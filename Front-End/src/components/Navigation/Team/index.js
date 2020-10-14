@@ -6,8 +6,7 @@ import React from 'react';
 // == Composant
 const Team = () => (
   <div>
-    Composant : Team
-    Wesley, Sylvain, Alexis, Nicolas, Caroline
+    Team
   </div>
 );
 
