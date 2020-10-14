@@ -1,3 +1,5 @@
+-- Deploy heros:init-table to pg
+
 BEGIN;
 
 CREATE SCHEMA nav AUTHORIZATION heros;
