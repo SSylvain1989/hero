@@ -7,6 +7,7 @@ import React from 'react';
 const Team = () => (
   <div>
     Composant : Team
+    Wesley, Sylvain, Alexis, Nicolas, Caroline
   </div>
 );
 
