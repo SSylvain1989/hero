@@ -1,21 +1,21 @@
 // == Import : npm
 import React from 'react';
-import PropTypes from 'prop-types';
+import Footer from '../Footer';
 
 // == Import : local
-import './styles.css';
+import './styles.scss';
 
 // == Composant
-const Accueil = ({ gameList }) => (
+const Accueil = () => (
   <>
-    <Header />
-    <div className="Accueil">
-      Je suis sur la page d'accueil
+    <div className="Home">
+      <div className="Home__background">
+        <button type="submit" className="Home__button">Liste des jeux</button>
+      </div>
     </div>
     <Footer />
   </>
 );
-
 
 // == Export
 export default Accueil;
