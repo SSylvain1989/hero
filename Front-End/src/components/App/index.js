@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './app.scss';
-import Header from '../Header';
+import Header from '../Navigation/Header';
 
 const App = () => (
   <div className="app">
