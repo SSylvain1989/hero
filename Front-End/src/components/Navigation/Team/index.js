@@ -6,8 +6,7 @@ import React from 'react';
 // == Composant
 const Team = () => (
   <div>
-    Composant : Team 
-    Github :o
+    Team
   </div>
 );
 
