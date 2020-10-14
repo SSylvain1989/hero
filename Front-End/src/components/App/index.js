@@ -6,6 +6,7 @@ import Header from '../Header';
 const App = () => (
   <div className="app">
     <Header />
+    Générons un conflit :)
   </div>
 );
 
