@@ -1,0 +1,50 @@
+.start {
+  author: Nicolas;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__scene {
+    display: flex;
+    height: 400px;
+    width: 80%;
+    background-color: #D1D1D1;
+    border: 5px solid black;
+
+    h1 {
+      margin: 2rem;
+    }
+
+    &--left {
+      width: 65%;
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+
+      p {
+        background-color: #fff;
+        height: 80%;
+        margin: 2rem 1rem;
+      }
+
+      &buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+
+        button {
+          padding: 0.5rem;
+          width: 45%;
+          margin: 0.3rem;
+        }
+      }
+    }
+
+  }
+
+}
