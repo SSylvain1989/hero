@@ -1,9 +1,12 @@
 import React from 'react';
 
-import './style.scss';
+import './legalnotices.scss';
 
 const LegalNotices = () => (
-  <div className="legalNotices">LegalNotices texte a rajouter pour tester</div>
+  <div className="legal-notices">
+    <h1>Mentions légales</h1>
+    <p>Bla - Bla - Bla</p>
+  </div>
 );
 
 export default LegalNotices;

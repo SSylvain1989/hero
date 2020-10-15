@@ -2,11 +2,12 @@ import React from 'react';
 
 import './app.scss';
 import Header from '../Navigation/Header';
-import Profil from '../Navigation/Profil';
+import LegalNotices from '../Navigation/LegalNotices';
 
 const App = () => (
   <div className="app">
     <Header />
+    <LegalNotices />
   </div>
 );
 
