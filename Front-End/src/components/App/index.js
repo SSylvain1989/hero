@@ -6,8 +6,6 @@ import Header from '../Navigation/Header';
 const App = () => (
   <div className="app">
     <Header />
-    Autre chose :p
-    Générons un conflit :)
   </div>
 );
 
