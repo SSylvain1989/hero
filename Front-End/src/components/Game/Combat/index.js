@@ -5,8 +5,22 @@ import React from 'react';
 
 // == Composant
 const Combat = () => (
-  <div>
-    Composant : Combat
+  <div className="combat">
+    <div className="combat__scene">
+      <div className="combat__opponent">
+        <h1>Nom adversaire</h1>
+        <p>Vie adversaire</p>
+      </div>
+      <div className="combat__actions">
+        <button type="button">Fiche personnage</button>
+        <button type="button">Attaquer</button>
+        <button type="button">Défendre</button>
+      </div>
+      <img
+        src=""
+        alt="Fiche personnage"
+      />
+    </div>
   </div>
 );
 
