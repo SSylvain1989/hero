@@ -7,8 +7,9 @@ const storieController = {
         response.json(historyList);
     },
 
-    getByName: (request, response) => {
-        response.send('Hello !');
+    getById: async (request, response) => {
+        const oneHistory = await history.findById(request.params.id);
+        response.json(oneHistory);
     },
 };
 

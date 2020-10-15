@@ -13,7 +13,7 @@ const router = Router();
 router.get('/sayHi', mainController.sayHi); /* test */
 
 router.get('/api/stories', storieController.getAll); /* Récupère toutes les histoires */
-// router.get('/api/stories/:game-name', storieController.getByName); /* Récupérer page d'un jeu spécifique */
+router.get('/api/stories/:id', storieController.getById); /* Récupère page d'un jeu spécifique */
 
 // router.get('/api/profile', profileController.getOne); /* Récupérer des informations profil */
 // router.patch('/api/profile/edit', profileController.edit); /* Modifier mot de passe / Email */
