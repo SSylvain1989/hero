@@ -1,4 +1,4 @@
-.Board{
+.NotFound{
   width: 90wh;
   height: 90vh;
   margin: 3rem 2rem;
@@ -16,7 +16,7 @@
     vertical-align: middle;
   }&__title{
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
   }&__button{
     padding: 1rem;
@@ -24,14 +24,5 @@
     font-size: large;
     position: relative;
     bottom: 20px;
-  }&__p{
-    font-size: large;
-    font-weight: 600;
-    padding: 0.2rem;
-    margin-bottom: 0.3rem;
-  }&__Nb{
-    padding: 0.2rem;
-    margin-bottom: 2rem;
   }
 }
-
