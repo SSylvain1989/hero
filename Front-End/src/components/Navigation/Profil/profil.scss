@@ -1,9 +1,76 @@
-.app {
-  width: 500px;
-  margin: 1em auto;
-  text-align: center;
-}
+.profil {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-weight: bold;
+    font-size: 24px;
+  }
 
-.app img {
-  max-width: 150px;
+    &__input {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      width: 60%;
+
+        h2 {
+          margin-top: 3rem;
+          margin-bottom: 1rem;
+          font-weight: bold;
+          margin-left: 3rem;
+        }
+
+        input {
+          margin: 0.3rem 0;
+          padding: 0.5rem;
+          margin-left: 3rem;
+          width: 70%;
+        }
+
+        button {
+          margin: 0.3rem;
+          margin-left: 3rem;;
+          padding: 0.5rem;
+          background-color: #F9BA32;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid black;
+          width: 70%;
+        }
+
+        &--delete {
+
+          button {
+            background-color: #D70026;
+          }
+        }
+    }
+
+  &__avatar {
+    display: flex;
+    width: 40%;
+    margin: 5rem 5rem 0 5rem;
+    background-color: #D3D3D3;
+    height: 80%;
+  }
+
+  &__delete-modal {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D1D1D1;
+    left: 20%;
+    top: 40%;
+    padding: 3rem;
+    border-radius: 10px;
+
+    input {
+      margin: 2rem 0;
+      width: 70%;
+    }
+  }
 }
