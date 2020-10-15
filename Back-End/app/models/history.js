@@ -1,3 +1,4 @@
+// On récupère 
 const db = require('../database');
 
 const history = {
