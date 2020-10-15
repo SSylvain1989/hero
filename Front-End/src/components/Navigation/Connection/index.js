@@ -11,11 +11,11 @@ import './connection.scss';
 const Connection = () => (
   <>
     <form className="connection">
-      <h1 className="connection-title">Je suis déjà joueur</h1>
+      <h1 className="connection__title">Je suis déjà joueur</h1>
       <Field />
       <Field />
-      <input className="connection-submit" type="submit" value="C'est parti" />
-      <button className="connection-redirect" type="button">L'inscription c'est par ici</button>
+      <input className="connection__submit" type="submit" value="C'est parti" />
+      <button className="connection__redirect" type="button">L'inscription c'est par ici</button>
     </form>
   </>
 );

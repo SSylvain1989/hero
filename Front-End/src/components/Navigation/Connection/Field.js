@@ -6,8 +6,8 @@ import React from 'react';
 // == Composant
 const Field = () => (
   <div className="field">
-    <p className="field-label">Titre de l'input</p>
-    <input className="field-input" type="text" placeholder="Placeholder" />
+    <p>Titre de l'input</p>
+    <input type="text" placeholder="Placeholder" />
   </div>
 );
 

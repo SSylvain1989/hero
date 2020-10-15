@@ -6,15 +6,19 @@ import React from 'react';
 // == Composant
 const Member = () => (
   <div className="member">
-    <img
-      src=""
-      alt="Team member"
-    />
-    <div className="member-description">
+    <div className="member__image">
+      <img
+        src=""
+        alt="Team member"
+      />
+    </div>
+    <div className="member__description">
       <h1>Member Name</h1>
       <p>Member Role</p>
     </div>
-    <a href="#">Logo LinkedIn + LinkedIn</a>
+    <div className="member__links">
+      <a href="#">Logo LinkedIn + LinkedIn</a>
+    </div>
   </div>
 );
 
