@@ -4,8 +4,8 @@ import './profil.scss';
 
 const Profil = () => (
   <div className="profil">
-    <h1>VOS INFORMATIONS</h1>
     <div className="profil__input">
+      <h1>VOS INFORMATIONS</h1>
       <h2>Modifier mon email</h2>
       <input type="text" placeholder="Nouvel email" />
       <input type="text" placeholder="Confirmer le nouvel email" />
@@ -22,7 +22,18 @@ const Profil = () => (
       <div className="profil__input--delete">
         <h2>Supprimer mon compte</h2>
         <button type="button">Supprimer mon compte</button>
+        <div className="profil__delete-modal">
+          <h1>Êtes-vous sur de vouloir supprimer votre compte</h1>
+          <input type="text" placeholder="Taper votre pseudo pour confirmer la suppression" />
+          <button type="button">Supprimer mon compte</button>
+        </div>
       </div>
+    </div>
+    <div className="profil__avatar">
+      <img
+        src=""
+        alt="avatar"
+      />
     </div>
   </div>
 );
