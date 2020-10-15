@@ -31,33 +31,31 @@ INSERT INTO game.character (
             ('Lich', 'false', '30', '5', '7'),
             ('Goblin', 'false', '20', '3', '2');
 
-INSERT INTO game.history ( 
-    "name",
-    "description",
-    "difficulty"
-    )
-    VALUES ('Matrio et Luigri', 'Aide Matrio et Luigri a retrouver la princesse Pear', 'easy');
-
 INSERT INTO game.type ( 
     "name"
     )
     VALUES  ('Début'),
             ('Cliquable'),
-            ('Discution/Combat'),
+            ('Choix'),
             ('Combat'),
             ('Discution'),
             ('Déplacement'),
             ('Fin');
 
-INSERT INTO game.scene ( 
+INSERT INTO game.history ( 
     "name",
     "description",
-    "type_id",
-    "opponent_id",
-    "item_id"
+    "difficulty"
     )
-    VALUES  ('test', 'scene de test', '0' '2', '4'),
-            ('test2', 'scene de test2', '1' '3', '5');
+    VALUES ('Matrio et Luigri', 'Aide Matrio et Luigri a retrouver la princesse Pear', 'easy'),
+            ('test-histoire', 'test-description', 'easy');
+
+INSERT INTO game.scene ( 
+    "name",
+    "description"
+    )
+    VALUES ('test', 'scene de test'),
+           ('test2', 'scene de test2');
 
 INSERT INTO game.item (
     "name", 
@@ -65,8 +63,8 @@ INSERT INTO game.item (
     "atk",
     "def"
     )
-    VALUES  ('weapon', '0', '5', '0'),
-            ('Armor', '0', '0', '5');
+    VALUES ('weapon', 0, 5, 0),
+           ('Armor', 0, 0, 5);
 
 INSERT INTO game.categories ( 
     "name"
@@ -76,50 +74,15 @@ INSERT INTO game.categories (
 INSERT INTO game.text_in_game ( 
     "description"
     )
-    VALUES  ('Vous vous réveillez en prison mais vous ne savez comment vous êtes arrivé là...
-              La porte ne semble pas verrouillée pour autant et un vieillard gît dans un coin sombre.')
-            ('Hum...
-              Cela fait si longtemps...
-              Je n\'ai vu que des rats depuis des années...
-              Rien d\'autre de vivant...
-              Tuez moi pour mettre fin à cette malédiction')
-            (`Tuez-moi ou vous serez maudit à jamais en partant d\'ici !`)
-            (`Vous voyez au loin une une sortie vers l'extérieur. Quelle aubaine ! Vous pourriez vous enfuir sans aucun soucis, Philosophie.`)
-            (`Vous montez sur la barque mais la mer l'emporte immédiatement !
-            Vous ne savez pas comment revenir en arrière et ça ne vous dérange pas plus que ça...
-            LIBRE !`);
-
-INSERT INTO game.party ( 
-    "user_id",
-    "playable_id",
-    "history_id"
-    )
-    VALUES ('0', '0', '0');
-
-INSERT INTO game.history_has_scene ( 
-    "history_id",
-    "scene_id",
-    "previous_scene_id",
-    "next_scene_id"
-    )
-    VALUES ('0', '0', null, '1');
-
-INSERT INTO game.history_has_categories ( 
-    "history_id",
-    "categories_id"
-    )
-    VALUES ('0', '0');
-
-INSERT INTO game.scene_has_text ( 
-    "scene_id",
-    "text_in_game_id"
-    )
-    VALUES ('0', '0');
-
-INSERT INTO game.scene_has_item ( 
-    "scene_id",
-    "item_id"
-    )
-    VALUES ('0', '0');
+    VALUES ('Vous vous réveillez en prison mais vous ne savez comment vous êtes arrivé là... 
+    La porte ne semble pas verrouillée pour autant et un vieillard gît dans un coin sombre.'),
+    ('Hum...
+    Cela fait si longtemps...
+    Je n''ai vu que des rats depuis des années...
+    Rien d''autre de vivant...
+    Tuez-moi pour mettre fin à cette malédiction'),
+    ('Tuez-moi ou vous serez maudit à jamais en partant d''ici !'),
+    ('Vous voyez au loin une une sortie vers l''extérieur. Quelle aubaine ! Vous pourriez vous enfuir sans aucun soucis, Philosophie.'),
+    ('Vous montez sur la barque mais la mer l''emporte immédiatement ! Vous ne savez pas comment revenir en arrière et ça ne vous dérange pas plus que ça... LIBRE !');
 
 COMMIT;
