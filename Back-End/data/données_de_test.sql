@@ -47,7 +47,7 @@ INSERT INTO game.history (
     "description",
     "difficulty"
     )
-    VALUES ('Matrio et Luigri', 'Aide Matrio et Luigri a retrouver la princesse Pear', 'easy')
+    VALUES ('Matrio et Luigri', 'Aide Matrio et Luigri a retrouver la princesse Pear', 'easy'),
             ('test-histoire', 'test-description', 'easy');
 
 INSERT INTO game.scene ( 
