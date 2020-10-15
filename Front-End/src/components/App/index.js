@@ -2,12 +2,12 @@ import React from 'react';
 
 import './app.scss';
 import Header from '../Navigation/Header';
+import Profil from '../Navigation/Profil';
 
 const App = () => (
   <div className="app">
     <Header />
-    Autre chose :p
-    Générons un conflit :)
+    <Profil />
   </div>
 );
 

@@ -1,9 +1,45 @@
-.app {
-  width: 500px;
-  margin: 1em auto;
-  text-align: center;
-}
+.profil {
+  margin: 7rem 2rem;
 
-.app img {
-  max-width: 150px;
+  h1 {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      margin-left: 3rem;
+
+        h2 {
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+
+        input {
+          width: 30%;
+          margin: 0.3rem 0;
+          padding: 0.5rem;
+        }
+
+        button {
+          width: 30%;
+          margin: 0.3rem 0;
+          padding: 0.5rem;
+          background-color: #F9BA32;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid black;
+        }
+
+        &--delete {
+          margin-top: 2rem;
+
+          button {
+            background-color: red;
+          }
+        }
+    }
 }

@@ -1,9 +1,31 @@
-.app {
-  width: 500px;
-  margin: 1em auto;
-  text-align: center;
-}
+.header {
+  background-color: #426E86;
+  position: fixed;
+  width: 100%;
+  left:0;
+  top: 0;
+  height: 4rem;
 
-.app img {
-  max-width: 150px;
+  ul {
+  display: flex;
+
+    li {
+      margin: 1.5rem;
+    }
+  }
+
+  &__leftside {
+  display: flex;
+  text-align: left;
+  width: 100%;
+  }
+
+  &__rightside {
+    width: 100%;
+    text-align: right;
+
+      img {
+        margin-left: 1.5rem;
+      }
+    }
 }
