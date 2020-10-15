@@ -2,12 +2,11 @@ import React from 'react';
 
 import './app.scss';
 import Header from '../Navigation/Header';
-import End from '../Game/End';
+import Profil from '../Navigation/Profil';
 
 const App = () => (
   <div className="app">
     <Header />
-    <End />
   </div>
 );
 
