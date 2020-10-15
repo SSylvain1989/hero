@@ -4,7 +4,13 @@ import './clickableElement.scss';
 
 const clickableElement = () => (
   <div className="clickable-element">
-    <h1>Composant : clickableElement</h1>
+    <div className="clickable-element__scene">
+      <h1>Lieu de la scène</h1>
+      <img
+        src=""
+        alt="Fiche personnage"
+      />
+    </div>
   </div>
 );
 
