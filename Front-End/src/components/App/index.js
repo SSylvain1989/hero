@@ -2,12 +2,12 @@ import React from 'react';
 
 import './app.scss';
 import Header from '../Navigation/Header';
-import LegalNotices from '../Navigation/LegalNotices';
+import Contact from '../Navigation/Contact';
 
 const App = () => (
   <div className="app">
     <Header />
-    <LegalNotices />
+    <Contact />
   </div>
 );
 
