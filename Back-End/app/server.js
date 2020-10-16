@@ -32,7 +32,7 @@ app.use(session({
 app.use(express.json());
 
 // On ouvre l'accés a l'API pour le localhost, on ajoutera l'url ou on va deployer l'API
-app.use( cors({origin: ['localhost']}));
+app.use(cors());
 
 // On utilise le router
 app.use(router);
