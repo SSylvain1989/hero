@@ -17,6 +17,17 @@ const app = express();
 // Si la variable d'environement PORT n'est pas dispo le port sera 8000
 const port = process.env.PORT || 8000;
 
+// on rajoute la gestion des POST body
+app.use(express.urlencoded({extended: true}));
+
+// et on rajoute la gestion des sessions
+const session = require('express-session');
+app.use(session({
+  saveUninitialized: true,
+  resave: true,
+  secret: 'Un Super Secret'
+}));
+
 // Si on m'envoie du JSON, je le mettrai en forme dans request.body, pour qu'il soit accessible
 app.use(express.json());
 
