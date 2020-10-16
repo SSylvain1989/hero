@@ -1,5 +1,5 @@
-.Discussion{
-  width: 90wh;
+.Home{
+  width: 90%;
   height: 90vh;
   margin: 3rem 2rem;
   &__background{
@@ -7,21 +7,22 @@
     width: 100%;
     background-color: rgb(240, 238, 238);
   }&__container{
-    display: flex;
+    display: table;
     width: 100%;
     height: 100%;
   }&__content{
+    display: table-cell;
     text-align: center;
-    background-color: gainsboro;
-    width: 60%;
+    vertical-align: middle;
   }&__title{
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
-  }&__text{
-    background-color: lightblue;
-    width: 40%;
-    height: 100%;
+  }button{
+    padding: 1rem;
+    color: black;
+    font-size: large;
+    position: relative;
+    bottom: 20px;
   }
 }
-

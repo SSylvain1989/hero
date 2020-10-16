@@ -2,24 +2,23 @@
 import React from 'react';
 
 // == Import : local
-import './styles.scss';
+import './discussion.scss';
 
 // == Composant
-const Discussion = ({ }) => (
-  <>
-    <div className="Discussion">
-      <div className="Discussion__background">
-        <div className="Discussion__container">
-          <div className="Discussion__content">
-            <div> </div>
-            <h1 className="Discussion__title">Tu es en pourparlers avec "un chiot NOIR"..!</h1>
-            <img src="" alt="" />
-          </div>
-          <div className="Discussion__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo debitis quis quod possimus expedita atque in, praesentium similique omnis eos rerum cum culpa error aperiam alias reiciendis quo. Modi, obcaecati?</div>
+const Discussion = () => (
+  <div className="discussion">
+    <div className="discussion__scene">
+      <div className="discussion__scene--left">
+        <h1>Description</h1>
+      </div>
+      <div className="discussion__scene--right">
+        <p>Texte d'information pour le joueur</p>
+        <div className="discussion__scene--rightbuttons">
+          <button type="button">Retour</button>
         </div>
       </div>
     </div>
-  </>
+  </div>
 );
 
 // == Export

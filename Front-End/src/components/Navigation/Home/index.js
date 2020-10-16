@@ -3,17 +3,19 @@ import React from 'react';
 import Footer from '../Footer';
 
 // == Import : local
-import './styles.scss';
+import './home.scss';
 
 // == Composant
-const Accueil = () => (
+const Home = () => (
   <>
     <div className="Home">
       <div className="Home__background">
         <div className="Home__container">
           <div className="Home__content">
             <h1 className="Home__title">Bienvenue à toi Soldat ..!</h1>
-            <a href="#" className="Home__button">Clic ici pour voir la liste des différentes batailles que tu peux mener..</a>
+            <button type="button">
+              Clic ici pour voir la liste des différentes batailles que tu peux mener..
+            </button>
           </div>
         </div>
       </div>
@@ -23,4 +25,4 @@ const Accueil = () => (
 );
 
 // == Export
-export default Accueil;
+export default Home;
