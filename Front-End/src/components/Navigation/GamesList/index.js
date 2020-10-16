@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import './gameslist.scss';
 import Game from './Game';
 
-const GamesList = () => (
-  <div className="games-list">
-    <h1>Liste des jeux</h1>
-    <div className="games-list__item">
-      <Game />
-      <Game />
-      <Game />
-      <Game />
+const GamesList = ({
+  fetchGames,
+  gamesList,
+}) => {
+  useEffect(() => {
+    fetchGames();
+  }, []);
+
+  return (
+    <div className="games-list">
+      <h1>Liste des jeux</h1>
+      <div className="games-list__item">
+        {gamesList.map((game) => (
+          <Game
+            key={game.id}
+            {...game}
+          />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+GamesList.propTypes = {
+  fetchGames: PropTypes.func.isRequired,
+  gamesList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default GamesList;
