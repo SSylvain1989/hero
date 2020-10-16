@@ -5,6 +5,7 @@ const storieController = {
     // Méthode pour récupérer toute les histoires
     getAll: async (request, response) => {
         const historyList = await history.findAll();
+        console.log('response.locals: ', response.locals.connected_user)
         response.json(historyList);
     },
     // Méthode pour récupérer une histoire par son id

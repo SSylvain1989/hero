@@ -32,12 +32,8 @@ const connexionController = {
             email: checkUser.email,
             detail_id: checkUser.detail_id
         };
-        if(request.session.user) {
-          response.locals.user = request.session.user;
-        } else {
-          response.locals.user = false;
-        }
         console.log('request.session apres update: ', request.session);
+        console.log('response.locals: ', response.locals.connected_user)
 
         response.json('Connexion ok');
     },
