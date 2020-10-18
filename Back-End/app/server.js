@@ -31,6 +31,9 @@ app.use(session({
   },
 }));
 
+const userMiddleware = require('./middlewares/user');
+app.use(userMiddleware);
+
 // Si on m'envoie du JSON, je le mettrai en forme dans request.body, pour qu'il soit accessible
 app.use(express.json());
 

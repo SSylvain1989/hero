@@ -24,7 +24,7 @@ const connexionController = {
 
         if (messageTab.length > 0) { // on check si notre tableau de message est supérieur à 0
             console.log(messageTab);
-            response.json(messageTab);
+            return response.json(messageTab);
         };
         
         request.session.user = {
@@ -40,21 +40,23 @@ const connexionController = {
             gamePlay: checkUser.gamePlay
         };
 
-        response.json(request.session.user);
+        const messageConnexion = 'L\'utilisateur est bien connecter';
+
+        response.json({message: messageConnexion, session: request.session.user});
     },
     loginCheck: (request, response) => {
         const messageTab = [];
 
-        if (!request.session.user) {
+        if (request.session.user.connected_user === false) {
             const messageCheckConnexion = 'Aucun utilisateur n\'est connecter';
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
-            return response.json(messageTab);
+            return response.json({message: messageTab, session: request.session.user});
         };
 
         if (request.session.user.connected_user === true){
             const messageCheckConnexion = 'L\'utilisateur est bien connecter';
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
-            return response.json(messageTab);
+            return response.json({message: messageTab, session: request.session.user});
         };
     },
     signup: async (request, response) => { //
@@ -78,7 +80,7 @@ const connexionController = {
         };
 
         if (messageTab.length > 0) { // on check si notre tableau de message est supérieur à 0
-            return response.json(messageTab);
+            return response.json({message: messageTab, session: request.session.user});
         };
 
         const salt = await bcrypt.genSalt(10); // 4 - On crypt le password
@@ -92,22 +94,22 @@ const connexionController = {
 
         const save = await user.createUser(newUser); // 6 - on passe les informations en paramêtre de la fonction createUser
         
-        response.json(save); // 7 - on renvoi le RETURNING de la requete SQL , soit ici ( cf models user ) id & userName
+        response.json({userSave: save, session: request.session.user}); // 7 - on renvoi le RETURNING de la requete SQL , soit ici ( cf models user ) id & userName
     },
     logout: (request, response) => {
         const messageTab = [];
 
-        if (!request.session.user) {
+        if (request.session.user.connected_user === false) {
             const messageLogout = 'Aucun utilisateur n\'est connecter';
             messageTab.push({messageLogout: messageLogout});
-            return response.json(messageTab);
+            return response.json({message: messageTab, session: request.session.user});
         };
 
         if (request.session.user.connected_user === true){
-            request.session.user = false;
+            request.session.user = {connected_user: false};
             const messageLogout = 'Deconnexion de l\'utilisateur ok';
             messageTab.push({messageLogout: messageLogout});
-            return response.json(messageTab);
+            return response.json({message: messageTab, session: request.session.user});
         };
     },
 };
