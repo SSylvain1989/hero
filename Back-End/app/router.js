@@ -16,8 +16,9 @@ router.get('/api/stories', storieController.getAll); /* Récupère toutes les hi
 router.get('/api/stories/:id', storieController.getById); /* Récupère page d'un jeu spécifique */
 
 router.post('/api/sign-up', connexionController.signup); /* Créer un compte en base de données */
-router.post('/api/log-in', connexionController.login); /* Connexion utilisateur, redirige l'utilisateur et confirme la connexion */
-// router.get('/api/login-check', connexionController.loginCheck); /* Vérifie si l'utilisateur est déjà connecté */
+router.post('/api/log-in', connexionController.login); /* Connexion utilisateur, confirme la connexion */
+router.get('/api/login-check', connexionController.loginCheck); /* Vérifie si l'utilisateur est déjà connecté */
+router.get('/api/log-out', connexionController.logout); /* Deconnexion utilisateur, confirme la deconnexion */
 
 // router.get('/api/profile', profileController.getOne); /* Récupérer des informations profil */
 // router.patch('/api/profile/edit', profileController.edit); /* Modifier mot de passe / Email */
