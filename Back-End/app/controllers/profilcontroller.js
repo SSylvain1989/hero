@@ -5,9 +5,11 @@ const bcrypt = require('bcrypt');
 
 const profileController = {
     getOne: (request, response) => {
+        // Le profil est deja enregistrer dans la session pas besoin de requete a la bdd on renvoie la session 
         response.json({session: request.session.user});
     },
     edit: async (request, response) => { 
+        // tableau d'erreur
         const messageTab = [];
 
         const data = { // je configure l'objet a envoyer un bdd
@@ -23,7 +25,7 @@ const profileController = {
             if (checkUser !== undefined) { // Si il existe on stock un message d'erreur dans messageTab
                 const messageUserName = 'UserName deja enregistré en base de donnée';
                 messageTab.push({messageUserName: messageUserName});
-            } else { // Sinon on le stock dans data
+            } else { // Sinon on le stock le userName du body dans data
                 data.userName = request.body.userName;
             };
         } else { // Sinon on stock le userName de la session dans data
@@ -35,7 +37,7 @@ const profileController = {
             if (!emailValidator.validate(request.body.email)) { // Si l'email n'est pas valide on stock un message d'erreur dans messageTab
                 const messageEmail = `Cet email n\'est pas valide.`;
                 messageTab.push({messageEmail: messageEmail});
-            } else { // Sinon on stock dans data
+            } else { // Sinon on stock l'email du body dans data
                 data.email = request.body.email;
             };
         } else { // Sinon on stock l'email de la session dans data
@@ -52,13 +54,13 @@ const profileController = {
                 const encryptedPassword = await bcrypt.hash(request.body.password, salt);
                 data.password = encryptedPassword;
             };
-        } else if (request.body.password && request.body.passwordConfirm === undefined) {
+        } else if (request.body.password && request.body.passwordConfirm === undefined) { // Si un des 2 password demander manque => message d'erreur
             const messagePassword = "Veuillez remplir les deux champs password.";
             messageTab.push({messagePassword: messagePassword});
-        } else if (request.body.password === undefined && request.body.passwordConfirm) {
+        } else if (request.body.password === undefined && request.body.passwordConfirm) { // Si un des 2 password demander manque => message d'erreur
             const messagePassword = "Veuillez remplir les deux champs password.";
             messageTab.push({messagePassword: messagePassword});
-        } else { // Sinon on recupère le password en bdd pour le ranger dans data
+        } else { // Si aucun password renseigner on recupère le password en bdd pour le ranger dans data
             const userBdd = await user.findById(request.session.user.id);
             data.password = userBdd.password;
         };
@@ -79,8 +81,13 @@ const profileController = {
         // ON renvoie le message de la bdd et la session mis a jour
         response.json({message: userEdit.message, session: request.session.user});
     },
-    delete: (request, response) => {
-        response.json('Hello !');
+    delete: async (request, response) => {
+        // Requete pour supprimer un utilisateur et ses details de jeux
+        const userDelete = await profile.deleteProfile(request.session.user);
+        // On repasse la session a deconnecter
+        request.session.user = { connected_user: false };
+        // On renvoie tous ca 
+        response.json({message: userDelete, session: request.session.user});
     },
 };
 

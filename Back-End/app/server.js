@@ -31,6 +31,7 @@ app.use(session({
   },
 }));
 
+// middleWare qui crée la session user (default: {connected_user = false})
 const userMiddleware = require('./middlewares/user');
 app.use(userMiddleware);
 

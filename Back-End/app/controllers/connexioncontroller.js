@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 const connexionController = {
     login: async (request, response) => {
+        // tableau d'erreur
         const messageTab = [];
 
         // on check si username rentré par l'user est égale à un User déjà dans la BDD
@@ -30,7 +31,7 @@ const connexionController = {
         if (messageTab.length > 0) { // Si notre tableau de message est supérieur à 0 on le renvoie
             return response.json(messageTab);
         };
-        
+        // on ajoute les informations de l'utilisateur a la session
         request.session.user = {
             connected_user: true,
             id: checkUser.id,
@@ -40,18 +41,19 @@ const connexionController = {
         };
 
         const messageConnexion = 'L\'utilisateur est bien connecter';
-
+        // on renvoie la session et le message de confirmation
         response.json({message: messageConnexion, session: request.session.user});
     },
     loginCheck: (request, response) => {
+        // tableau d'erreur
         const messageTab = [];
-
+        // si l'utilisateur n'est pas connecter on renvoie un message 
         if (request.session.user.connected_user === false) {
             const messageCheckConnexion = 'Aucun utilisateur n\'est connecter';
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
             return response.json({message: messageTab, session: request.session.user});
         };
-
+        // si l'utilisateur est connecter on renvoie un message de confirmation
         if (request.session.user.connected_user === true){
             const messageCheckConnexion = 'L\'utilisateur est bien connecter';
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
@@ -59,6 +61,7 @@ const connexionController = {
         };
     },
     signup: async (request, response) => {
+        // tableau d'erreur
         const messageTab = [];
         // Si toute les données son renseigner, on execute le code suivant
         if (request.body.userName && request.body.email && request.body.password && request.body.passwordConfirm) { 
@@ -104,14 +107,15 @@ const connexionController = {
         };
     },
     logout: (request, response) => {
+        // tableau d'erreur
         const messageTab = [];
-
+        // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
         if (request.session.user.connected_user === false) {
             const messageLogout = 'Aucun utilisateur n\'est connecter';
             messageTab.push({messageLogout: messageLogout});
             return response.json({message: messageTab, session: request.session.user});
         };
-
+        // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
         if (request.session.user.connected_user === true){
             request.session.user = {connected_user: false};
             const messageLogout = 'Deconnexion de l\'utilisateur ok';
