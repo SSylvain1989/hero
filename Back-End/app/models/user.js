@@ -1,4 +1,4 @@
-// On récupère 
+// On récupère la connexion a la bdd
 const db = require('../database');
 
 const user = {
@@ -12,12 +12,12 @@ const user = {
     findById: async (id) => {
         const sql = `SELECT * FROM nav.user WHERE id = $1;`;
         const data = await db.query(sql, [id]);
-        return data.rows;
+        return data.rows[0];
     },
 
     findByUserName: async (userName) => {
-        //const sql = `SELECT * FROM nav.user WHERE "userName" = $1;`;
-        const sql =`SELECT * FROM nav.user JOIN nav.game_details ON nav.user.detail_id = nav.game_details.id WHERE "userName" = $1;`
+        const sql = `SELECT * FROM nav.user WHERE "userName" = $1;`;
+        //const sql =`SELECT * FROM nav.user JOIN nav.game_details ON nav.user.detail_id = nav.game_details.id WHERE "userName" = $1;`
         const data = await db.query(sql, [userName]);
         return data.rows[0];
     },

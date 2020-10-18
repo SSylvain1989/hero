@@ -8,9 +8,13 @@ const contactController = require('./controllers/contactcontroller');
 const connexionController = require('./controllers/connexioncontroller');
 const gameController = require('./controllers/gamecontroller');
 
+const checkConnexion = require('./middlewares/checkConnexion');
+
 const router = Router();
 
 router.get('/sayHi', mainController.sayHi); /* test */
+
+// Route accécible sans connexion
 
 router.get('/api/stories', storieController.getAll); /* Récupère toutes les histoires */
 router.get('/api/stories/:id', storieController.getById); /* Récupère page d'un jeu spécifique */
@@ -20,8 +24,10 @@ router.post('/api/log-in', connexionController.login); /* Connexion utilisateur,
 router.get('/api/login-check', connexionController.loginCheck); /* Vérifie si l'utilisateur est déjà connecté */
 router.get('/api/log-out', connexionController.logout); /* Deconnexion utilisateur, confirme la deconnexion */
 
-// router.get('/api/profile', profileController.getOne); /* Récupérer des informations profil */
-// router.patch('/api/profile/edit', profileController.edit); /* Modifier mot de passe / Email */
+// Route accécible seulement avec connexion
+
+router.get('/api/profile', checkConnexion, profileController.getOne); /* Récupérer des informations profil */
+router.patch('/api/profile/edit', checkConnexion, profileController.edit); /* Modifier mot de passe / Email */
 // router.delete('/api/profile/delete', profileController.delete); /* Supprimer son compte (ATTENTION) */
 
 // router.get('/api/board', boardController.getOneBoard); /* Récupérer des informations profil */

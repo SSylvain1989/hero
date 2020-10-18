@@ -5,25 +5,29 @@ const bcrypt = require('bcrypt');
 const connexionController = {
     login: async (request, response) => {
         const messageTab = [];
-        // request.body c'est ici qu'on récupère les infos du formulaire
-        // on check si username rentré par l'user est égale à un User déjà dans la BDD
-        const checkUser = await user.findByUserName(request.body.userName); 
 
-        if (checkUser === undefined) {
-            const messageUserName = 'UserName non enregistré en base de donnée';
+        // on check si username rentré par l'user est égale à un User déjà dans la BDD
+        const checkUser = await user.findByUserName(request.body.userName);
+        
+        if (request.body.userName && request.body.password) { // Si les 2 elements du form son present on effectue la suite
+            if (checkUser !== undefined) { // Si l'utilisateur est trouver en bdd 
+                // On compare le mdp reçu en front & celui déjà en BDD ( si true : c'est good)
+                const compare = await bcrypt.compare(request.body.password, checkUser.password);
+                // Si la comparaison n'est pas bonne on stock un message d'erreur 
+                if (compare === false) {
+                    const messagePassword = `Le mot de passe n'est pas valide`;
+                    messageTab.push({messagePassword: messagePassword});
+                };
+            } else { // Sinon on stock un message d'erreur
+                const messageUserName = 'UserName non enregistré en base de donnée';
+                messageTab.push({messageUserName: messageUserName});
+            };
+        } else { // Sinon on stock un message d'erreur
+            const messageUserName = 'Veuillez remplir tous les champs';
             messageTab.push({messageUserName: messageUserName});
         };
 
-        // ici on compare le mdp reçu en front & celui déjà en BDD ( si true : c'est good)
-        const compare = await bcrypt.compare(request.body.password, checkUser.password);
-        
-        if (compare === false) {
-            const messagePassword = `Le mot de passe n'est pas valide`;
-            messageTab.push({messagePassword: messagePassword});
-        };
-
-        if (messageTab.length > 0) { // on check si notre tableau de message est supérieur à 0
-            console.log(messageTab);
+        if (messageTab.length > 0) { // Si notre tableau de message est supérieur à 0 on le renvoie
             return response.json(messageTab);
         };
         
@@ -32,12 +36,7 @@ const connexionController = {
             id: checkUser.id,
             userName: checkUser.userName,
             email: checkUser.email,
-            detail_id: checkUser.detail_id,
-            avatar: checkUser.avatar,
-            displayName: checkUser.displayName,
-            gameWin: checkUser.gameWin,
-            gameOver: checkUser.gameOver,
-            gamePlay: checkUser.gamePlay
+            detail_id: checkUser.detail_id
         };
 
         const messageConnexion = 'L\'utilisateur est bien connecter';
@@ -59,7 +58,7 @@ const connexionController = {
             return response.json({message: messageTab, session: request.session.user});
         };
     },
-    signup: async (request, response) => { //
+    signup: async (request, response) => { // IL FAUT ENCORE RAJOUTER DES CONDITIONS AU CAS OU LES DONNEES SONT PARTIEL !!!!!
         const messageTab = [];
 
         const checkUser = await user.findByUserName(request.body.userName); 
