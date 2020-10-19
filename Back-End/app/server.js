@@ -8,9 +8,6 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
-
-const userMiddleware = require('./middleware/userMiddleware');
-
 // On récupère le router 
 const router = require('./router');
 
@@ -28,11 +25,15 @@ const session = require('express-session');
 app.use(session({
   saveUninitialized: true,
   resave: true,
-  secret: 'Un Super Secret'
+  secret: 'Un Super Secret',
+  cookie: {
+          maxAge: 60 * 60 * 1000 // 1h
+  },
 }));
 
-// Ici on utilise notre custom user middleware afin de remplir la variable locals.connected_user
-app.use(userMiddleware)
+// middleWare qui crée la session user (default: {connected_user = false})
+const userMiddleware = require('./middlewares/user');
+app.use(userMiddleware);
 
 // Si on m'envoie du JSON, je le mettrai en forme dans request.body, pour qu'il soit accessible
 app.use(express.json());

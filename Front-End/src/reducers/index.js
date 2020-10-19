@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
+import navigation from './navigation';
+import field from './field';
 
 export default combineReducers({
-  counter,
+  navigation,
+  field,
 });
