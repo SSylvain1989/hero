@@ -23,7 +23,7 @@ const mapStateToProps = (state) => ({
   emailConfirm: state.field.signup.emailConfirm,
   password: state.field.signup.password,
   passwordConfirm: state.field.signup.passwordConfirm,
-  message: state.signup.message,
+  messages: state.signup.message,
 });
 
 /* === Actions ===

@@ -9,8 +9,10 @@ const signupMiddleware = (store) => (next) => (action) => {
     case SIGNUP: {
       const state = store.getState();
       const signupFormValues = state.field.signup;
+      // Renommer userName pour correspondre avec le back
+      signupFormValues.userName = signupFormValues.username;
       console.log(signupFormValues);
-      axios.post('http://localhost:3000/api/sign-up', { signupFormValues })
+      axios.post('http://localhost:3000/api/sign-up', { ...signupFormValues })
         .then((response) => {
           store.dispatch(signupResponse(response.data));
         })

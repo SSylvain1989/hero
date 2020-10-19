@@ -2,7 +2,7 @@ import { SIGNUP_RESPONSE } from '../actions/signup';
 
 const initialState = {
   response: '',
-  message: '',
+  messages: [],
 };
 
 const signup = (state = initialState, action = {}) => {
@@ -12,6 +12,7 @@ const signup = (state = initialState, action = {}) => {
       return {
         ...state,
         response: action.response,
+        message: action.response.message,
       };
     default:
       return state;

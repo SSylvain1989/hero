@@ -6,6 +6,6 @@ export const signup = () => ({
 });
 
 export const signupResponse = (response) => ({
-  type: SIGNUP,
+  type: SIGNUP_RESPONSE,
   response,
 });
