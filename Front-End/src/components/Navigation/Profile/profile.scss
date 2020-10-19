@@ -13,6 +13,8 @@
     &__input {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin-top: 1rem;
       width: 60%;
 
@@ -20,19 +22,16 @@
           margin-top: 3rem;
           margin-bottom: 1rem;
           font-weight: bold;
-          margin-left: 3rem;
         }
 
         input {
           margin: 0.3rem 0;
           padding: 0.5rem;
-          margin-left: 3rem;
           width: 70%;
         }
 
         button {
           margin: 0.3rem;
-          margin-left: 3rem;;
           padding: 0.5rem;
           background-color: #F9BA32;
           font-size: 16px;
@@ -45,17 +44,10 @@
 
           button {
             background-color: #D70026;
+            width: 200px;
           }
         }
     }
-
-  &__avatar {
-    display: flex;
-    width: 40%;
-    margin: 5rem 5rem 0 5rem;
-    background-color: #D3D3D3;
-    height: 80%;
-  }
 
   &__delete-modal {
     position: absolute;

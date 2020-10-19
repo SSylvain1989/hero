@@ -2,11 +2,11 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-import Signup from 'src/components/Navigation/Signup';
+import Profile from '../components/Navigation/Profile';
 
 // == Import : actions
-import { signup } from 'src/actions/signup';
-import { changeFieldValue } from 'src/actions/field';
+import { emailSubmit, usernameSubmit, passwordSubmit } from '../actions/user';
+import { changeProfileField } from '../actions/field';
 
 // Action Creators
 
@@ -18,12 +18,10 @@ import { changeFieldValue } from 'src/actions/field';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state) => ({
-  username: state.field.signup.username,
-  email: state.field.signup.email,
-  emailConfirm: state.field.signup.emailConfirm,
-  password: state.field.signup.password,
-  passwordConfirm: state.field.signup.passwordConfirm,
-  message: state.field.signup.message,
+  email: state.field.profile.email,
+  userName: state.field.profile.userName,
+  password: state.field.profile.password,
+  passwordConfirm: state.field.profile.passwordConfirm,
 });
 
 /* === Actions ===
@@ -34,19 +32,25 @@ const mapStateToProps = (state) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 const mapDispatchToProps = (dispatch) => ({
-  changeField: (value, name) => {
-    dispatch(changeFieldValue(value, name));
+  onChange: (value, name) => {
+    dispatch(changeProfileField(value, name));
   },
-  handleSignup: () => {
-    dispatch(signup());
+  handleEmailSubmit: () => {
+    dispatch(emailSubmit());
+  },
+  handleusernameSubmit: () => {
+    dispatch(usernameSubmit());
+  },
+  handlePasswordSubmit: () => {
+    dispatch(passwordSubmit());
   },
 });
 
 // Container
-const SignupContainer = connect(
+const ProfileContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Signup);
+)(Profile);
 
 // == Export
-export default SignupContainer;
+export default ProfileContainer;

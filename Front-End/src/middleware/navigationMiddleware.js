@@ -5,7 +5,7 @@ import {
   FETCH_GAMEDETAIL,
 } from '../actions/navigation';
 
-const logMiddleware = (store) => (next) => (action) => {
+const navigationMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_GAMES:
       axios.get('http://localhost:3000/api/stories')
@@ -26,4 +26,4 @@ const logMiddleware = (store) => (next) => (action) => {
   }
 };
 
-export default logMiddleware;
+export default navigationMiddleware;

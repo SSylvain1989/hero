@@ -1,15 +1,15 @@
 import React from 'react';
 
 import './app.scss';
-import Header from '../Navigation/Header';
+import Header from '../../containers/Header';
 import Footer from '../Navigation/Footer';
-import Profile from '../Navigation/Profile';
-// import Profile from '../../containers/Profile';
+// import Connection from '../Navigation/Connection';
+import Connection from '../../containers/Connection';
 
 const App = () => (
   <div className="app">
     <Header />
-    <Profile />
+    <Connection />
     <Footer />
   </div>
 );

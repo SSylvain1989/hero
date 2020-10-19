@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './header.scss';
 
-const Header = () => (
+const Header = ({
+  isLoged,
+  loginHandler,
+}) => (
   <div className="header">
     <ul>
       <div className="header__leftside">
@@ -17,16 +21,26 @@ const Header = () => (
         <li>Nouveautés</li>
       </div>
       <div className="header__rightside">
-        <li>
-          Pseudo
-          <img
-            src=""
-            alt="avatar"
-          />
-        </li>
+        { isLoged
+          ? (
+            <li>
+              Pseudo
+              <img
+                src=""
+                alt="avatar"
+              />
+              Déconnexion
+            </li>
+          )
+          : <li>Connexion</li>}
       </div>
     </ul>
   </div>
 );
+
+Header.propTypes = ({
+  isLoged: PropTypes.bool.isRequired,
+  loginHandler: PropTypes.func.isRequired,
+});
 
 export default Header;
