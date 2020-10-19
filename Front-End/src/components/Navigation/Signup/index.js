@@ -2,7 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Field from '../../common/Field/FieldUser';
+import Field from '../../common/Field';
+
+// == Import scss
+import './signup.scss';
 
 // == Composant
 const Signup = ({
@@ -21,8 +24,8 @@ const Signup = ({
   };
 
   return (
-    <div>
-      <form className="signup" onSubmit={handleOnSubmit}>
+    <div className="signup">
+      <form onSubmit={handleOnSubmit}>
         <h1 className="signup__title">Je souhaite devenir joueur</h1>
         <Field
           name="username"
