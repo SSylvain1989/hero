@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Field from '../../../common/Field';
+import Field from '../../common/Field';
 
 // == Composant
 const Signup = ({
@@ -13,7 +13,7 @@ const Signup = ({
   passwordConfirm,
   changeField,
   handleSignup,
-  message,
+  messages,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -22,38 +22,39 @@ const Signup = ({
 
   return (
     <div>
-      <h1 className="signup__message">{message}</h1>
       <form className="signup" onSubmit={handleOnSubmit}>
         <h1 className="signup__title">Je souhaite devenir joueur</h1>
         <Field
           name="username"
-          placeholder="Placeholder"
+          placeholder="Nom d'utilisateur"
           onChange={changeField}
           value={username}
         />
         <Field
           name="email"
-          placeholder="Placeholder"
+          placeholder="Adresse e-mail"
           onChange={changeField}
           value={email}
         />
         <Field
           name="emailConfirm"
-          placeholder="Placeholder"
+          placeholder="Confirmation e-mail"
           onChange={changeField}
           value={emailConfirm}
         />
         <Field
           name="password"
-          placeholder="Placeholder"
+          placeholder="Mot de passe"
           onChange={changeField}
           value={password}
+          type="password"
         />
         <Field
           name="passwordConfirm"
-          placeholder="Placeholder"
+          placeholder="Confirmation mot de passe"
           onChange={changeField}
           value={passwordConfirm}
+          type="password"
         />
         <input className="signup__submit" type="submit" value="C'est parti" />
       </form>
@@ -63,18 +64,23 @@ const Signup = ({
 
 // == PropTypes
 Signup.propTypes = {
-  username: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  emailConfirm: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  passwordConfirm: PropTypes.string.isRequired,
+  username: PropTypes.string,
+  email: PropTypes.string,
+  emailConfirm: PropTypes.string,
+  password: PropTypes.string,
+  passwordConfirm: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
-  message: PropTypes.string,
+  messages: PropTypes.array,
 };
 
 Signup.defaultProps = {
-  message: '',
+  messages: [],
+  username: '',
+  email: '',
+  emailConfirm: '',
+  password: '',
+  passwordConfirm: '',
 };
 
 // == Export
