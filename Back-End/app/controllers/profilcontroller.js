@@ -12,7 +12,7 @@ const profileController = {
         // tableau d'erreur
         const messageTab = [];
 
-        const data = { // je configure l'objet a envoyer un bdd
+        const data = { // je configure l'objet a envoyer en bdd
             id: request.session.user.id,
             userName: null,
             email: null,

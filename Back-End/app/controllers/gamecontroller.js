@@ -1,9 +1,10 @@
 const gameController = {
     getHistory: (request, response) => {
-        response.send('Hello !');
+        console.log(request.params.id)
+        response.json('Hello !');
     },
     getByName: (request, response) => {
-        response.send('Hello !');
+        response.json('Hello !');
     },
 };
 
