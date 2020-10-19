@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { FETCH_GAMES, addGames } from '../actions/navigation';
+import {
+  FETCH_GAMES,
+  addGames,
+  FETCH_GAMEDETAIL,
+} from '../actions/navigation';
 
 const logMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -11,6 +15,9 @@ const logMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.error(error);
         });
+      next(action);
+      break;
+    case FETCH_GAMEDETAIL:
       next(action);
       break;
     default:

@@ -3,12 +3,12 @@ import React from 'react';
 import './app.scss';
 import Header from '../Navigation/Header';
 import Footer from '../Navigation/Footer';
-import GamesList from '../../containers/GamesList';
+import GameDetail from '../../containers/GameDetail';
 
 const App = () => (
   <div className="app">
     <Header />
-    <GamesList />
+    <GameDetail />
     <Footer />
   </div>
 );
