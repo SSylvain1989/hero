@@ -2,12 +2,10 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-// import Signup from 'src/components/Navigation/Signup';
+import App from '../components/App';
+
 
 // == Import : actions
-import { signup } from '../actions/signup';
-import { changeSignupFieldValue } from '../actions/field';
-import Signup from '../components/Navigation/Signup';
 
 // Action Creators
 
@@ -19,12 +17,7 @@ import Signup from '../components/Navigation/Signup';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state) => ({
-  username: state.field.signup.username,
-  email: state.field.signup.email,
-  emailConfirm: state.field.signup.emailConfirm,
-  password: state.field.signup.password,
-  passwordConfirm: state.field.signup.passwordConfirm,
-  messages: state.signup.message,
+  games: state.navigation.games,
 });
 
 /* === Actions ===
@@ -34,20 +27,13 @@ const mapStateToProps = (state) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch) => ({
-  changeField: (value, name) => {
-    dispatch(changeSignupFieldValue(value, name));
-  },
-  handleSignup: () => {
-    dispatch(signup());
-  },
-});
+const mapDispatchToProps = (dispatch) => ({});
 
 // Container
-const SignupContainer = connect(
+const AppContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Signup);
+)(App);
 
 // == Export
-export default SignupContainer;
+export default AppContainer;
