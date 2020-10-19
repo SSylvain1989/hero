@@ -3,7 +3,7 @@ BEGIN;
 CREATE SCHEMA nav AUTHORIZATION heros;
 CREATE SCHEMA game AUTHORIZATION heros;
 
-CREATE TABLE nav.game_details (
+CREATE TABLE nav.game_details ( -- TABLE BOARD TABLEAU DES SCORES
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "avatar" text NOT NULL,
   "displayName" text NOT NULL,

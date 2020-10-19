@@ -3,12 +3,13 @@ import React from 'react';
 import './app.scss';
 import Header from '../Navigation/Header';
 import Footer from '../Navigation/Footer';
-import GameDetail from '../../containers/GameDetail';
+import Profile from '../Navigation/Profile';
+// import Profile from '../../containers/Profile';
 
 const App = () => (
   <div className="app">
     <Header />
-    <GameDetail />
+    <Profile />
     <Footer />
   </div>
 );
