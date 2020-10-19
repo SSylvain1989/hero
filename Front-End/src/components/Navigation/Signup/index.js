@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Field from '../../../common/Field';
+import Field from '../../common/Field';
 
 // == Composant
 const Signup = ({
@@ -63,11 +63,11 @@ const Signup = ({
 
 // == PropTypes
 Signup.propTypes = {
-  username: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  emailConfirm: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  passwordConfirm: PropTypes.string.isRequired,
+  username: PropTypes.string,
+  email: PropTypes.string,
+  emailConfirm: PropTypes.string,
+  password: PropTypes.string,
+  passwordConfirm: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
   message: PropTypes.string,
@@ -75,6 +75,11 @@ Signup.propTypes = {
 
 Signup.defaultProps = {
   message: '',
+  username: '',
+  email: '',
+  emailConfirm: '',
+  password: '',
+  passwordConfirm: '',
 };
 
 // == Export

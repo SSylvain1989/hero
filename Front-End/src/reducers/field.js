@@ -18,6 +18,7 @@ const field = (state = initialState, action = {}) => {
       return {
         ...state,
         signup: {
+          ...state.signup,
           [action.name]: action.value,
         },
       };
