@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Field from '../../common/Field';
+import Field from '../../common/Field/FieldUser';
 
 // == Composant
 const Signup = ({

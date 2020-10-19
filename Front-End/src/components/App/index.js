@@ -30,14 +30,8 @@ import Team from '../Navigation/Team';
 const App = () => (
   <div className="app">
 
-    <Route exact path="/">
-      <Home />
-    </Route>
-    <Route exact path="/GamesList">
       <GamesList />
-    </Route>
 
->>>>>>> 8df4ba8d5e9689da6fcdb8b1a699c90c9c5a6cda
   </div>
 );
 

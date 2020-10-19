@@ -10,7 +10,7 @@ const navigationMiddleware = (store) => (next) => (action) => {
     case FETCH_GAMES:
       axios.get('http://localhost:3000/api/stories')
         .then((response) => {
-          store.dispatch(addGames(response.data));
+          store.dispatch(addGames(response.data.historylist));
         })
         .catch((error) => {
           console.error(error);
