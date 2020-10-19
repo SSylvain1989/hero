@@ -1,17 +1,62 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import './app.scss';
-import Header from '../../containers/Header';
+
+// import game
+import Battle from '../Game/Battle';
+import Choice from '../Game/Choice';
+import ClickableElement from '../Game/ClickableElement';
+import Discussion from '../Game/Discussion';
+import End from '../Game/End';
+import Start from '../Game/Start';
+
+// import navigation ** attention IMPORT CONTAINER ET COMPONENT
+import Header from '../Navigation/Header';
 import Footer from '../Navigation/Footer';
-// import Connection from '../Navigation/Connection';
-import Connection from '../../containers/Connection';
+import Profile from '../Navigation/Profile';
+import Board from '../Navigation/Board';
+import Connection from '../Navigation/Connection';
+import Contact from '../Navigation/Contact';
+import GameDetail from '../../containers/GameDetail';
+import GamesList from '../../containers/GamesList';
+import Home from '../Navigation/Home';
+import LegalNotices from '../Navigation/LegalNotices';
+import NotFound from '../Navigation/NotFound';
+import Signup from '../../containers/Signup';
+import Team from '../Navigation/Team';
+// import Profile from '../../containers/Profile';
 
 const App = () => (
   <div className="app">
-    <Header />
-    <Connection />
-    <Footer />
+
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Route exact path="/GamesList">
+      <GamesList />
+    </Route>
+
+>>>>>>> 8df4ba8d5e9689da6fcdb8b1a699c90c9c5a6cda
   </div>
 );
 
 export default App;
+{ /* <Header />
+<Battle />
+<Choice />
+<ClickableElement />
+<Discussion />
+<End />
+<Start />
+    <Board />
+    <Connection />
+    <Contact />
+    <GameDetail />
+    <GamesList />
+    <LegalNotices />
+    <NotFound />
+    <Profile />
+    <Signup />
+    <Team />
+    <Footer /> */ }
