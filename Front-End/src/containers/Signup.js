@@ -6,7 +6,7 @@ import Signup from 'src/components/Navigation/Signup';
 
 // == Import : actions
 import { signup } from 'src/actions/signup';
-import { changeFieldValue } from 'src/actions/field';
+import { changeSignupFieldValue } from 'src/actions/field';
 
 // Action Creators
 
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => ({
  */
 const mapDispatchToProps = (dispatch) => ({
   changeField: (value, name) => {
-    dispatch(changeFieldValue(value, name));
+    dispatch(changeSignupFieldValue(value, name));
   },
   handleSignup: () => {
     dispatch(signup());
