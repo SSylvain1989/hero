@@ -25,14 +25,21 @@ const session = require('express-session');
 app.use(session({
   saveUninitialized: true,
   resave: true,
-  secret: 'Un Super Secret'
+  secret: 'Un Super Secret',
+  cookie: {
+          maxAge: 60 * 60 * 1000 // 1h
+  },
 }));
+
+// middleWare qui crée la session user (default: {connected_user = false})
+const userMiddleware = require('./middlewares/user');
+app.use(userMiddleware);
 
 // Si on m'envoie du JSON, je le mettrai en forme dans request.body, pour qu'il soit accessible
 app.use(express.json());
 
 // On ouvre l'accés a l'API pour le localhost, on ajoutera l'url ou on va deployer l'API
-app.use( cors({origin: ['localhost']}));
+app.use(cors());
 
 // On utilise le router
 app.use(router);

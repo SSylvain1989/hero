@@ -1,9 +1,10 @@
 .games-list {
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  padding-top: 8rem;
 
   h1 {
     margin-bottom: 3rem;

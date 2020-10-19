@@ -2,13 +2,10 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-import Signup from 'src/components/Navigation/Signup';
-
-// == Import : actions
-import { signup } from 'src/actions/signup';
-import { changeSignupFieldValue } from 'src/actions/field';
+import GamesList from '../components/Navigation/GamesList';
 
 // Action Creators
+import { fetchGames } from '../actions/navigation';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -18,12 +15,7 @@ import { changeSignupFieldValue } from 'src/actions/field';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state) => ({
-  username: state.field.signup.username,
-  email: state.field.signup.email,
-  emailConfirm: state.field.signup.emailConfirm,
-  password: state.field.signup.password,
-  passwordConfirm: state.field.signup.passwordConfirm,
-  message: state.signup.message,
+  gamesList: state.navigation.games,
 });
 
 /* === Actions ===
@@ -34,19 +26,16 @@ const mapStateToProps = (state) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 const mapDispatchToProps = (dispatch) => ({
-  changeField: (value, name) => {
-    dispatch(changeSignupFieldValue(value, name));
-  },
-  handleSignup: () => {
-    dispatch(signup());
+  fetchGames: () => {
+    dispatch(fetchGames());
   },
 });
 
 // Container
-const SignupContainer = connect(
+const GamesListContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Signup);
+)(GamesList);
 
 // == Export
-export default SignupContainer;
+export default GamesListContainer;

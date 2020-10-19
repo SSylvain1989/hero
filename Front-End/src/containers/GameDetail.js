@@ -2,10 +2,10 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-import Counter from 'src/components/Counter';
+import GameDetail from '../components/Navigation/GameDetail';
 
 // Action Creators
-import { increment, decrement } from '../actions';
+import { fetchGameDetail } from '../actions/navigation';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -14,8 +14,8 @@ import { increment, decrement } from '../actions';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state, ownProps) => ({
-  count: state.counter.value,
+const mapStateToProps = (state) => ({ 
+
 });
 
 /* === Actions ===
@@ -25,20 +25,17 @@ const mapStateToProps = (state, ownProps) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  increment: () => {
-    dispatch(increment());
-  },
-  decrement: () => {
-    dispatch(decrement());
+const mapDispatchToProps = (dispatch) => ({
+  fetchGameDetail: () => {
+    dispatch(fetchGameDetail());
   },
 });
 
 // Container
-const CounterContainer = connect(
+const GameDetailContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Counter);
+)(GameDetail);
 
 // == Export
-export default CounterContainer;
+export default GameDetailContainer;
