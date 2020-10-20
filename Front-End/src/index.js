@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 // == Import : local
 // Composants
-import App from './components/App';
+import App from './containers/App';
 // Store
 import store from './store';
 

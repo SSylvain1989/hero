@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // == Import
 import Field from '../../common/Field/FieldUser';
@@ -38,7 +39,7 @@ const Connection = ({
           type="password"
         />
         <button type="submit">Se connecter</button>
-        <button className="connection__redirect" type="button">L'inscription c'est par ici</button>
+        <button className="connection__redirect" type="button"><Link to="/compte">L'inscription c'est par ici</Link></button>
       </form>
     </>
   );
