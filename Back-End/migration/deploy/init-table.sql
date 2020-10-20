@@ -61,8 +61,7 @@ CREATE TABLE game.scene ( -- NE PEUT ETRE CREE AVANT CHARACTER ET TYPE
   "name" text NOT NULL UNIQUE,
   "description" text,
   "type_id" int REFERENCES game.type(id),
-  "opponent_id" int REFERENCES game.character(id),
-  "item_id" int REFERENCES game.item(id)
+  "opponent_id" int REFERENCES game.character(id)
 );
 
 CREATE TABLE game.categories ( 
