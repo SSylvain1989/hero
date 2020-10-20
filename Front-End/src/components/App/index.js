@@ -37,7 +37,7 @@ const App = ({ games }) => (
       <Route exact path="/connection">
         <Connection />
       </Route>
-      <Route exact path="/inscription">
+      <Route exact path="/compte">
         <Signup />
       </Route>
       <Route exact path="/liste-des-jeux">

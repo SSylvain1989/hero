@@ -1,0 +1,19 @@
+// Aspect/ couleur vieux papier pour les cadres  panneaux du jeu
+// Avec une bordure style 'livre' de la couleur de la catégorie de l'histoire (pourpre, vert foncé, ...)
+
+$brown-color: #42291A;
+$normal-color: #EBD78D;
+$border-color: #E2D296;
+
+// Ne pas avoir de blanc pur ou de noir pur, le texte mis en avant sera doré 
+// Police : Merriweather
+
+$font-base-color: #EEEEEE;
+$font-contrast-color: #222222;
+$font-gold-color: #D4AF37;
+$font-silver-color: #B1B1B1;
+
+// Les messages de validation seront en vert, invalide/attention rouge et information bleu
+$valide-color: #5CB85C;
+$invalide-color: #D9534F;
+$info-color: #5BC0DE;

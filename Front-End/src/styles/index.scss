@@ -1,9 +1,10 @@
 @use 'reset';
 @use 'vars';
-
+@import url(https://fr.allfont.net/allfont.css?fonts=merriweather);
 body {
-  font-family: sans-serif;
+  font-family: 'Merriweather', arial;
 }
+
 
 /* 
   // or you can import your own font
