@@ -26,14 +26,13 @@ import Home from '../Navigation/Home';
 import LegalNotices from '../Navigation/LegalNotices';
 import NotFound from '../Navigation/NotFound';
 import Signup from '../../containers/Signup';
-import Start from '../Game/Start';
 // **** inscription à modifier pour la route signup ****
 const App = ({ games }) => (
   <div className="app">
     <Header />
     <Switch>
       <Route exact path="/">
-        <Start />
+        <Home />
       </Route>
       <Route exact path="/connection">
         <Connection />
