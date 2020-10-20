@@ -27,7 +27,9 @@ app.use(session({
   resave: true,
   secret: 'Un Super Secret',
   cookie: {
-          maxAge: 60 * 60 * 1000 // 1h
+    httpOnly: true, // empêche l'accès au cookie depuis du javascript côté front
+    secure: false, // HTTPS est nécessaire si l'on veut passer l'option à true
+    maxAge: 1000 * 60 * 60 * 24, // durée de vie du cookie en milliseconds, ici ça donne 1 jour
   },
 }));
 
@@ -39,8 +41,30 @@ app.use(userMiddleware);
 app.use(express.json());
 
 // On ouvre l'accés a l'API pour le localhost, on ajoutera l'url ou on va deployer l'API
-app.use(cors());
 
+// app.use(cors({
+//   origin: 'http://localhost:3005',
+//   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+//   credentials: true
+// }));
+
+// app.use(cors({
+//   credentials: true,
+//   origin:'',
+//   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+// }));
+
+app.use((req, res, next) => {
+
+  // on autorise explicitement le domaine du front
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  // on autorise le partage du cookie
+  res.header('Access-Control-Allow-Credentials', true);
+  // on autorise le partage de ressources entre origines
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
 // On utilise le router
 app.use(router);
 
