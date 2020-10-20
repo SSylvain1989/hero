@@ -1,10 +1,10 @@
 // == Import : npm
 import { connect } from 'react-redux';
-
+import { checkConnexion } from '../actions/user';
 // == Import : local
 import App from '../components/App';
 // == Import : actions
-import { checkConnexion } from '../actions/user';
+
 // Action Creators
 
 /* === State (données) ===
