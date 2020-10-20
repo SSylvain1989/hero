@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './header.scss';
 
 const Header = () => (
@@ -27,6 +26,7 @@ const Header = () => (
       </div>
     </ul>
   </div>
+
 );
 
 export default Header;
