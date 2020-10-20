@@ -2,7 +2,8 @@
 import React from 'react';
 
 // == Import
-
+import startMinautor from '../../../images/start-minautor.gif';
+import parchemin from '../../../images/parchemin.png';
 // == Import scss
 import './start.scss';
 
@@ -10,15 +11,20 @@ import './start.scss';
 const Start = () => (
   <div className="start">
     <div className="start__scene">
-      <div className="start__scene--left">
-        <img
-          src=""
-          alt="Donneur de quète"
-        />
-      </div>
+      <img
+        src={startMinautor}
+        alt="mooving-minautor"
+      />
+      <div className="start__scene--left" />
       <div className="start__scene--right">
-        <p>Texte de description de l'histoire à suivre</p>
-        <div className="start__scene--rightbuttons">
+        <div className="start__scene--right-text">
+          <p>Texte de description de l'histoire à suivre</p>
+          <img
+            src={parchemin}
+            alt="parchemin"
+          />
+        </div>
+        <div className="start__scene--right-buttons">
           <button type="button">Passer</button>
           <button type="button">Démarrer</button>
         </div>
