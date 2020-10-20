@@ -2,7 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Field from '../../common/Field/FieldUser';
+import Field from '../../common/Field';
+
+// == Import scss
+import './signup.scss';
 
 import './signup.scss';
 
