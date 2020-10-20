@@ -29,8 +29,9 @@ import Team from '../Navigation/Team';
 
 const App = () => (
   <div className="app">
-
+      <Header />
       <GamesList />
+      <Footer />
 
   </div>
 );
