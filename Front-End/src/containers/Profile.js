@@ -38,7 +38,7 @@ const mapDispatchToProps = (dispatch) => ({
   handleEmailSubmit: () => {
     dispatch(emailSubmit());
   },
-  handleusernameSubmit: () => {
+  handleUsernameSubmit: () => {
     dispatch(usernameSubmit());
   },
   handlePasswordSubmit: () => {

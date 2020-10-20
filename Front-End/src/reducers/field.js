@@ -4,7 +4,10 @@ import {
   CHANGE_LOGIN_FIELD_VALUE,
 } from '../actions/field';
 
-import { LOGIN_HANDLER } from '../actions/user';
+import {
+  LOGIN_HANDLER,
+  SAVE_SESSION,
+} from '../actions/user';
 
 export const initialState = {
   isLoged: false,
@@ -24,6 +27,13 @@ export const initialState = {
   login: {
     userName: '',
     password: '',
+  },
+  session: {
+    connected_user: false,
+    detail_id: null,
+    email: '',
+    id: null,
+    userName: '',
   },
 };
 
@@ -53,11 +63,17 @@ const field = (state = initialState, action = {}) => {
           [action.name]: action.value,
         },
       };
-
     case LOGIN_HANDLER:
       return {
         ...state,
         isLoged: !state.isLoged,
+      };
+    case SAVE_SESSION:
+      return {
+        ...state,
+        session: {
+          ...action.session,
+        },
       };
     default:
       return state;

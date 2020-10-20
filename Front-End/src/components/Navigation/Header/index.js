@@ -29,23 +29,33 @@ const Header = ({
             Liste des jeux
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/score"
+            exact
+          >
+            Scores
+          </NavLink>
+        </li>
       </div>
       <div className="header__rightside">
         {isLoged
           ? (
-            <li>
-              Pseudo
-              <NavLink
-                to="/board"
-                exact
-              >
-                <img
-                  src=""
-                  alt="avatar"
-                />
-              </NavLink>
-              Déconnexion
-            </li>
+            <>
+              <li>
+                Pseudo
+                <NavLink
+                  to="/profil"
+                  exact
+                >
+                  <img
+                    src=""
+                    alt="avatar"
+                  />
+                </NavLink>
+              </li>
+              <li onClick={loginHandler}><NavLink to="/">Déconnexion</NavLink></li>
+            </>
           )
           : (
             <>
@@ -58,7 +68,7 @@ const Header = ({
               </li>
               <li>
                 <NavLink
-                  to="/compte"
+                  to="/inscription"
                   exact
                 >Créer un compte
                 </NavLink>

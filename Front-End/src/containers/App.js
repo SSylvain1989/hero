@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 
 // == Import : local
 import App from '../components/App';
-
-
 // == Import : actions
-
+import { checkConnexion } from '../actions/user';
 // Action Creators
 
 /* === State (données) ===
@@ -27,7 +25,11 @@ const mapStateToProps = (state) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  checkConnexion: () => {
+    dispatch(checkConnexion());
+  },
+});
 
 // Container
 const AppContainer = connect(
