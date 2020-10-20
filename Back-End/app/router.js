@@ -10,7 +10,7 @@ const contactController = require('./controllers/contactcontroller');
 const connexionController = require('./controllers/connexioncontroller');
 const gameController = require('./controllers/gamecontroller');
 
-// middleWare qui check si l'utilisateur est connecter pour donner l'accè a certaine page
+// middleWare qui check si l'utilisateur est connecter pour donner l'accès a certaine page
 const checkConnexion = require('./middlewares/checkConnexion');
 
 const router = Router();
@@ -38,7 +38,7 @@ router.patch('/api/board/edit', checkConnexion, boardController.edit); /* Modifi
 
 // router.post('/api/contact', contactController.email); /* Envoyer les infos du mail */
 
-// router.get('/api/stories/:id(\\d+)/play', gameController.getHistory); /* Recevoir toute l'histoire */
+router.get('/api/stories/:id(\\d+)/play', checkConnexion, gameController.getHistory); /* Recevoir toute l'histoire */
 // router.post('/api/stories/:id(\\d+)/finish', boardController.editStat); /* Mettre a jour les stats d'un user */
 
 
