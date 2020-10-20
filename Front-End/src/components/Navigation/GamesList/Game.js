@@ -6,9 +6,11 @@ const Game = ({ name, description, difficulty, id }) => (
   <div className="game">
     <div className="game__card">
       <img src="#" alt="imgGames" />
-      <h2>{name}</h2>
-      <p>{difficulty}</p>
-      <p>{description}</p>
+      <div className="game__card-text">
+        <h2>{name}</h2>
+        <p>{difficulty}</p>
+        <p>{description}</p>
+      </div>
       <button type="button"><Link to={`/liste-des-jeux/${id}`}>Voir les détails</Link></button>
     </div>
   </div>

@@ -14,7 +14,7 @@ const GamesList = ({
 
   return (
     <div className="games-list">
-      <h1>Liste des jeux</h1>
+      <h1 className="games-list__title">Liste des jeux</h1>
       <div className="games-list__item">
         {gamesList.map((game) => (
           <Game
