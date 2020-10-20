@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
 
 // import game
-import Battle from '../Game/Battle';
-import Choice from '../Game/Choice';
-import ClickableElement from '../Game/ClickableElement';
-import Discussion from '../Game/Discussion';
-import End from '../Game/End';
-import Start from '../Game/Start';
+// import Battle from '../Game/Battle';
+// import Choice from '../Game/Choice';
+// import ClickableElement from '../Game/ClickableElement';
+// import Discussion from '../Game/Discussion';
+// import End from '../Game/End';
+// import Start from '../Game/Start';
 
 // import navigation ** attention IMPORT CONTAINER ET COMPONENT
 import Header from '../../containers/Header';
@@ -42,11 +43,11 @@ const App = ({ games }) => (
       <Route exact path="/liste-des-jeux">
         <GamesList />
       </Route>
-      {games.map((game) =>
+      {games.map((game) => (
         <Route key={game.id} exact path={`/liste-des-jeux/${game.id}`}>
           <GameDetail />
         </Route>
-      )}
+      ))}
       <Route exact path="/score">
         <Board />
       </Route>
@@ -69,5 +70,9 @@ const App = ({ games }) => (
     <Footer />
   </div>
 );
+
+App.propTypes = ({
+  games: PropTypes.array.isRequired,
+});
 
 export default App;
