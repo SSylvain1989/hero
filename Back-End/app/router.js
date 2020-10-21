@@ -24,8 +24,8 @@ router.get('/api/stories/:id(\\d+)', storieController.getById); /* Récupère pa
 
 router.post('/api/sign-up', connexionController.signup); /* Créer un compte en base de données */
 router.post('/api/log-in', connexionController.login); /* Connexion utilisateur, confirme la connexion */
-router.get('/api/login-check', connexionController.loginCheck); /* Vérifie si l'utilisateur est déjà connecté */
-router.get('/api/log-out', connexionController.logout); /* Deconnexion utilisateur, confirme la deconnexion */
+router.post('/api/login-check', connexionController.loginCheck); /* Vérifie si l'utilisateur est déjà connecté */
+router.post('/api/log-out', connexionController.logout); /* Deconnexion utilisateur, confirme la deconnexion */
 
 // Route accécible seulement avec connexion
 

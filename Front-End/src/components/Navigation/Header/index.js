@@ -4,10 +4,12 @@ import { NavLink } from 'react-router-dom';
 
 import './header.scss';
 import logo from '../../../images/logo.png';
+import avatar from '../../../images/avatar.png';
 
 const Header = ({
   isLoged,
-  loginHandler,
+  logoutHandler,
+  userName,
 }) => (
   <div className="header">
     <ul>
@@ -43,18 +45,20 @@ const Header = ({
           ? (
             <>
               <li>
-                Pseudo
+                { userName }
+              </li>
+              <li>
                 <NavLink
                   to="/profil"
                   exact
                 >
                   <img
-                    src=""
+                    src={avatar}
                     alt="avatar"
                   />
                 </NavLink>
               </li>
-              <li onClick={loginHandler}><NavLink to="/">Déconnexion</NavLink></li>
+              <li onClick={logoutHandler}><NavLink to="/">Déconnexion</NavLink></li>
             </>
           )
           : (
@@ -82,7 +86,8 @@ const Header = ({
 
 Header.propTypes = ({
   isLoged: PropTypes.bool.isRequired,
-  loginHandler: PropTypes.func.isRequired,
+  logoutHandler: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
 });
 
 export default Header;

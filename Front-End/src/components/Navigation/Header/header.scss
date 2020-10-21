@@ -30,23 +30,15 @@
   }
 
   &__rightside {
-    width: 50%;
+    position: absolute;
     display: flex;
-    align-items: right;
-    justify-content: right;
-    text-align: right;
-
-    &--elements {
-      display: flex;
-      text-align: right;
-      align-items: right;
-      justify-content: right;
-      text-align: right;
-      color: red;
-    }
+    right: 1rem;
 
       img {
-        margin: 0 1.5rem;
+        position: absolute;
+        width: 50px;
+        top: 0.5rem;
+        right: 9rem;
       }
     }
 }

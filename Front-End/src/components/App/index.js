@@ -10,7 +10,6 @@ import './app.scss';
 // import ClickableElement from '../Game/ClickableElement';
 // import Discussion from '../Game/Discussion';
 // import End from '../Game/End';
-// import Start from '../Game/Start';
 
 // import navigation ** attention IMPORT CONTAINER ET COMPONENT
 import Header from '../../containers/Header';
@@ -26,11 +25,13 @@ import Home from '../Navigation/Home';
 import LegalNotices from '../Navigation/LegalNotices';
 import NotFound from '../Navigation/NotFound';
 import Signup from '../../containers/Signup';
+import Start from '../../containers/Start';
+
 // **** inscription à modifier pour la route signup ****
 const App = ({ games, checkConnexion }) => {
   useEffect(() => {
     checkConnexion();
-  });
+  }, []);
 
   return (
     <div className="app">
@@ -53,6 +54,9 @@ const App = ({ games, checkConnexion }) => {
             <GameDetail />
           </Route>
         ))}
+        <Route exact path="/teststart">
+          <Start />
+        </Route>
         <Route exact path="/score">
           <Board />
         </Route>

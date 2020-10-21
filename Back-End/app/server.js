@@ -18,7 +18,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 // on rajoute la gestion des POST body
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 // et on rajoute la gestion des sessions
 const session = require('express-session');

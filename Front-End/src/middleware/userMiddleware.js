@@ -9,6 +9,7 @@ import {
   loginHandler,
   saveSession,
   CHECK_CONNEXION,
+  LOGOUT_HANDLER,
 } from '../actions/user';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -63,13 +64,29 @@ const userMiddleware = (store) => (next) => (action) => {
         });
       next(action);
       break;
-    case CHECK_CONNEXION:
-      axios.post('http://localhost:3000/api/log-check',
+    case LOGOUT_HANDLER:
+      axios.post('http://localhost:3000/api/log-out',
         {},
         { withCredentials: true })
         .then((response) => {
           store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      next(action);
+      break;
+    case CHECK_CONNEXION:
+      axios.post('http://localhost:3000/api/login-check',
+        {},
+        { withCredentials: true })
+        .then((response) => {
+          if (response.data.session.connected_user) {
+            store.dispatch(saveSession(response.data.session));
+            store.dispatch(loginHandler());
+          }
+          else store.dispatch(saveSession(response.data.session));
         })
         .catch((error) => {
           console.error(error);

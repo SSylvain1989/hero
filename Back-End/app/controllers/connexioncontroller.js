@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 const connexionController = {
     login: async (request, response) => {
+    try {
         // tableau d'erreur
         const messageTab = [];
 
@@ -29,7 +30,8 @@ const connexionController = {
         };
 
         if (messageTab.length > 0) { // Si notre tableau de message est supérieur à 0 on le renvoie
-            return response.json(messageTab);
+            return response.status(404).json({message: messageTab, session: request.session.user});
+            //return response.json(messageTab);
         };
         // on ajoute les informations de l'utilisateur a la session
         request.session.user = {
@@ -42,26 +44,46 @@ const connexionController = {
 
         const messageConnexion = 'L\'utilisateur est bien connecté';
         // on renvoie la session et le message de confirmation
-        response.json({ message: messageConnexion, session: request.session.user });
+        response.status(200).json({message: messageConnexion, session: request.session.user});
+    } catch (error) {
+        console.trace(error);
+        return response.status(500).json(error.tostring());
+    };
     },
     loginCheck: (request, response) => {
+    try {
         // tableau d'erreur
         const messageTab = [];
         // si l'utilisateur n'est pas connecter on renvoie un message 
         if (request.session.user.connected_user === false) {
 
             const messageCheckConnexion = 'Aucun utilisateur n\'est connecté';
+<<<<<<< HEAD
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
-            return response.json({message: messageTab, session: request.session.user});
+            return response.status(404).json({message: messageTab, session: request.session.user});
+=======
+            messageTab.push({ messageCheckConnexion: messageCheckConnexion });
+            return response.json({ message: messageTab, session: request.session.user });
+>>>>>>> 0ed0fa6e35a807f2ecad2b642129261b8f8b48f7
         };
         // si l'utilisateur est connecter on renvoie un message de confirmation
-        if (request.session.user.connected_user === true){
+        if (request.session.user.connected_user === true) {
             const messageCheckConnexion = 'L\'utilisateur est bien connecté';
+<<<<<<< HEAD
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
-            return response.json({message: messageTab, session: request.session.user});
+            return response.status(200).json({message: messageTab, session: request.session.user});
+=======
+            messageTab.push({ messageCheckConnexion: messageCheckConnexion });
+            return response.json({ message: messageTab, session: request.session.user });
+>>>>>>> 0ed0fa6e35a807f2ecad2b642129261b8f8b48f7
         };
+    } catch (error) {
+        console.trace(error);
+        return response.status(500).json(error.tostring());
+    };
     },
     signup: async (request, response) => {
+    try {
         // tableau d'erreur
         const messageTab = [];
         // Si toute les données son renseigner, on execute le code suivant
@@ -84,7 +106,7 @@ const connexionController = {
             };
 
             if (messageTab.length > 0) { // on check si notre tableau de message est supérieur à 0
-                return response.json({ message: messageTab, session: request.session.user });
+                return response.status(404).json({message: messageTab, session: request.session.user});
             };
 
             const salt = await bcrypt.genSalt(10); // 4 - On crypt le password
@@ -97,31 +119,57 @@ const connexionController = {
             };
 
             const save = await user.createUser(newUser); // 6 - on passe les informations en paramêtre de la fonction createUser
-
-            response.json({ userSave: save, session: request.session.user }); // 7 - on renvoi le RETURNING de la requete SQL , soit ici ( cf models user ) id & userName
+            
+            response.status(200).json({userSave: save, session: request.session.user}); // 7 - on renvoi le RETURNING de la requete SQL , soit ici ( cf models user ) id & userName
 
         } else if (!request.body.userName || !request.body.email || !request.body.password || !request.body.passwordConfirm) {
             // Si une des 4 valeur n'est pas renseigner on renvoie un message d'erreur
             const message = "Veuillez remplir tous les champs.";
-            messageTab.push({ message: message });
-            response.json({ message: messageTab, session: request.session.user });
+            messageTab.push({message: message});
+            response.status(404).json({message: messageTab, session: request.session.user});
         };
+    } catch (error) {
+        console.trace(error);
+        return response.status(500).json(error.tostring());
+    };
     },
     logout: (request, response) => {
+<<<<<<< HEAD
+        try {
+            // tableau d'erreur
+            const messageTab = [];
+            // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
+            if (request.session.user.connected_user === false) {
+                const messageLogout = 'Aucun utilisateur n\'est connecté';
+                messageTab.push({messageLogout: messageLogout});
+                return response.status(404).json({message: messageTab, session: request.session.user});
+            };
+            // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
+            if (request.session.user.connected_user === true){
+                request.session.user = {connected_user: false};
+                const messageLogout = 'Déconnexion de l\'utilisateur ok';
+                messageTab.push({messageLogout: messageLogout});
+                return response.status(200).json({message: messageTab, session: request.session.user});
+            };
+        } catch (error) {
+            console.trace(error);
+            return response.status(500).json(error.tostring());
+=======
         // tableau d'erreur
         const messageTab = [];
         // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
         if (request.session.user.connected_user === false) {
             const messageLogout = 'Aucun utilisateur n\'est connecté';
-            messageTab.push({messageLogout: messageLogout});
-            return response.json({message: messageTab, session: request.session.user});
+            messageTab.push({ messageLogout: messageLogout });
+            return response.json({ message: messageTab, session: request.session.user });
         };
         // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
-        if (request.session.user.connected_user === true){
-            request.session.user = {connected_user: false};
+        if (request.session.user.connected_user === true) {
+            request.session.user = { connected_user: false };
             const messageLogout = 'Déconnexion de l\'utilisateur ok';
-            messageTab.push({messageLogout: messageLogout});
-            return response.json({message: messageTab, session: request.session.user});
+            messageTab.push({ messageLogout: messageLogout });
+            return response.json({ message: messageTab, session: request.session.user });
+>>>>>>> 0ed0fa6e35a807f2ecad2b642129261b8f8b48f7
         };
     },
 };

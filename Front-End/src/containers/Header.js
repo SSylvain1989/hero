@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Navigation/Header';
 
 // == Import : actions
-import { loginHandler } from '../actions/user';
+import { loginHandler, logoutHandler } from '../actions/user';
 
 // Action Creators
 
@@ -18,6 +18,7 @@ import { loginHandler } from '../actions/user';
  */
 const mapStateToProps = (state) => ({
   isLoged: state.field.isLoged,
+  userName: state.field.session.userName,
 });
 
 /* === Actions ===
@@ -30,6 +31,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   loginHandler: () => {
     dispatch(loginHandler());
+  },
+  logoutHandler: () => {
+    dispatch(logoutHandler());
   },
 });
 
