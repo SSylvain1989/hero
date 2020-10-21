@@ -36,15 +36,15 @@ const App = ({ games, checkConnexion }) => {
   const displayGoodScene = (scene) => {
     switch (scene.details_scene.scene_type) {
       case 'Début':
-        return <Start />;
+        return <Start sceneId={scene.details_scene.scene_id} />;
       case 'Choix':
-        return <Choice />;
+        return <Choice sceneId={scene.details_scene.scene_id} />;
       case 'Cliquable':
-        return <ClickableElement />;
+        return <ClickableElement sceneId={scene.details_scene.scene_id} />;
       case 'Combat':
-        return <Battle />;
+        return <Battle sceneId={scene.details_scene.scene_id} />;
       case 'Fin':
-        return <End />;
+        return <End sceneId={scene.details_scene.scene_id} />;
       default:
         return null;
     }
@@ -106,7 +106,7 @@ const App = ({ games, checkConnexion }) => {
 App.propTypes = ({
   games: PropTypes.array.isRequired,
   checkConnexion: PropTypes.func.isRequired,
-  story: PropTypes.object.isRequired,
+  // story: PropTypes.object.isRequired,
 });
 
 export default App;
