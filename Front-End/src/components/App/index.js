@@ -30,7 +30,7 @@ import Signup from '../../containers/Signup';
 const App = ({ games, checkConnexion }) => {
   useEffect(() => {
     checkConnexion();
-  });
+  }, []);
 
   return (
     <div className="app">
