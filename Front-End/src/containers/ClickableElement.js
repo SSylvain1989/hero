@@ -13,8 +13,10 @@ import clickableElement from '../components/Game/ClickableElement';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
+  // Récupérer la scene par rapport au ownProps.sceneId
   story: state.game.story,
+  id: ownProps.sceneId,
 });
 
 /* === Actions ===

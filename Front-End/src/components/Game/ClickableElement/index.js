@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link, useParams, Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './clickableElement.scss';
 
-const clickableElement = ({ story }) => {
-  const { histoire, scene } = useParams();
-
+const clickableElement = ({ story, id }) => {
   if (story.history !== undefined) {
-    const description = story.history.scene_list[1].details_scene.scene_description;
-    const nextScene = `/histoires/${histoire}/scene/${story.history.scene_list[scene].next_scene_id}`;
-    const nextScene2 = `/histoires/${histoire}/scene/${story.history.scene_list[scene].next_scene_id2}`;
+    const storyId = story.history.history_id;
+    const description = story.history.scene_list[id].details_scene.scene_description;
+    const nextScene = story.history.scene_list[id].next_scene_id;
+    const nextScene2 = story.history.scene_list[id].next_scene_id2;
+    const nextSceneURL = `/liste-des-jeux/${storyId}/${nextScene}`;
+    const nextScene2URL = `/liste-des-jeux/${storyId}/${nextScene2}`;
 
     return (
       <div className="clickable-element">
@@ -19,15 +20,15 @@ const clickableElement = ({ story }) => {
             src=""
             alt="Fiche personnage"
           />
-          <Link to={nextScene}><button className="clickable-element__redirect" type="button">Porte</button></Link>
-          <Link to={nextScene2}><button className="clickable-element__redirect" type="button">Vieillard</button></Link>
+          {nextScene && <Link to={nextSceneURL}><button className="clickable-element__redirect" type="button">Porte</button></Link>}
+          {nextScene2 && <Link to={nextScene2URL}><button className="clickable-element__redirect" type="button">Vieillard</button></Link>}
         </div>
       </div>
     );
   }
 
   return (
-    <Redirect to={`/histoires/${histoire}`} />
+    <Redirect to="/" exact />
   );
 };
 
