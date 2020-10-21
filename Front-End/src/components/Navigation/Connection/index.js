@@ -39,7 +39,7 @@ const Connection = ({
           type="password"
         />
         <button type="submit">Se connecter</button>
-        <button className="connection__redirect" type="button"><Link to="/compte">L'inscription c'est par ici</Link></button>
+        <button className="connection__redirect" type="button"><Link to="/inscription">L'inscription c'est par ici</Link></button>
       </form>
     </>
   );

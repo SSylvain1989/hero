@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import Footer from '../Footer';
-
+import { Link } from 'react-router-dom';
 // == Import : local
 import './styles.scss';
 
@@ -20,7 +20,7 @@ const Board = ({ }) => (
             <p className="Board__Nb">3</p>
             <p className="Board__p">Défaites</p>
             <p className="Board__Nb">2</p>
-            <a href="#" className="Board__button">Clic ici pour voir la liste des différentes batailles que tu peux mener..</a>
+            <button type="button"><Link to="/liste-des-jeux">Clique ici pour voir la liste des différentes batailles que tu peux mener..</Link></button>
           </div>
         </div>
       </div>

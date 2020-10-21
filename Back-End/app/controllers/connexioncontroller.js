@@ -49,6 +49,7 @@ const connexionController = {
         const messageTab = [];
         // si l'utilisateur n'est pas connecter on renvoie un message 
         if (request.session.user.connected_user === false) {
+
             const messageCheckConnexion = 'Aucun utilisateur n\'est connecté';
             messageTab.push({ messageCheckConnexion: messageCheckConnexion });
             return response.json({ message: messageTab, session: request.session.user });

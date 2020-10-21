@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
@@ -27,52 +27,59 @@ import LegalNotices from '../Navigation/LegalNotices';
 import NotFound from '../Navigation/NotFound';
 import Signup from '../../containers/Signup';
 // **** inscription à modifier pour la route signup ****
-const App = ({ games }) => (
-  <div className="app">
-    <Header />
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/connection">
-        <Connection />
-      </Route>
-      <Route exact path="/inscription">
-        <Signup />
-      </Route>
-      <Route exact path="/liste-des-jeux">
-        <GamesList />
-      </Route>
-      {games.map((game) => (
-        <Route key={game.id} exact path={`/liste-des-jeux/${game.id}`}>
-          <GameDetail />
+const App = ({ games, checkConnexion }) => {
+  useEffect(() => {
+    checkConnexion();
+  });
+
+  return (
+    <div className="app">
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
         </Route>
-      ))}
-      <Route exact path="/score">
-        <Board />
-      </Route>
-      <Route exact path="/contact">
-        <Contact />
-      </Route>
-      <Route exact path="/profil">
-        <Profile />
-      </Route>
-      <Route exact path="/equipe">
-        <Team />
-      </Route>
-      <Route exact path="/mentions-legales">
-        <LegalNotices />
-      </Route>
-      <Route>
-        <NotFound />
-      </Route>
-    </Switch>
-    <Footer />
-  </div>
-);
+        <Route exact path="/connection">
+          <Connection />
+        </Route>
+        <Route exact path="/inscription">
+          <Signup />
+        </Route>
+        <Route exact path="/liste-des-jeux">
+          <GamesList />
+        </Route>
+        {games.map((game) => (
+          <Route key={game.id} exact path={`/liste-des-jeux/${game.id}`}>
+            <GameDetail />
+          </Route>
+        ))}
+        <Route exact path="/score">
+          <Board />
+        </Route>
+        <Route exact path="/contact">
+          <Contact />
+        </Route>
+        <Route exact path="/profil">
+          <Profile />
+        </Route>
+        <Route exact path="/equipe">
+          <Team />
+        </Route>
+        <Route exact path="/mentions-legales">
+          <LegalNotices />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
 
 App.propTypes = ({
   games: PropTypes.array.isRequired,
+  checkConnexion: PropTypes.func.isRequired,
 });
 
 export default App;

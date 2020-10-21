@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 
 import {
@@ -6,6 +7,8 @@ import {
   PASSWORD_SUBMIT,
   LOGIN_SUBMIT,
   loginHandler,
+  saveSession,
+  CHECK_CONNEXION,
 } from '../actions/user';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -13,7 +16,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case EMAIL_SUBMIT:
       axios.post('http://localhost:3000/api/profile/edit', { email: store.getState().field.profile.email })
         .then((response) => {
-          console.log('soumis');
+          console.log(response);
         })
         .catch((error) => {
           console.error(error);
@@ -23,7 +26,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case USERNAME_SUBMIT:
       axios.post('http://localhost:3000/api/profile/edit', { userName: store.getState().field.profile.userName })
         .then((response) => {
-          console.log('soumis');
+          console.log(response.data);
         })
         .catch((error) => {
           console.error(error);
@@ -37,7 +40,7 @@ const userMiddleware = (store) => (next) => (action) => {
           passwordConfirm: store.getState().field.profile.passwordConfirm,
         })
         .then((response) => {
-          console.log('soumis');
+          console.log(response.data);
         })
         .catch((error) => {
           console.error(error);
@@ -49,9 +52,23 @@ const userMiddleware = (store) => (next) => (action) => {
         {
           password: store.getState().field.login.password,
           userName: store.getState().field.login.userName,
-        })
+        },
+        { withCredentials: true })
         .then((response) => {
-          console.log(response.data);
+          store.dispatch(saveSession(response.data.session));
+          store.dispatch(loginHandler());
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      next(action);
+      break;
+    case CHECK_CONNEXION:
+      axios.post('http://localhost:3000/api/log-check',
+        {},
+        { withCredentials: true })
+        .then((response) => {
+          store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
         })
         .catch((error) => {
