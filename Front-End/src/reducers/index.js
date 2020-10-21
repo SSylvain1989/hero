@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
+import navigation from './navigation';
+import field from './field';
+import signup from './signup';
 
 export default combineReducers({
-  counter,
+  navigation,
+  field,
+  signup,
 });

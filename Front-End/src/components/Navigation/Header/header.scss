@@ -1,10 +1,13 @@
+@use 'src/styles/vars';
+
 .header {
-  background-color: #426E86;
+  background-color: vars.$normal-color;
   position: fixed;
   width: 100%;
   left:0;
   top: 0;
   height: 4rem;
+  z-index: 999;
 
   ul {
   display: flex;
@@ -17,15 +20,33 @@
   &__leftside {
   display: flex;
   text-align: left;
-  width: 70%;
+  width: 100%;
+    
+  img {
+    width: 50px;
+    top: 0;
+    margin: 0.5rem;
+  }
   }
 
   &__rightside {
-    width: 30%;
+    width: 50%;
+    display: flex;
+    align-items: right;
+    justify-content: right;
     text-align: right;
 
+    &--elements {
+      display: flex;
+      text-align: right;
+      align-items: right;
+      justify-content: right;
+      text-align: right;
+      color: red;
+    }
+
       img {
-        margin-left: 1.5rem;
+        margin: 0 1.5rem;
       }
     }
 }

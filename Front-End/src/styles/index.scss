@@ -2,16 +2,20 @@
 @use 'vars';
 
 body {
-  font-family: sans-serif;
+  font-family: 'Merriweather', arial;
+}
+.bg_heros {
+  opacity: 0.5;
+      width: hide, 100vh;
+      z-index: 0;
+      position: relative;
 }
 
-/* 
+
   // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
-  }
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-*/
+  // @font-face {
+  //   font-family: 'Merriweather';
+  //   src: url(https://fr.allfont.net/allfont.css?fonts=merriweather);
+  // }
+
+

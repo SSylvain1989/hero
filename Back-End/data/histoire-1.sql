@@ -59,11 +59,13 @@ INSERT INTO game.text_in_game (
     ('Vous montez sur la barque mais la mer l''emporte immédiatement ! Vous ne savez pas comment revenir en arrière et ça ne vous dérange pas plus que ça... LIBRE !');
 
 INSERT INTO game.clickable_element ( 
-    "contact_information"
+    "name",
+    "shape",
+    "coords"
     )
-    VALUES  ('Coordonnées porte: 0,0,500,500'),
-            ('Coordonnées vieillard: 500,0,1000,500'),
-            ('Coordonnées barque: 0,0,1000,1000');
+    VALUES  ('porte', 'rect', '0,0,500,500'),
+            ('vieillard', 'rect', '500,0,1000,500'),
+            ('barque', 'rect', '0,0,1000,1000');
 
 COMMIT;
 
@@ -164,7 +166,9 @@ SELECT  scene.id AS scene_id,
         scene.name AS scene_name, 
         scene.description AS scene_description, 
         "type"."name" AS scene_type, 
-        clickable_element.contact_information 
+        clickable_element.name AS clickable_element_name,
+        clickable_element.shape AS clickable_element_shape,
+        clickable_element.coords  AS clickable_element_coords
 FROM game.scene
 JOIN game.type ON "type"."id" = scene.type_id
 JOIN game.scene_has_clickable_element ON scene_has_clickable_element.scene_id = scene.id
