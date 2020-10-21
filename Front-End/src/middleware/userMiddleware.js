@@ -64,12 +64,15 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case CHECK_CONNEXION:
-      axios.post('http://localhost:3000/api/log-check',
+      axios.post('http://localhost:3000/api/login-check',
         {},
         { withCredentials: true })
         .then((response) => {
-          store.dispatch(saveSession(response.data.session));
-          store.dispatch(loginHandler());
+          if (response.data.session.connected_user) {
+            store.dispatch(saveSession(response.data.session));
+            store.dispatch(loginHandler());
+          }
+          else store.dispatch(saveSession(response.data.session));
         })
         .catch((error) => {
           console.error(error);
