@@ -7,6 +7,7 @@ import logMiddleware from '../middleware/logMiddleware';
 import navigationMiddleware from '../middleware/navigationMiddleware';
 import userMiddleware from '../middleware/userMiddleware';
 import signupMiddleware from '../middleware/signupMiddleware';
+import gameMiddleware from '../middleware/gameMiddleware';
 
 // == Enhancers
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -18,6 +19,7 @@ const enhancers = composeEnhancers(
     navigationMiddleware,
     userMiddleware,
     signupMiddleware,
+    gameMiddleware,
   ),
 );
 
