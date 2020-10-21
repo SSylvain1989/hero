@@ -8,30 +8,37 @@ import parchemin from '../../../images/parchemin.png';
 import './start.scss';
 
 // == Composant
-const Start = ({ loadStory }) => (
-  <div className="start">
-    <div className="start__scene">
-      <img
-        src={startMinautor}
-        alt="mooving-minautor"
-      />
-      <div className="start__scene--left" />
-      <div className="start__scene--right">
-        <div className="start__scene--right-text">
-          <p>Texte de description de l'histoire à suivre</p>
-          <img
-            src={parchemin}
-            alt="parchemin"
-          />
-        </div>
-        <div className="start__scene--right-buttons">
-          <button type="button">Passer</button>
-          <button type="button">Démarrer</button>
+const Start = ({ storyStart }) => {
+  console.log('you win', storyStart.history.scene_list);
+  // const startStory = storyStart.history.scene_list;
+  // const myStory = startStory.find(scene_description === 'scene de depart');
+  // console.log(mystory);
+
+  return (
+    <div className="start">
+      <div className="start__scene">
+        <img
+          src={startMinautor}
+          alt="mooving-minautor"
+        />
+        <div className="start__scene--left" />
+        <div className="start__scene--right">
+          <div className="start__scene--right-text">
+            <p>Texte de description de l'histoire à suivre</p>
+            <img
+              src={parchemin}
+              alt="parchemin"
+            />
+          </div>
+          <div className="start__scene--right-buttons">
+            <button type="button">Passer</button>
+            <button type="button">Démarrer</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 // == Export
 export default Start;
