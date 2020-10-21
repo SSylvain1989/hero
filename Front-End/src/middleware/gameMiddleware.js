@@ -8,7 +8,6 @@ import {
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOAD_ONE_STORY:
-      //Requête axios à faire
       store.dispatch(addStory(history));
       next(action);
       break;

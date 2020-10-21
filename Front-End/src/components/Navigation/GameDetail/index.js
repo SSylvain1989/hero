@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './gamedetail.scss';
 
-const GameDetail = ({ fetchGameDetail, loadStory }) => {
+const GameDetail = ({ fetchGameDetail, loadStory, gameId }) => {
   useEffect(() => {
     fetchGameDetail();
   }, []);
@@ -21,7 +22,7 @@ const GameDetail = ({ fetchGameDetail, loadStory }) => {
           <p>Notation</p>
           <img src="https://picsum.photos/id/237/80/80" alt="" />
           <div>
-            <button type="button" className="game-detail__button" onClick={loadStory}>Jouer maintenant</button>
+            <button type="button" className="game-detail__button" onClick={loadStory}><Link to={`/liste-des-jeux/${gameId}/1`}>Jouer maintenant</Link></button>
           </div>
           <section className="game-detail__section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus veritatis quae expedita! Consequuntur perspiciatis optio minima obcaecati accusantium culpa expedita quod natus quo odit, amet est non! Dolores, aliquam obcaecati.</section>
         </div>
@@ -32,6 +33,8 @@ const GameDetail = ({ fetchGameDetail, loadStory }) => {
 
 GameDetail.propTypes = ({
   fetchGameDetail: PropTypes.func.isRequired,
+  loadStory: PropTypes.func.isRequired,
+  gameId: PropTypes.number.isRequired,
 });
 
 export default GameDetail;
