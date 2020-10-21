@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 
 import './gamedetail.scss';
 
-const GameDetail = ({ fetchGameDetail }) => {
+const GameDetail = ({ fetchGameDetail, loadStory }) => {
   useEffect(() => {
     fetchGameDetail();
   }, []);
+  // const Start = ({ loadStory }) => {
+  //   useEffect(() => {
+  //     // qqch pour récupérer l'histoire
+  //     loadStory();
+  //   }, []);
 
   return (
     <div className="game-detail">
@@ -16,7 +21,7 @@ const GameDetail = ({ fetchGameDetail }) => {
           <p>Notation</p>
           <img src="https://picsum.photos/id/237/80/80" alt="" />
           <div>
-            <button type="button" className="game-detail__button">Jouer maintenant</button>
+            <button type="button" className="game-detail__button" onClick={loadStory}>Jouer maintenant</button>
           </div>
           <section className="game-detail__section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus veritatis quae expedita! Consequuntur perspiciatis optio minima obcaecati accusantium culpa expedita quod natus quo odit, amet est non! Dolores, aliquam obcaecati.</section>
         </div>
