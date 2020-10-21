@@ -49,27 +49,15 @@ const connexionController = {
         const messageTab = [];
         // si l'utilisateur n'est pas connecter on renvoie un message 
         if (request.session.user.connected_user === false) {
-<<<<<<< HEAD
-            const messageCheckConnexion = 'Aucun utilisateur n\'est connecter';
+            const messageCheckConnexion = 'Aucun utilisateur n\'est connecté';
             messageTab.push({ messageCheckConnexion: messageCheckConnexion });
             return response.json({ message: messageTab, session: request.session.user });
         };
         // si l'utilisateur est connecter on renvoie un message de confirmation
         if (request.session.user.connected_user === true) {
-            const messageCheckConnexion = 'L\'utilisateur est bien connecter';
+            const messageCheckConnexion = 'L\'utilisateur est bien connecté';
             messageTab.push({ messageCheckConnexion: messageCheckConnexion });
             return response.json({ message: messageTab, session: request.session.user });
-=======
-            const messageCheckConnexion = 'Aucun utilisateur n\'est connecté';
-            messageTab.push({messageCheckConnexion: messageCheckConnexion});
-            return response.json({message: messageTab, session: request.session.user});
-        };
-        // si l'utilisateur est connecter on renvoie un message de confirmation
-        if (request.session.user.connected_user === true){
-            const messageCheckConnexion = 'L\'utilisateur est bien connecté';
-            messageTab.push({messageCheckConnexion: messageCheckConnexion});
-            return response.json({message: messageTab, session: request.session.user});
->>>>>>> b8092fad373ebd49f895eca38912814ae4765d9b
         };
     },
     signup: async (request, response) => {
@@ -123,29 +111,16 @@ const connexionController = {
         const messageTab = [];
         // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
         if (request.session.user.connected_user === false) {
-<<<<<<< HEAD
-            const messageLogout = 'Aucun utilisateur n\'est connecter';
+            const messageLogout = 'Aucun utilisateur n\'est connecté';
             messageTab.push({ messageLogout: messageLogout });
             return response.json({ message: messageTab, session: request.session.user });
         };
         // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
         if (request.session.user.connected_user === true) {
             request.session.user = { connected_user: false };
-            const messageLogout = 'Deconnexion de l\'utilisateur ok';
+            const messageLogout = 'Déconnexion de l\'utilisateur ok';
             messageTab.push({ messageLogout: messageLogout });
             return response.json({ message: messageTab, session: request.session.user });
-=======
-            const messageLogout = 'Aucun utilisateur n\'est connecté';
-            messageTab.push({messageLogout: messageLogout});
-            return response.json({message: messageTab, session: request.session.user});
-        };
-        // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
-        if (request.session.user.connected_user === true){
-            request.session.user = {connected_user: false};
-            const messageLogout = 'Déconnexion de l\'utilisateur ok';
-            messageTab.push({messageLogout: messageLogout});
-            return response.json({message: messageTab, session: request.session.user});
->>>>>>> b8092fad373ebd49f895eca38912814ae4765d9b
         };
     },
 };
