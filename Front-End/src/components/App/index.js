@@ -8,7 +8,7 @@ import './app.scss';
 // import Battle from '../Game/Battle';
 // import Choice from '../Game/Choice';
 // import ClickableElement from '../Game/ClickableElement';
-// import Discussion from '../Game/Discussion';
+import Discussion from '../../containers/Discussion';
 // import End from '../Game/End';
 
 // import navigation ** attention IMPORT CONTAINER ET COMPONENT
@@ -71,6 +71,9 @@ const App = ({ games, checkConnexion }) => {
         </Route>
         <Route exact path="/mentions-legales">
           <LegalNotices />
+        </Route>
+        <Route exact path="/discussion">
+          <Discussion />
         </Route>
         <Route>
           <NotFound />
