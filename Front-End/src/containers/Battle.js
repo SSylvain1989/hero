@@ -1,7 +1,7 @@
 // == Import : npm
 import { connect } from 'react-redux';
 // == Import : local
-import clickableElement from '../components/Game/ClickableElement';
+import Battle from '../components/Game/Battle';
 // == Import : actions
 import getSceneById from '../selectors/getSceneById';
 
@@ -30,10 +30,10 @@ const mapStateToProps = (state, { sceneId }) => ({
 const mapDispatchToProps = () => ({});
 
 // Container
-const ClickableElementContainer = connect(
+const BattleContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(clickableElement);
+)(Battle);
 
 // == Export
-export default ClickableElementContainer;
+export default BattleContainer;

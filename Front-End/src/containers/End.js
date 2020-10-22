@@ -1,9 +1,9 @@
 // == Import : npm
 import { connect } from 'react-redux';
-
 // == Import : local
-import Discussion from '../components/Game/Discussion';
+import End from '../components/Game/End';
 // == Import : actions
+import getSceneById from '../selectors/getSceneById';
 
 // Action Creators
 
@@ -14,10 +14,10 @@ import Discussion from '../components/Game/Discussion';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-
- // state.reducer.propriété ou est stocké le state
-const mapStateToProps = (state) => ({
-  story: state.game.story,
+const mapStateToProps = (state, { sceneId }) => ({
+  // Récupérer la scene par rapport au ownProps.sceneId
+  storyId: state.game.story.history.history_id,
+  scene: getSceneById(sceneId, state.game.story.history.scene_list),
 });
 
 /* === Actions ===
@@ -25,18 +25,15 @@ const mapStateToProps = (state) => ({
  * - mapDispatchToProps met à dispo 2 params
  *  - dispatch : la fonction du store pour dispatcher une action
  *  - ownProps : les props passées au container
- * Pas de disptach à transmettre ? const mapDispatchToProps = () => ({ });;
- * //
+ * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = () => ({
-
-});
+const mapDispatchToProps = () => ({});
 
 // Container
-const DiscussionContainer = connect(
+const EndContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Discussion);
+)(End);
 
 // == Export
-export default DiscussionContainer;
+export default EndContainer;
