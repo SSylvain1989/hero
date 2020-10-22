@@ -20,6 +20,8 @@ import { changeLoginField } from '../actions/field';
 const mapStateToProps = (state) => ({
   userName: state.field.login.userName,
   password: state.field.login.password,
+  isLoged: state.field.isLoged,
+  sessionUserName: state.field.session.userName,
 });
 
 /* === Actions ===

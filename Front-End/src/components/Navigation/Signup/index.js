@@ -19,6 +19,7 @@ const Signup = ({
   changeField,
   handleSignup,
   messages,
+  isLoged,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -80,6 +81,7 @@ Signup.propTypes = ({
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
   messages: PropTypes.array,
+  isLoged: PropTypes.bool.isRequired,
 });
 
 Signup.defaultProps = ({
