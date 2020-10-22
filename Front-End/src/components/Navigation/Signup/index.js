@@ -7,8 +7,6 @@ import Field from '../../common/Field';
 // == Import scss
 import './signup.scss';
 
-import './signup.scss';
-
 // == Composant
 const Signup = ({
   username,
