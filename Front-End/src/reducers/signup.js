@@ -1,8 +1,8 @@
-import { SIGNUP_RESPONSE } from '../actions/signup';
+import { SIGNUP_RESPONSE, SIGNUP_ERROR } from '../actions/signup';
 
 const initialState = {
   response: '',
-  messages: [],
+  messagesError: '',
 };
 
 const signup = (state = initialState, action = {}) => {
@@ -12,7 +12,12 @@ const signup = (state = initialState, action = {}) => {
       return {
         ...state,
         response: action.response,
-        message: action.response.message,
+      };
+    case SIGNUP_ERROR:
+      console.log(action.message);
+      return {
+        ...state,
+        messagesError: action.message,
       };
     default:
       return state;

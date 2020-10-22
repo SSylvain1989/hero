@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import Start from '../components/Game/Start';
+import getSceneById from '../selectors/getSceneById';
 
 // Action Creators
-
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -11,10 +11,9 @@ import Start from '../components/Game/Start';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state) => ({
-  // il faut recuperer tout l'objet storie dispo dans le store
-  // au déclanchement du bouton "jouer maintenant"
-  storyStart: state.game.story,
+const mapStateToProps = (state, { sceneId }) => ({
+  storyId: state.game.story.history.history_id,
+  scene: getSceneById(sceneId, state.game.story.history.scene_list),
 });
 
 /* === Actions ===

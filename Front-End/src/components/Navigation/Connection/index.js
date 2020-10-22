@@ -15,33 +15,44 @@ const Connection = ({
   password,
   onChange,
   onSubmit,
+  isLoged,
+  sessionUserName,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
   };
+
+  if (!isLoged) {
+    return (
+      <>
+        <form className="connection" onSubmit={handleSubmit}>
+          <h1 className="connection__title">CONNEXION</h1>
+          <Field
+            name="userName"
+            placeholder="Username"
+            onChange={onChange}
+            value={userName}
+            type="text"
+          />
+          <Field
+            name="password"
+            placeholder="Mot de passe"
+            onChange={onChange}
+            value={password}
+            type="password"
+          />
+          <button type="submit">Se connecter</button>
+          <button className="connection__redirect" type="button"><Link to="/inscription">L'inscription c'est par ici</Link></button>
+        </form>
+      </>
+    );
+  }
   return (
-    <>
-      <form className="connection" onSubmit={handleSubmit}>
-        <h1 className="connection__title">CONNEXION</h1>
-        <Field
-          name="userName"
-          placeholder="Username"
-          onChange={onChange}
-          value={userName}
-          type="text"
-        />
-        <Field
-          name="password"
-          placeholder="Mot de passe"
-          onChange={onChange}
-          value={password}
-          type="password"
-        />
-        <button type="submit">Se connecter</button>
-        <button className="connection__redirect" type="button"><Link to="/inscription">L'inscription c'est par ici</Link></button>
-      </form>
-    </>
+    <div className="connection__loged">
+      <h1>Vous êtes bien connecté, bienvenue {sessionUserName} </h1>
+      <button type="button"><Link to="liste-des-jeux">Voir la liste des jeux</Link></button>
+    </div>
   );
 };
 
@@ -50,6 +61,12 @@ Connection.propTypes = ({
   password: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  isLoged: PropTypes.bool.isRequired,
+  sessionUserName: PropTypes.string,
+});
+
+Connection.defaultProps = ({
+  sessionUserName: '',
 });
 
 // == Export

@@ -4,13 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
 
-// import game
-// import Battle from '../Game/Battle';
-// import Choice from '../Game/Choice';
-// import ClickableElement from '../Game/ClickableElement';
-import Discussion from '../Game/Discussion';
-// import End from '../Game/End';
-
 // import navigation ** attention IMPORT CONTAINER ET COMPONENT
 import Header from '../../containers/Header';
 import Footer from '../Navigation/Footer';
@@ -26,6 +19,12 @@ import LegalNotices from '../Navigation/LegalNotices';
 import NotFound from '../Navigation/NotFound';
 import Signup from '../../containers/Signup';
 import Start from '../../containers/Start';
+import ClickableElement from '../../containers/ClickableElement';
+import Battle from '../../containers/Battle';
+import Choice from '../../containers/Choice';
+import End from '../../containers/End';
+import story from '../../data/histoire1';
+
 
 // **** inscription à modifier pour la route signup ****
 const App = ({ games, checkConnexion }) => {
@@ -33,6 +32,22 @@ const App = ({ games, checkConnexion }) => {
     checkConnexion();
   }, []);
 
+  const displayGoodScene = (scene) => {
+    switch (scene.details_scene.scene_type) {
+      case 'Début':
+        return <Start sceneId={scene.details_scene.scene_id} />;
+      case 'Choix':
+        return <Choice sceneId={scene.details_scene.scene_id} />;
+      case 'Cliquable':
+        return <ClickableElement sceneId={scene.details_scene.scene_id} />;
+      case 'Combat':
+        return <Battle sceneId={scene.details_scene.scene_id} />;
+      case 'Fin':
+        return <End sceneId={scene.details_scene.scene_id} />;
+      default:
+        return null;
+    }
+  };
   return (
     <div className="app">
       <Header />
@@ -51,9 +66,15 @@ const App = ({ games, checkConnexion }) => {
         </Route>
         {games.map((game) => (
           <Route key={game.id} exact path={`/liste-des-jeux/${game.id}`}>
-            <GameDetail />
+            <GameDetail gameId={game.id} />
           </Route>
         ))}
+        {story.history ? (
+          story.history.scene_list.map((scene) => (
+            <Route key={scene.details_scene.scene_id} exact path={`/liste-des-jeux/${story.history.history_id}/${scene.details_scene.scene_id}`}>
+              {displayGoodScene(scene)}
+            </Route>
+          ))) : (null)}
         <Route exact path="/teststart">
           <Start />
         </Route>
@@ -72,9 +93,6 @@ const App = ({ games, checkConnexion }) => {
         <Route exact path="/mentions-legales">
           <LegalNotices />
         </Route>
-        <Route exact path="/discussion">
-          <Discussion />
-        </Route>
         <Route>
           <NotFound />
         </Route>
@@ -87,6 +105,7 @@ const App = ({ games, checkConnexion }) => {
 App.propTypes = ({
   games: PropTypes.array.isRequired,
   checkConnexion: PropTypes.func.isRequired,
+  // story: PropTypes.object.isRequired,
 });
 
 export default App;

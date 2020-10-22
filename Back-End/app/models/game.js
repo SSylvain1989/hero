@@ -44,7 +44,7 @@ const game = {
         // on envoie la requete en bdd avec la requete preparer et l'id passé en parametre
         const data = await db.query(sql, [id]);
         // on renvoie les data de la requete
-        return data.rows[0];
+        return data.rows;
     },
 
     findSceneFinishById: async (id) => {

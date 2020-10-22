@@ -1,9 +1,9 @@
 // == Import : npm
 import { connect } from 'react-redux';
-import { checkConnexion } from '../actions/user';
 // == Import : local
-import App from '../components/App';
+import End from '../components/Game/End';
 // == Import : actions
+import getSceneById from '../selectors/getSceneById';
 
 // Action Creators
 
@@ -14,9 +14,10 @@ import App from '../components/App';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state) => ({
-  games: state.navigation.games,
-  story: state.game.story,
+const mapStateToProps = (state, { sceneId }) => ({
+  // Récupérer la scene par rapport au ownProps.sceneId
+  storyId: state.game.story.history.history_id,
+  scene: getSceneById(sceneId, state.game.story.history.scene_list),
 });
 
 /* === Actions ===
@@ -26,17 +27,13 @@ const mapStateToProps = (state) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch) => ({
-  checkConnexion: () => {
-    dispatch(checkConnexion());
-  },
-});
+const mapDispatchToProps = () => ({});
 
 // Container
-const AppContainer = connect(
+const EndContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(App);
+)(End);
 
 // == Export
-export default AppContainer;
+export default EndContainer;
