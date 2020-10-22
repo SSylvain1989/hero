@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 // == Import
 import startMinautor from '../../../images/start-minautor.gif';
@@ -12,7 +12,7 @@ import './start.scss';
 // == Composant
 const Start = ({ scene, storyId }) => {
   if (scene !== undefined) {
-    const description = scene.details_scene.scene_description;
+    const text = scene.details_scene.scene_text;
     const nextScene = scene.next_scene_id;
     const nextSceneURL = `/liste-des-jeux/${storyId}/${nextScene}`;
 
@@ -26,21 +26,23 @@ const Start = ({ scene, storyId }) => {
           <div className="start__scene--left" />
           <div className="start__scene--right">
             <div className="start__scene--right-text">
-              <p>Texte de description de l'histoire à suivre</p>
+              <p>{text}</p>
               <img
                 src={parchemin}
                 alt="parchemin"
               />
             </div>
             <div className="start__scene--right-buttons">
-              <button type="button">Passer</button>
               <button type="button"><Link to={nextSceneURL}>Démarrer</Link></button>
             </div>
           </div>
         </div>
       </div>
     );
-  };
+  }
+  return (
+    <Redirect to="/" exact />
+  );
 };
 
 Start.propTypes = ({
