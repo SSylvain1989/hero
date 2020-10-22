@@ -1,12 +1,12 @@
 import {
   ADD_STORY,
 } from '../actions/game';
-import history from '../data/histoire1';
 
 export const initialState = {
   // ici on déclare un objet vide avec la propriété story qui sera rempli
   // au déclenchement du bouton "jouer maintenant"
-  story: history,
+  story: {},
+  isStoryLoaded: false,
 };
 
 const game = (state = initialState, action = {}) => {
@@ -17,6 +17,7 @@ const game = (state = initialState, action = {}) => {
         story: {
           ...action.story,
         },
+        isStoryLoaded: true,
       };
     default:
       return state;

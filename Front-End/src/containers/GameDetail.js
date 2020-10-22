@@ -16,7 +16,7 @@ import { loadStory } from '../actions/game';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state) => ({
-
+  isStoryLoaded: state.game.isStoryLoaded,
 });
 
 /* === Actions ===
