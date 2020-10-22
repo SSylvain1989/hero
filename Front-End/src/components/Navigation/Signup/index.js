@@ -1,12 +1,11 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Field from '../../common/Field';
 
 // == Import scss
-import './signup.scss';
-
 import './signup.scss';
 
 // == Composant
@@ -19,56 +18,63 @@ const Signup = ({
   changeField,
   handleSignup,
   messages,
-  isLoged,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     handleSignup();
   };
 
-  return (
-    <div className="signup">
-      <form onSubmit={handleOnSubmit}>
-        <h1 className="signup__title">Je souhaite devenir joueur</h1>
-        <Field
-          name="username"
-          placeholder="Nom d'utilisateur"
-          onChange={changeField}
-          value={username}
-          type="text"
-        />
-        <Field
-          name="email"
-          placeholder="Adresse e-mail"
-          onChange={changeField}
-          value={email}
-          type="email"
-        />
-        <Field
-          name="emailConfirm"
-          placeholder="Confirmation e-mail"
-          onChange={changeField}
-          value={emailConfirm}
-          type="email"
-        />
-        <Field
-          name="password"
-          placeholder="Mot de passe"
-          onChange={changeField}
-          value={password}
-          type="password"
-        />
-        <Field
-          name="passwordConfirm"
-          placeholder="Confirmation mot de passe"
-          onChange={changeField}
-          value={passwordConfirm}
-          type="password"
-        />
-        <input className="signup__submit" type="submit" value="C'est parti" />
-      </form>
-    </div>
-  );
+  // if (//Condition a trouver après le signup) {
+    return (
+      <div className="signup">
+        <form onSubmit={handleOnSubmit}>
+          <h1 className="signup__title">Je souhaite devenir joueur</h1>
+          <Field
+            name="username"
+            placeholder="Nom d'utilisateur"
+            onChange={changeField}
+            value={username}
+            type="text"
+          />
+          <Field
+            name="email"
+            placeholder="Adresse e-mail"
+            onChange={changeField}
+            value={email}
+            type="email"
+          />
+          <Field
+            name="emailConfirm"
+            placeholder="Confirmation e-mail"
+            onChange={changeField}
+            value={emailConfirm}
+            type="email"
+          />
+          <Field
+            name="password"
+            placeholder="Mot de passe"
+            onChange={changeField}
+            value={password}
+            type="password"
+          />
+          <Field
+            name="passwordConfirm"
+            placeholder="Confirmation mot de passe"
+            onChange={changeField}
+            value={passwordConfirm}
+            type="password"
+          />
+          <input className="signup__submit" type="submit" value="C'est parti" />
+        </form>
+      </div>
+    );
+  // }
+  // return (
+  //   <div className="signup__signed">
+  //     <h1>Votre compte a bien été crée </h1>
+  //     <button type="button"><Link to="/connection">Connectez-vous</Link></button>
+  //   </div>
+  // );
 };
 
 // == PropTypes
