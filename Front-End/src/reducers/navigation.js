@@ -1,9 +1,10 @@
 import { ADD_GAMES } from '../actions/navigation';
 
 const initialState = {
+  // ici on déclare un tableau vide avec la propriété games qui sera rempli plus tard
   games:
-  [
-  ],
+    [
+    ],
 };
 
 const navigation = (state = initialState, action = {}) => {

@@ -3,6 +3,8 @@ import {
 } from '../actions/game';
 
 export const initialState = {
+  // ici on déclare un objet vide avec la propriété story qui sera rempli
+  // au déclenchement du bouton "jouer maintenant"
   story: {},
 };
 

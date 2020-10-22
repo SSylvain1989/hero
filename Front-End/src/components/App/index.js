@@ -4,11 +4,20 @@ import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
 
+<<<<<<< HEAD
 import Battle from '../Game/Battle';
 import Choice from '../Game/Choice';
 import ClickableElement from '../Game/ClickableElement';
 import Discussion from '../Game/Discussion';
 import End from '../Game/End';
+=======
+// import game
+// import Battle from '../Game/Battle';
+// import Choice from '../Game/Choice';
+// import ClickableElement from '../Game/ClickableElement';
+import Discussion from '../Game/Discussion';
+// import End from '../Game/End';
+>>>>>>> 82f9f7dac7631368158dedd0eb722f4ebeb1ea4e
 
 // import navigation ** attention IMPORT CONTAINER ET COMPONENT
 import Header from '../../containers/Header';
@@ -93,6 +102,9 @@ const App = ({ games, checkConnexion }) => {
         </Route>
         <Route exact path="/mentions-legales">
           <LegalNotices />
+        </Route>
+        <Route exact path="/discussion">
+          <Discussion />
         </Route>
         <Route>
           <NotFound />
