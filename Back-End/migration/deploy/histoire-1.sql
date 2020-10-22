@@ -1,3 +1,5 @@
+-- Deploy heros:histoire-1 to pg
+
 BEGIN;
 
 INSERT INTO game.character (
@@ -181,5 +183,7 @@ SELECT  scene.id AS scene_id,
         "type"."name" AS scene_type
 FROM game.scene
 JOIN game.type ON "type"."id" = scene.type_id;
+
+GRANT ALL PRIVILEGES ON scene_text, scene_opponent, scene_clickable_element, scene_finish TO heros;
 
 COMMIT;

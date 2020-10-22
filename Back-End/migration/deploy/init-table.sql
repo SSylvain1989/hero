@@ -76,7 +76,9 @@ CREATE TABLE game.text_in_game (
 
 CREATE TABLE game.clickable_element (
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  "contact_information" text
+  "name" text,
+  "shape" text,
+  "coords" text
 );
 
 CREATE TABLE game.party ( 
