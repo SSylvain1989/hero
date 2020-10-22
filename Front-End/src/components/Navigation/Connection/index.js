@@ -62,7 +62,11 @@ Connection.propTypes = ({
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   isLoged: PropTypes.bool.isRequired,
-  sessionUserName: PropTypes.string.isRequired,
+  sessionUserName: PropTypes.string,
+});
+
+Connection.defaultProps = ({
+  sessionUserName: '',
 });
 
 // == Export
