@@ -25,14 +25,10 @@ const Signup = ({
     handleSignup();
   };
 
-<<<<<<< HEAD
-  // if (//Condition a trouver après le signup) {
-=======
   // console.log('messageERROR du back :', messagesError);
   // console.log('reponseOK du back :', response);
 
   if (!response) {
->>>>>>> bc616a5901cc384be536f5e8db95f7a488a34e59
     return (
       <div className="signup">
         <form onSubmit={handleOnSubmit}>
@@ -73,18 +69,6 @@ const Signup = ({
             type="password"
           />
           <input className="signup__submit" type="submit" value="C'est parti" />
-<<<<<<< HEAD
-        </form>
-      </div>
-    );
-  // }
-  // return (
-  //   <div className="signup__signed">
-  //     <h1>Votre compte a bien été crée </h1>
-  //     <button type="button"><Link to="/connection">Connectez-vous</Link></button>
-  //   </div>
-  // );
-=======
           {!messagesError === false && <p className="signup__error">Ce nom d'utilisateur est déjà existant , merci d'en choisir un autre</p>}
         </form>
       </div>
@@ -99,7 +83,6 @@ const Signup = ({
       </div>
     </div>
   );
->>>>>>> bc616a5901cc384be536f5e8db95f7a488a34e59
 };
 
 // == PropTypes
@@ -111,13 +94,8 @@ Signup.propTypes = ({
   passwordConfirm: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
-<<<<<<< HEAD
-  messages: PropTypes.array,
-=======
   messagesError: PropTypes.string,
   response: PropTypes.object,
->>>>>>> bc616a5901cc384be536f5e8db95f7a488a34e59
-  isLoged: PropTypes.bool.isRequired,
 });
 
 Signup.defaultProps = ({
