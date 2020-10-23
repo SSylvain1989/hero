@@ -13,14 +13,14 @@ import Player from '../components/Game/Player';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
   /* !!! ATTENTION !!!
    * Il faudra un OBJECT player de cette forme
    * Si on veut afficher l'image du personnage et ses stats
    * Ici, les données sont en brut
    * Il faudra dynamiser selon l'état actuel du joueur
    */
-  player: {
+  /* player: {
     name: 'Warrior',
     attackPoint: 10,
     defensePoint: 8,
@@ -30,7 +30,8 @@ const mapStateToProps = () => ({
     },
     image: '',
     inventory: {},
-  },
+  }, */
+  player: state.game.player,
 });
 
 /* === Actions ===

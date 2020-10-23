@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import startMinautor from '../../../images/start-minautor.gif';
+import Player from 'src/containers/Player';
 
 import './clickableElement.scss';
 
@@ -18,10 +18,7 @@ const clickableElement = ({ scene, storyId }) => {
         <div className="clickable-element__scene">
           <h1>{description}</h1>
           <div className="clickable-element__scene--image-container">
-            <img
-              src={startMinautor}
-              alt="Fiche personnage"
-            />
+            <Player />
           </div>
           {nextScene && <Link to={nextSceneURL}><button className="clickable-element__redirect" type="button">Choix 1</button></Link>}
           {nextScene2 && <Link to={nextScene2URL}><button className="clickable-element__redirect" type="button">Choix 2</button></Link>}
