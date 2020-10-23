@@ -24,7 +24,7 @@ const boardController = {
                 data.character_id = request.body.character_id;
             };
             // Si la partie est gagné
-            if (request.body.gameWin === 'true') {
+            if (request.body.gameWin === 'true' || request.body.gameWin === true) {
                 // on change les valeur dans data en y ajoutant les valeur présente dans la session
                 data.gameWin = 1 + request.session.user.gameWin
                 data.gameOver = 0 + request.session.user.gameOver
