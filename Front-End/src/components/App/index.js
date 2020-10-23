@@ -18,7 +18,7 @@ import Team from '../Navigation/Team';
 import Profile from '../../containers/Profile';
 import Connection from '../../containers/Connection';
 import Board from '../Navigation/Board';
-import Contact from '../../containers/Contact';
+// import Contact from '../../containers/Contact';
 import GameDetail from '../../containers/GameDetail';
 import GamesList from '../../containers/GamesList';
 import Home from '../Navigation/Home';
@@ -60,9 +60,9 @@ const App = ({ games, checkConnexion }) => {
         <Route exact path="/score">
           <Board />
         </Route>
-        <Route exact path="/contact">
+        {/* <Route exact path="/contact">
           <Contact />
-        </Route>
+        </Route> */}
         <Route exact path="/profil">
           <Profile />
         </Route>
