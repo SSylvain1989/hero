@@ -1,7 +1,7 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import emailjs from ‘emailjs-com’;
-import apiKeys from ‘../apikeys’;
+import emailjs from 'emailjs-com';
+import apiKeys from 'Front-End/src/components/Navigation/Contact/apikey.js';
 
 import './contact.scss';
 
@@ -19,14 +19,15 @@ const Contact = () => (
   // </div>
 
   // eslint-disable-next-line no-undef
-  <form className="form" onSubmit ={onSubmit}>
-    <p>Your Name:</p>
-    <input name="name" type="text" placeholder="name..." className="form__input" />
-    <p>Subject:</p>
-    <input name="subject" type="text" placeholder="Subject…" className="form__input" />
-    <p>Your Message:</p>
-    <textarea name="message" type="text" placeholder="Your Message…" className="form__input-message" />
-    <button className="form__input — button">Send Message</button>
+  <form className="contact" onSubmit ={onSubmit}>
+    <h1>Nous contacter</h1>
+    <p>Votre nom</p>
+    <input name="name" type="text" placeholder="name..." className="contact__input" />
+    <p>Votre sujet</p>
+    <input name="subject" type="text" placeholder="Subject…" className="contact__input" />
+    <p>Votre message</p>
+    <textarea name="message" type="text" placeholder="Your Message…" className="contact__input-message" />
+    <button className="contact__input — button">Envoyer</button>
   </form>
 );
 
@@ -37,10 +38,10 @@ const onSubmit=(e)=>{
   e.preventDefault()// Prevents default refresh by the browser
   emailjs.sendForm(‘gmail’, apiKeys.TEMPLATE_ID, e.target, apiKeys.USER_ID)
   .then(result => {
-  alert('Message Sent, I\'ll get back to you shortly', result.text);
+  alert('Message envoyé, nous revenons vers vous bientot ', result.text);
   },
   error => {
-  alert( 'An error occured, Plese try again',error.text)
+  alert( 'Une erreur est apparu. Ré-essayez s\'il vous plait',error.text)
   })
   }
 
