@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   SIGNUP,
   signupResponse,
+  signupError,
 } from '../actions/signup';
 
 const signupMiddleware = (store) => (next) => (action) => {
@@ -14,10 +15,11 @@ const signupMiddleware = (store) => (next) => (action) => {
       console.log(signupFormValues);
       axios.post('http://34.207.247.234:3000/api/sign-up', { ...signupFormValues })
         .then((response) => {
-          store.dispatch(signupResponse(response.data));
+          store.dispatch(signupResponse(response.data.userSave));
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error.response);
+          store.dispatch(signupError(error.response.data.message[0].messageUserName));
         });
       next(action);
       break;
