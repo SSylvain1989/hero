@@ -6,6 +6,7 @@ export const LOGIN_HANDLER = 'LOGIN_HANDLER';
 export const LOGOUT_HANDLER = 'LOGOUT_HANDLER';
 export const SAVE_SESSION = 'SAVE_SESSION';
 export const CHECK_CONNEXION = 'CHECK_CONNEXION';
+export const LOGIN_ERROR = 'LOGIN_ERROR';
 
 export const emailSubmit = () => ({
   type: EMAIL_SUBMIT,
@@ -38,4 +39,9 @@ export const saveSession = (session) => ({
 
 export const checkConnexion = () => ({
   type: CHECK_CONNEXION,
+});
+
+export const loginError = (message) => ({
+  type: LOGIN_ERROR,
+  message,
 });

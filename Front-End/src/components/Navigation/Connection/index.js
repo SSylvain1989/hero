@@ -17,11 +17,15 @@ const Connection = ({
   onSubmit,
   isLoged,
   sessionUserName,
+  messagesError,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
   };
+
+  console.log('log connection component', messagesError);
+
 
   if (!isLoged) {
     return (
