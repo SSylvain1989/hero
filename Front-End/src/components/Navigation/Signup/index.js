@@ -24,6 +24,7 @@ const Signup = ({
     event.preventDefault();
     handleSignup();
   };
+  console.log(messagesError);
 
   if (!response) {
     return (

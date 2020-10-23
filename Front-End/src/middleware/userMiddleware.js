@@ -64,7 +64,7 @@ const userMiddleware = (store) => (next) => (action) => {
           Cookies.set('connect.sid', response.header['connect-sid']);
         })
         .catch((error) => {
-          console.error('userMiddleWare', error.response.data.message[0]);
+          console.error('userMiddleWare', error.response.data.message);
           store.dispatch(loginError(error.response.data.message));
         });
       next(action);

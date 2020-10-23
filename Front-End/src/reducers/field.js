@@ -36,7 +36,7 @@ export const initialState = {
     id: null,
     userName: '',
   },
-  loginErrorMessage: [],
+  messagesError: '',
 };
 
 const field = (state = initialState, action = {}) => {
@@ -78,9 +78,11 @@ const field = (state = initialState, action = {}) => {
         },
       };
     case LOGIN_ERROR:
+      console.log(action.message);
+
       return {
         ...state,
-        loginErrorMessage: action.response,
+        messagesError: action.message,
       };
     default:
       return state;

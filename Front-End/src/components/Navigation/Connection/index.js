@@ -25,6 +25,8 @@ const Connection = ({
   };
 
   console.log('log connection component', messagesError);
+  console.log('log connection component', messagesError);
+
 
 
   if (!isLoged) {
