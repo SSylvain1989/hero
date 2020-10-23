@@ -1,7 +1,55 @@
-// On récupère le models history
+// On récupère le models gameDetails
 const gameDetails = require('../models/game_details');
 
 const boardController = {
+    editStat: async (request, response) => { // met a jour les stat de jeux d'un utilisateur
+        try {
+            // tableau d'erreur
+            const messageTab = [];
+            // on configure l'objet data a envoyer
+            const data = {
+                user_id: request.session.user.id,
+                history_id: request.params.id,
+                character_id: null,
+                detail_id: request.session.user.detail_id,
+                gameWin: null,
+                gameOver: null,
+                gamePlay: 1
+            };
+            // Si il manque le champs character_id on stock un message d'erreur
+            if (request.body.character_id === undefined) {
+                const message = `Le personnage n'est pas renseigné, les stats ne peuvent pas etre mis a jour`
+                response.status(404).json({message: message, session: request.session.user});
+            } else { // Sinon on stock le character envoyer dans le body dans data
+                data.character_id = request.body.character_id;
+            };
+            // Si la partie est gagné
+            if (request.body.gameWin === 'true' || request.body.gameWin === true) {
+                // on change les valeur dans data en y ajoutant les valeur présente dans la session
+                data.gameWin = 1 + request.session.user.gameWin
+                data.gameOver = 0 + request.session.user.gameOver
+            } else { // Sinon elle est perdu
+                // on change les valeur dans data
+                data.gameWin = 0 + request.session.user.gameWin
+                data.gameOver = 1 + request.session.user.gameOver
+            }
+            // On met a jour le nombre de partie jouer
+            data.gamePlay = data.gamePlay + request.session.user.gamePlay;
+            // On met a jour les stat en bdd
+            const statEdit = await gameDetails.editBoardDetailGame(data);
+            // On sauvegarde la partie en bdd
+            const createParty = await gameDetails.createParty(data);
+            // On met a jour la session avec les nouvelles info 
+            request.session.user.gameWin = statEdit.gameWin;
+            request.session.user.gameOver = statEdit.gameOver;
+            request.session.user.gamePlay = statEdit.gamePlay;
+            // on renvoie le resultat de la session update et un message de confirmation
+            response.status(200).json({message: createParty, session: request.session.user});
+        } catch (error) {
+            console.trace(error);
+            return response.status(500).json(error.tostring());
+        };
+    },
     getOneBoard: async (request, response) => { // renvoi userSession & userBoard
         try {
             // on récupère le detail_id de la session

@@ -2,6 +2,17 @@
 const game = require('../models/game');
 
 const gameController = {
+    getAllCharacter: async (request, response) => {
+        try {
+            // on recupère tout les personnable jouable
+            const allCharacter = await game.findAllCharacter();
+
+            response.status(200).json({character: allCharacter, session: request.session.user});
+        } catch (error) {
+            console.trace(error);
+            return response.status(500).json(error.tostring());  
+        };
+    },
     getHistory: async (request, response) => {
         try {
             // on attend le retour de la methode qui recupère une histoire par son id
@@ -39,7 +50,7 @@ const gameController = {
                         };
                         sceneTab.push(data);
                     } else {
-                        sceneTab.push(oneScene);
+                        sceneTab.push(oneScene[0]);
                     };
                 };
                 if (index === 9 || index === 10 || index === 11) {
@@ -54,71 +65,103 @@ const gameController = {
                 history_description: oneHistory[0].history_description,
                 history_difficulty: oneHistory[0].history_difficulty,
                 scene_list: [
-                    {
+                    { // Scene 1
                         details_scene: sceneTab[0],
                         previous_scene_id: oneHistory[0].previous_scene_id,
-                        next_scene_id: oneHistory[0].next_scene_id
+                        next_scene_id: oneHistory[0].next_scene_id,
+                        next_scene_name: 'Démarrer'
                     },
-                    {
+                    { // Scene 2
                         details_scene: sceneTab[1],
                         previous_scene_id: oneHistory[1].previous_scene_id,
                         next_scene: {
                             next_scene_id: oneHistory[1].next_scene_id,
-                            clickable_element_name: sceneTab[1].clickable_element2.clickable_element_name
+                            next_scene_name: 'Vieillard'
                         },
                         next_scene2: {
                             next_scene_id2: oneHistory[2].next_scene_id,
-                            clickable_element_name2: sceneTab[1].clickable_element.clickable_element_name
+                            next_scene_name2: 'Porte'
                         }
                     },
-                    {
+                    { // Scene 3
                         details_scene: sceneTab[2],
                         previous_scene_id: oneHistory[3].previous_scene_id,
-                        next_scene_id: oneHistory[3].next_scene_id,
-                        next_scene_id2: oneHistory[4].next_scene_id
+                        next_scene: {
+                            next_scene_id: oneHistory[3].next_scene_id,
+                            next_scene_name: 'Combattre'
+                        },
+                        next_scene2: {
+                            next_scene_id2: oneHistory[4].next_scene_id,
+                            next_scene_name2: 'Discuter'
+                        }
                     },
-                    {
+                    { // Scene 4
                         details_scene: sceneTab[3],
                         previous_scene_id: oneHistory[5].previous_scene_id,
-                        next_scene_id: oneHistory[5].next_scene_id,
-                        next_scene_id2: oneHistory[6].next_scene_id
+                        next_scene: {
+                            next_scene_id: oneHistory[5].next_scene_id,
+                            next_scene_name: 'Suite'
+                        },
+                        next_scene2: {
+                            next_scene_id2: oneHistory[6].next_scene_id,
+                            next_scene_name2: 'GameOver'
+                        }   
                     },
-                    {
+                    { // Scene 5
                         details_scene: sceneTab[4],
                         previous_scene_id: oneHistory[7].previous_scene_id,
-                        next_scene_id: oneHistory[7].next_scene_id
+                        next_scene: {
+                            next_scene_id: oneHistory[7].next_scene_id,
+                            next_scene_name: 'Suite'
+                        }
                     },
-                    {
+                    { // Scene 6
                         details_scene: sceneTab[5],
                         previous_scene_id: oneHistory[8].previous_scene_id,
-                        next_scene_id: oneHistory[8].next_scene_id,
-                        next_scene_id2: oneHistory[9].next_scene_id
+                        next_scene: {
+                            next_scene_id: oneHistory[8].next_scene_id,
+                            next_scene_name: 'Sortir'
+                        },
+                        next_scene2: {
+                            next_scene_id2: oneHistory[9].next_scene_id,
+                            next_scene_name2: `Revenir a l'entrée`
+                        }
                     },
-                    {
+                    { // Scene 7
                         details_scene: sceneTab[6],
                         previous_scene_id: oneHistory[10].previous_scene_id,
-                        next_scene_id: oneHistory[10].next_scene_id
+                        next_scene: {
+                            next_scene_id: oneHistory[10].next_scene_id,
+                            next_scene_name: 'Barque'
+                        }
                     },
-                    {
+                    { // Scene 8
                         details_scene: sceneTab[7],
                         previous_scene_id: oneHistory[11].previous_scene_id,
-                        next_scene_id: oneHistory[11].next_scene_id,
-                        next_scene_id2: oneHistory[12].next_scene_id
+                        next_scene: {
+                            next_scene_id: oneHistory[11].next_scene_id,
+                            next_scene_name: 'Si le vieillard est en vie'
+                        },
+                        next_scene2: {
+                            next_scene_id2: oneHistory[12].next_scene_id,
+                            next_scene_name2: `Si le veillard est mort`
+                        },
+                        finish_text: `Suite`
                     },
-                    {
+                    { // Scene 9
                         details_scene: sceneTab[8],
                         previous_scene_id: oneHistory[13].previous_scene_id,
-                        next_scene_id: oneHistory[13].next_scene_id
+                        finish_text: `Game Over, Vous etes mort !`
                     },
-                    {
+                    { // Scene 10
                         details_scene: sceneTab[9],
                         previous_scene_id: oneHistory[14].previous_scene_id,
-                        next_scene_id: oneHistory[14].next_scene_id
+                        finish_text: `Bravo, vous avez terminé le jeu mais vous etes maudit !`
                     },
-                    {
+                    { // Scene 11
                         details_scene: sceneTab[10],
                         previous_scene_id: oneHistory[15].previous_scene_id,
-                        next_scene_id: oneHistory[15].next_scene_id
+                        finish_text: `Bravo, vous avez terminé le jeu en ayant levé la malédiction !`
                     },
                 ]
             };
