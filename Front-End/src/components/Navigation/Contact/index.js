@@ -16,33 +16,32 @@ const Contact = ({
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    handleContact(),
+    handleContact();
   };
 
   return (
     <div className="contact">
       <h1>Nous contacter</h1>
-      <form onSubmit={handleOnSubmit}> 
-      <input type="text" className="contact__email" />
-      <Field
+      <form onSubmit={handleOnSubmit}>
+        <input type="text" className="contact__email" />
+        <Field
           placeholder="Votre email"
           onChange={changeField}
           value={email}
           type="email"
         />
-      <textarea className="contact__message" />
-      <Field
+        <textarea className="contact__message" />
+        <Field
           placeholder="Votre message"
           onChange={changeField}
           value={message}
           type="text"
         />
-      <button type="button" className="contact__submit">Envoyer</button>
+        <button type="button" className="contact__submit">Envoyer</button>
       </form>
     </div>
-  )
-);
-
+  );
+};
 
 // == PropTypes
 Contact.propTypes = ({
