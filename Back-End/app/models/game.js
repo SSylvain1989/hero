@@ -1,7 +1,13 @@
 // On récupère la connexion a la base de données
 const db = require('../database');
 
-const game = {
+const game = { 
+    // On récupère tout les personnages jouables
+    findAllCharacter: async () => {
+        const sql = `SELECT * FROM game.character WHERE character.playable = $1;`;
+        const data = await db.query(sql, [true]);
+        return data.rows;
+    },
     findHistoryById: async (id) => {
         // on prépare la requete
         const sql = `SELECT history.id AS history_id,

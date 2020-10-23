@@ -6,7 +6,7 @@ import GameDetail from '../components/Navigation/GameDetail';
 
 // Action Creators
 import { fetchGameDetail } from '../actions/navigation';
-import { loadStory } from '../actions/game';
+import { loadStory, loadCharacterList, selectCharacter } from '../actions/game';
 import getGameDetailById from '../selectors/getGameDetailById';
 
 /* === State (données) ===
@@ -19,6 +19,8 @@ import getGameDetailById from '../selectors/getGameDetailById';
 const mapStateToProps = (state, { gameId }) => ({
   isStoryLoaded: state.game.isStoryLoaded,
   game: getGameDetailById(gameId, state.navigation.games),
+  characterList: state.game.characterList,
+  playerSelected: state.game.playerSelected,
 });
 
 /* === Actions ===
@@ -32,8 +34,14 @@ const mapDispatchToProps = (dispatch) => ({
   fetchGameDetail: () => {
     dispatch(fetchGameDetail());
   },
+  loadCharacterList: () => {
+    dispatch(loadCharacterList());
+  },
   loadStory: () => {
     dispatch(loadStory());
+  },
+  selectCharacter: (id) => {
+    dispatch(selectCharacter(id));
   },
 });
 
