@@ -1,4 +1,5 @@
 const user = require('../models/user');
+const gameDetails = require('../models/game_details');
 const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
 
@@ -33,13 +34,20 @@ const connexionController = {
             return response.status(404).json({message: messageTab, session: request.session.user});
             //return response.json(messageTab);
         };
+        // on appel la methode findbyid de gameDetails avec le detail_id récupérer au dessus
+        const userBoard = await gameDetails.findById(checkUser.detail_id);
         // on ajoute les informations de l'utilisateur a la session
         request.session.user = {
             connected_user: true,
             id: checkUser.id,
             userName: checkUser.userName,
             email: checkUser.email,
-            detail_id: checkUser.detail_id
+            detail_id: userBoard.id,
+            avatar: userBoard.avatar,
+            displayName: userBoard.displayName,
+            gameWin: userBoard.gameWin,
+            gameOver: userBoard.gameOver,
+            gamePlay: userBoard.gamePlay
         };
 
         const messageConnexion = 'L\'utilisateur est bien connecté';
