@@ -1,7 +1,14 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
+import emailjs from ‘emailjs-com’;
+import apiKeys from ‘../apikeys’;
 
 import './contact.scss';
+
+// J'essaie de suivre cette méthode
+// https://medium.com/@barseetbrown/send-e-mail-directly-from-your-react-website-no-back-end-required-ed0d3106c3d4
+
+// Création d'un fichier Apikey.js dans contact + ajout dans .gitignore.
 
 const Contact = () => (
   // <div className="contact">
@@ -22,5 +29,19 @@ const Contact = () => (
     <button className="form__input — button">Send Message</button>
   </form>
 );
+
+// J'ai lancé dans le terminal npm install emailjs-com - save
+// Installer la fonction sendMail
+
+const onSubmit=(e)=>{
+  e.preventDefault()// Prevents default refresh by the browser
+  emailjs.sendForm(‘gmail’, apiKeys.TEMPLATE_ID, e.target, apiKeys.USER_ID)
+  .then(result => {
+  alert('Message Sent, I\'ll get back to you shortly', result.text);
+  },
+  error => {
+  alert( 'An error occured, Plese try again',error.text)
+  })
+  }
 
 export default Contact;

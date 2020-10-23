@@ -1,6 +1,7 @@
 node_modules/
 dist/
 src/components/Navigation/App/
+src/components/Navigation/Contact/apikey.js
 
 .DS_Store
 Thumbs.db
