@@ -7,6 +7,7 @@ import GameDetail from '../components/Navigation/GameDetail';
 // Action Creators
 import { fetchGameDetail } from '../actions/navigation';
 import { loadStory } from '../actions/game';
+import getGameDetailById from '../selectors/getGameDetailById';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -15,8 +16,9 @@ import { loadStory } from '../actions/game';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, { gameId }) => ({
   isStoryLoaded: state.game.isStoryLoaded,
+  game: getGameDetailById(gameId, state.navigation.games),
 });
 
 /* === Actions ===
