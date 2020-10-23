@@ -38,6 +38,7 @@ router.patch('/api/board/edit', checkConnexion, boardController.edit); /* Modifi
 
 // router.post('/api/contact', contactController.email); /* Envoyer les infos du mail */
 
+router.get('/api/characters', checkConnexion, gameController.getAllCharacter); /* Recevoir tout les personnages jouable */
 router.get('/api/stories/:id(\\d+)/play', checkConnexion, gameController.getHistory); /* Recevoir toute l'histoire */
 // router.post('/api/stories/:id(\\d+)/finish', boardController.editStat); /* Mettre a jour les stats d'un user */
 
