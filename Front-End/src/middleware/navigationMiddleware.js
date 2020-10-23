@@ -8,7 +8,7 @@ import {
 const navigationMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_GAMES:
-      axios.get('http://localhost:3000/api/stories')
+      axios.get('http://34.207.247.234:3000/api/stories')
         .then((response) => {
           store.dispatch(addGames(response.data.historylist));
         })
