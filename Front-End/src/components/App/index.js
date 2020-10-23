@@ -19,6 +19,7 @@ import Profile from '../../containers/Profile';
 import Connection from '../../containers/Connection';
 import Board from '../Navigation/Board';
 // import Contact from '../../containers/Contact';
+import Mail from '../Navigation/Contact/Email';
 import GameDetail from '../../containers/GameDetail';
 import GamesList from '../../containers/GamesList';
 import Home from '../Navigation/Home';
@@ -63,6 +64,9 @@ const App = ({ games, checkConnexion }) => {
         {/* <Route exact path="/contact">
           <Contact />
         </Route> */}
+        <Route exact path="/mail">
+          <Mail />
+        </Route>
         <Route exact path="/profil">
           <Profile />
         </Route>
