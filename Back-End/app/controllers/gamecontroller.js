@@ -20,14 +20,34 @@ const gameController = {
                 };
                 if (index === 2 || index === 7) {
                     const oneScene = await game.findSceneClickableElementById(index);
-                    sceneTab.push(oneScene);
+                    if (index === 2) {
+                        const data = {
+                            scene_id: oneScene[0].scene_id,
+                            scene_name: oneScene[0].scene_name,
+                            scene_description: oneScene[0].scene_description,
+                            scene_type: oneScene[0].scene_type,
+                            clickable_element: {
+                                clickable_element_name: oneScene[0].clickable_element_name,
+                                clickable_element_shape: oneScene[0].clickable_element_shape,
+                                clickable_element_coords: oneScene[0].clickable_element_coords
+                            },
+                            clickable_element2: {
+                                clickable_element_name: oneScene[1].clickable_element_name,
+                                clickable_element_shape: oneScene[1].clickable_element_shape,
+                                clickable_element_coords: oneScene[1].clickable_element_coords
+                            }
+                        };
+                        sceneTab.push(data);
+                    } else {
+                        sceneTab.push(oneScene);
+                    };
                 };
                 if (index === 9 || index === 10 || index === 11) {
                     const oneScene = await game.findSceneFinishById(index);
                     sceneTab.push(oneScene);
                 };
             };
-
+            
             const history = { // je configure l'objet de l'histoire
                 history_id: oneHistory[0].history_id,
                 history_name: oneHistory[0].history_name,
@@ -42,8 +62,14 @@ const gameController = {
                     {
                         details_scene: sceneTab[1],
                         previous_scene_id: oneHistory[1].previous_scene_id,
-                        next_scene_id: oneHistory[1].next_scene_id,
-                        next_scene_id2: oneHistory[2].next_scene_id
+                        next_scene: {
+                            next_scene_id: oneHistory[1].next_scene_id,
+                            clickable_element_name: sceneTab[1].clickable_element2.clickable_element_name
+                        },
+                        next_scene2: {
+                            next_scene_id2: oneHistory[2].next_scene_id,
+                            clickable_element_name2: sceneTab[1].clickable_element.clickable_element_name
+                        }
                     },
                     {
                         details_scene: sceneTab[2],

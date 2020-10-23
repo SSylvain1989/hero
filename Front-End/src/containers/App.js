@@ -16,6 +16,7 @@ import App from '../components/App';
  */
 const mapStateToProps = (state) => ({
   games: state.navigation.games,
+  story: state.game.story,
 });
 
 /* === Actions ===

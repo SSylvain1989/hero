@@ -1,60 +1,26 @@
-// // == Import npm
-// import React from 'react';
-// import PropTypes from 'prop-types';
+/* eslint-disable react/button-has-type */
+import React from 'react';
 
-// import Field from '../../common/Field';
+import './contact.scss';
 
-// // == Import scss
-// import './contact.scss';
+const Contact = () => (
+  // <div className="contact">
+  //   <h1>Nous contacter</h1>
+  //   <input type="text" placeholder="Votre email" />
+  //   <textarea placeholder="Votre message" />
+  //   <button type="button">Envoyer</button>
+  // </div>
 
-// // == Composant
-// const Contact = ({
-//   email,
-//   message,
-//   changeField,
-//   handleContact,
-// }) => {
-//   const handleOnSubmit = (event) => {
-//     event.preventDefault();
-//     handleContact();
-//   };
+  // eslint-disable-next-line no-undef
+  <form className="form" onSubmit ={onSubmit}>
+    <p>Your Name:</p>
+    <input name="name" type="text" placeholder="name..." className="form__input" />
+    <p>Subject:</p>
+    <input name="subject" type="text" placeholder="Subject…" className="form__input" />
+    <p>Your Message:</p>
+    <textarea name="message" type="text" placeholder="Your Message…" className="form__input-message" />
+    <button className="form__input — button">Send Message</button>
+  </form>
+);
 
-//   return (
-//     <div className="contact">
-//       <h1>Nous contacter</h1>
-//       <form onSubmit={handleOnSubmit}>
-//         <input type="text" className="contact__email" />
-//         <Field
-//           placeholder="Votre email"
-//           onChange={changeField}
-//           value={email}
-//           type="email"
-//         />
-//         <textarea className="contact__message" />
-//         <Field
-//           placeholder="Votre message"
-//           onChange={changeField}
-//           value={message}
-//           type="text"
-//         />
-//         <button type="button" className="contact__submit">Envoyer</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// // == PropTypes
-// Contact.propTypes = ({
-//   email: PropTypes.string,
-//   message: PropTypes.array,
-//   changeField: PropTypes.func.isRequired,
-//   handleContact: PropTypes.func.isRequired,
-// });
-
-// Contact.defaultProps = ({
-//   email: '',
-//   message: [],
-// });
-
-// // == Export
-// export default Contact;
+export default Contact;

@@ -1,13 +1,11 @@
 // == Import : npm
 import { connect } from 'react-redux';
-
 // == Import : local
-import GameDetail from '../components/Navigation/GameDetail';
+import End from '../components/Game/End';
+// == Import : actions
+import getSceneById from '../selectors/getSceneById';
 
 // Action Creators
-import { fetchGameDetail } from '../actions/navigation';
-import { loadStory } from '../actions/game';
-import getGameDetailById from '../selectors/getGameDetailById';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -16,9 +14,10 @@ import getGameDetailById from '../selectors/getGameDetailById';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state, { gameId }) => ({
-  isStoryLoaded: state.game.isStoryLoaded,
-  game: getGameDetailById(gameId, state.navigation.games),
+const mapStateToProps = (state, { sceneId }) => ({
+  // Récupérer la scene par rapport au ownProps.sceneId
+  storyId: state.game.story.history.history_id,
+  scene: getSceneById(sceneId, state.game.story.history.scene_list),
 });
 
 /* === Actions ===
@@ -28,20 +27,13 @@ const mapStateToProps = (state, { gameId }) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch) => ({
-  fetchGameDetail: () => {
-    dispatch(fetchGameDetail());
-  },
-  loadStory: () => {
-    dispatch(loadStory());
-  },
-});
+const mapDispatchToProps = () => ({});
 
 // Container
-const GameDetailContainer = connect(
+const EndContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(GameDetail);
+)(End);
 
 // == Export
-export default GameDetailContainer;
+export default EndContainer;
