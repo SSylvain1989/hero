@@ -1,12 +1,20 @@
 import {
   ADD_STORY,
+  SELECT_CHARACTER,
+  ADD_CHARACTER_LIST,
 } from '../actions/game';
+
+import getCharacterById from '../selectors/getCharacterbyId';
+import createPlayer from '../utils/createPlayer';
 
 export const initialState = {
   // ici on déclare un objet vide avec la propriété story qui sera rempli
   // au déclenchement du bouton "jouer maintenant"
   story: {},
   isStoryLoaded: false,
+  player: {},
+  playerSelected: false,
+  characterList: [],
 };
 
 const game = (state = initialState, action = {}) => {
@@ -18,6 +26,21 @@ const game = (state = initialState, action = {}) => {
           ...action.story,
         },
         isStoryLoaded: true,
+      };
+    case SELECT_CHARACTER: {
+      const chosenCharacter = getCharacterById(action.id, [...state.characterList]);
+      const newPlayer = createPlayer(chosenCharacter);
+      //console.log(newPlayer);
+      return {
+        ...state,
+        player: newPlayer,
+        playerSelected: true,
+      };
+    }
+    case ADD_CHARACTER_LIST:
+      return {
+        ...state,
+        characterList: [...action.data.character],
       };
     default:
       return state;

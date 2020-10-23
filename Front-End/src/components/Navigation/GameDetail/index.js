@@ -6,11 +6,26 @@ import { Link } from 'react-router-dom';
 import './gamedetail.scss';
 
 const GameDetail = ({
-  fetchGameDetail, loadStory, gameId, isStoryLoaded, game,
+  fetchGameDetail,
+  loadStory,
+  gameId,
+  isStoryLoaded,
+  game,
+  loadCharacterList,
+  characterList,
+  selectCharacter,
+  playerSelected,
 }) => {
   useEffect(() => {
     fetchGameDetail();
+    loadCharacterList();
   }, []);
+
+  const handleCharacterOnClick = (event) => {
+    selectCharacter(event.currentTarget.id);
+  };
+
+  // console.log(playerSelected);
 
   return (
     <div className="game-detail">
@@ -22,7 +37,21 @@ const GameDetail = ({
           <div>
             {!isStoryLoaded
               ? <button type="button" className="game-detail__button" onClick={loadStory}>Charger le jeu</button>
-              : <Link to={`/liste-des-jeux/${gameId}/1`}><button type="button" className="game-detail__button" onClick={loadStory}>Jouer</button></Link>}
+              : (
+                <>
+                  {characterList.length > 0
+                    && characterList.map((character) => (
+                      <div
+                          key={character.id}
+                          id={character.id}
+                          onClick={handleCharacterOnClick}
+                      >
+                        {character.name}
+                      </div>
+                    )) }
+                  {playerSelected && <Link to={`/liste-des-jeux/${gameId}/1`}><button type="button" className="game-detail__button" onClick={loadStory}>Jouer</button></Link>}
+                </>
+              )}
           </div>
           <section className="game-detail__section">{game.description}</section>
         </div>
@@ -34,6 +63,10 @@ const GameDetail = ({
 GameDetail.propTypes = ({
   fetchGameDetail: PropTypes.func.isRequired,
   loadStory: PropTypes.func.isRequired,
+  loadCharacterList: PropTypes.func.isRequired,
+  characterList: PropTypes.array.isRequired,
+  selectCharacter: PropTypes.func.isRequired,
+  playerSelected: PropTypes.bool.isRequired,
   gameId: PropTypes.number.isRequired,
   isStoryLoaded: PropTypes.bool.isRequired,
   game: PropTypes.shape({
