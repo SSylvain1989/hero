@@ -1,4 +1,4 @@
-import history from '../data/histoire1';
+import axios from 'axios';
 
 import {
   LOAD_ONE_STORY,
@@ -8,7 +8,11 @@ import {
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOAD_ONE_STORY:
-      store.dispatch(addStory(history));
+      axios.get('http://34.207.247.234:3000/api/stories/1/play')
+        .then((response) => {
+          console.log(response.data);
+          store.dispatch(addStory(response.data));
+        });
       next(action);
       break;
     default:

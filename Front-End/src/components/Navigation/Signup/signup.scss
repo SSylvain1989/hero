@@ -9,6 +9,24 @@
     form {
         display: flex;
         flex-direction: column;
+    }&__input{
+      margin-bottom: 2rem;
+    }
+
+
+    &__signed {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+    }&__text {
+      margin: 1rem;
+    }&__button {
+      margin: 1rem;
+      padding: 1rem;
+    }&__error {
+      color: red;
     }
 
     &__signed {

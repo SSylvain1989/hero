@@ -4,12 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
 
-import Battle from '../Game/Battle';
-import Choice from '../Game/Choice';
-import ClickableElement from '../Game/ClickableElement';
-import Discussion from '../Game/Discussion';
-import End from '../Game/End';
-
 // import navigation ** attention IMPORT CONTAINER ET COMPONENT
 import Header from '../../containers/Header';
 import Footer from '../Navigation/Footer';
@@ -25,7 +19,12 @@ import LegalNotices from '../Navigation/LegalNotices';
 import NotFound from '../Navigation/NotFound';
 import Signup from '../../containers/Signup';
 import Start from '../../containers/Start';
+import ClickableElement from '../../containers/ClickableElement';
+import Battle from '../../containers/Battle';
+import Choice from '../../containers/Choice';
+import End from '../../containers/End';
 import story from '../../data/histoire1';
+
 
 // **** inscription à modifier pour la route signup ****
 const App = ({ games, checkConnexion }) => {
@@ -93,9 +92,6 @@ const App = ({ games, checkConnexion }) => {
         </Route>
         <Route exact path="/mentions-legales">
           <LegalNotices />
-        </Route>
-        <Route exact path="/discussion">
-          <Discussion />
         </Route>
         <Route>
           <NotFound />

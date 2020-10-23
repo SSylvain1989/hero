@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Start from '../components/Game/Start';
 import getSceneById from '../selectors/getSceneById';
-import story from '../data/histoire1';
 
 // Action Creators
 
@@ -13,7 +12,8 @@ import story from '../data/histoire1';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, { sceneId }) => ({
-  scene: getSceneById(sceneId, story.history.scene_list),
+  storyId: state.game.story.history.history_id,
+  scene: getSceneById(sceneId, state.game.story.history.scene_list),
 });
 
 /* === Actions ===

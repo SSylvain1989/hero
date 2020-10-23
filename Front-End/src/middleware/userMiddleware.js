@@ -15,7 +15,7 @@ import {
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case EMAIL_SUBMIT:
-      axios.post('http://localhost:3000/api/profile/edit', { email: store.getState().field.profile.email })
+      axios.post('http://34.207.247.234:3000/api/profile/edit', { email: store.getState().field.profile.email })
         .then((response) => {
           console.log(response);
         })
@@ -25,7 +25,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case USERNAME_SUBMIT:
-      axios.post('http://localhost:3000/api/profile/edit', { userName: store.getState().field.profile.userName })
+      axios.post('http://34.207.247.234:3000/api/profile/edit', { userName: store.getState().field.profile.userName })
         .then((response) => {
           console.log(response.data);
         })
@@ -35,7 +35,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case PASSWORD_SUBMIT:
-      axios.post('http://localhost:3000/api/profile/edit',
+      axios.post('http://34.207.247.234:3000/api/profile/edit',
         {
           password: store.getState().field.profile.password,
           passwordConfirm: store.getState().field.profile.passwordConfirm,
@@ -49,7 +49,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case LOGIN_SUBMIT:
-      axios.post('http://localhost:3000/api/log-in',
+      axios.post('http://34.207.247.234:3000/api/log-in',
         {
           password: store.getState().field.login.password,
           userName: store.getState().field.login.userName,
@@ -65,7 +65,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case LOGOUT_HANDLER:
-      axios.post('http://localhost:3000/api/log-out',
+      axios.post('http://34.207.247.234:3000/api/log-out',
         {},
         { withCredentials: true })
         .then((response) => {
@@ -78,7 +78,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case CHECK_CONNEXION:
-      axios.post('http://localhost:3000/api/login-check',
+      axios.post('http://34.207.247.234:3000/api/login-check',
         {},
         { withCredentials: true })
         .then((response) => {

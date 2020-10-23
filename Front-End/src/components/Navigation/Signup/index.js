@@ -17,14 +17,18 @@ const Signup = ({
   passwordConfirm,
   changeField,
   handleSignup,
-  messages,
+  messagesError,
+  response,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     handleSignup();
   };
 
-  // if (//Condition a trouver après le signup) {
+  // console.log('messageERROR du back :', messagesError);
+  // console.log('reponseOK du back :', response);
+
+  if (!response) {
     return (
       <div className="signup">
         <form onSubmit={handleOnSubmit}>
@@ -65,16 +69,20 @@ const Signup = ({
             type="password"
           />
           <input className="signup__submit" type="submit" value="C'est parti" />
+          {!messagesError === false && <p className="signup__error">Ce nom d'utilisateur est déjà existant , merci d'en choisir un autre</p>}
         </form>
       </div>
     );
-  // }
-  // return (
-  //   <div className="signup__signed">
-  //     <h1>Votre compte a bien été crée </h1>
-  //     <button type="button"><Link to="/connection">Connectez-vous</Link></button>
-  //   </div>
-  // );
+  }
+
+  return (
+    <div className="signup">
+      <div className="signup__signed">
+        <h1 className="signup__text">Bonjour <span>{response.userName}</span> , Votre compte est créé - connectez-vous vite pour pouvoir jouer </h1>
+        <Link to="/connection"><button className="signup__button" type="button">Connectez-vous</button></Link>
+      </div>
+    </div>
+  );
 };
 
 // == PropTypes
@@ -86,17 +94,18 @@ Signup.propTypes = ({
   passwordConfirm: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
-  messages: PropTypes.array,
-  isLoged: PropTypes.bool.isRequired,
+  messagesError: PropTypes.string,
+  response: PropTypes.object,
 });
 
 Signup.defaultProps = ({
-  messages: [],
+  messagesError: '',
   username: '',
   email: '',
   emailConfirm: '',
   password: '',
   passwordConfirm: '',
+  response: '',
 });
 
 // == Export

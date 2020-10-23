@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // == Import : local
 import clickableElement from '../components/Game/ClickableElement';
 // == Import : actions
+import getSceneById from '../selectors/getSceneById';
 
 // Action Creators
 
@@ -13,10 +14,10 @@ import clickableElement from '../components/Game/ClickableElement';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, { sceneId }) => ({
   // Récupérer la scene par rapport au ownProps.sceneId
-  story: state.game.story,
-  id: ownProps.sceneId,
+  storyId: state.game.story.history.history_id,
+  scene: getSceneById(sceneId, state.game.story.history.scene_list),
 });
 
 /* === Actions ===

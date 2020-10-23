@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .end {
   display: flex;
   justify-content: center;
@@ -10,7 +12,7 @@
     height: 400px;
     width: 80%;
     background-color: #D1D1D1;
-    border: 5px solid black;
+    border: 5px solid vars.$border-color;
     position: relative;
 
     h1 {
@@ -24,13 +26,15 @@
       width: 35%;
       position: absolute;
       left: 31%;
-      background-color: green;
+      background-color: vars.$brown-color;
       top: 20%;
       text-align: center;
 
       p {
         height: 80%;
         margin: 2rem 1rem;
+        font-weight: bold;
+        color: white;
       }
 
       &buttons {

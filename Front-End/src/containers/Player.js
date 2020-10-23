@@ -1,13 +1,10 @@
 // == Import : npm
 import { connect } from 'react-redux';
-
 // == Import : local
-import GameDetail from '../components/Navigation/GameDetail';
+import Player from '../components/Game/Player';
+// == Import : actions
 
 // Action Creators
-import { fetchGameDetail } from '../actions/navigation';
-import { loadStory } from '../actions/game';
-import getGameDetailById from '../selectors/getGameDetailById';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -16,9 +13,24 @@ import getGameDetailById from '../selectors/getGameDetailById';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state, { gameId }) => ({
-  isStoryLoaded: state.game.isStoryLoaded,
-  game: getGameDetailById(gameId, state.navigation.games),
+const mapStateToProps = () => ({
+  /* !!! ATTENTION !!!
+   * Il faudra un OBJECT player de cette forme
+   * Si on veut afficher l'image du personnage et ses stats
+   * Ici, les données sont en brut
+   * Il faudra dynamiser selon l'état actuel du joueur
+   */
+  player: {
+    name: 'Warrior',
+    attackPoint: 10,
+    defensePoint: 8,
+    healthPoint: {
+      current: 8,
+      max: 20,
+    },
+    image: '',
+    inventory: {},
+  },
 });
 
 /* === Actions ===
@@ -28,20 +40,13 @@ const mapStateToProps = (state, { gameId }) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch) => ({
-  fetchGameDetail: () => {
-    dispatch(fetchGameDetail());
-  },
-  loadStory: () => {
-    dispatch(loadStory());
-  },
-});
+const mapDispatchToProps = () => ({});
 
 // Container
-const GameDetailContainer = connect(
+const AppContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(GameDetail);
+)(Player);
 
 // == Export
-export default GameDetailContainer;
+export default AppContainer;

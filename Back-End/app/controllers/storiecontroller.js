@@ -7,12 +7,8 @@ const storieController = {
         try {
             // on attend le retour de la methode qui recupère toute les histoires
             const historyList = await history.findAll();
-            // si un utilisateur est connecter, on renvoie les histoires et la session 
-            if (request.session.user) {
-                return response.status(200).json({historylist: historyList, session: request.session.user});
-            }
-            // Sinon on renvoie que les histoire
-            response.status(200).json({historylist: historyList});
+            // on renvoie les histoires et la session 
+            return response.status(200).json({historylist: historyList, session: request.session.user});
         } catch (error) {
             console.trace(error);
             return response.status(500).json(error.tostring());
