@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 import {
   EMAIL_SUBMIT,
@@ -58,6 +59,8 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
+          console.log(response);
+          Cookies.set('connect.sid', response.header['connect-sid']);
         })
         .catch((error) => {
           console.error(error);
