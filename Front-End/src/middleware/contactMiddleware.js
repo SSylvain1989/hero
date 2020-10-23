@@ -12,7 +12,7 @@ const contactMiddleware = (store) => (next) => (action) => {
       // Renommer userName pour correspondre avec le back
       contactFormValues.userName = contactFormValues.message;
       console.log(contactFormValues);
-      axios.post('http://localhost:3000/api/sign-up', { ...contactFormValues })
+      axios.post('http://localhost:3000/api/contact', { ...contactFormValues })
         .then((response) => {
           store.dispatch(contactResponse(response.data));
         })
