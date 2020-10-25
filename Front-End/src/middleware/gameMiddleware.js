@@ -12,7 +12,6 @@ const gameMiddleware = (store) => (next) => (action) => {
     case LOAD_ONE_STORY:
       axios.get('http://34.207.247.234:3000/api/stories/1/play')
         .then((response) => {
-          console.log(response.data);
           store.dispatch(addStory(response.data));
         });
       next(action);
