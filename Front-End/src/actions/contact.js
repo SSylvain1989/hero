@@ -1,6 +1,6 @@
 export const CONTACT = 'CONTACT';
 export const CONTACT_RESPONSE = 'CONTACT_RESPONSE';
-export const CONTACT_ERROR = 'CONTACT_ERROR';
+// export const CONTACT_ERROR = 'CONTACT_ERROR';
 
 export const contact = () => ({
   type: CONTACT,
@@ -11,7 +11,7 @@ export const contactResponse = (response) => ({
   response,
 });
 
-export const contactError = (email) => ({
-  type: CONTACT_ERROR,
-  email,
-});
+// export const contactError = (message) => ({
+//   type: CONTACT_ERROR,
+//   message,
+// });

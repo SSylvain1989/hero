@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from 'react';
 import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
@@ -35,12 +36,17 @@ const Contact = ({
   };
   if (!response) {
     return (
-      <form className="contact" onSubmit={onSubmit}>
-        <h1>Nous contacter</h1>
-        <input name="email" type="text" value={email} onChange={changeField} placeholder="Votre email" className="contact__input" />
-        <textarea name="message" value={message} onChange={changeField} type="text" placeholder="Votre message ..." className="contact__input-message" />
-        <button type="button" className="contact__input — button">Envoyer</button>
-      </form>
+      <div className="contact_container">
+        <div className="contact_wrap">
+          <img className="contact_picture" alt="IMG" />
+          <form className="contact_form" onSubmit={onSubmit}>
+            <h1>Nous contacter</h1>
+            <input name="email" type="text" value={email} onChange={changeField} placeholder="Votre email" className="contact_input--email" />
+            <textarea name="message" value={message} type="text" placeholder="Votre message ..." className="contact_input--message" />
+            <button type="button" className="contact_input--button">Envoyer</button>
+          </form>
+        </div>
+      </div>
     );
   }
 };
