@@ -28,7 +28,8 @@ app.use(session({
   secret: 'Un Super Secret',
   cookie: {
     httpOnly: true, // empêche l'accès au cookie depuis du javascript côté front
-    secure: false, // HTTPS est nécessaire si l'on veut passer l'option à true
+    secure: false,
+    sameSite: 'none', // HTTPS est nécessaire si l'on veut passer l'option à true
     maxAge: 1000 * 60 * 60 * 24, // durée de vie du cookie en milliseconds, ici ça donne 1 jour
   },
 }));
@@ -48,11 +49,7 @@ app.use(express.json());
 //   credentials: true
 // }));
 
-// app.use(cors({
-//   credentials: true,
-//   origin:'',
-//   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
-// }));
+app.use(cors());
 
 app.use((req, res, next) => {
 
