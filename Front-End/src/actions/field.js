@@ -21,9 +21,8 @@ export const changeLoginField = (value, name) => ({
   name,
 });
 
-export const changeContactField = (value, email, message) => ({
+export const changeContactFieldValue = (value, name) => ({
   type: CHANGE_CONTACT_FIELD_VALUE,
   value,
-  email,
-  message,
+  name,
 });

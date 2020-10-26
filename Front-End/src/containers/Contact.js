@@ -15,8 +15,8 @@ const mapStateToProps = (state) => ({
 
 /* === Actions === */
 const mapDispatchToProps = (dispatch) => ({
-  changeField: (value, email, message) => {
-    dispatch(changeContactFieldValue(value, email, message));
+  changeField: (value, name) => {
+    dispatch(changeContactFieldValue(value, name));
   },
   handleContact: () => {
     dispatch(contact());

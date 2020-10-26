@@ -72,8 +72,8 @@ const field = (state = initialState, action = {}) => {
       return {
         ...state,
         contact: {
-          ...state.login,
-          [action.email]: action.value,
+          ...state.contact,
+          [action.name]: action.value,
         },
       };
     case LOGIN_HANDLER:
