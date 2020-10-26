@@ -48,6 +48,15 @@ const Connection = ({
             value={password}
             type="password"
           />
+          {messagesError.length > 0
+            && messagesError.map((element) => (
+              <p
+                className="connection__error"
+                key={Object.values(element)[0]}
+              >Attention :
+                {Object.values(element)[0]}
+              </p>
+            ))}
           <button type="submit">Se connecter</button>
           <button className="connection__redirect" type="button"><Link to="/inscription">L'inscription c'est par ici</Link></button>
         </form>
