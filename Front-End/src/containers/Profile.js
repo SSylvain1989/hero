@@ -5,8 +5,14 @@ import { connect } from 'react-redux';
 import Profile from '../components/Navigation/Profile';
 
 // == Import : actions
-import { emailSubmit, usernameSubmit, passwordSubmit } from '../actions/user';
-import { changeProfileField } from '../actions/field';
+import {
+  emailSubmit,
+  usernameSubmit,
+  passwordSubmit,
+  showModalToggle,
+  handleAccountDeletion,
+} from '../actions/user';
+import { resetFields, changeProfileField } from '../actions/field';
 
 // Action Creators
 
@@ -22,6 +28,8 @@ const mapStateToProps = (state) => ({
   userName: state.field.profile.userName,
   password: state.field.profile.password,
   passwordConfirm: state.field.profile.passwordConfirm,
+  showModal: state.field.profile.showModal,
+  message: state.field.profile.message,
 });
 
 /* === Actions ===
@@ -43,6 +51,15 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handlePasswordSubmit: () => {
     dispatch(passwordSubmit());
+  },
+  showModalToggle: () => {
+    dispatch(showModalToggle());
+  },
+  handleAccountDeletion: (showModal) => {
+    dispatch(handleAccountDeletion(showModal));
+  },
+  resetFields: () => {
+    dispatch(resetFields());
   },
 });
 

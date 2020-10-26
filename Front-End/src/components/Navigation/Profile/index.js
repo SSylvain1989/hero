@@ -13,6 +13,10 @@ const Profile = ({
   handleEmailSubmit,
   handleUsernameSubmit,
   handlePasswordSubmit,
+  handleAccountDeletion,
+  showModal,
+  showModalToggle,
+  message,
 }) => (
   <div className="profile">
     <div className="profile__input">
@@ -25,7 +29,7 @@ const Profile = ({
         value={email}
         type="text"
       />
-      <button type="button" onSubmit={handleEmailSubmit}>Valider</button>
+      <button type="button" onClick={handleEmailSubmit}>Valider</button>
       <h2>Modifier mon nom d'utilisateur</h2>
       <Field
         name="userName"
@@ -34,7 +38,7 @@ const Profile = ({
         value={userName}
         type="text"
       />
-      <button type="button" onSubmit={handleUsernameSubmit}>Valider</button>
+      <button type="button" onClick={handleUsernameSubmit}>Valider</button>
       <h2>Modifier mon mot de passe</h2>
       <Field
         name="password"
@@ -50,16 +54,19 @@ const Profile = ({
         value={passwordConfirm}
         type="password"
       />
-      <button type="button" onSubmit={handlePasswordSubmit}>Valider</button>
+      <button type="button" onClick={handlePasswordSubmit}>Valider</button>
       <div className="profile__input--delete">
         <h2>Supprimer mon compte</h2>
-        <button type="button">Supprimer mon compte</button>
-        <div className="profile__delete-modal">
+        <button type="button" onClick={() => showModalToggle(showModal)}>Supprimer mon compte</button>
+        <div className={showModal ? 'profile__delete-modal' : 'profile__delete-modal--hide'}>
           <h1>Êtes-vous sur de vouloir supprimer votre compte</h1>
-          <input type="text" placeholder="Taper votre pseudo pour confirmer la suppression" />
-          <button type="button">Supprimer mon compte</button>
+          <button type="button" onClick={handleAccountDeletion}>Supprimer mon compte definitivement</button>
+          <button type="button" onClick={() => showModalToggle(showModal)}>Retour</button>
         </div>
       </div>
+    </div>
+    <div className="profile__confirmation">
+      {message}
     </div>
   </div>
 );
@@ -73,6 +80,10 @@ Profile.propTypes = ({
   handleEmailSubmit: PropTypes.func.isRequired,
   handleUsernameSubmit: PropTypes.func.isRequired,
   handlePasswordSubmit: PropTypes.func.isRequired,
+  handleAccountDeletion: PropTypes.func.isRequired,
+  showModal: PropTypes.bool.isRequired,
+  showModalToggle: PropTypes.func.isRequired,
+  message: PropTypes.string.isRequired,
 });
 
 export default Profile;
