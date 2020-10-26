@@ -2,7 +2,11 @@
 const db = require('../database');
 
 const boardDetail = {
-    findById: async (id) => { // on récupère les game_details de l'user connecter dans la session
+    /**
+     * On récupère les game_details de l'user connecter dans la session par le details_id
+     * @param - id de game_details
+     */
+    findById: async (id) => {
         // on prépare la requete
         const sql = `SELECT * FROM nav.game_details WHERE id = $1;`;
         // on envoie la requete en bdd avec la requete preparer et l'id passé en parametre
@@ -10,6 +14,12 @@ const boardDetail = {
         // on renvoie les data de la requete
         return data.rows[0];
     },
+    /**
+     * On modifie l'avatar et le displayName de l'user connecter dans la session
+     * @param - id de game_details
+     * @param - avatar de game_details
+     * @param - displayName de game_details
+     */
     editBoardProfile: async (boardUser) => {
         // on prépare la requete
         const sql = `UPDATE nav.game_details SET "displayName" = $1, "avatar" = $2 WHERE id = $3 RETURNING "displayName", "avatar";`;
@@ -20,6 +30,13 @@ const boardDetail = {
         // on renvoie les données
         return boardUserUpdate.rows[0];
     },
+    /**
+     * On modifie le gameWin, gameOver et gamePlay de l'user connecter dans la session
+     * @param - id de game_details
+     * @param - gameWin de game_details
+     * @param - gameOver de game_details
+     * @param - gamePlay de game_details
+     */
     editBoardDetailGame: async (boardDetail) => {
         // on prépare la requete
         const sql = `UPDATE nav.game_details SET "gameWin" = $1, "gameOver" = $2, "gamePlay" = $3 WHERE id = $4 RETURNING "gameWin", "gameOver", "gamePlay";`;
@@ -30,7 +47,13 @@ const boardDetail = {
         // on renvoie les données
         return boardDetailUpdate.rows[0];
     },
-    createParty: async (data) => { // on récupère les game_details de l'user connecter dans la session
+    /**
+     * On enregistre la partie avec l'id de l'user, de l'histoire et du personnage
+     * @param - id de l'user
+     * @param - id du personnage
+     * @param - id de l'histoire
+     */
+    createParty: async (data) => {
         // on prépare la requete
         const sql = `INSERT INTO game.party ("user_id", "playable_id", "history_id") VALUES ($1, $2, $3);`;
         // on envoie la requete en bdd avec la requete preparer et l'id passé en parametre

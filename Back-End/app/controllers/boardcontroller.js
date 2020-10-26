@@ -21,8 +21,8 @@ const boardController = {
                 history_id: request.params.id,
                 character_id: null,
                 detail_id: request.session.user.detail_id,
-                gameWin: null,
-                gameOver: null,
+                gameWin: 0,
+                gameOver: 0,
                 gamePlay: 1
             };
             // Si il manque le champs character_id on stock un message d'erreur

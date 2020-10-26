@@ -2,12 +2,18 @@
 const db = require('../database');
 
 const game = { 
-    // On récupère tout les personnages jouables
+    /**
+     * On récupère tout les personnages jouables
+     */
     findAllCharacter: async () => {
         const sql = `SELECT * FROM game.character WHERE character.playable = $1;`;
         const data = await db.query(sql, [true]);
         return data.rows;
     },
+    /**
+     * On récupère une histoire par son id
+     * @param - id de l'histoire
+     */
     findHistoryById: async (id) => {
         // on prépare la requete
         const sql = `SELECT history.id AS history_id,
@@ -25,7 +31,10 @@ const game = {
         // on renvoie les data de la requete
         return data.rows;
     },
-
+    /**
+     * On récupère une scene de text par son id
+     * @param - id de la scene
+     */
     findSceneTextById: async (id) => {
         // on prépare la requete
         const sql = `SELECT * FROM scene_text WHERE scene_id = $1;`;
@@ -34,7 +43,10 @@ const game = {
         // on renvoie les data de la requete
         return data.rows[0];
     },
-
+    /**
+     * On récupère une scene avec un opponent par son id
+     * @param - id de la scene
+     */
     findSceneOpponnentById: async (id) => {
         // on prépare la requete
         const sql = `SELECT * FROM scene_opponent WHERE scene_id = $1;`;
@@ -43,7 +55,10 @@ const game = {
         // on renvoie les data de la requete
         return data.rows[0];
     },
-
+    /**
+     * On récupère une scene d'element cliquable par son id
+     * @param - id de la scene
+     */
     findSceneClickableElementById: async (id) => {
         // on prépare la requete
         const sql = `SELECT * FROM scene_clickable_element WHERE scene_id = $1;`;
@@ -52,7 +67,10 @@ const game = {
         // on renvoie les data de la requete
         return data.rows;
     },
-
+    /**
+     * On récupère une scene de fin par son id
+     * @param - id de la scene
+     */
     findSceneFinishById: async (id) => {
         // on prépare la requete
         const sql = `SELECT * FROM scene_finish WHERE scene_id = $1;`;

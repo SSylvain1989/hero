@@ -38,7 +38,7 @@ const profileController = {
                 password: null
             };
 
-            if (request.body.userName) { // Si il y'a un userName dans la requete
+            if (request.body.userName !== undefined) { // Si il y'a un userName dans la requete
                 const checkUser = await user.findByUserName(request.body.userName); // On verifie si le userName existe en bdd
         
                 if (checkUser !== undefined) { // Si il existe on stock un message d'erreur dans messageTab
@@ -51,7 +51,7 @@ const profileController = {
                 data.userName = request.session.user.userName;
             };
 
-            if (request.body.email) { // Si il y'a un email dans la requete
+            if (request.body.email !== undefined) { // Si il y'a un email dans la requete
                 // On verifie si le format d'email est valide
                 if (!emailValidator.validate(request.body.email)) { // Si l'email n'est pas valide on stock un message d'erreur dans messageTab
                     const messageEmail = `Cet email n\'est pas valide.`;
@@ -63,7 +63,7 @@ const profileController = {
                 data.email = request.session.user.email;
             };
 
-            if (request.body.password && request.body.passwordConfirm) { // Si il y a un password et sa confirmation dans la requete
+            if (request.body.password !== undefined && request.body.passwordConfirm !== undefined) { // Si il y a un password et sa confirmation dans la requete
                 // On verifie si le mdp et sa confirmation correspondent
                 if (request.body.password !== request.body.passwordConfirm) { // Si il ne correspondent pas on stock un message d'erreur dans messageTab 
                     const messagePassword = "La confirmation du mot de passe ne correspond pas.";
@@ -95,7 +95,12 @@ const profileController = {
                 id: userEdit.id,
                 userName: userEdit.userName,
                 email: userEdit.email,
-                detail_id: userEdit.detail_id
+                detail_id: userEdit.detail_id,
+                avatar: request.session.user.avatar,
+                displayName: request.session.user.displayName,
+                gameWin: request.session.user.gameWin,
+                gameOver: request.session.user.gameOver,
+                gamePlay: request.session.user.gamePlay
             }
             // ON renvoie le message de la bdd et la session mis a jour
             response.status(200).json({message: userEdit.message, session: request.session.user});
@@ -105,7 +110,7 @@ const profileController = {
         };
     },
     /**
-     * Sert a supprimé un compte
+     * Sert a supprimé un compte avec ses stats et toute les party jouer
      * @param number - id récupérer dans la session
      * @param string - detail_id récupérer dans la session
      * @returns {object} 200 - Un message de confirmation de la suppression et la session mis a jour sur { connected_user: false }
@@ -115,7 +120,7 @@ const profileController = {
             // Requete pour supprimer un utilisateur et ses details de jeux
             const userDelete = await profile.deleteProfile(request.session.user);
             // On repasse la session a deconnecter
-            request.session.user = { connected_user: false };
+            request.session.user = {connected_user: false};
             // On renvoie tous ca 
             response.status(200).json({message: userDelete, session: request.session.user});
         } catch (error) {
