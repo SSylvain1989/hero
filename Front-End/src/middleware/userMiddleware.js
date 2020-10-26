@@ -51,7 +51,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case LOGIN_SUBMIT:
-      axios.post('http://34.207.247.234:3000/api/log-in',
+      axios.post('http://localhost:3000/api/log-in',
         {
           password: store.getState().field.login.password,
           userName: store.getState().field.login.userName,

@@ -39,8 +39,8 @@
   }button{
     color: black;
     // background-color: v.$info-color;
-    background-color: rgba($color: #000000, $alpha: 0);
-    border: none;
+    background-color: v.$normal-color;
+    border: 3px solid black;
     z-index: 2;
     top: 60%;
     left: 0;

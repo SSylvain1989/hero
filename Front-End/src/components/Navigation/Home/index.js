@@ -19,7 +19,7 @@ const Home = () => (
               to="/liste-des-jeux"
               exact
             >
-              Clique ici pour voir la liste des différentes batailles que tu peux mener..
+              Voir la liste des jeux
             </NavLink>
           </button>
         </div>
