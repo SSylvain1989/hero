@@ -1,7 +1,7 @@
 // == Import : npm
 import { connect } from 'react-redux';
 // == Import : local
-import Player from '../components/Game/Player';
+import PlayerFrame from '../components/Game/PlayerFrame';
 // == Import : actions
 
 // Action Creators
@@ -44,10 +44,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = () => ({});
 
 // Container
-const AppContainer = connect(
+const PlayerFrameContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Player);
+)(PlayerFrame);
 
 // == Export
-export default AppContainer;
+export default PlayerFrameContainer;

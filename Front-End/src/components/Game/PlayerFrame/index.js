@@ -7,7 +7,7 @@ import testImage from 'src/images/start-minautor.gif';
 import PlayerMenu from './PlayerMenu';
 
 // == Composant
-const Player = ({ player }) => {
+const PlayerFrame = ({ player }) => {
   const [playerMenu, setPlayerMenu] = useState(false);
 
   const togglePlayerMenu = () => {
@@ -27,7 +27,7 @@ const Player = ({ player }) => {
 };
 
 // == PropTypes
-Player.propTypes = {
+PlayerFrame.propTypes = {
   player: PropTypes.shape({
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -35,4 +35,4 @@ Player.propTypes = {
 };
 
 // == Export
-export default Player;
+export default PlayerFrame;

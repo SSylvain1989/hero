@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Player from 'src/containers/Player';
+import PlayerFrame from 'src/containers/PlayerFrame';
 
 import './battle.scss';
 
@@ -24,7 +24,7 @@ const Battle = ({
         <div className="battle-element__scene">
           <h1>{description}</h1>
           <div className="battle-element__scene--image-container">
-            <Player />
+            <PlayerFrame />
           </div>
           <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>
           {!playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
