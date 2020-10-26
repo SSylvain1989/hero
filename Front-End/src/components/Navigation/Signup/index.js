@@ -60,10 +60,6 @@ const Signup = ({
             type="password"
           />
           <input className="signup__submit" type="submit" value="C'est parti" />
-          {/* {messagesError.length > 0
-            && messagesError.forEach((elementArray) => {
-              <p className="signup__error"> erreur {elementArray}</p>;
-            })} */}
           {messagesError.length > 0
             && messagesError.map((element) => (
               <p
