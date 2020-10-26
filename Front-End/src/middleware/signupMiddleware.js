@@ -18,8 +18,8 @@ const signupMiddleware = (store) => (next) => (action) => {
           store.dispatch(signupResponse(response.data.userSave));
         })
         .catch((error) => {
-          console.error(error.response);
-          store.dispatch(signupError(error.response.data.message[0].messageUserName));
+          console.error('signupMidlleware', error.response);
+          store.dispatch(signupError(error.response.data.message));
         });
       next(action);
       break;

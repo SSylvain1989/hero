@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 import {
   EMAIL_SUBMIT,
@@ -10,6 +11,7 @@ import {
   saveSession,
   CHECK_CONNEXION,
   LOGOUT_HANDLER,
+  loginError,
 } from '../actions/user';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -58,9 +60,12 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
+          console.log(response);
+          Cookies.set('connect.sid', response.header['connect-sid']);
         })
         .catch((error) => {
-          console.error(error);
+          console.error('userMiddleWare', error.response.data.message[0]);
+          store.dispatch(loginError(error.response.data.message));
         });
       next(action);
       break;

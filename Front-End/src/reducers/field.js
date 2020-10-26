@@ -7,6 +7,7 @@ import {
 import {
   LOGIN_HANDLER,
   SAVE_SESSION,
+  LOGIN_ERROR,
 } from '../actions/user';
 
 export const initialState = {
@@ -35,6 +36,7 @@ export const initialState = {
     id: null,
     userName: '',
   },
+  loginErrorMessage: [],
 };
 
 const field = (state = initialState, action = {}) => {
@@ -74,6 +76,11 @@ const field = (state = initialState, action = {}) => {
         session: {
           ...action.session,
         },
+      };
+    case LOGIN_ERROR:
+      return {
+        ...state,
+        loginErrorMessage: action.response,
       };
     default:
       return state;

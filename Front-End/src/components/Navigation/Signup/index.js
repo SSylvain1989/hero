@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import ReactCardFlip from 'react-card-flip';
 
 import Field from '../../common/Field';
 
@@ -12,7 +13,6 @@ import './signup.scss';
 const Signup = ({
   username,
   email,
-  emailConfirm,
   password,
   passwordConfirm,
   changeField,
@@ -24,9 +24,6 @@ const Signup = ({
     event.preventDefault();
     handleSignup();
   };
-
-  // console.log('messageERROR du back :', messagesError);
-  // console.log('reponseOK du back :', response);
 
   if (!response) {
     return (
@@ -48,13 +45,6 @@ const Signup = ({
             type="email"
           />
           <Field
-            name="emailConfirm"
-            placeholder="Confirmation e-mail"
-            onChange={changeField}
-            value={emailConfirm}
-            type="email"
-          />
-          <Field
             name="password"
             placeholder="Mot de passe"
             onChange={changeField}
@@ -69,11 +59,27 @@ const Signup = ({
             type="password"
           />
           <input className="signup__submit" type="submit" value="C'est parti" />
-          {!messagesError === false && <p className="signup__error">Ce nom d'utilisateur est déjà existant , merci d'en choisir un autre</p>}
+          {/* {messagesError.length > 0
+            && messagesError.forEach((elementArray) => {
+              <p className="signup__error"> erreur {elementArray}</p>;
+            })} */}
+          {messagesError.length > 0
+            && messagesError.map((element) => (
+              <p
+                className="signup__error"
+                key={Object.values(element)[0]}
+              >Attention :
+                {Object.values(element)[0]}
+              </p>
+            ))}
         </form>
       </div>
     );
   }
+
+  // for (const message of messagesError) {
+  //   console.log(message);
+  // };
 
   return (
     <div className="signup">
@@ -89,20 +95,18 @@ const Signup = ({
 Signup.propTypes = ({
   username: PropTypes.string,
   email: PropTypes.string,
-  emailConfirm: PropTypes.string,
   password: PropTypes.string,
   passwordConfirm: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
-  messagesError: PropTypes.string,
-  response: PropTypes.object,
+  messagesError: PropTypes.array,
+  response: PropTypes.string,
 });
 
 Signup.defaultProps = ({
-  messagesError: '',
+  messagesError: [],
   username: '',
   email: '',
-  emailConfirm: '',
   password: '',
   passwordConfirm: '',
   response: '',
