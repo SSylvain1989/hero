@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PlayerFrame from 'src/containers/PlayerFrame';
+import OpponentFrame from 'src/containers/OpponentFrame';
 
 import './battle.scss';
 
@@ -9,8 +10,10 @@ const Battle = ({
   scene, storyId, setOpponent, handleAttack, playerIsAlive, opponentIsAlive,
 }) => {
   if (scene !== undefined) {
+    const [ready, setReady] = useState(false);
     useEffect(() => {
       setOpponent(scene.details_scene);
+      setReady(true);
     }, []);
 
     const description = scene.details_scene.scene_description;
@@ -23,6 +26,7 @@ const Battle = ({
       <div className="battle-element">
         <div className="battle-element__scene">
           <h1>{description}</h1>
+          {ready && <h1><OpponentFrame /></h1>}
           <div className="battle-element__scene--image-container">
             <PlayerFrame />
           </div>
