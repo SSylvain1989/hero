@@ -2,7 +2,10 @@
 const history = require('../models/history');
 
 const storieController = {
-    // Méthode pour récupérer toute les histoires
+    /**
+     * Méthode pour récupérer toute les histoires
+     * @returns {object} 200 - Une liste d'histoire et la session
+     */
     getAll: async (request, response) => {
         try {
             // on attend le retour de la methode qui recupère toute les histoires
@@ -14,7 +17,11 @@ const storieController = {
             return response.status(500).json(error.tostring());
         };
     },
-    // Méthode pour récupérer une histoire par son id
+    /**
+     * Méthode pour récupérer une histoire par son id
+     * @param number - Id passé en slug
+     * @returns {object} 200 - Une histoire par son id et la session
+     */
     getById: async (request, response) => {
         try {
             // on attend le retour de la methode qui recupère une histoire par son id

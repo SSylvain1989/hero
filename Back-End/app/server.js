@@ -20,6 +20,9 @@ const port = process.env.PORT || 8000;
 // on rajoute la gestion des POST body
 app.use(express.urlencoded({ extended: true }));
 
+// On dit que le dossier public est static
+app.use(express.static('public'));
+
 // et on rajoute la gestion des sessions
 const session = require('express-session');
 app.use(session({
@@ -28,8 +31,8 @@ app.use(session({
   secret: 'Un Super Secret',
   cookie: {
     httpOnly: true, // empêche l'accès au cookie depuis du javascript côté front
-    secure: false,
-    sameSite: 'none', // HTTPS est nécessaire si l'on veut passer l'option à true
+    secure: false, // HTTPS est nécessaire si l'on veut passer l'option à true
+    sameSite: 'none',
     maxAge: 1000 * 60 * 60 * 24, // durée de vie du cookie en milliseconds, ici ça donne 1 jour
   },
 }));
@@ -58,12 +61,12 @@ app.use((req, res, next) => {
   // on autorise le partage du cookie
   res.header('Access-Control-Allow-Credentials', true);
   // on autorise le partage de ressources entre origines
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Set-Cookie');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS, PUT, DELETE');
   next();
 });
 // On utilise le router
-app.use(router);
+app.use('/api', router);
 
 // On ecoute le port 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));

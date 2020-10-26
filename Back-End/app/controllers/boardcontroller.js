@@ -2,7 +2,16 @@
 const gameDetails = require('../models/game_details');
 
 const boardController = {
-    editStat: async (request, response) => { // met a jour les stat de jeux d'un utilisateur
+    /**
+     * Met a jour les stat de jeux d'un utilisateur
+     * @param number - user_id récupérer dans la session
+     * @param number - history_id passé en slug
+     * @param number - character_id passé dans le body
+     * @param number - detail_id récupérer dans la session
+     * @param boolean - gameWin passé dans le body
+     * @returns {object} 200 - Un message de confirmation de la modification des stats et le resultat de la session update
+     */
+    editStat: async (request, response) => {
         try {
             // tableau d'erreur
             const messageTab = [];
@@ -12,8 +21,8 @@ const boardController = {
                 history_id: request.params.id,
                 character_id: null,
                 detail_id: request.session.user.detail_id,
-                gameWin: null,
-                gameOver: null,
+                gameWin: 0,
+                gameOver: 0,
                 gamePlay: 1
             };
             // Si il manque le champs character_id on stock un message d'erreur
@@ -50,7 +59,12 @@ const boardController = {
             return response.status(500).json(error.tostring());
         };
     },
-    getOneBoard: async (request, response) => { // renvoi userSession & userBoard
+    /**
+     * Récupère les détails de jeu d'un utilisateur
+     * @param number - detail_id récupérer dans la session
+     * @returns {object} 200 - Un objet avec les details des stats et la session
+     */
+    getOneBoard: async (request, response) => {
         try {
             // on récupère le detail_id de la session
             const idUser = request.session.user.detail_id;
@@ -63,7 +77,14 @@ const boardController = {
             return response.status(500).json(error.tostring());
         };
     },
-    edit: async (request, response) => { // modifier avatar / pseudoAffichage
+    /**
+     * Modifie l'avatar et le displayName d'un utilisateur
+     * @param number - detail_id récupérer dans la session
+     * @param string - avatar passé dans le body
+     * @param string - displayName passé dans le body
+     * @returns {object} 200 - L'objet board contenant l'avatar et le displayName update et la session update
+     */
+    edit: async (request, response) => {
         try {
             // on récupère le detail_id de la session
             const idUser = request.session.user.detail_id;
@@ -91,6 +112,10 @@ const boardController = {
 
             // on envoie les data pour la requete en bdd
             const editBoardUser = await gameDetails.editBoardProfile(data); 
+            // on met a jour la session 
+            request.session.user.avatar = editBoardUser.avatar;
+            request.session.user.displayName = editBoardUser.displayName;
+
             //boardUser.board nous permet de recup juste l'objet board(sans session)
             response.status(200).json({board: editBoardUser, session: request.session.user});
         } catch (error) {

@@ -2,26 +2,38 @@
 const db = require('../database');
 
 const user = {
-    // On récupère tout les users
+    /**
+     * On récupère tout les users
+     */ 
     findAll: async () => {
         const sql = `SELECT * FROM nav.user;`;
         const data = await db.query(sql);
         return data.rows;
     },
-    // On récupère un user par son id
+    /**
+     * On récupère un user par son id
+     * @param number - id de l'user
+     */ 
     findById: async (id) => {
         const sql = `SELECT * FROM nav.user WHERE id = $1;`;
         const data = await db.query(sql, [id]);
         return data.rows[0];
     },
-
+    /**
+     * On récupère un user par son userName
+     * @param string - userName de l'user
+     */ 
     findByUserName: async (userName) => {
         const sql = `SELECT * FROM nav.user WHERE "userName" = $1;`;
         //const sql =`SELECT * FROM nav.user JOIN nav.game_details ON nav.user.detail_id = nav.game_details.id WHERE "userName" = $1;`
         const data = await db.query(sql, [userName]);
         return data.rows[0];
     },
-
+    /**
+     * On crée les details de jeux pour un nouvel utilisateur
+     * @param string - avatar de l'user
+     * @param string - displayName de l'user
+     */ 
     createGameDetails: async (newUser) => { // fonction qui va servir spécialement à la création du compte pour créer
         // un detail_id obligatoire à la gesiton de notre page profil
         // ici on décompose la requete SQL 
@@ -31,7 +43,13 @@ const user = {
         const data = await db.query(sql, ["Warrior", newUser.userName]);
         return data.rows[0];
     },
-
+    /**
+     * On crée un nouvel utilisateur en base de donnée
+     * @param string - userName de l'user
+     * @param string - email de l'user
+     * @param string - password de l'user
+     * @param number - detail_id de l'user
+     */ 
     createUser: async (newUser) => {
         const gameDetails = await user.createGameDetails(newUser);
         // on décomponse la requete SQL avec les informations que l'on veut insérer 
