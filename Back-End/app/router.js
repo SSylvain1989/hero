@@ -134,6 +134,4 @@ router.get('/stories/:id(\\d+)/play', checkConnexion, gameController.getHistory)
  */
 router.post('/stories/:id(\\d+)/finish', checkConnexion, boardController.editStat);
 
-
-
 module.exports = router;

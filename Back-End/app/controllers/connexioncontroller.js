@@ -4,6 +4,12 @@ const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
 
 const connexionController = {
+    /**
+     * Sert a se connecté avec un utilisateur présent en base de donnée
+     * @param string - userName passé dans le body
+     * @param string - password passé dans le body
+     * @returns {object} 200 - Un message de confirmation et la session qui correspond au userName
+     */
     login: async (request, response) => {
     try {
         // tableau d'erreur
@@ -58,6 +64,11 @@ const connexionController = {
         return response.status(500).json(error.tostring());
     };
     },
+    /**
+     * Sert a vérifier si un utilisateur est connecté ou non
+     * @param boolean - connected_user récupérer dans la session
+     * @returns {object} 200 - Un message de confirmation et la session
+     */
     loginCheck: (request, response) => {
     try {
         // tableau d'erreur
@@ -80,6 +91,14 @@ const connexionController = {
         return response.status(500).json(error.tostring());
     };
     },
+    /**
+     * Sert a se créé un compte un base de donnée
+     * @param string - userName passé dans le body
+     * @param string - email passé dans le body
+     * @param string - password passé dans le body
+     * @param string - passwordConfirm passé dans le body
+     * @returns {object} 200 - Un message de confirmation de la création du compte et la session
+     */
     signup: async (request, response) => {
     try {
         // tableau d'erreur
@@ -131,6 +150,11 @@ const connexionController = {
         return response.status(500).json(error.tostring());
     };
     },
+    /**
+     * Sert a se déconnecté
+     * @param boolean - connected_user récupérer dans la session
+     * @returns {object} 200 - Un message de confirmation et la session {connected_user: false}
+     */
     logout: (request, response) => {
         try {
             // tableau d'erreur

@@ -20,6 +20,9 @@ const port = process.env.PORT || 8000;
 // on rajoute la gestion des POST body
 app.use(express.urlencoded({extended: true}));
 
+// On dit que le dossier public est static
+app.use(express.static('public'));
+
 // et on rajoute la gestion des sessions
 const session = require('express-session');
 app.use(session({
@@ -63,7 +66,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', true);
   // on autorise le partage de ressources entre origines
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Set-Cookie');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS, PUT, DELETE');
   next();
 });
 // On utilise le router

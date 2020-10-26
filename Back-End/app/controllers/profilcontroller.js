@@ -4,6 +4,10 @@ const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
 
 const profileController = {
+    /**
+     * Sert a récupérer les infos du compte
+     * @returns {object} 200 - La session ou toute les infos son deja présente
+     */
     getOne: (request, response) => {
         try {
             // Le profil est deja enregistrer dans la session pas besoin de requete a la bdd on renvoie la session 
@@ -13,6 +17,15 @@ const profileController = {
             return response.status(500).json(error.tostring());
         };
     },
+    /**
+     * Sert a modifié les infos du compte
+     * @param number - id récupérer dans la session
+     * @param string - userName passé dans le body
+     * @param string - email passé dans le body
+     * @param string - password passé dans le body
+     * @param string - passwordConfirm passé dans le body
+     * @returns {object} 200 - Un message de confirmation de la modification et la session mis a jour
+     */
     edit: async (request, response) => { 
         try {
             // tableau d'erreur
@@ -91,6 +104,12 @@ const profileController = {
             return response.status(500).json(error.tostring());
         };
     },
+    /**
+     * Sert a supprimé un compte
+     * @param number - id récupérer dans la session
+     * @param string - detail_id récupérer dans la session
+     * @returns {object} 200 - Un message de confirmation de la suppression et la session mis a jour sur { connected_user: false }
+     */
     delete: async (request, response) => {
         try {
             // Requete pour supprimer un utilisateur et ses details de jeux

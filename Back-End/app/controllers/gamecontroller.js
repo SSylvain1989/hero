@@ -2,6 +2,10 @@
 const game = require('../models/game');
 
 const gameController = {
+    /**
+     * Sert a récupérer tout les personnages jouable
+     * @returns {object} 200 - La liste des personnages jouable et la session
+     */
     getAllCharacter: async (request, response) => {
         try {
             // on recupère tout les personnable jouable
@@ -13,6 +17,11 @@ const gameController = {
             return response.status(500).json(error.tostring());  
         };
     },
+    /**
+     * Sert a récupérer une histoire et toute ses scène (Pour le moment seulement l'histoire 1)
+     * @param number - id de l'histoire passé en slug
+     * @returns {object} 200 - L'histoire complète et la session
+     */
     getHistory: async (request, response) => {
         try {
             // on attend le retour de la methode qui recupère une histoire par son id
@@ -70,7 +79,6 @@ const gameController = {
                         previous_scene_id: oneHistory[0].previous_scene_id,
                         next_scene_id: oneHistory[0].next_scene_id,
                         next_scene_name: 'Démarrer'
-                        //img: 'Back-end/data/img/cloud.pnj'
                     },
                     { // Scene 2
                         details_scene: sceneTab[1],
