@@ -2,6 +2,17 @@
 const game = require('../models/game');
 
 const gameController = {
+    getAllCharacter: async (request, response) => {
+        try {
+            // on recupère tout les personnable jouable
+            const allCharacter = await game.findAllCharacter();
+
+            response.status(200).json({character: allCharacter, session: request.session.user});
+        } catch (error) {
+            console.trace(error);
+            return response.status(500).json(error.tostring());  
+        };
+    },
     getHistory: async (request, response) => {
         try {
             // on attend le retour de la methode qui recupère une histoire par son id

@@ -25,7 +25,6 @@ import Choice from '../../containers/Choice';
 import End from '../../containers/End';
 import story from '../../data/histoire1';
 
-
 // **** inscription à modifier pour la route signup ****
 const App = ({ games, checkConnexion }) => {
   useEffect(() => {
@@ -105,7 +104,6 @@ const App = ({ games, checkConnexion }) => {
 App.propTypes = ({
   games: PropTypes.array.isRequired,
   checkConnexion: PropTypes.func.isRequired,
-  // story: PropTypes.object.isRequired,
 });
 
 export default App;
