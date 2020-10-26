@@ -11,7 +11,7 @@ import Team from '../Navigation/Team';
 import Profile from '../../containers/Profile';
 import Connection from '../../containers/Connection';
 import Board from '../Navigation/Board';
-import Contact from '../Navigation/Contact';
+import Contact from '../../containers/Contact';
 import GameDetail from '../../containers/GameDetail';
 import GamesList from '../../containers/GamesList';
 import Home from '../Navigation/Home';
