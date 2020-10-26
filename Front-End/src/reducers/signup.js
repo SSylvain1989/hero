@@ -14,7 +14,7 @@ const signup = (state = initialState, action = {}) => {
         response: action.response,
       };
     case SIGNUP_ERROR:
-      console.log(action.message);
+      console.log('reducer', action.message);
       return {
         ...state,
         messagesError: [...action.message],
