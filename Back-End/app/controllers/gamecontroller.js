@@ -70,6 +70,7 @@ const gameController = {
                         previous_scene_id: oneHistory[0].previous_scene_id,
                         next_scene_id: oneHistory[0].next_scene_id,
                         next_scene_name: 'Démarrer'
+                        //img: 'Back-end/data/img/cloud.pnj'
                     },
                     { // Scene 2
                         details_scene: sceneTab[1],
