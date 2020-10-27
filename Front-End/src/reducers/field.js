@@ -3,6 +3,7 @@ import {
   CHANGE_PROFILE_FIELD_VALUE,
   CHANGE_LOGIN_FIELD_VALUE,
   RESET_FIELDS,
+  DISPLAY_MESSAGE_TOOGLE,
 } from '../actions/field';
 
 import {
@@ -42,6 +43,7 @@ export const initialState = {
     userName: '',
   },
   loginErrorMessage: [],
+  displayMessage: false,
 };
 
 const field = (state = initialState, action = {}) => {
@@ -126,6 +128,11 @@ const field = (state = initialState, action = {}) => {
           userName: '',
           password: '',
         },
+      };
+    case DISPLAY_MESSAGE_TOOGLE:
+      return {
+        ...state,
+        displayMessage: !state.displayMessage,
       };
     default:
       return state;
