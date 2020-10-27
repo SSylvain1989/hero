@@ -91,7 +91,8 @@ const gameController = {
                         next_scene2: {
                             next_scene_id2: oneHistory[2].next_scene_id,
                             next_scene_name2: 'Porte'
-                        }
+                        },
+                        img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
                     },
                     { // Scene 3
                         details_scene: sceneTab[2],
@@ -103,7 +104,8 @@ const gameController = {
                         next_scene2: {
                             next_scene_id2: oneHistory[4].next_scene_id,
                             next_scene_name2: 'Discuter'
-                        }
+                        },
+                        img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
                     },
                     { // Scene 4
                         details_scene: sceneTab[3],
@@ -115,7 +117,8 @@ const gameController = {
                         next_scene2: {
                             next_scene_id2: oneHistory[6].next_scene_id,
                             next_scene_name2: 'GameOver'
-                        }   
+                        },
+                        img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
                     },
                     { // Scene 5
                         details_scene: sceneTab[4],
@@ -123,7 +126,8 @@ const gameController = {
                         next_scene: {
                             next_scene_id: oneHistory[7].next_scene_id,
                             next_scene_name: 'Suite'
-                        }
+                        },
+                        img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
                     },
                     { // Scene 6
                         details_scene: sceneTab[5],
@@ -135,7 +139,8 @@ const gameController = {
                         next_scene2: {
                             next_scene_id2: oneHistory[9].next_scene_id,
                             next_scene_name2: `Revenir a l'entrée`
-                        }
+                        },
+                        img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
                     },
                     { // Scene 7
                         details_scene: sceneTab[6],
@@ -143,7 +148,8 @@ const gameController = {
                         next_scene: {
                             next_scene_id: oneHistory[10].next_scene_id,
                             next_scene_name: 'Barque'
-                        }
+                        },
+                        img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png'
                     },
                     { // Scene 8
                         details_scene: sceneTab[7],
@@ -156,7 +162,8 @@ const gameController = {
                             next_scene_id2: oneHistory[12].next_scene_id,
                             next_scene_name2: `Si le veillard est mort`
                         },
-                        finish_text: `Suite`
+                        finish_text: `Suite`,
+                        img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png'
                     },
                     { // Scene 9
                         details_scene: sceneTab[8],
