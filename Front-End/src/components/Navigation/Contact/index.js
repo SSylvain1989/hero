@@ -18,11 +18,14 @@ const Contact = ({
   response,
 }) => {
   const onSubmit = (e) => {
-    console.log('je suis laf');
-    e.preventDefault();// Prevents default refresh by the browser
     console.log('je suis la');
+    e.preventDefault();// Prevents default refresh by the browser
+    console.log('Et je suis rela');
+    console.log(email);
+    console.log(message);
     const form = {
-      name: 'toto', subject: 'test toto', message: 'toto text',
+      // les attributs name & message sont identiques aux attributs du template du mail de emailJs
+      name: email, message, subject: 'test',
     };
 
     // console.log('e', e);
