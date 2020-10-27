@@ -1,10 +1,8 @@
 // == Import : npm
 import { connect } from 'react-redux';
 // == Import : local
-import Battle from '../components/Game/Battle';
+import OpponentFrame from '../components/Game/Battle/OpponentFrame';
 // == Import : actions
-import getSceneById from '../selectors/getSceneById';
-import { attack, setOpponent } from '../actions/game';
 
 // Action Creators
 
@@ -15,12 +13,8 @@ import { attack, setOpponent } from '../actions/game';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state, { sceneId }) => ({
-  // Récupérer la scene par rapport au ownProps.sceneId
-  storyId: state.game.story.history.history_id,
-  scene: getSceneById(sceneId, state.game.story.history.scene_list),
-  playerIsAlive: state.game.playerIsAlive,
-  opponentIsAlive: state.game.opponentIsAlive,
+const mapStateToProps = (state) => ({
+  opponent: { ...state.game.opponent },
 });
 
 /* === Actions ===
@@ -30,20 +24,13 @@ const mapStateToProps = (state, { sceneId }) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch) => ({
-  setOpponent: (sceneDetails) => {
-    dispatch(setOpponent(sceneDetails));
-  },
-  handleAttack: () => {
-    dispatch(attack());
-  },
-});
+const mapDispatchToProps = () => ({});
 
 // Container
-const BattleContainer = connect(
+const OpponentFrameContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Battle);
+)(OpponentFrame);
 
 // == Export
-export default BattleContainer;
+export default OpponentFrameContainer;

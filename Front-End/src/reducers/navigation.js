@@ -1,10 +1,12 @@
-import { ADD_GAMES } from '../actions/navigation';
+import { ADD_GAMES, ADD_DATABOARD } from '../actions/navigation';
 
 const initialState = {
   // ici on déclare un tableau vide avec la propriété games qui sera rempli plus tard
   games:
     [
     ],
+  dataBoard:
+    {},
 };
 
 const navigation = (state = initialState, action = {}) => {
@@ -16,6 +18,12 @@ const navigation = (state = initialState, action = {}) => {
       };
     default:
       return state;
+    case ADD_DATABOARD:
+      console.log('log REDUCER action.dataBoard', action.dataBoard);
+      return {
+        ...state,
+        dataBoard: { ...action.dataBoard },
+      };
   }
 };
 

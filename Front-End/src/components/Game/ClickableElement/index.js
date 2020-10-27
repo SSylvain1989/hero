@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Player from 'src/containers/Player';
+import PlayerFrame from 'src/containers/PlayerFrame';
 
 import './clickableElement.scss';
 
@@ -13,7 +13,7 @@ const clickableElement = ({ scene, storyId }) => {
         <div className="clickable-element__scene">
           <h1>{description}</h1>
           <div className="clickable-element__scene--image-container">
-            <Player />
+            <PlayerFrame />
           </div>
           {scene.next_scene && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">{scene.next_scene.next_scene_name}</button></Link>}
           {scene.next_scene2 && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">{scene.next_scene2.next_scene_name2}</button></Link>}

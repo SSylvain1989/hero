@@ -17,6 +17,7 @@ const GameDetail = ({
   playerSelected,
 }) => {
   useEffect(() => {
+    console.log(game);
     fetchGameDetail();
     loadCharacterList();
   }, []);
@@ -42,13 +43,13 @@ const GameDetail = ({
                   {characterList.length > 0
                     && characterList.map((character) => (
                       <div
-                          key={character.id}
-                          id={character.id}
-                          onClick={handleCharacterOnClick}
+                        key={character.id}
+                        id={character.id}
+                        onClick={handleCharacterOnClick}
                       >
                         {character.name}
                       </div>
-                    )) }
+                    ))}
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/1`}><button type="button" className="game-detail__button" onClick={loadStory}>Jouer</button></Link>}
                 </>
               )}
