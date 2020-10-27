@@ -12,7 +12,11 @@ import {
   showModalToggle,
   handleAccountDeletion,
 } from '../actions/user';
-import { resetFields, changeProfileField } from '../actions/field';
+import {
+  resetFields,
+  changeProfileField,
+  displayMessageToggle,
+} from '../actions/field';
 
 // Action Creators
 
@@ -30,6 +34,7 @@ const mapStateToProps = (state) => ({
   passwordConfirm: state.field.profile.passwordConfirm,
   showModal: state.field.profile.showModal,
   message: state.field.profile.message,
+  displayMessage: state.field.displayMessage,
 });
 
 /* === Actions ===
@@ -60,6 +65,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   resetFields: () => {
     dispatch(resetFields());
+  },
+  displayMessageToggle: () => {
+    dispatch(displayMessageToggle());
   },
 });
 
