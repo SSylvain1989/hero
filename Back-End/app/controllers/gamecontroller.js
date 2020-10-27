@@ -78,7 +78,8 @@ const gameController = {
                         details_scene: sceneTab[0],
                         previous_scene_id: oneHistory[0].previous_scene_id,
                         next_scene_id: oneHistory[0].next_scene_id,
-                        next_scene_name: 'Démarrer'
+                        next_scene_name: 'Démarrer',
+                        img_scene: 'https://i.ibb.co/9tjk959/Alcatraz-01.png'
                     },
                     { // Scene 2
                         details_scene: sceneTab[1],
