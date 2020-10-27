@@ -20,7 +20,8 @@ INSERT INTO game.type (
             ('Cliquable'),
             ('Choix'),
             ('Combat'),
-            ('Fin');
+            ('Fin'),
+            ('Redirection');
 
 INSERT INTO game.history ( 
     "name",
@@ -40,7 +41,7 @@ INSERT INTO game.scene (
            ('speak', 'scene de discution'),
            ('click_on_door', 'scene de choix: partir rester'),
            ('raft', 'scene clickable: bord de mer'),
-           ('click_on_raft', 'scene de choix: partir'),
+           ('click_on_raft', 'scene de redirection: partir'),
            ('game_over', 'scene de fin: gameover'),
            ('game_neutral', 'scene de fin: sortir maudit sans avoir tuer le Vieillard'),
            ('game_win', 'scene de fin: sortir en ayant tuer le Vieillard');
@@ -80,7 +81,7 @@ UPDATE game.scene SET "type_id" = 4, "opponent_id" = 3 WHERE "id" = 4;
 UPDATE game.scene SET "type_id" = 3, "opponent_id" = null WHERE "id" = 5;
 UPDATE game.scene SET "type_id" = 3, "opponent_id" = null WHERE "id" = 6;
 UPDATE game.scene SET "type_id" = 2, "opponent_id" = null WHERE "id" = 7;
-UPDATE game.scene SET "type_id" = 3, "opponent_id" = null WHERE "id" = 8;
+UPDATE game.scene SET "type_id" = 6, "opponent_id" = null WHERE "id" = 8;
 UPDATE game.scene SET "type_id" = 5, "opponent_id" = null WHERE "id" = 9;
 UPDATE game.scene SET "type_id" = 5, "opponent_id" = null WHERE "id" = 10;
 UPDATE game.scene SET "type_id" = 5, "opponent_id" = null WHERE "id" = 11;
