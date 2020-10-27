@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-alert */
 /* eslint-disable react/style-prop-object */
 import React from 'react';
@@ -58,7 +59,7 @@ const Contact = ({
               placeholder="Votre message ..."
               className="contact_input--message"
             />
-            <button type="button" className="contact_input--button">Envoyer</button>
+            <button className="contact_input--button">Envoyer</button>
           </form>
         </div>
       </div>
