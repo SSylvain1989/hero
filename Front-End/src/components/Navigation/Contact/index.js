@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/order */
 /* eslint-disable consistent-return */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-alert */
@@ -9,6 +11,7 @@ import apiKeys from './apikey';
 import Field from '../../common/Field';
 
 import './contact.scss';
+import logo from 'src/images/logo.png';
 
 // https://medium.com/@barseetbrown/send-e-mail-directly-from-your-react-website-no-back-end-required-ed0d3106c3d4
 
@@ -44,7 +47,7 @@ const Contact = ({
     return (
       <div className="contact_container">
         <div className="contact_wrap">
-          <img className="contact_picture" alt="IMG" />
+          <img className="contact_picture" src={logo} alt="logo" />
           <form className="contact_form" onSubmit={onSubmit}>
             <h1>Nous contacter</h1>
             <Field
