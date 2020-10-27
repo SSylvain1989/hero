@@ -16,8 +16,6 @@ const Battle = ({
       setReady(true);
     }, []);
 
-    const description = scene.details_scene.scene_description;
-
     const handleOnAttackClick = () => {
       handleAttack();
     };
@@ -25,7 +23,6 @@ const Battle = ({
     return (
       <div className="battle-element">
         <div className="battle-element__scene">
-          <h1>{description}</h1>
           {ready && <h1><OpponentFrame /></h1>}
           <div className="battle-element__scene--image-container">
             <PlayerFrame />
@@ -33,6 +30,12 @@ const Battle = ({
           <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>
           {!playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
           {!opponentIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
+        </div>
+        <div className="battle-element__image-background">
+          <img
+            src={`${scene.img_scene}`}
+            alt="background"
+          />
         </div>
       </div>
     );

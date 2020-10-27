@@ -5,7 +5,6 @@ import {
   SET_OPPONENT,
   ATTACK,
 } from '../actions/game';
-import history from '../data/histoire1';
 
 import createOpponentFromScene from '../utils/createOpponentFromScene';
 import getCharacterById from '../selectors/getCharacterbyId';
@@ -15,7 +14,7 @@ import damageCalculation from '../utils/damageCalculation';
 export const initialState = {
   // ici on déclare un objet vide avec la propriété story qui sera rempli
   // au déclenchement du bouton "jouer maintenant"
-  story: { ...history },
+  story: {},
   isStoryLoaded: false,
   player: {},
   playerIsAlive: true,

@@ -23,10 +23,10 @@ import ClickableElement from '../../containers/ClickableElement';
 import Battle from '../../containers/Battle';
 import Choice from '../../containers/Choice';
 import End from '../../containers/End';
-import story from '../../data/histoire1';
+import Redirection from '../../containers/Redirection';
 
 // **** inscription à modifier pour la route signup ****
-const App = ({ games, checkConnexion }) => {
+const App = ({ games, checkConnexion, story }) => {
   useEffect(() => {
     checkConnexion();
   }, []);
@@ -37,6 +37,8 @@ const App = ({ games, checkConnexion }) => {
         return <Start sceneId={scene.details_scene.scene_id} />;
       case 'Choix':
         return <Choice sceneId={scene.details_scene.scene_id} />;
+      case 'Redirection':
+        return <Redirection sceneId={scene.details_scene.scene_id} />;
       case 'Cliquable':
         return <ClickableElement sceneId={scene.details_scene.scene_id} />;
       case 'Combat':

@@ -7,16 +7,20 @@ import './clickableElement.scss';
 
 const clickableElement = ({ scene, storyId }) => {
   if (scene !== undefined) {
-    const description = scene.details_scene.scene_description;
     return (
       <div className="clickable-element">
         <div className="clickable-element__scene">
-          <h1>{description}</h1>
           <div className="clickable-element__scene--image-container">
             <PlayerFrame />
           </div>
           {scene.next_scene && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">{scene.next_scene.next_scene_name}</button></Link>}
           {scene.next_scene2 && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">{scene.next_scene2.next_scene_name2}</button></Link>}
+        </div>
+        <div className="clickable-element__image-background">
+          <img
+            src={`${scene.img_scene}`}
+            alt="background"
+          />
         </div>
       </div>
     );

@@ -5,34 +5,34 @@ import { Link, Redirect } from 'react-router-dom';
 import startMinautor from '../../../images/start-minautor.gif';
 import parchemin from '../../../images/parchemin.png';
 
-import './choice.scss';
+import './redirection.scss';
 
-const Choice = ({ scene, storyId }) => {
+const Redirection = ({ scene, storyId, opponentIsAlive }) => {
   if (scene !== undefined) {
     const text = scene.details_scene.scene_text;
     return (
-      <div className="choice">
-        <div className="choice__scene">
+      <div className="redirection">
+        <div className="redirection__scene">
           <img
             src={startMinautor}
             alt="mooving-minautor"
           />
-          <div className="choice__scene--left" />
-          <div className="choice__scene--right">
-            <div className="choice__scene--right-text">
+          <div className="redirection__scene--left" />
+          <div className="redirection__scene--right">
+            <div className="redirection__scene--right-text">
               <p>{text}</p>
               <img
                 src={parchemin}
                 alt="parchemin"
               />
             </div>
-            <div className="choice__scene--right-buttons">
-              {scene.next_scene && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">{scene.next_scene.next_scene_name}</button></Link>}
-              {scene.next_scene2 && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">{scene.next_scene2.next_scene_name2}</button></Link>}
+            <div className="redirection__scene--right-buttons">
+              {opponentIsAlive && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">Continuer</button></Link>}
+              {!opponentIsAlive && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">Continuer</button></Link>}
             </div>
           </div>
         </div>
-        <div className="choice__image-background">
+        <div className="redirection__image-background">
           <img
             src={`${scene.img_scene}`}
             alt="background"
@@ -46,7 +46,7 @@ const Choice = ({ scene, storyId }) => {
   );
 };
 
-Choice.propTypes = ({
+Redirection.propTypes = ({
   scene: PropTypes.shape({
     details_scene: PropTypes.shape({
       scene_id: PropTypes.number,
@@ -66,6 +66,7 @@ Choice.propTypes = ({
     }),
   }).isRequired,
   storyId: PropTypes.number.isRequired,
+  opponentIsAlive: PropTypes.bool.isRequired,
 });
 
-export default Choice;
+export default Redirection;

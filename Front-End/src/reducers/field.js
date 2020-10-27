@@ -90,7 +90,7 @@ const field = (state = initialState, action = {}) => {
         ...state,
         profile: {
           ...state.profile,
-          message: action.message,
+          message: action.message[0],
         },
       };
     case LOGIN_ERROR:
