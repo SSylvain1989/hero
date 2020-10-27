@@ -38,6 +38,7 @@ const Connection = ({
             onChange={onChange}
             value={userName}
             type="text"
+            className="connection__input"
           />
           <Field
             name="password"
@@ -45,6 +46,7 @@ const Connection = ({
             onChange={onChange}
             value={password}
             type="password"
+            className="connection__input"
           />
           {messagesError.length > 0
             && messagesError.map((element) => (
@@ -55,7 +57,7 @@ const Connection = ({
                 {Object.values(element)[0]}
               </p>
             ))}
-          <button type="submit">Se connecter</button>
+          <button className="connection__button" type="submit">Se connecter</button>
           <button className="connection__redirect" type="button"><Link to="/inscription">L'inscription c'est par ici</Link></button>
         </form>
       </>

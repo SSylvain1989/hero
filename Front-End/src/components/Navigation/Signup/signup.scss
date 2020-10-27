@@ -1,3 +1,5 @@
+@use 'src/styles/vars' as vars;
+
 .signup {
     display:flex;
     flex-direction: column;
@@ -29,10 +31,15 @@
     }&__text {
       margin: 1rem;
     }&__button {
-      margin: 1rem;
       padding: 1rem;
+      color: white;
+      font-size: large;
+      bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: vars.$bgr-btn-bleu;
     }&__error {
-      color: red;
+      color: vars.$invalide-color;
     }&__signed {
         display:flex;
         flex-direction: column;
