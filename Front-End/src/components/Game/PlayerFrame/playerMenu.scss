@@ -1,37 +1,54 @@
-.player-menu {
-  width: 300px;
-  height: 200px;
-  background-color: #808080;
-  display: flex;
-  flex-wrap: wrap;
+@use 'src/styles/vars';
 
-  &__header{
-    flex: 1 1 100%;
-    height: 25%;
-    background-color: blueviolet;
+.player-frame {
+  width: 100px;
+  height: 100px;
 
-    margin: auto;
-    padding: 5px;
-    text-align: center;
+  &__click {
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    right: -30px;
+    bottom: -30px;
+    border-radius: 100%;
+    height: 140px;
+    width: 140px;
   }
 
-  &__stats{
-    flex: 1 1 auto;
-    height: 75%;
-    background-color: coral;
+  .player-menu {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 3px solid vars.$border-color;
+    z-index: 0;
 
-    margin: auto;
-    padding: 5px;
-    text-align: center;
-  }
+    &__header {
+      flex: 1 1 100%;
+      height: 25%;
+      background-color: blueviolet;
+      margin: auto;
+      text-align: center;
+    }
 
-  &__inventory{
-    flex: 4 1 auto;
-    height: 75%;
-    background-color: crimson;
+    &__stats {
+      flex: 1 1 auto;
+      height: 75%;
+      background-color: coral;
+      margin: auto;
+      text-align: center;
+    }
 
-    margin: auto;
-    padding: 5px;
-    text-align: center;
+    &__inventory {
+      flex: 4 1 auto;
+      height: 75%;
+      background-color: crimson;
+      margin: auto;
+      text-align: center;
+    }
   }
 }

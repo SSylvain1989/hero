@@ -15,14 +15,10 @@ const PlayerFrame = ({ player }) => {
   };
 
   return (
-    <>
-      <img
-        src={testImage}
-        alt={player.name}
-        onClick={togglePlayerMenu}
-      />
+    <div className="player-frame">
+      <div className="player-frame__click" onClick={togglePlayerMenu} />
       <PlayerMenu isToggled={playerMenu} {...player} />
-    </>
+    </div>
   );
 };
 

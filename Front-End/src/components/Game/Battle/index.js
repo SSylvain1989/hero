@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PlayerFrame from 'src/containers/PlayerFrame';
 import OpponentFrame from 'src/containers/OpponentFrame';
+import testImage from 'src/images/start-minautor.gif';
 
 import './battle.scss';
 
@@ -25,8 +26,12 @@ const Battle = ({
         <div className="battle-element__scene">
           {ready && <h1><OpponentFrame /></h1>}
           <div className="battle-element__scene--image-container">
-            <PlayerFrame />
+            <img
+              src={testImage}
+              alt="player-info"
+            />
           </div>
+          <PlayerFrame />
           <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>
           {!playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
           {!opponentIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
