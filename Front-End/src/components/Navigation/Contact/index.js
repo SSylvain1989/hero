@@ -48,12 +48,12 @@ const Contact = ({
           <form className="contact_form" onSubmit={onSubmit}>
             <h1>Nous contacter</h1>
             <Field
+              className="contact_email"
               name="email"
               type="email"
               value={email}
               onChange={changeField}
               placeholder="Votre email"
-              className="contact_input--email"
             />
             <Field
               name="message"
@@ -63,7 +63,7 @@ const Contact = ({
               placeholder="Votre message ..."
               className="contact_input--message"
             />
-            <button className="contact_input--button">Envoyer</button>
+            <button className="contact_button">Envoyer</button>
           </form>
         </div>
       </div>
