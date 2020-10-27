@@ -73,7 +73,7 @@ const Profile = ({
         </div>
       </div>
       <div className={displayMessage ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
-        {message}
+        <p>{message}</p>
       </div>
     </div>
   );
