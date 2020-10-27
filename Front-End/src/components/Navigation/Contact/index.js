@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-alert */
 /* eslint-disable react/style-prop-object */
@@ -25,7 +26,7 @@ const Contact = ({
     console.log(message);
     const form = {
       // les attributs name & message sont identiques aux attributs du template du mail de emailJs
-      name: email, message, subject: 'test',
+      name: email, message,
     };
 
     // console.log('e', e);
