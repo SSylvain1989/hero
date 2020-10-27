@@ -39,6 +39,11 @@ const Header = ({
             Scores
           </NavLink>
         </li>
+        <li>
+          <button className="bg-blue-500 hover:bg-blue-700 text-green font-bold py-2 px-4 rounded-full" type="button">
+            Button
+          </button>
+        </li>
       </div>
       <div className="header__rightside">
         {isLoged
