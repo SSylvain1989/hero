@@ -4,6 +4,7 @@
 
 .legal-notices {
     width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -17,46 +18,37 @@
     box-shadow: 0px 10px 13px -7px #000000,
     inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
     position: absolute;
-    height: 70%;
-    width: 90%;
-    margin-top: 5px;
+    height: auto;
+    width: auto;
+    margin: 40px;
+    
 
   }&__title {
-        font-family: sans-serif;
-        font-size: 24px;
-        font-weight: bold;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
 
-        text-shadow: 3px 2px 0 #290f0f;
-        color: vars.$font-gold-color;
-        text-align: center;
-
-        color: #D4AF37;
-        text-transform: uppercase;
-        z-index: 10;
-        position: absolute;
-        font-size: 2em;
-
-        // text-shadow:#F7FF00 0 0px 0,
-        // #FFD400 1px 1px 0,
-        // #FFBB00 1px 1px 0,
-        // #E8AA00 2px 2px 0.5px,
-        // #333 4px 5px 15px;
-        // color:#FFE600;
-    border-bottom: vars.$border-color 1px solid;
+    z-index: 10;
+    padding-top: 30px;
+    padding-bottom: 5px;
 
   }&__text {
-    margin-top: 7rem;
     font-weight: bold;
-    font-size: 22px;
-    margin-bottom: 1rem;
+    font-size: 12px;
+    margin: 20px;
     font-family: Merriweather, arial;
-    color: #42291A;
-    text-transform: uppercase;     
+    color: vars.$normal-color;
+    text-align: justify;
+    z-index: 8; 
   }
 }
 
 // Test avec le fond bibli 01 du site //
-.contact__bg--site {
+.legal-notices__bg--site {
   background: no-repeat center fixed; 
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
