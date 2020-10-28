@@ -1,16 +1,4 @@
--- Revert heros:histoire-1 from pg
-
-BEGIN;
-
-DROP VIEW scene_text;
-
-DROP VIEW scene_opponent;
-
-DROP VIEW scene_clickable_element;
-
-DROP VIEW scene_finish;
-
-COMMIT;
+-- Revert heros:histoire-2 from pg
 
 BEGIN;
 
@@ -39,4 +27,3 @@ DELETE FROM game.text_in_game;
 DELETE FROM game.clickable_element;
 
 COMMIT;
-

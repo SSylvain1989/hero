@@ -13,8 +13,7 @@ const boardController = {
      */
     editStat: async (request, response) => {
         try {
-            // tableau d'erreur
-            const messageTab = [];
+            if (request.params.id === '1' || request.params.id === 1 || request.params.id === '2' || request.params.id === 2) {
             // on configure l'objet data a envoyer
             const data = {
                 user_id: request.session.user.id,
@@ -54,6 +53,10 @@ const boardController = {
             request.session.user.gamePlay = statEdit.gamePlay;
             // on renvoie le resultat de la session update et un message de confirmation
             response.status(200).json({message: createParty, session: request.session.user});
+        } else {
+            const message = `Votre partie n'a pas été enregistré, l'histoire n'est pas disponible`
+            response.status(404).json({message: message, session: request.session.user});
+        }
         } catch (error) {
             console.trace(error);
             return response.status(500).json(error.tostring());

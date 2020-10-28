@@ -8,7 +8,6 @@ import CharacterList from './CharacterList';
 import './gamedetail.scss';
 
 const GameDetail = ({
-  fetchGameDetail,
   loadStory,
   gameId,
   isStoryLoaded,
@@ -17,12 +16,22 @@ const GameDetail = ({
   characterList,
   selectCharacter,
   playerSelected,
+  firstSceneId,
 }) => {
   useEffect(() => {
+<<<<<<< HEAD
     console.log(game);
     fetchGameDetail();
+=======
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
     loadCharacterList();
   }, []);
+
+  useEffect(() => {
+    // On ne charge la liste des personnages
+    // Que quand l'histoire est chargée
+    loadCharacterList();
+  }, [isStoryLoaded]);
 
   const handleCharacterOnClick = (event) => {
     selectCharacter(event.currentTarget.id);
@@ -36,22 +45,29 @@ const GameDetail = ({
       <div className="game-detail__container">
         <div className="game-detail__content">
           <h1 className="game-detail__title">{game.name}</h1>
-          <p>Difficulté: {game.difficulty}</p>
-          <img src="https://picsum.photos/id/237/80/80" alt="" />
+          <section className="game-detail__section">{game.description}</section>
+          <p>{game.difficulty}</p>
           <div>
             {!isStoryLoaded
+<<<<<<< HEAD
               ? <button type="button" className="game-detail__button" onClick={loadStory}>Choisir un héro</button>
+=======
+              ? <button type="button" className="game-detail__button" onClick={loadStory(gameId)}>Choisir un héro</button>
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
               : (
                 <>
                   <CharacterList
                       characterList={characterList}
                       handleCharacterOnClick={handleCharacterOnClick}
                   />
+<<<<<<< HEAD
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/1`}><button type="button" className="game-detail__button" onClick={loadStory}>Jouer</button></Link>}
+=======
+                  {playerSelected && <Link to={`/liste-des-jeux/${gameId}/${firstSceneId}`}><button type="button" className="game-detail__button">Jouer</button></Link>}
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
                 </>
               )}
           </div>
-          <section className="game-detail__section">{game.description}</section>
         </div>
       </div>
     </div>
@@ -59,7 +75,6 @@ const GameDetail = ({
 };
 
 GameDetail.propTypes = ({
-  fetchGameDetail: PropTypes.func.isRequired,
   loadStory: PropTypes.func.isRequired,
   loadCharacterList: PropTypes.func.isRequired,
   characterList: PropTypes.array.isRequired,

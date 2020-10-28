@@ -2,6 +2,7 @@
 
 
 .team{
+<<<<<<< HEAD
   margin: auto;
   background-color: #587ab9;
   display: flex;
@@ -22,4 +23,186 @@
   height: 8rem;
   border-radius: 5px;
 }
+=======
+  margin-top: 5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 0 5rem ;
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
 }
+
+// .member{
+//   border: solid 1px black;
+//   border-radius: 5px;
+//   margin: 1rem;
+//   background-color: white;
+//   padding: 1rem;
+//   width: 15rem;
+//   height: 20rem;
+// &__image{
+//   border: solid 1px red;
+//   width: 98%;
+//   height: 8rem;
+//   border-radius: 5px;
+// }
+// }
+
+.member{
+  // display: flex;
+  // flex-direction: row;
+}
+
+section{
+    // display: flex;
+  // flex-direction: row;
+  padding: 5rem 0;
+  background-color: #fff;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+.heading{
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+  // margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+  position: absolute;
+  margin-top: 5rem;
+  left: 40%;
+}
+
+.heading::after{
+  content: "";
+  width: 10rem;
+  height: .8rem;
+  background-color: #45e19f;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  border-radius: 2rem;
+  transform: translateX(-50%);
+}
+
+.card-wrapper{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.card{
+    width: 20rem;
+  height: auto;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+}
+
+.card .card-img{
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  // https://bennettfeely.com/clippy/
+  clip-path: polygon(0 1%, 100% 0, 100% 71%, 0% 100%);
+  border-radius: 8px 5px 0 0;
+}
+.profile-img{
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: -10rem;
+  z-index: 2;
+  border: 0.5rem solid #ebeef8;
+}
+
+.card h1{
+  font-size: 2.5rem;
+  color: #333;
+  margin: 1.5rem 0;
+}
+
+.job-title{
+  color: #777;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.about{
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  text-align: center;
+  color: #333;
+}
+
+.card .btn{
+  padding: 1rem 2.5rem;
+  background-color: vars.$bgr-btn-bleu;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  color: #eeee;
+  transition: all .5s;
+}
+
+.card .btn:hover{
+  transform: translateY(-2px);
+  box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
+}
+
+.card .btn:active{
+  transform: translateY(0);
+  box-shadow: none;
+
+}
+
+.social-media{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 3rem;
+}
+
+.social-icon:hover{
+  transform: translateY(-2px); 
+}
+
+@media screen and(min-width: 700px){
+  .card-wrapper{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .card{
+    margin: 2rem ;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+
+}
+.card:nth-child(1){
+  animation: fadeIn 1.7s;
+}
+

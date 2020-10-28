@@ -4,9 +4,17 @@ import {
   ADD_CHARACTER_LIST,
   SET_OPPONENT,
   ATTACK,
+<<<<<<< HEAD
 } from '../actions/game';
 
 import createOpponentFromScene from '../utils/createOpponentFromScene';
+=======
+  RESET_STORY,
+} from '../actions/game';
+
+import createOpponentFromScene from '../utils/createOpponentFromScene';
+import getCharactersByStory from '../selectors/getCharactersByStory';
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
 import getCharacterById from '../selectors/getCharacterbyId';
 import createPlayer from '../utils/createPlayer';
 import damageCalculation from '../utils/damageCalculation';
@@ -14,7 +22,21 @@ import damageCalculation from '../utils/damageCalculation';
 export const initialState = {
   // ici on déclare un objet vide avec la propriété story qui sera rempli
   // au déclenchement du bouton "jouer maintenant"
+<<<<<<< HEAD
   story: {},
+=======
+  story: {
+    history: {
+      scene_list: [
+        {
+          details_scene: {
+            scene_id: 0,
+          },
+        },
+      ],
+    },
+  },
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
   isStoryLoaded: false,
   player: {},
   playerIsAlive: true,
@@ -35,6 +57,10 @@ const game = (state = initialState, action = {}) => {
         playerSelected: false,
         isStoryLoaded: true,
       };
+    case RESET_STORY:
+      return {
+        ...initialState,
+      };
     case SELECT_CHARACTER: {
       const chosenCharacter = getCharacterById(action.id, [...state.characterList]);
       const newPlayer = createPlayer(chosenCharacter);
@@ -44,19 +70,35 @@ const game = (state = initialState, action = {}) => {
         player: newPlayer,
         playerSelected: true,
         playerIsAlive: true,
+<<<<<<< HEAD
+=======
       };
     }
-    case ADD_CHARACTER_LIST:
+    case ADD_CHARACTER_LIST: {
+      const characterList = getCharactersByStory([...action.data.character], state.story);
+      console.log('characterList', characterList);
       return {
         ...state,
-        characterList: [...action.data.character],
+        characterList: [...characterList],
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
       };
+    }
+    case SET_OPPONENT: {
+      const opponent = createOpponentFromScene(action.sceneDetails);
+      return {
+        ...state,
+        opponent,
+        opponentIsAlive: true,
+      };
+<<<<<<< HEAD
     case SET_OPPONENT: {
       const opponent = createOpponentFromScene(action.sceneDetails);
       return {
         ...state,
         opponent,
       };
+=======
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
     }
     case ATTACK: {
       // calcul des dégats qu'on va infliger à l'adversaire (aléatoire et points d'attaque)

@@ -4,12 +4,16 @@
 
 .legal-notices {
     width: 100%;
+<<<<<<< HEAD
     min-height: 100vh;
+=======
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 20px;
+<<<<<<< HEAD
     
   &__encart {
     background-color: vars.$brown-color;
@@ -21,9 +25,22 @@
     height: auto;
     width: auto;
     margin: 40px;
+=======
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
     
+  &__encart {
+    background-color: vars.$brown-color;
+    border: 10px outset vars.$border-color;
+    border-radius: 12px;
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+    position: absolute;
+    height: 70%;
+    width: 90%;
+    margin-top: 5px;
 
   }&__title {
+<<<<<<< HEAD
     font-family: sans-serif;
     font-size: 24px;
     font-weight: bold;
@@ -53,6 +70,47 @@
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
 
+=======
+        font-family: sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+
+        text-shadow: 3px 2px 0 #290f0f;
+        color: vars.$font-gold-color;
+        text-align: center;
+
+        color: #D4AF37;
+        text-transform: uppercase;
+        z-index: 10;
+        position: absolute;
+        font-size: 2em;
+
+        // text-shadow:#F7FF00 0 0px 0,
+        // #FFD400 1px 1px 0,
+        // #FFBB00 1px 1px 0,
+        // #E8AA00 2px 2px 0.5px,
+        // #333 4px 5px 15px;
+        // color:#FFE600;
+    border-bottom: vars.$border-color 1px solid;
+
+  }&__text {
+    margin-top: 7rem;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 1rem;
+    font-family: Merriweather, arial;
+    color: #42291A;
+    text-transform: uppercase;     
+  }
+}
+
+// Test avec le fond bibli 01 du site //
+.contact__bg--site {
+  background: no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+
+>>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
   //filter: grayscale(1);
   //filter: sepia(1);
   //filter: blur(3px);

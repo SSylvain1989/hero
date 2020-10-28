@@ -1,3 +1,7 @@
+// integrer typo merriweather
+
+@use 'src/styles/vars' as vars;
+
 .games-list {
   height: 100vh;
   display: flex;
@@ -6,7 +10,7 @@
   width: 100%;
   padding-top: 8rem;
 
-  h1 {
+  &__title {
     margin-bottom: 3rem;
     font-size: 30px;
     font-weight: bold;
@@ -14,13 +18,12 @@
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #D4AF37;
     color: #D4AF37;
-  }
 
-  &__item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  }&__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -44,7 +47,7 @@
   overflow:hidden;
   background-color: #42291A;
 
-  h2 {
+.game__card--name {
     font-size: 20px;
     font-weight: bold;
     margin: 1rem 0;
@@ -55,12 +58,12 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-  img {
+  .game__image {
     border-radius: 5px 5px 0 0;
     margin-bottom: 5px;
   }
 
-  button {
+  .game__card--button {
     background-color: #42291A;
     color: #D4AF37;
     padding: 7px 32px;
@@ -79,7 +82,7 @@
     }
   }
 
-  .game__card-text {
+  .game__card--text {
     color: #B1B1B1;
   }
 
