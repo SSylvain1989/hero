@@ -2,97 +2,47 @@
 
 
 .team{
-  margin-top: 5rem;
+  // margin-top: 5rem;
   background-color: white;
   display: flex;
-  flex-direction: row;
-  padding: 0 5rem ;
+  flex-direction: column;
+  padding: 5rem ;
 }
-
-// .member{
-//   border: solid 1px black;
-//   border-radius: 5px;
-//   margin: 1rem;
-//   background-color: white;
-//   padding: 1rem;
-//   width: 15rem;
-//   height: 20rem;
-// &__image{
-//   border: solid 1px red;
-//   width: 98%;
-//   height: 8rem;
-//   border-radius: 5px;
-// }
-// }
 
 .member{
   // display: flex;
   // flex-direction: row;
-}
-
-section{
+&__section{
     // display: flex;
   // flex-direction: row;
-  padding: 5rem 0;
+  padding: 4rem 0rem;
   background-color: #fff;
-}
-.container{
+}&__container{
+  margin: 0.1rem;
   display: flex;
   flex-direction: row;
-}
-
-.heading{
-  text-transform: uppercase;
-  font-size: 3rem;
-  letter-spacing: 3px;
-  margin-right: -3px;
-  // margin-bottom: 2rem;
-  text-align: center;
-  color: #333;
-  position: absolute;
-  margin-top: 5rem;
-  left: 40%;
-}
-
-.heading::after{
-  content: "";
-  width: 10rem;
-  height: .8rem;
-  background-color: #45e19f;
-  position: absolute;
-  bottom: -2rem;
-  left: 50%;
-  border-radius: 2rem;
-  transform: translateX(-50%);
-}
-
-.card-wrapper{
+}&__wrapper{
+  margin-top: 1.9rem;
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: column;
-}
-
-.card{
-  width: 20rem;
+}&__card{
   background-color: #ebeef8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   // https://html-css-js.com/css/generator/box-shadow/
-  box-shadow: 12px 12px 18px 6px rgba(0,0,0,0.26)
-}
-
-.card .card-img{
-  width: 100%;
-  height: 20rem;
+  box-shadow: 8px 8px 10px 3px rgba(0,0,0,0.26)
+}&__imgBgr{
+  width: 20rem;
+  height: auto;
   object-fit: cover;
   // https://bennettfeely.com/clippy/
   clip-path: polygon(0 1%, 100% 0, 100% 71%, 0% 100%);
   border-radius: 8px 5px 0 0;
-}
-.profile-img{
+}&__imgProfile{
   width: 12rem;
   height: 12rem;
   object-fit: cover;
@@ -100,28 +50,21 @@ section{
   margin-top: -10rem;
   z-index: 2;
   border: 0.5rem solid #ebeef8;
-}
-
-.card h1{
+}&__name{
   font-size: 2.5rem;
   color: #333;
   margin: 1.5rem 0;
-}
-
-.job-title{
+}&__job{
   color: #777;
   font-size: 1.5rem;
   font-weight: 300;
-}
-.about{
+}&__about{
   font-size: 1.5rem;
-  margin: 1.5rem 0;
+  margin: .9rem 0;
   font-style: italic;
   text-align: center;
   color: #333;
-}
-
-.card .btn{
+}&__btn{
   padding: 1rem 2.5rem;
   background-color: vars.$bgr-btn-bleu;
   border-radius: 2rem;
@@ -129,20 +72,13 @@ section{
   text-transform: uppercase;
   color: #eeee;
   transition: all .5s;
-}
-
-.card .btn:hover{
+}&__btn:hover{
   transform: translateY(-2px);
   box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
-}
-
-.card .btn:active{
+}&__btn:active{
   transform: translateY(0);
   box-shadow: none;
-
-}
-
-.social-media{
+}&__social{
   width: 100%;
   list-style: none;
   display: flex;
@@ -151,23 +87,69 @@ section{
   margin-top: 1.5rem;
   border-top: 1px solid rgba(0,0,0,0.1);
   font-size: 3rem;
-}
-
-.social-icon:hover{
+}&__social-icon:hover{
   transform: translateY(-2px); 
 }
+}
 
-@media screen and(min-width: 700px){
-  .card-wrapper{
+// si t'es sur mobile , le css est au-dessus
+// si plus de 700px en largeur sur ton ecran ( donc pc ) voir ci-dessous 
+@media screen and (min-width: 700px){
+  .team{
+    width: 100%;
+    height: 100%;
+    margin-top: 0.3rem;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 0 1rem;
   }
-  .card{
-    margin: 2rem ;
+.member{
+  &__wrapper{
+    width: 19rem;
+  }&__card{
+    width: 17rem;
+    margin: 0.5rem ;
+  }&__social{
+    width: 90%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: 2rem;
+  }&__imgBgr{
+    width: 17rem;
+    height: auto;
+    object-fit: cover;
+    // https://bennettfeely.com/clippy/
+    clip-path: polygon(0 1%, 100% 0, 100% 71%, 0% 100%);
+    border-radius: 8px 5px 0 0;
+  }&__imgProfile{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -5rem;
+    z-index: 2;
+    border: 0.5rem solid #ebeef8;
+  }&__name{
+    font-size: 2.2rem;
+    color: #333;
+    margin: 1.5rem 0;
+  }&__btn:hover{
+    transform: translateY(-2px);
+    box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
+  }&__btn:active{
+    transform: translateY(0);
+    box-shadow: none;
   }
 }
+}
+
+
 
 @keyframes fadeIn {
   from {
@@ -181,4 +163,3 @@ section{
 .card:nth-child(1){
   animation: fadeIn 0.7s;
 }
-

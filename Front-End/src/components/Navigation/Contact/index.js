@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/order */
 /* eslint-disable consistent-return */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-alert */
@@ -6,9 +8,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
 import apiKeys from './apikey';
-import Field from '../../common/Field';
+import Field from '../../common/Field/FieldUser';
+
+import backgroundhero from 'src/images/backgroundhero.jpg';
+
+//import Letter from './letter';
 
 import './contact.scss';
+import logo from 'src/images/logo.png';
 
 // https://medium.com/@barseetbrown/send-e-mail-directly-from-your-react-website-no-back-end-required-ed0d3106c3d4
 
@@ -36,34 +43,35 @@ const Contact = ({
         alert('Votre message a bien été envoyé, nous vous répondrons sous peu', result.text);
         console.log(result);
       },
-      (error) => {
-        alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
-      });
+        (error) => {
+          alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
+        });
   };
   if (!response) {
     return (
-      <div className="contact_container">
-        <div className="contact_wrap">
-          <img className="contact_picture" alt="IMG" />
-          <form className="contact_form" onSubmit={onSubmit}>
-            <h1>Nous contacter</h1>
+      <div className="contact">
+        <img className="contact__bg--site" src={backgroundhero} alt="backgroundHero" />
+        <div className="contact__wrap">
+          <img className="contact__picture" src={logo} alt="logo" />
+          <form className="contact__form" onSubmit={onSubmit}>
+            <h1 className="contact__title">Nous contacter</h1>
             <Field
               name="email"
-              type="email"
-              value={email}
-              onChange={changeField}
               placeholder="Votre email"
-              className="contact_input--email"
+              onChange={changeField}
+              value={email}
+              type="email"
+              className="contact__email"
             />
             <Field
               name="message"
-              value={message}
+              placeholder="Votre message"
               onChange={changeField}
+              value={message}
               type="text"
-              placeholder="Votre message ..."
-              className="contact_input--message"
+              className="contact__message"
             />
-            <button className="contact_input--button">Envoyer</button>
+            <button className="contact__button">Envoyer</button>
           </form>
         </div>
       </div>

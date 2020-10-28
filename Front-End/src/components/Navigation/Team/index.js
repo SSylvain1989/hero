@@ -11,35 +11,22 @@ import './team.scss';
 // == Composant
 const Team = () => {
   console.log(team);
-
-  const teamList = team.map((oneTeamMember) => {
-    console.log(oneTeamMember.description);
-
-    return (
-      <div className="connasse">
-        <div>{oneTeamMember.description}</div>
-        <div>{oneTeamMember.fullName}</div>
-        {/* <Member
-          key={oneTeamMember.fullName}
-          name={oneTeamMember.fullName}
-          specialite={oneTeamMember.specilite}
-          role={oneTeamMember.role}
-          description={oneTeamMember.description}
-        /> */}
-      </div>
-    );
-  });
-
+  team.map((oneTeamMember) => (
+    console.log(oneTeamMember.fullName)
+  ));
   return (
     <div>
-      {teamList}
-      {/* <h1 className="heading"> La Team Hero</h1>
+      {/* <h1 className="heading"> La Team Hero</h1> */}
       <div className="team">
-        <Member />
-        <Member />
-        <Member />
-        <Member />
-      </div> */}
+        {
+          team.map((oneTeamMember) => (
+            <Member
+              key={oneTeamMember.fullName}
+              {...oneTeamMember}
+            />
+          ))
+        }
+      </div>
     </div>
   );
 };

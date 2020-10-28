@@ -1,101 +1,143 @@
-.contact_container {
+// integrer typo merriweather
+
+@use 'src/styles/vars' as vars;
+
+.contact {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   padding: 20px;
-  background-color: #B1B1B1;
-}
+  //background-color: vars.$font-silver-color;
 
-.contact_wrap {
-  background-color: #E2D296;
-  border-radius: 10px;
-  overflow: hidden;
-  //display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px 30px 60px 50px;
-}
-
-.contact_picture {
-  width: 20%;
-  padding-top: 55px;
-  box-sizing: border-box;
-}
-
-.contact_form {
-  box-sizing: border-box;
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #42291A;
-  text-align: center;
-  padding-bottom: 10px;
-  box-sizing: border-box;
-}
-
-.contact_input--email {
-  min-height: 50px;
-  border-radius: 25px;
-  padding: 14px 30px;
-
-  display: block;
-  background: #EEEEEE;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-input {
-  outline: none;
-  border: none;
-}
-
-.contact_input--message {
-  min-height: 150px;
-  border-radius: 25px;
-  padding: 14px 30px;
-
-  display: block;
-  background: #EEEEEE;
-  font-size: 15px;
-  line-height: 1.5;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  &__wrap {
+    background-color: vars.$brown-color;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 30px 60px 50px;
   
-}
+    border: 10px outset vars.$border-color;
+    border-radius: 12px;
+  
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+  
+    position: absolute;
 
-textarea {
-  outline: none;
-  border: none;
-  overflow: auto;
-  resize: vertical;
-}
+  }&__picture {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+  
+    max-width: 100%;
+    vertical-align: middle;
 
-.contact_input--button {
-  width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    background: #42291A;
+  }&__title {
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
+
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: vars.$border-color 1px solid;
+
+  }&__email {
+    border-radius: 15px;
+    padding: 14px 30px;
+  
+    display: list-item;
+    background: vars.$font-base-color;
     font-size: 15px;
     line-height: 1.5;
-    color: #EBD78D;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 15px;
+  
+    text-align: center;
+
+  }&__message {
+    min-height: 120px;
+
+    border-radius: 15px;
+    padding: 14px 30px;
+  
+    display: list-item;
+    background: vars.$font-base-color;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 15px;
+  
+    text-align: center;
+
+  }&__email::placeholder {
+    color: vars.$brown-color;
+  }&__message::placeholder {
+    color: vars.$brown-color;
+  }
+
+  &__button {
+    width: 50%;
+    height: 50px;
+  
+    color: vars.$font-btn-grad-color;
+  
     transition: all 0.4s;
+    
+    cursor: pointer;
+  
+    background: linear-gradient(
+    180deg,
+    vars.$bgr-btn-grad-01 0%,
+    vars.$bgr-btn-grad-02 49%,
+    vars.$bgr-btn-grad-03 51%,
+    vars.$bgr-btn-grad-04 100%);
+  
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+    
+    font-family: sans-serif;
+    font-size: 16px;
     font-weight: bold;
+    text-align: center;
+  
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 12px;
+  }
+  &__button:hover {
+    color: vars.$font-btn-grad-color-hover;
+    background: linear-gradient(
+      180deg,
+      vars.$bgr-btn-grad-hover-01 0%,
+      vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+      vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+      vars.$bgr-btn-grad-hover-04  100%);
+  }
 }
 
-button {
-  outline: none !important;
-  border: none;
-}
+// Test avec le fond bibli 01 du site //
+.contact__bg--site {
+  background: no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
 
-button:hover {
-  color: #D4AF37;
-  background-color: #222222;
+  //filter: grayscale(1);
+  //filter: sepia(1);
+  //filter: blur(3px);
+  //filter: opacity(50%);
+  filter: brightness(50%) blur(1px) hue-rotate(-5deg);
 }

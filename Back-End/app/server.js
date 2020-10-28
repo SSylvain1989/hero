@@ -18,7 +18,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 // on rajoute la gestion des POST body
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 
 // On dit que le dossier public est static
 app.use(express.static('public'));
@@ -52,7 +52,11 @@ app.use(express.json());
 //   credentials: true
 // }));
 
-app.use(cors());
+// app.use(cors({
+//   credentials: true,
+//   origin:'',
+//   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+// }));
 
 app.use((req, res, next) => {
 

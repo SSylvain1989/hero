@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import GameDetail from '../components/Navigation/GameDetail';
 
 // Action Creators
-import { fetchGameDetail } from '../actions/navigation';
 import { loadStory, loadCharacterList, selectCharacter } from '../actions/game';
 import getGameDetailById from '../selectors/getGameDetailById';
 
@@ -21,6 +20,7 @@ const mapStateToProps = (state, { gameId }) => ({
   game: getGameDetailById(gameId, state.navigation.games),
   characterList: state.game.characterList,
   playerSelected: state.game.playerSelected,
+  firstSceneId: state.game.story.history.scene_list[0].details_scene.scene_id
 });
 
 /* === Actions ===
@@ -31,14 +31,11 @@ const mapStateToProps = (state, { gameId }) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 const mapDispatchToProps = (dispatch) => ({
-  fetchGameDetail: () => {
-    dispatch(fetchGameDetail());
-  },
   loadCharacterList: () => {
     dispatch(loadCharacterList());
   },
-  loadStory: () => {
-    dispatch(loadStory());
+  loadStory: (gameId) => {
+    dispatch(loadStory(gameId));
   },
   selectCharacter: (id) => {
     dispatch(selectCharacter(id));
