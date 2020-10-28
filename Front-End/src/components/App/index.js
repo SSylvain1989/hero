@@ -10,8 +10,6 @@ import Footer from '../Navigation/Footer';
 import Team from '../Navigation/Team';
 import Profile from '../../containers/Profile';
 import Board from '../../containers/Board';
-import Contact from '../Navigation/Contact';
-import Board from '../Navigation/Board';
 import Contact from '../../containers/Contact';
 import GameDetail from '../../containers/GameDetail';
 import GamesList from '../../containers/GamesList';
@@ -25,6 +23,7 @@ import Battle from '../../containers/Battle';
 import Choice from '../../containers/Choice';
 import End from '../../containers/End';
 import Redirection from '../../containers/Redirection';
+import Connection from '../../containers/Connection';
 
 // **** inscription à modifier pour la route signup ****
 const App = ({ games, checkConnexion, story }) => {
