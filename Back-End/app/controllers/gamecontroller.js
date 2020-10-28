@@ -75,6 +75,7 @@ const gameController = {
                     history_name: oneHistory[0].history_name,
                     history_description: oneHistory[0].history_description,
                     history_difficulty: oneHistory[0].history_difficulty,
+                    playable_character_id: [1,2],
                     scene_list: [
                         { // Scene 1
                             details_scene: sceneTab[0],
@@ -212,6 +213,7 @@ const gameController = {
                     history_name: oneHistory[0].history_name,
                     history_description: oneHistory[0].history_description,
                     history_difficulty: oneHistory[0].history_difficulty,
+                    playable_character_id: [4,5,6],
                     scene_list: [
                         { // Scene 12
                             details_scene: sceneTab[0],
