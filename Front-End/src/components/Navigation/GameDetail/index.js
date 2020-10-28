@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
+import CharacterList from './CharacterList';
+
 import './gamedetail.scss';
 
 const GameDetail = ({
@@ -24,6 +26,7 @@ const GameDetail = ({
 
   const handleCharacterOnClick = (event) => {
     selectCharacter(event.currentTarget.id);
+    console.log(characterList);
   };
 
   // console.log(playerSelected);
@@ -37,19 +40,13 @@ const GameDetail = ({
           <img src="https://picsum.photos/id/237/80/80" alt="" />
           <div>
             {!isStoryLoaded
-              ? <button type="button" className="game-detail__button" onClick={loadStory}>Charger le jeu</button>
+              ? <button type="button" className="game-detail__button" onClick={loadStory}>Choisir un héro</button>
               : (
                 <>
-                  {characterList.length > 0
-                    && characterList.map((character) => (
-                      <div
-                        key={character.id}
-                        id={character.id}
-                        onClick={handleCharacterOnClick}
-                      >
-                        {character.name}
-                      </div>
-                    ))}
+                  <CharacterList
+                      characterList={characterList}
+                      handleCharacterOnClick={handleCharacterOnClick}
+                  />
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/1`}><button type="button" className="game-detail__button" onClick={loadStory}>Jouer</button></Link>}
                 </>
               )}
