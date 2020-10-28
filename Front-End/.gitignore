@@ -1,6 +1,5 @@
 node_modules/
 dist/
-src/components/Navigation/App/
 
 .DS_Store
 Thumbs.db

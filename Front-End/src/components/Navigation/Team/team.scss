@@ -74,15 +74,14 @@ section{
 }
 
 .card{
-    width: 20rem;
-  height: auto;
+  width: 20rem;
   background-color: #ebeef8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem;
-  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+  // https://html-css-js.com/css/generator/box-shadow/
+  box-shadow: 12px 12px 18px 6px rgba(0,0,0,0.26)
 }
 
 .card .card-img{
@@ -180,6 +179,6 @@ section{
 
 }
 .card:nth-child(1){
-  animation: fadeIn 1.7s;
+  animation: fadeIn 0.7s;
 }
 
