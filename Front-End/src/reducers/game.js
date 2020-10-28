@@ -75,6 +75,7 @@ const game = (state = initialState, action = {}) => {
       return {
         ...state,
         opponent,
+        opponentIsAlive: true,
       };
     }
     case ATTACK: {
