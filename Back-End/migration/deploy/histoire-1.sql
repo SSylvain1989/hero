@@ -26,9 +26,10 @@ INSERT INTO game.type (
 INSERT INTO game.history ( 
     "name",
     "description",
-    "difficulty"
+    "difficulty",
+    "img"
     )
-    VALUES  ('Prison', 'Evadez-vous', 'easy');
+    VALUES  ('Prison', 'Evadez-vous', 'easy', 'https://i.ibb.co/25xVbhh/arenes.jpg');
 
 INSERT INTO game.scene ( 
     "name",
