@@ -9,9 +9,9 @@ CREATE TABLE nav.game_details (
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "avatar" text NOT NULL,
   "displayName" text NOT NULL,
-  "gameWin" int,
-  "gameOver" int,
-  "gamePlay" int
+  "gameWin" int DEFAULT 0,
+  "gameOver" int DEFAULT 0,
+  "gamePlay" int DEFAULT 0
 );
 
 CREATE TABLE nav.user ( -- NE PEUT ETRE CREE AVANT DETAILS_GAME_USER
