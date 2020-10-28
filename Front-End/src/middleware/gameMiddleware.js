@@ -10,11 +10,7 @@ import {
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOAD_ONE_STORY:
-<<<<<<< HEAD
-      axios.get('http://34.207.247.234:3000/api/stories/1/play',
-=======
       axios.get(`http://34.207.247.234:3000/api/stories/${action.gameId}/play`,
->>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
         { withCredentials: true })
         .then((response) => {
           store.dispatch(addStory(response.data));

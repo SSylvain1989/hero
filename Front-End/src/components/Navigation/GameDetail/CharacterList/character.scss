@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-.character__card {
-  text-align: center;
-  margin: auto;
-  border: solid black;
-  width: 300px;
-  flex-basis: 50%;
-=======
 @use 'src/styles/vars';
 
 .character__card {
@@ -41,5 +33,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
->>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
 }

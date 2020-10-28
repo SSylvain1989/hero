@@ -19,11 +19,6 @@ const GameDetail = ({
   firstSceneId,
 }) => {
   useEffect(() => {
-<<<<<<< HEAD
-    console.log(game);
-    fetchGameDetail();
-=======
->>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
     loadCharacterList();
   }, []);
 
@@ -49,22 +44,14 @@ const GameDetail = ({
           <p>{game.difficulty}</p>
           <div>
             {!isStoryLoaded
-<<<<<<< HEAD
-              ? <button type="button" className="game-detail__button" onClick={loadStory}>Choisir un héro</button>
-=======
               ? <button type="button" className="game-detail__button" onClick={loadStory(gameId)}>Choisir un héro</button>
->>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
               : (
                 <>
                   <CharacterList
                       characterList={characterList}
                       handleCharacterOnClick={handleCharacterOnClick}
                   />
-<<<<<<< HEAD
-                  {playerSelected && <Link to={`/liste-des-jeux/${gameId}/1`}><button type="button" className="game-detail__button" onClick={loadStory}>Jouer</button></Link>}
-=======
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/${firstSceneId}`}><button type="button" className="game-detail__button">Jouer</button></Link>}
->>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
                 </>
               )}
           </div>

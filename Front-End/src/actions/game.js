@@ -8,11 +8,7 @@ export const SELECT_CHARACTER = 'SELECT_CHARACTER';
 export const SET_OPPONENT = 'SET_OPPONENT';
 export const ATTACK = 'ATTACK';
 
-<<<<<<< HEAD
-export const loadStory = () => ({
-=======
 export const loadStory = (gameId) => ({
->>>>>>> e5b7d2342b301a8cd49ef80949beb72715331753
   type: LOAD_ONE_STORY,
   gameId,
 });
