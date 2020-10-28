@@ -1,8 +1,7 @@
 const prepareOpponentsFromStory = (story) => {
-  console.log('In prepareOpponentsFromStory with', story);
+  console.log('In prepareOpponentsFromStory');
   const sceneList = story.history.scene_list;
   const filteredSceneListByCombat = sceneList.filter((scene) => scene.details_scene.scene_type === 'Combat');
-  console.log('filteredSceneListByCombat', filteredSceneListByCombat);
   const opponentList = [];
   filteredSceneListByCombat.forEach((scene) => {
     // Create opponent
@@ -20,7 +19,7 @@ const prepareOpponentsFromStory = (story) => {
     };
     opponentList.push(opponent);
   });
-  console.log(opponentList);
+  console.log('opponentList', opponentList);
   return opponentList;
 };
 

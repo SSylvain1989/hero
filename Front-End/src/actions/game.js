@@ -37,9 +37,9 @@ export const selectCharacter = (id) => ({
   id,
 });
 
-export const setOpponent = (sceneDetails) => ({
+export const setOpponent = (id) => ({
   type: SET_OPPONENT,
-  sceneDetails,
+  id,
 });
 
 export const attack = () => ({
