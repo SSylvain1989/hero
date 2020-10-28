@@ -2,7 +2,13 @@
 const db = require('../database');
 
 const profile = {
-
+    /**
+     * Permet de modifier les informations du compte
+     * @param - id de l'user
+     * @param - userName de l'user
+     * @param - email de l'user
+     * @param - password de l'user
+     */
     editProfile: async (data) => {
         // on décomponse la requete SQL avec les informations que l'on veut insérer 
         const sql = `UPDATE nav.user SET "userName" = $1, "email" = $2, "password" = $3, "updated_at" = now() WHERE id = $4 RETURNING "id", "userName", "email", "detail_id";`;
@@ -12,16 +18,24 @@ const profile = {
         // On renvoie les données mis a jours 
         return dataUpdate.rows[0];
     },
-
+    /**
+     * Permet de supprimer le compte 
+     * @param - id de l'user
+     * @param - id de game_details
+     */
     deleteProfile: async (user) => {
+        // requete SQL pour supprimer les party de l'utilisateur
+        const sql = `DELETE FROM game.party WHERE user_id = $1;`;
         // requete SQL pour supprimer l'utilisateur
-        const sql = `DELETE FROM nav.user WHERE id = $1;`;
+        const sql2 = `DELETE FROM nav.user WHERE id = $1;`;
         // requete SQL pour supprimer les details de l'utilisateur
-        const sql2 = `DELETE FROM nav.game_details WHERE id = $1;`;
-        // On lance la premiere requette pour supprimer un utilisateur
+        const sql3 = `DELETE FROM nav.game_details WHERE id = $1;`;
+        // On lance la premiere requete pour supprimer les party d'un utilisateur
         await db.query(sql, [user.id]);
-        // On lance la deuxieme requette pour supprimer les details d'un utilisateur
-        await db.query(sql2, [user.details_id]);
+        // On lance la deuxieme requete pour supprimer un utilisateur
+        await db.query(sql2, [user.id]);
+        // On lance la troisieme requete pour supprimer les details d'un utilisateur
+        await db.query(sql3, [user.details_id]);
 
         const message = 'Le compte est bien supprimer';
         // On retourne le message de confirmation de suppression de compte

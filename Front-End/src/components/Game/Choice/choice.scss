@@ -9,10 +9,10 @@
 
   &__scene {
     display: flex;
-    height: 400px;
-    width: 80%;
-    background-color: #D1D1D1;
+    height: 405px;
+    width: 1000px;
     position: relative;
+    z-index: 1;
 
     img {
       position:absolute;
@@ -48,9 +48,11 @@
         }
 
         p {
-          padding: 3rem 1rem;
+          padding: 3rem 3rem;
+          line-height: 1.3rem;
           position: absolute;
           z-index:1;
+          text-align: justify;
         }
       }
 
@@ -76,9 +78,15 @@
         }
       }
     }
-
   }
 
+  &__image-background {
+    position: absolute;
+    img {
+    height: 400px;
+    z-index: 0;
+    }
+  }
 }
 
 @media (max-width: 800px) {

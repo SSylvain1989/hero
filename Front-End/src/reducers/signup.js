@@ -2,7 +2,7 @@ import { SIGNUP_RESPONSE, SIGNUP_ERROR } from '../actions/signup';
 
 const initialState = {
   response: '',
-  messagesError: '',
+  messagesError: [],
 };
 
 const signup = (state = initialState, action = {}) => {
@@ -14,10 +14,10 @@ const signup = (state = initialState, action = {}) => {
         response: action.response,
       };
     case SIGNUP_ERROR:
-      console.log(action.message);
+      console.log('reducer', action.message);
       return {
         ...state,
-        messagesError: action.message,
+        messagesError: [...action.message],
       };
     default:
       return state;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Link, Redirect } from 'react-router-dom';
 import startMinautor from '../../../images/start-minautor.gif';
@@ -9,9 +10,6 @@ import './choice.scss';
 const Choice = ({ scene, storyId }) => {
   if (scene !== undefined) {
     const text = scene.details_scene.scene_text;
-    const nextScene = scene.next_scene_id;
-    const nextSceneURL = `/liste-des-jeux/${storyId}/${nextScene}`;
-
     return (
       <div className="choice">
         <div className="choice__scene">
@@ -29,10 +27,16 @@ const Choice = ({ scene, storyId }) => {
               />
             </div>
             <div className="choice__scene--right-buttons">
-              {nextScene && <Link to={nextSceneURL}><button type="button">Choix 1</button></Link>}
-              {nextScene && <Link to={nextSceneURL}><button type="button">Choix 2</button></Link>}
+              {scene.next_scene && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">{scene.next_scene.next_scene_name}</button></Link>}
+              {scene.next_scene2 && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">{scene.next_scene2.next_scene_name2}</button></Link>}
             </div>
           </div>
+        </div>
+        <div className="choice__image-background">
+          <img
+            src={`${scene.img_scene}`}
+            alt="background"
+          />
         </div>
       </div>
     );
@@ -41,5 +45,27 @@ const Choice = ({ scene, storyId }) => {
     <Redirect to="/" exact />
   );
 };
+
+Choice.propTypes = ({
+  scene: PropTypes.shape({
+    details_scene: PropTypes.shape({
+      scene_id: PropTypes.number,
+      scene_name: PropTypes.string,
+      scene_description: PropTypes.string,
+      scene_type: PropTypes.string,
+      scene_text: PropTypes.string,
+    }).isRequired,
+    previous_scene_id: PropTypes.number.isRequired,
+    next_scene: PropTypes.shape({
+      next_scene_id: PropTypes.number.isRequired,
+      next_scene_name: PropTypes.string.isRequired,
+    }).isRequired,
+    next_scene2: PropTypes.shape({
+      next_scene_id2: PropTypes.number,
+      next_scene_name2: PropTypes.string,
+    }),
+  }).isRequired,
+  storyId: PropTypes.number.isRequired,
+});
 
 export default Choice;

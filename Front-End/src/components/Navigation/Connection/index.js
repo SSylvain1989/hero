@@ -17,11 +17,15 @@ const Connection = ({
   onSubmit,
   isLoged,
   sessionUserName,
+  messagesError,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
   };
+
+  console.log('log connection component', messagesError);
+  console.log('log connection component', messagesError);
 
   if (!isLoged) {
     return (
@@ -34,6 +38,7 @@ const Connection = ({
             onChange={onChange}
             value={userName}
             type="text"
+            className="connection__input"
           />
           <Field
             name="password"
@@ -41,8 +46,18 @@ const Connection = ({
             onChange={onChange}
             value={password}
             type="password"
+            className="connection__input"
           />
-          <button type="submit">Se connecter</button>
+          {messagesError.length > 0
+            && messagesError.map((element) => (
+              <p
+                className="connection__error"
+                key={Object.values(element)[0]}
+              >Attention :
+                {Object.values(element)[0]}
+              </p>
+            ))}
+          <button className="connection__button" type="submit">Se connecter</button>
           <button className="connection__redirect" type="button"><Link to="/inscription">L'inscription c'est par ici</Link></button>
         </form>
       </>

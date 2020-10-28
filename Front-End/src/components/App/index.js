@@ -9,8 +9,7 @@ import Header from '../../containers/Header';
 import Footer from '../Navigation/Footer';
 import Team from '../Navigation/Team';
 import Profile from '../../containers/Profile';
-import Connection from '../../containers/Connection';
-import Board from '../Navigation/Board';
+import Board from '../../containers/Board';
 import Contact from '../../containers/Contact';
 import GameDetail from '../../containers/GameDetail';
 import GamesList from '../../containers/GamesList';
@@ -23,11 +22,11 @@ import ClickableElement from '../../containers/ClickableElement';
 import Battle from '../../containers/Battle';
 import Choice from '../../containers/Choice';
 import End from '../../containers/End';
-import story from '../../data/histoire1';
-
+import Redirection from '../../containers/Redirection';
+import Connection from '../../containers/Connection';
 
 // **** inscription à modifier pour la route signup ****
-const App = ({ games, checkConnexion }) => {
+const App = ({ games, checkConnexion, story }) => {
   useEffect(() => {
     checkConnexion();
   }, []);
@@ -38,6 +37,8 @@ const App = ({ games, checkConnexion }) => {
         return <Start sceneId={scene.details_scene.scene_id} />;
       case 'Choix':
         return <Choice sceneId={scene.details_scene.scene_id} />;
+      case 'Redirection':
+        return <Redirection sceneId={scene.details_scene.scene_id} />;
       case 'Cliquable':
         return <ClickableElement sceneId={scene.details_scene.scene_id} />;
       case 'Combat':
@@ -105,7 +106,6 @@ const App = ({ games, checkConnexion }) => {
 App.propTypes = ({
   games: PropTypes.array.isRequired,
   checkConnexion: PropTypes.func.isRequired,
-  // story: PropTypes.object.isRequired,
 });
 
 export default App;

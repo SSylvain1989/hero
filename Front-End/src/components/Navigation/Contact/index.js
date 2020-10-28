@@ -51,7 +51,7 @@ const Contact = ({
         <div className="contact_wrap">
           <img className="contact_picture" src={logo} alt="logo" />
           <form className="contact_form" onSubmit={onSubmit}>
-            <h1>Nous contacter</h1>
+            <h1 className="contact_title">Nous contacter</h1>
             <Field
               className="contact_email"
               name="email"
