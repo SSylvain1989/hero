@@ -9,6 +9,7 @@ const Field = ({
   type,
   placeholder,
   onChange,
+  className,
 }) => {
   // == Handlers
   const handleChange = (evt) => {
@@ -22,6 +23,7 @@ const Field = ({
       placeholder={placeholder}
       name={name}
       type={type}
+      className={className}
     />
   );
 };
@@ -34,6 +36,7 @@ Field.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 // == Export

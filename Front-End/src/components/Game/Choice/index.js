@@ -32,6 +32,12 @@ const Choice = ({ scene, storyId }) => {
             </div>
           </div>
         </div>
+        <div className="choice__image-background">
+          <img
+            src={`${scene.img_scene}`}
+            alt="background"
+          />
+        </div>
       </div>
     );
   }

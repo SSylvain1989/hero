@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import axios from 'axios';
-import Cookies from 'js-cookie';
 
 import {
   EMAIL_SUBMIT,
@@ -12,14 +11,23 @@ import {
   CHECK_CONNEXION,
   LOGOUT_HANDLER,
   loginError,
+  HANDLE_ACCOUNT_DELETION,
+  saveMessage,
 } from '../actions/user';
+
+import { resetFields } from '../actions/field';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case EMAIL_SUBMIT:
-      axios.post('http://34.207.247.234:3000/api/profile/edit', { email: store.getState().field.profile.email })
+      axios.patch('http://34.207.247.234:3000/api/profile/edit',
+        { email: store.getState().field.profile.email },
+        { withCredentials: true })
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
+          store.dispatch(saveMessage(response.data.message));
+          store.dispatch(saveSession(response.data.session));
+          store.dispatch(resetFields());
         })
         .catch((error) => {
           console.error(error);
@@ -27,9 +35,13 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case USERNAME_SUBMIT:
-      axios.post('http://34.207.247.234:3000/api/profile/edit', { userName: store.getState().field.profile.userName })
+      axios.patch('http://34.207.247.234:3000/api/profile/edit',
+        { userName: store.getState().field.profile.userName },
+        { withCredentials: true })
         .then((response) => {
-          console.log(response.data);
+          store.dispatch(saveMessage(response.data.message));
+          store.dispatch(saveSession(response.data.session));
+          store.dispatch(resetFields());
         })
         .catch((error) => {
           console.error(error);
@@ -37,13 +49,16 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case PASSWORD_SUBMIT:
-      axios.post('http://34.207.247.234:3000/api/profile/edit',
+      axios.patch('http://34.207.247.234:3000/api/profile/edit',
         {
           password: store.getState().field.profile.password,
           passwordConfirm: store.getState().field.profile.passwordConfirm,
-        })
+        },
+        { withCredentials: true })
         .then((response) => {
-          console.log(response.data);
+          store.dispatch(saveMessage(response.data.message));
+          console.log(response);
+          store.dispatch(resetFields());
         })
         .catch((error) => {
           console.error(error);
@@ -60,11 +75,9 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
-          console.log(response);
-          Cookies.set('connect.sid', response.header['connect-sid']);
+          store.dispatch(resetFields());
         })
         .catch((error) => {
-          console.error('userMiddleWare', error.response.data.message[0]);
           store.dispatch(loginError(error.response.data.message));
         });
       next(action);
@@ -76,6 +89,7 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
+          store.dispatch(resetFields());
         })
         .catch((error) => {
           console.error(error);
@@ -92,6 +106,19 @@ const userMiddleware = (store) => (next) => (action) => {
             store.dispatch(loginHandler());
           }
           else store.dispatch(saveSession(response.data.session));
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      next(action);
+      break;
+    case HANDLE_ACCOUNT_DELETION:
+      axios.delete('http://34.207.247.234:3000/api/profile/delete',
+        { withCredentials: true })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(loginHandler());
+          store.dispatch(resetFields());
         })
         .catch((error) => {
           console.error(error);

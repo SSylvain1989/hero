@@ -7,9 +7,11 @@ import Game from './Game';
 const GamesList = ({
   fetchGames,
   gamesList,
+  resetStory,
 }) => {
   useEffect(() => {
     fetchGames();
+    resetStory();
   }, []);
 
   return (

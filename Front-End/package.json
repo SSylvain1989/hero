@@ -55,14 +55,18 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
-    "js-cookie": "^2.2.1",
+    "connect": "^3.7.0",
+    "emailjs-com": "^2.6.3",
+    "install": "^0.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-card-flip": "^1.0.11",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "tailwind": "^4.0.0"
   }
 }

@@ -30,6 +30,8 @@ const profileController = {
         try {
             // tableau d'erreur
             const messageTab = [];
+            // tableau de confirm
+            const messageTabConfirm = [];
 
             const data = { // je configure l'objet a envoyer en bdd
                 id: request.session.user.id,
@@ -46,6 +48,8 @@ const profileController = {
                     messageTab.push({messageUserName: messageUserName});
                 } else { // Sinon on le stock le userName du body dans data
                     data.userName = request.body.userName;
+                    const messageUserNameConfirm = 'Le userName a bien été modifié';
+                    messageTabConfirm.push({messageUserNameConfirm: messageUserNameConfirm});
                 };
             } else { // Sinon on stock le userName de la session dans data
                 data.userName = request.session.user.userName;
@@ -54,10 +58,12 @@ const profileController = {
             if (request.body.email !== undefined) { // Si il y'a un email dans la requete
                 // On verifie si le format d'email est valide
                 if (!emailValidator.validate(request.body.email)) { // Si l'email n'est pas valide on stock un message d'erreur dans messageTab
-                    const messageEmail = `Cet email n\'est pas valide.`;
+                    const messageEmail = `Cet e-mail n\'est pas valide.`;
                     messageTab.push({messageEmail: messageEmail});
                 } else { // Sinon on stock l'email du body dans data
                     data.email = request.body.email;
+                    const messageEmailConfirm = 'L\'e-mail a bien été modifié';
+                    messageTabConfirm.push({messageEmailConfirm: messageEmailConfirm});
                 };
             } else { // Sinon on stock l'email de la session dans data
                 data.email = request.session.user.email;
@@ -72,6 +78,8 @@ const profileController = {
                     const salt = await bcrypt.genSalt(10);
                     const encryptedPassword = await bcrypt.hash(request.body.password, salt);
                     data.password = encryptedPassword;
+                    const messagePasswordConfirm = 'Le password a bien été modifié';
+                    messageTabConfirm.push({messagePasswordConfirm: messagePasswordConfirm});
                 };
             } else if (request.body.password && request.body.passwordConfirm === undefined) { // Si un des 2 password demander manque => message d'erreur
                 const messagePassword = "Veuillez remplir les deux champs password.";
@@ -103,7 +111,7 @@ const profileController = {
                 gamePlay: request.session.user.gamePlay
             }
             // ON renvoie le message de la bdd et la session mis a jour
-            response.status(200).json({message: userEdit.message, session: request.session.user});
+            response.status(200).json({message: messageTabConfirm, session: request.session.user});
         } catch (error) {
             console.trace(error);
             return response.status(500).json(error.tostring());

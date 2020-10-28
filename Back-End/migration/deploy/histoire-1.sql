@@ -9,8 +9,8 @@ INSERT INTO game.character (
     "atk",
     "def"
     )
-    VALUES  ('Warrior', 'true', '20', '7', '10'),
-            ('Ranger', 'true', '15', '10', '5'),
+    VALUES  ('Minotaur', 'true', '20', '7', '10'),
+            ('Wraith', 'true', '15', '10', '5'),
             ('Vieillard', 'false', '20', '3', '2');
 
 INSERT INTO game.type ( 
@@ -20,14 +20,16 @@ INSERT INTO game.type (
             ('Cliquable'),
             ('Choix'),
             ('Combat'),
-            ('Fin');
+            ('Fin'),
+            ('Redirection');
 
 INSERT INTO game.history ( 
     "name",
     "description",
-    "difficulty"
+    "difficulty",
+    "img"
     )
-    VALUES  ('Prison', 'Evadez-vous', 'easy');
+    VALUES  ('Prison', 'Evadez-vous', 'easy', 'https://i.ibb.co/25xVbhh/arenes.jpg');
 
 INSERT INTO game.scene ( 
     "name",
@@ -40,7 +42,7 @@ INSERT INTO game.scene (
            ('speak', 'scene de discution'),
            ('click_on_door', 'scene de choix: partir rester'),
            ('raft', 'scene clickable: bord de mer'),
-           ('click_on_raft', 'scene de choix: partir'),
+           ('click_on_raft', 'scene de redirection: partir'),
            ('game_over', 'scene de fin: gameover'),
            ('game_neutral', 'scene de fin: sortir maudit sans avoir tuer le Vieillard'),
            ('game_win', 'scene de fin: sortir en ayant tuer le Vieillard');
@@ -74,16 +76,16 @@ COMMIT;
 BEGIN;
 
 UPDATE game.scene SET "type_id" = 1, "opponent_id" = null WHERE "id" = 1;
-UPDATE game.scene SET "type_id" = 2, "opponent_id" = null WHERE "id" = 2;
-UPDATE game.scene SET "type_id" = 3, "opponent_id" = null WHERE "id" = 3;
+UPDATE game.scene SET "type_id" = 2, "opponent_id" = 3 WHERE "id" = 2;
+UPDATE game.scene SET "type_id" = 3, "opponent_id" = 3 WHERE "id" = 3;
 UPDATE game.scene SET "type_id" = 4, "opponent_id" = 3 WHERE "id" = 4;
-UPDATE game.scene SET "type_id" = 3, "opponent_id" = null WHERE "id" = 5;
+UPDATE game.scene SET "type_id" = 3, "opponent_id" = 3 WHERE "id" = 5;
 UPDATE game.scene SET "type_id" = 3, "opponent_id" = null WHERE "id" = 6;
 UPDATE game.scene SET "type_id" = 2, "opponent_id" = null WHERE "id" = 7;
-UPDATE game.scene SET "type_id" = 3, "opponent_id" = null WHERE "id" = 8;
+UPDATE game.scene SET "type_id" = 6, "opponent_id" = null WHERE "id" = 8;
 UPDATE game.scene SET "type_id" = 5, "opponent_id" = null WHERE "id" = 9;
 UPDATE game.scene SET "type_id" = 5, "opponent_id" = null WHERE "id" = 10;
-UPDATE game.scene SET "type_id" = 5, "opponent_id" = null WHERE "id" = 11;
+UPDATE game.scene SET "type_id" = 5, "opponent_id" = 3 WHERE "id" = 11;
 
 INSERT INTO game.history_has_scene ( 
     "history_id",
@@ -143,6 +145,7 @@ CREATE VIEW scene_text AS
 SELECT  scene.id AS scene_id,
         scene.name AS scene_name,
         scene.description AS scene_description,
+        scene.opponent_id AS scene_opponent_id,
         "type"."name" AS scene_type,
         text_in_game.description AS scene_text
 FROM game.scene
@@ -154,6 +157,7 @@ CREATE VIEW scene_opponent AS
 SELECT  scene.id AS scene_id,
         scene.name AS scene_name, 
         scene.description AS scene_description, 
+        scene.opponent_id AS scene_opponent_id,
         "type"."name" AS scene_type,
         "character"."name" AS opponent_name,
         "character"."hp" AS opponent_hp,
@@ -167,6 +171,7 @@ CREATE VIEW scene_clickable_element AS
 SELECT  scene.id AS scene_id,
         scene.name AS scene_name, 
         scene.description AS scene_description, 
+        scene.opponent_id AS scene_opponent_id,
         "type"."name" AS scene_type, 
         clickable_element.name AS clickable_element_name,
         clickable_element.shape AS clickable_element_shape,
@@ -180,6 +185,7 @@ CREATE VIEW scene_finish AS
 SELECT  scene.id AS scene_id,
         scene.name AS scene_name, 
         scene.description AS scene_description, 
+        scene.opponent_id AS scene_opponent_id,
         "type"."name" AS scene_type
 FROM game.scene
 JOIN game.type ON "type"."id" = scene.type_id;

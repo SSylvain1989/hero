@@ -37,6 +37,12 @@ const Start = ({ scene, storyId }) => {
             </div>
           </div>
         </div>
+        <div className="start__image-background">
+          <img
+            src={`${scene.img_scene}`}
+            alt="background"
+          />
+        </div>
       </div>
     );
   }

@@ -39,6 +39,7 @@ CREATE TABLE game.history ( -- NE PEUT ETRE CREE AVANT CHARACTER
   "name" text NOT NULL UNIQUE,
   "description" text,
   "difficulty" text,
+  "img" text,
   "created_at" timestamptz DEFAULT NOW(),
   "updated_at" timestamptz DEFAULT NULL
 );

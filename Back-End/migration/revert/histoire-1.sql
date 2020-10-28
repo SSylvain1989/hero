@@ -22,9 +22,7 @@ DELETE FROM game.scene_has_text;
 
 DELETE FROM game.scene_has_clickable_element;
 
-COMMIT;
-
-BEGIN;
+DELETE FROM game.party;
 
 DELETE FROM game.history;
 

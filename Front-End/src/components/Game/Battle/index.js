@@ -1,26 +1,46 @@
-import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import startMinautor from '../../../images/start-minautor.gif';
+import PlayerFrame from 'src/containers/PlayerFrame';
+import OpponentFrame from 'src/containers/OpponentFrame';
+import testImage from 'src/images/start-minautor.gif';
 
 import './battle.scss';
 
-const Battle = ({ scene, storyId }) => {
+const Battle = ({
+  scene, storyId, setOpponent, handleAttack, playerIsAlive, opponentIsAlive,
+}) => {
   if (scene !== undefined) {
-    const description = scene.details_scene.scene_description;
+    const [ready, setReady] = useState(false);
+    useEffect(() => {
+      setOpponent(scene.details_scene);
+      setReady(true);
+    }, []);
+
+    const handleOnAttackClick = () => {
+      handleAttack();
+    };
 
     return (
       <div className="battle-element">
         <div className="battle-element__scene">
-          <h1>{description}</h1>
+          {ready && <h1><OpponentFrame /></h1>}
           <div className="battle-element__scene--image-container">
             <img
-              src={startMinautor}
-              alt="Fiche personnage"
+              src={testImage}
+              alt="player-info"
             />
           </div>
-          {scene.next_scene && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button className="battle-element__scene-attack" type="button">{scene.next_scene.next_scene_name}</button></Link>}
-          {scene.next_scene2 && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button className="battle-element__scene-defense" type="button">{scene.next_scene2.next_scene_name2}</button></Link>}
+          <PlayerFrame />
+          <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>
+          {!playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
+          {!opponentIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
+        </div>
+        <div className="battle-element__image-background">
+          <img
+            src={`${scene.img_scene}`}
+            alt="background"
+          />
         </div>
       </div>
     );
@@ -53,6 +73,10 @@ Battle.propTypes = ({
     }),
   }).isRequired,
   storyId: PropTypes.number.isRequired,
+  handleAttack: PropTypes.func.isRequired,
+  setOpponent: PropTypes.func.isRequired,
+  playerIsAlive: PropTypes.bool.isRequired,
+  opponentIsAlive: PropTypes.bool.isRequired,
 });
 
 export default Battle;

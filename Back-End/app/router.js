@@ -68,7 +68,7 @@ router.post('/login-check', connexionController.loginCheck);
  * @group connexion - Route en lien avec la connexion 
  * @returns {object} 200 - Un message de confirmation de la déconnexion et la session
  */
-router.get('/log-out', connexionController.logout);
+router.post('/log-out', connexionController.logout);
 
 /* ---------- Route accécible seulement avec connexion ---------- */
 
