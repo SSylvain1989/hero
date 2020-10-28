@@ -31,7 +31,7 @@ const mapStateToProps = (state) => ({
     image: '',
     inventory: {},
   }, */
-  player: state.game.player,
+  player: { ...state.game.player },
 });
 
 /* === Actions ===
