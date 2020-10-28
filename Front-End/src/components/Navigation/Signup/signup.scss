@@ -1,0 +1,51 @@
+@use 'src/styles/vars' as vars;
+
+.signup {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    form {
+      border: solid 1px black;
+        // display: flex;
+        // flex-direction: column;
+        border-radius: 5px;
+        background-color: rgb(167, 181, 199);
+    }input{
+      margin: 0.3rem;
+      padding: 0.3rem;
+      width: 120px;
+      border-radius: 5px;
+      align-items: left;
+    }&__title{
+      padding: 0.3rem;
+    }
+    &__signed {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+    }&__text {
+      margin: 1rem;
+    }&__button {
+      padding: 1rem;
+      color: white;
+      font-size: large;
+      bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: vars.$bgr-btn-bleu;
+    }&__error {
+      color: vars.$invalide-color;
+    }&__signed {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }&__submit{
+      text-align: center;
+    }
+}

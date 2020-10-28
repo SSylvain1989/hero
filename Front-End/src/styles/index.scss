@@ -1,0 +1,15 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+
+  // or you can import your own font
+  // @font-face {
+  //   font-family: 'Merriweather';
+  //   src: url(https://fr.allfont.net/allfont.css?fonts=merriweather);
+  // }
+
+

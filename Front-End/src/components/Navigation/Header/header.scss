@@ -1,0 +1,44 @@
+@use 'src/styles/vars';
+
+.header {
+  background-color: vars.$normal-color;
+  position: fixed;
+  width: 100%;
+  left:0;
+  top: 0;
+  height: 4rem;
+  z-index: 999;
+
+  ul {
+  display: flex;
+
+    li {
+      margin: 1.5rem;
+    }
+  }
+
+  &__leftside {
+  display: flex;
+  text-align: left;
+  width: 100%;
+    
+  img {
+    width: 50px;
+    top: 0;
+    margin: 0.5rem;
+  }
+  }
+
+  &__rightside {
+    position: absolute;
+    display: flex;
+    right: 1rem;
+
+      img {
+        position: absolute;
+        width: 50px;
+        top: 0.5rem;
+        right: 9rem;
+      }
+    }
+}
