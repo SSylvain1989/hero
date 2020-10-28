@@ -19,9 +19,6 @@ const navigationMiddleware = (store) => (next) => (action) => {
         });
       next(action);
       break;
-    case FETCH_GAMEDETAIL:
-      next(action);
-      break;
     case FETCH_DATABOARD:
       console.log('je suis avant la requete axios');
       axios.get('http://34.207.247.234:3000/api/board',

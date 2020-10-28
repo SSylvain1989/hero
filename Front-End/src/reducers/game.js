@@ -4,6 +4,7 @@ import {
   ADD_CHARACTER_LIST,
   SET_OPPONENT,
   ATTACK,
+  RESET_STORY,
 } from '../actions/game';
 
 import createOpponentFromScene from '../utils/createOpponentFromScene';
@@ -14,7 +15,17 @@ import damageCalculation from '../utils/damageCalculation';
 export const initialState = {
   // ici on déclare un objet vide avec la propriété story qui sera rempli
   // au déclenchement du bouton "jouer maintenant"
-  story: {},
+  story: {
+    history: {
+      scene_list: [
+        {
+          details_scene: {
+            scene_id: 0,
+          },
+        },
+      ],
+    },
+  },
   isStoryLoaded: false,
   player: {},
   playerIsAlive: true,
@@ -34,6 +45,10 @@ const game = (state = initialState, action = {}) => {
         },
         playerSelected: false,
         isStoryLoaded: true,
+      };
+    case RESET_STORY:
+      return {
+        ...initialState,
       };
     case SELECT_CHARACTER: {
       const chosenCharacter = getCharacterById(action.id, [...state.characterList]);

@@ -6,6 +6,7 @@ import GamesList from '../components/Navigation/GamesList';
 
 // Action Creators
 import { fetchGames } from '../actions/navigation';
+import { resetStory } from '../actions/game';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -28,6 +29,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchGames: () => {
     dispatch(fetchGames());
+  },
+  resetStory: () => {
+    dispatch(resetStory());
   },
 });
 
