@@ -9,12 +9,12 @@ INSERT INTO game.character (
     "atk",
     "def"
     )
-    VALUES  ('Dark Knight', 'true', '30', '15', '7'),
-            ('Samurai', 'true', '20', '20', '10'),
-            ('Paladin', 'true', '40', '7', '15'),
-            ('Gargoyle', 'false', '20', '5', '4'),
-            ('Dragon King', 'false', '30', '8', '10'),
-            ('Death', 'false', '40', '12', '6');
+    VALUES  ('Fallen Angels', 'true', '30', '15', '7'),
+            ('Reaper Man', 'true', '20', '20', '10'),
+            ('Golem', 'true', '40', '7', '15'),
+            ('Goblin', 'false', '20', '5', '4'),
+            ('Orc', 'false', '30', '8', '10'),
+            ('Ogre', 'false', '40', '12', '6');
 
 INSERT INTO game.history ( 
     "name",

@@ -46,6 +46,7 @@ const gameController = {
                                 scene_id: oneScene[0].scene_id,
                                 scene_name: oneScene[0].scene_name,
                                 scene_description: oneScene[0].scene_description,
+                                scene_opponent_id: oneScene[0].scene_opponent_id,
                                 scene_type: oneScene[0].scene_type,
                                 clickable_element: {
                                     clickable_element_name: oneScene[0].clickable_element_name,
@@ -216,7 +217,8 @@ const gameController = {
                             details_scene: sceneTab[0],
                             previous_scene_id: oneHistory[0].previous_scene_id,
                             next_scene_id: oneHistory[0].next_scene_id,
-                            next_scene_name: 'Démarrer'
+                            next_scene_name: 'Démarrer',
+                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                         { // Scene 13
                             details_scene: sceneTab[1],
@@ -228,7 +230,8 @@ const gameController = {
                             next_scene2: {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
-                            }
+                            },
+                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                         { // Scene 14
                             details_scene: sceneTab[2],
@@ -240,7 +243,8 @@ const gameController = {
                             next_scene2: {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
-                            }
+                            },
+                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                         { // Scene 15
                             details_scene: sceneTab[3],
@@ -252,17 +256,20 @@ const gameController = {
                             next_scene2: {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
-                            }
+                            },
+                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                         { // Scene 16
                             details_scene: sceneTab[4],
                             previous_scene_id: [15, 14, 13],
-                            finish_text: `Game Over, Vous etes mort !`
+                            finish_text: `Game Over, Vous etes mort !`,
+                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                         { // Scene 17
                             details_scene: sceneTab[5],
                             previous_scene_id: oneHistory[5].previous_scene_id,
-                            finish_text: `Bravo, vous etes le grand maitre de l'arene !`
+                            finish_text: `Bravo, vous etes le grand maitre de l'arene !`,
+                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                     ]
                 };
