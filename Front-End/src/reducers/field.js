@@ -4,6 +4,7 @@ import {
   CHANGE_LOGIN_FIELD_VALUE,
   RESET_FIELDS,
   DISPLAY_MESSAGE_TOOGLE,
+  CHANGE_CONTACT_FIELD_VALUE,
 } from '../actions/field';
 
 import {
@@ -34,6 +35,10 @@ export const initialState = {
   login: {
     userName: '',
     password: '',
+  },
+  contact: {
+    email: '',
+    message: '',
   },
   session: {
     connected_user: false,
@@ -70,6 +75,14 @@ const field = (state = initialState, action = {}) => {
         ...state,
         login: {
           ...state.login,
+          [action.name]: action.value,
+        },
+      };
+    case CHANGE_CONTACT_FIELD_VALUE:
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
           [action.name]: action.value,
         },
       };

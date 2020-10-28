@@ -20,6 +20,26 @@ const boardDetail = {
         // on renvoie les données
         return boardUserUpdate.rows[0];
     },
+    editBoardDetailGame: async (boardDetail) => {
+        // on prépare la requete
+        const sql = `UPDATE nav.game_details SET "gameWin" = $1, "gameOver" = $2, "gamePlay" = $3 WHERE id = $4 RETURNING "gameWin", "gameOver", "gamePlay";`;
+        // on envoie la requete en bdd avec la requete preparer et les valeurs passé en parametre
+        const boardDetailUpdate = await db.query(sql, [boardDetail.gameWin, boardDetail.gameOver, boardDetail.gamePlay, boardDetail.detail_id]);
+        // on stock un message de confirmation dans les données recus
+        boardDetailUpdate.rows[0].message = 'Vos informations sont modifiées';
+        // on renvoie les données
+        return boardDetailUpdate.rows[0];
+    },
+    createParty: async (data) => { // on récupère les game_details de l'user connecter dans la session
+        // on prépare la requete
+        const sql = `INSERT INTO game.party ("user_id", "playable_id", "history_id") VALUES ($1, $2, $3);`;
+        // on envoie la requete en bdd avec la requete preparer et l'id passé en parametre
+        const newData = await db.query(sql, [data.user_id, data.playable_id, data.history_id]);
+        // on ecrit un message de confirmation
+        const message = 'Votre partie est bien enregistré';
+        // on renvoie le message
+        return message;
+    },
 };
 
 module.exports = boardDetail;
