@@ -7,6 +7,7 @@ import {
   RESET_STORY,
 } from '../actions/game';
 
+import prepareOpponentsFromStory from '../utils/prepareOpponentsFromStory';
 import createOpponentFromScene from '../utils/createOpponentFromScene';
 import getCharactersByStory from '../selectors/getCharactersByStory';
 import getCharacterById from '../selectors/getCharacterbyId';
@@ -38,7 +39,10 @@ export const initialState = {
 
 const game = (state = initialState, action = {}) => {
   switch (action.type) {
-    case ADD_STORY:
+    case ADD_STORY: {
+      // Préparer tous les opponents (non playable characters) de l'histoire
+      const opponentList = prepareOpponentsFromStory({ ...action.story });
+      console.log(opponentList);
       return {
         ...state,
         story: {
@@ -47,6 +51,7 @@ const game = (state = initialState, action = {}) => {
         playerSelected: false,
         isStoryLoaded: true,
       };
+    }
     case RESET_STORY:
       return {
         ...initialState,
