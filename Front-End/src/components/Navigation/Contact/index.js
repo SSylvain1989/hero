@@ -8,7 +8,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
 import apiKeys from './apikey';
-import Field from '../../common/Field';
+import Field from '../../common/Field/FieldUser';
+
+import backgroundhero from 'src/images/backgroundhero.jpg';
 
 //import Letter from './letter';
 
@@ -47,28 +49,29 @@ const Contact = ({
   };
   if (!response) {
     return (
-      <div className="contact_container">
-        <div className="contact_wrap">
-          <img className="contact_picture" src={logo} alt="logo" />
-          <form className="contact_form" onSubmit={onSubmit}>
-            <h1 className="contact_title">Nous contacter</h1>
+      <div className="contact">
+        <img className="contact__bg--site" src={backgroundhero} alt="backgroundHero" />
+        <div className="contact__wrap">
+          <img className="contact__picture" src={logo} alt="logo" />
+          <form className="contact__form" onSubmit={onSubmit}>
+            <h1 className="contact__title">Nous contacter</h1>
             <Field
-              className="contact_email"
               name="email"
-              type="email"
-              value={email}
-              onChange={changeField}
               placeholder="Votre email"
+              onChange={changeField}
+              value={email}
+              type="email"
+              className="contact__email"
             />
             <Field
               name="message"
-              value={message}
+              placeholder="Votre message"
               onChange={changeField}
+              value={message}
               type="text"
-              placeholder="Votre message ..."
-              className="contact_input--message"
+              className="contact__message"
             />
-            <button className="contact_button">Envoyer</button>
+            <button className="contact__button">Envoyer</button>
           </form>
         </div>
       </div>

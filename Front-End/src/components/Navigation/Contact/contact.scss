@@ -1,126 +1,143 @@
 // integrer typo merriweather
-// voir pr le responsive
-// ajout img de fond
-// Field a modif
 
-.contact_container {
+@use 'src/styles/vars' as vars;
+
+.contact {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   padding: 20px;
-  background-color: #B1B1B1;
-}
+  //background-color: vars.$font-silver-color;
 
-.contact_wrap {
-  background-color: #42291A;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px 30px 60px 50px;
-
-  border: 10px outset #D4AF37;
-  border-radius: 12px;
-
-  box-shadow: 0px 10px 13px -7px #000000,
-  inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
-
-  position: absolute;
-}
-
-.contact_picture {
-  // width: 20%;
-  // padding-top: 55px;
-  // box-sizing: border-box;
-
-  // max-width: 100%;
-  // vertical-align: middle;
-
-}
-
-.contact_form {
-  box-sizing: border-box;
-}
-
-.contact_title {
-  font-family: sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-
-  text-shadow: 3px 2px 0 #290f0f;
-  color: #D4AF37;
-  text-align: center;
-
-  padding-bottom: 10px;
-  box-sizing: border-box;
-}
-
-.contact_email {
-  min-height: 50px;
-  border-radius: 25px;
-  padding: 14px 30px;
-
-  display: block;
-  background: #EEEEEE;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-
-.contact_input--message {
-  min-height: 150px;
-  border-radius: 25px;
-  padding: 14px 30px;
-
-  display: block;
-  background: #EEEEEE;
-  font-size: 15px;
-  line-height: 1.5;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  &__wrap {
+    background-color: vars.$brown-color;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 30px 60px 50px;
   
-}
-
-// BUTTON //
-
-.contact_button {
-  width: 50%;
-  height: 50px;
-
-  color: #42291A;
-
-  transition: all 0.4s;
+    border: 10px outset vars.$border-color;
+    border-radius: 12px;
   
-  cursor: pointer;
-
-  background: linear-gradient(
-  180deg,
-  #fea 0%,
-  #eccb5f 49%,
-  #D4AF37 51%,
-  #fea 100%);
-
-  padding: 10px 20px 10px 20px;
-  margin-top: 10px;
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
   
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
+    position: absolute;
 
-  border: 5px outset #D4AF37;
-  border-radius: 12px;
-}
+  }&__picture {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+  
+    max-width: 100%;
+    vertical-align: middle;
 
-.contact_button:hover {
-  color: #D4AF37;
-  background: linear-gradient(
+  }&__title {
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
+
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: vars.$border-color 1px solid;
+
+  }&__email {
+    border-radius: 15px;
+    padding: 14px 30px;
+  
+    display: list-item;
+    background: vars.$font-base-color;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 15px;
+  
+    text-align: center;
+
+  }&__message {
+    min-height: 120px;
+
+    border-radius: 15px;
+    padding: 14px 30px;
+  
+    display: list-item;
+    background: vars.$font-base-color;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 15px;
+  
+    text-align: center;
+
+  }&__email::placeholder {
+    color: vars.$brown-color;
+  }&__message::placeholder {
+    color: vars.$brown-color;
+  }
+
+  &__button {
+    width: 50%;
+    height: 50px;
+  
+    color: vars.$font-btn-grad-color;
+  
+    transition: all 0.4s;
+    
+    cursor: pointer;
+  
+    background: linear-gradient(
     180deg,
-    #804b2a 0%,
-    #42291A 46.65551839464883%,
-    #42291A 46.65551839464883%,
-    #804b2a  100%);
+    vars.$bgr-btn-grad-01 0%,
+    vars.$bgr-btn-grad-02 49%,
+    vars.$bgr-btn-grad-03 51%,
+    vars.$bgr-btn-grad-04 100%);
+  
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+    
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 12px;
+  }
+  &__button:hover {
+    color: vars.$font-btn-grad-color-hover;
+    background: linear-gradient(
+      180deg,
+      vars.$bgr-btn-grad-hover-01 0%,
+      vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+      vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+      vars.$bgr-btn-grad-hover-04  100%);
+  }
 }
 
+// Test avec le fond bibli 01 du site //
+.contact__bg--site {
+  background: no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+
+  //filter: grayscale(1);
+  //filter: sepia(1);
+  //filter: blur(3px);
+  //filter: opacity(50%);
+  filter: brightness(50%) blur(1px) hue-rotate(-5deg);
+}
