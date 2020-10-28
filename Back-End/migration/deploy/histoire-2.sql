@@ -9,8 +9,8 @@ INSERT INTO game.character (
     "atk",
     "def"
     )
-    VALUES  ('Fallen Angels', 'true', '30', '15', '7'),
-            ('Reaper Man', 'true', '20', '20', '10'),
+    VALUES  ('Anges déchus', 'true', '30', '15', '7'),
+            ('Faucheur', 'true', '20', '20', '10'),
             ('Golem', 'true', '40', '7', '15'),
             ('Goblin', 'false', '20', '5', '4'),
             ('Orc', 'false', '30', '8', '10'),
@@ -22,9 +22,9 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('L''arène', 'Arriverez-vous a battre tous les ennemies ?', 'medium', 'https://i.ibb.co/25xVbhh/arenes.jpg'),
-            ('Chateau', 'Le Roi c''est fais volé sa courrone ! Pourra t''il la retrouver ?', 'medium', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
-            ('Le labyrinthe', 'Trouvez la sortie le plus vite possible !', 'hard', 'https://i.ibb.co/bKW2JFn/labyrinth.jpg');
+    VALUES  ('L''arène', 'Arriverez-vous a battre tous les ennemies ?', 'Moyen', 'https://i.ibb.co/25xVbhh/arenes.jpg'),
+            ('Chateau', 'Le Roi c''est fais volé sa courrone ! Pourra t''il la retrouver ?', 'Moyen', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
+            ('Le labyrinthe', 'Trouvez la sortie le plus vite possible !', 'Difficile', 'https://i.ibb.co/bKW2JFn/labyrinth.jpg');
 
 INSERT INTO game.scene ( 
     "name",

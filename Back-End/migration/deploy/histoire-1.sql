@@ -9,8 +9,8 @@ INSERT INTO game.character (
     "atk",
     "def"
     )
-    VALUES  ('Minotaur', 'true', '20', '7', '10'),
-            ('Wraith', 'true', '15', '10', '5'),
+    VALUES  ('Minotaure', 'true', '20', '7', '10'),
+            ('Spectre', 'true', '15', '10', '5'),
             ('Vieillard', 'false', '20', '3', '2');
 
 INSERT INTO game.type ( 
@@ -29,7 +29,7 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('Prison', 'Evadez-vous', 'easy', 'https://i.ibb.co/25xVbhh/arenes.jpg');
+    VALUES  ('Prison', 'Evadez-vous', 'Facile', 'https://i.ibb.co/25xVbhh/arenes.jpg');
 
 INSERT INTO game.scene ( 
     "name",
