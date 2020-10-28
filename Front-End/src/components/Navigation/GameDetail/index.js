@@ -21,8 +21,13 @@ const GameDetail = ({
   useEffect(() => {
     console.log(game);
     fetchGameDetail();
-    loadCharacterList();
   }, []);
+
+  useEffect(() => {
+    // On ne charge la liste des personnages
+    // Que quand l'histoire est chargée
+    loadCharacterList();
+  }, [isStoryLoaded]);
 
   const handleCharacterOnClick = (event) => {
     selectCharacter(event.currentTarget.id);

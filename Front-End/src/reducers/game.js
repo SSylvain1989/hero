@@ -7,6 +7,7 @@ import {
 } from '../actions/game';
 
 import createOpponentFromScene from '../utils/createOpponentFromScene';
+import getCharactersByStory from '../selectors/getCharactersByStory';
 import getCharacterById from '../selectors/getCharacterbyId';
 import createPlayer from '../utils/createPlayer';
 import damageCalculation from '../utils/damageCalculation';
@@ -46,11 +47,14 @@ const game = (state = initialState, action = {}) => {
         playerIsAlive: true,
       };
     }
-    case ADD_CHARACTER_LIST:
+    case ADD_CHARACTER_LIST: {
+      const characterList = getCharactersByStory([...action.data.character], state.story);
+      console.log('characterList', characterList);
       return {
         ...state,
-        characterList: [...action.data.character],
+        characterList: [...characterList],
       };
+    }
     case SET_OPPONENT: {
       const opponent = createOpponentFromScene(action.sceneDetails);
       return {
