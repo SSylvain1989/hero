@@ -66,7 +66,7 @@ const Connection = ({
   return (
     <div className="connection__loged">
       <h1>Vous êtes bien connecté, bienvenue {sessionUserName} </h1>
-      <button type="button"><Link to="liste-des-jeux">Voir la liste des jeux</Link></button>
+      <button type="button" className="connection__redirect"><Link to="liste-des-jeux">Voir la liste des jeux</Link></button>
     </div>
   );
 };
@@ -78,6 +78,7 @@ Connection.propTypes = ({
   onSubmit: PropTypes.func.isRequired,
   isLoged: PropTypes.bool.isRequired,
   sessionUserName: PropTypes.string,
+  messagesError: PropTypes.string.isRequired,
 });
 
 Connection.defaultProps = ({

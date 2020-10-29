@@ -13,7 +13,14 @@ const damageCalculation = (source, destination) => {
   console.log(destination.name, ':', destination.healthPoint.current, '/', destination.healthPoint.max);
 
   // vérification si la cible est en vie
-  return destination.healthPoint.current > 0;
+  return [destination.healthPoint.current > 0,
+    // ici je passe toutes les informations dont j'ai besoin pour structurer mon mess en log
+    // destination.name,
+    // source.name,
+    //   baseDamage,
+    //   trueDamage,
+    // destination.healthPoint.max,
+  ];
 };
 
 export default damageCalculation;

@@ -7,12 +7,18 @@ import PropTypes from 'prop-types';
 // == Composant
 const OpponentFrame = ({
   opponent,
-}) => (
-  <div className="opponent-frame">
-    <h1>{ opponent.name }</h1>
-    <p>health  : { opponent.healthPoint.current } / { opponent.healthPoint.max }</p>
-  </div>
-);
+}) => {
+  console.log('toto', opponent);
+  return (
+
+    <div className="opponent-frame">
+      <h1>{opponent.name}</h1>
+      <p>point(s) d'attaque : {opponent.attackPoint}</p>
+      <p>point(s) de défense : {opponent.defensePoint}</p>
+      <p>point(s) de vie  : {opponent.healthPoint.current} / {opponent.healthPoint.max}</p>
+    </div>
+  );
+};
 
 // == PropTypes
 OpponentFrame.propTypes = {

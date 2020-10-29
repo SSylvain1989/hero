@@ -6,6 +6,7 @@ import getSceneById from 'src/selectors/getSceneById';
 
 import './clickableElement.scss';
 
+// composant avec deux choix vieillard ou porte
 const clickableElement = ({ scene, storyId, image, game }) => {
   if (scene !== undefined) {
     // TOUT CE QUI SE TROUVE EN DESSOUS EST SALE
@@ -50,11 +51,11 @@ const clickableElement = ({ scene, storyId, image, game }) => {
           </div>
           <PlayerFrame />
           {scene.next_scene
-          && nextSceneOpponentIsAlive
-          && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">{scene.next_scene.next_scene_name}</button></Link>}
+            && nextSceneOpponentIsAlive
+            && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">{scene.next_scene.next_scene_name}</button></Link>}
           {scene.next_scene2
-          && nextSceneOpponentIsAlive2
-          && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">{scene.next_scene2.next_scene_name2}</button></Link>}
+            && nextSceneOpponentIsAlive2
+            && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">{scene.next_scene2.next_scene_name2}</button></Link>}
         </div>
         <div className="clickable-element__image-background">
           <img

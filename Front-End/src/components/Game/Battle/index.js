@@ -47,6 +47,10 @@ const Battle = ({
             alt="background"
           />
         </div>
+        <div className="battle-log">
+          {!opponent.isAlive && <p>Votre adversaire est mort dans d'atroces souffrances</p>}
+          {!opponent.isAlive && <p>Vous êtes toujours debout avec 'à définir' point de vie</p>}
+        </div>
       </div>
     );
   }
