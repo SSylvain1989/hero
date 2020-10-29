@@ -79,10 +79,3 @@
       vars.$bgr-btn-grad-hover-04  100%);
   }
 }
-
-.Home__img {
-  background: no-repeat center fixed; 
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
-  filter: brightness(50%) blur(1px) hue-rotate(-5deg);
-}

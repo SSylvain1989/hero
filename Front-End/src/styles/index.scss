@@ -3,13 +3,21 @@
 
 body {
   font-family: 'Merriweather', Georgia, serif;
+  background-color: #222222;
 }
 
 
-  // or you can import your own font
+  //or you can import your own font
   // @font-face {
   //   font-family: 'Merriweather';
   //   src: url(https://fr.allfont.net/allfont.css?fonts=merriweather);
   // }
 
+
+.bg__site--01 {
+  background: no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  filter: brightness(50%) hue-rotate(-5deg);
+}
 

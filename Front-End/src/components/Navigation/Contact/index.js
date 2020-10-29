@@ -1,3 +1,4 @@
+  
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/order */
 /* eslint-disable consistent-return */
@@ -11,8 +12,6 @@ import apiKeys from './apikey';
 import Field from '../../common/Field/FieldUser';
 
 import backgroundhero from 'src/images/backgroundhero.jpg';
-
-//import Letter from './letter';
 
 import './contact.scss';
 import logo from 'src/images/logo.png';
@@ -43,14 +42,14 @@ const Contact = ({
         alert('Votre message a bien été envoyé, nous vous répondrons sous peu', result.text);
         console.log(result);
       },
-        (error) => {
-          alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
-        });
+      (error) => {
+        alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
+      });
   };
   if (!response) {
     return (
       <div className="contact">
-        <img className="contact__bg--site" src={backgroundhero} alt="backgroundHero" />
+        <img className="bg__site--01" src={backgroundhero} alt="backgroundHero" />
         <div className="contact__wrap">
           <img className="contact__picture" src={logo} alt="logo" />
           <form className="contact__form" onSubmit={onSubmit}>
