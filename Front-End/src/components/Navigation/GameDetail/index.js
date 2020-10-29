@@ -75,7 +75,7 @@ GameDetail.propTypes = ({
     name: PropTypes.string.isRequired,
     difficulty: PropTypes.string.isRequired,
   }).isRequired,
-  firstSceneId: PropTypes.string.isRequired,
+  firstSceneId: PropTypes.number.isRequired,
   isLogged: PropTypes.bool.isRequired,
 });
 

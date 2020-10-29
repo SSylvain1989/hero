@@ -19,15 +19,29 @@ const Profile = ({
   message,
   displayMessage,
   displayMessageToggle,
+  resetFields,
+  errorMessage,
 }) => {
   useEffect(() => {
     displayMessageToggle();
     setTimeout(() => displayMessageToggle(), 3000);
+    return () => {
+      resetFields();
+    };
   }, [message]);
   return (
     <div className="profile">
       <div className="profile__input">
         <h1>VOS INFORMATIONS</h1>
+        {errorMessage.length > 0
+            && errorMessage.map((element) => (
+              <p
+                className="signup__error"
+                key={Object.values(element)[0]}
+              >
+                {Object.values(element)[0]}
+              </p>
+            ))}
         <h2>Modifier mon email</h2>
         <Field
           name="email"
@@ -94,6 +108,8 @@ Profile.propTypes = ({
   message: PropTypes.string.isRequired,
   displayMessage: PropTypes.bool.isRequired,
   displayMessageToggle: PropTypes.func.isRequired,
+  resetFields: PropTypes.func.isRequired,
+  errorMessage: PropTypes.array.isRequired,
 });
 
 export default Profile;

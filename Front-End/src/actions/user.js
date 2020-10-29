@@ -10,6 +10,7 @@ export const CHECK_CONNEXION = 'CHECK_CONNEXION';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const SHOW_MODAL_TOOGLE = 'SHOW_MODAL_TOOGLE';
 export const HANDLE_ACCOUNT_DELETION = 'HANDLE_ACCOUNT_DELETION';
+export const ADD_PROFILE_ERROR_MESSAGE = 'ADD_PROFILE_ERROR_MESSAGE';
 
 export const emailSubmit = () => ({
   type: EMAIL_SUBMIT,
@@ -61,4 +62,9 @@ export const showModalToggle = () => ({
 export const handleAccountDeletion = (showModal) => ({
   type: HANDLE_ACCOUNT_DELETION,
   showModal,
+});
+
+export const addProfileErrorMessage = (errorMessage) => ({
+  type: ADD_PROFILE_ERROR_MESSAGE,
+  errorMessage,
 });

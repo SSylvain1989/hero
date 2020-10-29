@@ -31,14 +31,17 @@ const Header = ({
             Liste des jeux
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/score"
-            exact
-          >
-            Scores
-          </NavLink>
-        </li>
+        {isLoged
+          ? (
+            <li>
+              <NavLink
+                to="/score"
+                exact
+              >
+                Scores
+              </NavLink>
+            </li>
+          ) : null }
       </div>
       <div className="header__rightside">
         {isLoged

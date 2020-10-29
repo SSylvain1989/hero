@@ -85,6 +85,7 @@ Battle.propTypes = ({
   opponent: PropTypes.shape({
     isAlive: PropTypes.bool.isRequired,
   }).isRequired,
+  image: PropTypes.string.isRequired,
 });
 
 export default Battle;

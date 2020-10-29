@@ -35,6 +35,7 @@ const mapStateToProps = (state) => ({
   showModal: state.field.profile.showModal,
   message: state.field.profile.message,
   displayMessage: state.field.displayMessage,
+  errorMessage: state.field.profile.errorMessage,
 });
 
 /* === Actions ===

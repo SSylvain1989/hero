@@ -13,6 +13,7 @@ import {
   LOGIN_ERROR,
   SHOW_MODAL_TOOGLE,
   SAVE_MESSAGE,
+  ADD_PROFILE_ERROR_MESSAGE,
 } from '../actions/user';
 
 export const initialState = {
@@ -31,6 +32,7 @@ export const initialState = {
     passwordConfirm: '',
     showModal: false,
     message: '',
+    errorMessage: [],
   },
   login: {
     userName: '',
@@ -48,7 +50,7 @@ export const initialState = {
     userName: '',
   },
   messagesError: '',
-  loginErrorMessage: [],
+  // loginErrorMessage: [],
   displayMessage: false,
 };
 
@@ -107,8 +109,6 @@ const field = (state = initialState, action = {}) => {
         },
       };
     case LOGIN_ERROR:
-      console.log(action.message);
-
       return {
         ...state,
         messagesError: action.message,
@@ -144,11 +144,20 @@ const field = (state = initialState, action = {}) => {
           userName: '',
           password: '',
         },
+        messagesError: '',
       };
     case DISPLAY_MESSAGE_TOOGLE:
       return {
         ...state,
         displayMessage: !state.displayMessage,
+      };
+    case ADD_PROFILE_ERROR_MESSAGE:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          errorMessage: [...action.errorMessage],
+        },
       };
     default:
       return state;

@@ -13,6 +13,7 @@ import {
   loginError,
   HANDLE_ACCOUNT_DELETION,
   saveMessage,
+  addProfileErrorMessage,
 } from '../actions/user';
 
 import { resetFields } from '../actions/field';
@@ -24,13 +25,14 @@ const userMiddleware = (store) => (next) => (action) => {
         { email: store.getState().field.profile.email },
         { withCredentials: true })
         .then((response) => {
-          console.log(response.data);
           store.dispatch(saveMessage(response.data.message));
           store.dispatch(saveSession(response.data.session));
           store.dispatch(resetFields());
         })
         .catch((error) => {
-          console.error(error);
+          store.dispatch((addProfileErrorMessage(error.response.data.message)));
+        }).then(() => {
+          store.dispatch(resetFields());
         });
       next(action);
       break;
@@ -41,10 +43,11 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(saveMessage(response.data.message));
           store.dispatch(saveSession(response.data.session));
-          store.dispatch(resetFields());
         })
         .catch((error) => {
-          console.error(error);
+          store.dispatch((addProfileErrorMessage(error.response.data.message)));
+        }).then(() => {
+          store.dispatch(resetFields());
         });
       next(action);
       break;
@@ -61,7 +64,9 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(resetFields());
         })
         .catch((error) => {
-          console.error(error);
+          store.dispatch((addProfileErrorMessage(error.response.data.message)));
+        }).then(() => {
+          store.dispatch(resetFields());
         });
       next(action);
       break;
