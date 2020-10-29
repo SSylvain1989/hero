@@ -6,7 +6,7 @@ import getSceneById from 'src/selectors/getSceneById';
 
 import './clickableElement.scss';
 
-const clickableElement = ({ scene, storyId, game }) => {
+const clickableElement = ({ scene, storyId, image, game }) => {
   if (scene !== undefined) {
     // TOUT CE QUI SE TROUVE EN DESSOUS EST SALE
     // MAIS CA MARCHE
@@ -44,7 +44,7 @@ const clickableElement = ({ scene, storyId, game }) => {
         <div className="clickable-element__scene">
           <div className="clickable-element__scene--image-container">
             <img
-              src={testImage}
+              src={image}
               alt="player-info"
             />
           </div>

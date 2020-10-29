@@ -8,11 +8,9 @@ const CharacterList = ({ characterList, handleCharacterOnClick }) => (
     {characterList.length > 0
       && characterList.map((character) => (
         <Character
-          id={character.id}
           key={character.id}
           {...character}
           onClick={handleCharacterOnClick}
-          selected="selected"
         />
       ))}
   </div>

@@ -8,7 +8,6 @@ import {
 } from '../actions/game';
 
 import prepareOpponentsFromStory from '../utils/prepareOpponentsFromStory';
-import createOpponentFromScene from '../utils/createOpponentFromScene';
 import getCharactersByStory from '../selectors/getCharactersByStory';
 import getCharacterById from '../selectors/getCharacterbyId';
 import createPlayer from '../utils/createPlayer';
@@ -33,7 +32,9 @@ export const initialState = {
   playerIsAlive: true,
   playerSelected: false,
   opponentList: [],
-  opponent: {},
+  opponent: {
+    isAlive: true,
+  },
   opponentIsAlive: true,
   characterList: [],
 };
@@ -65,7 +66,6 @@ const game = (state = initialState, action = {}) => {
         ...state,
         player: newPlayer,
         playerSelected: true,
-        playerIsAlive: true,
       };
     }
     case ADD_CHARACTER_LIST: {
@@ -76,7 +76,7 @@ const game = (state = initialState, action = {}) => {
       };
     }
     case SET_OPPONENT: {
-      const opponent = createOpponentFromScene(action.sceneDetails);
+      const opponent = state.opponentList.find((who) => who.id === action.id);
       return {
         ...state,
         opponent,
