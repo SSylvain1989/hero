@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PlayerFrame from 'src/containers/PlayerFrame';
-import testImage from 'src/images/start-minautor.gif';
+import testImage from 'src/images/minotaur.gif';
 
 import './clickableElement.scss';
 

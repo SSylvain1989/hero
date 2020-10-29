@@ -91,7 +91,7 @@ Profile.propTypes = ({
   handleAccountDeletion: PropTypes.func.isRequired,
   showModal: PropTypes.bool.isRequired,
   showModalToggle: PropTypes.func.isRequired,
-  message: PropTypes.object.isRequired,
+  message: PropTypes.string.isRequired,
   displayMessage: PropTypes.bool.isRequired,
   displayMessageToggle: PropTypes.func.isRequired,
 });
