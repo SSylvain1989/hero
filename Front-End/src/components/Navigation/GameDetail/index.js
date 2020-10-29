@@ -47,8 +47,8 @@ const GameDetail = ({
               : (
                 <>
                   <CharacterList
-                      characterList={characterList}
-                      handleCharacterOnClick={handleCharacterOnClick}
+                    characterList={characterList}
+                    handleCharacterOnClick={handleCharacterOnClick}
                   />
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/${firstSceneId}`}><button type="button" className="game-detail__button">Jouer</button></Link>}
                 </>

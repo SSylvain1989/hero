@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './character.scss';
-import minotaur from 'src/images/minotaur.gif';
 import wraith from 'src/images/wraith.gif';
 
 const Character = ({
