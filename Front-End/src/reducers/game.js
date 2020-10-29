@@ -28,10 +28,6 @@ export const initialState = {
       ],
     },
   },
-<<<<<<< HEAD
-=======
-
->>>>>>> 00f57f162a82b4c6f22a6bc87ede243f2ebec8cc
   isStoryLoaded: false,
   player: {},
   playerIsAlive: true,
