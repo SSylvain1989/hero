@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // == Import
-import testImage from 'src/images/start-minautor.gif';
 import PlayerMenu from './PlayerMenu';
 
 // == Composant

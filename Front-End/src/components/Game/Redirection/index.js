@@ -2,19 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link, Redirect } from 'react-router-dom';
-import startMinautor from '../../../images/start-minautor.gif';
 import parchemin from '../../../images/parchemin.png';
 
 import './redirection.scss';
 
-const Redirection = ({ scene, storyId, opponentIsAlive }) => {
+const Redirection = ({ scene, storyId, opponentIsAlive, image }) => {
   if (scene !== undefined) {
     const text = scene.details_scene.scene_text;
     return (
       <div className="redirection">
         <div className="redirection__scene">
           <img
-            src={startMinautor}
+            src={image}
             alt="mooving-minautor"
           />
           <div className="redirection__scene--left" />

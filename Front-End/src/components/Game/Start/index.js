@@ -4,13 +4,12 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 
 // == Import
-import startMinautor from '../../../images/start-minautor.gif';
 import parchemin from '../../../images/parchemin.png';
 // == Import scss
 import './start.scss';
 
 // == Composant
-const Start = ({ scene, storyId }) => {
+const Start = ({ scene, storyId, image }) => {
   if (scene !== undefined) {
     const text = scene.details_scene.scene_text;
     const nextScene = scene.next_scene_id;
@@ -20,7 +19,7 @@ const Start = ({ scene, storyId }) => {
       <div className="start">
         <div className="start__scene">
           <img
-            src={startMinautor}
+            src={image}
             alt="mooving-minautor"
           />
           <div className="start__scene--left" />

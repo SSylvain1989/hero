@@ -7,7 +7,11 @@ const CharacterList = ({ characterList, handleCharacterOnClick }) => (
   <div className="character-list">
     {characterList.length > 0
       && characterList.map((character) => (
-        <Character id={character.id} key={character.id} image="#" {...character} onClick={handleCharacterOnClick} />
+        <Character
+          key={character.id}
+          {...character}
+          onClick={handleCharacterOnClick}
+        />
       ))}
   </div>
 );

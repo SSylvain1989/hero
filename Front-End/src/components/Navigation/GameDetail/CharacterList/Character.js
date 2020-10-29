@@ -2,27 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './character.scss';
-import minotaur from 'src/images/start-minautor.gif';
-import wraith from 'src/images/wraith.gif';
 
 const Character = ({
-  id, name, hp, atk, def, onClick,
+  id, name, hp, atk, def, onClick, image,
 }) => {
-  let characterImage = null;
-  switch (name) {
-    case 'Minotaur':
-      characterImage = minotaur;
-      break;
-    case 'Wraith':
-      characterImage = wraith;
-      break;
-    default:
-      break;
-  }
+  console.log(image);
 
   return (
     <div className="character__card" id={id} onClick={onClick}>
-      <img src={characterImage} alt={name} />
+      <img src={image} alt={name} />
       <h1>{name}</h1>
       <h2>Points de vie</h2>
       <p>{hp}</p>

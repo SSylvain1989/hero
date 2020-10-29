@@ -9,24 +9,24 @@ import './playerMenu.scss';
 const PlayerMenu = ({
   isToggled, name, attackPoint, defensePoint, healthPoint,
 }) => (
-  <>
-    {isToggled && (
-      <div className="player-menu">
-        <div className="player-menu__header">
-          <h1>{ name }</h1>
-        </div>
-        <div className="player-menu__stats">
-          <p>attack  : { attackPoint }</p>
-          <p>defense : { defensePoint }</p>
-          <p>health  : { healthPoint.current } / { healthPoint.max }</p>
-        </div>
-        <div className="player-menu__inventory">
-          WIP : Inventory
-        </div>
+    <>
+      {isToggled && (
+        <div className="player-menu">
+          <div className="player-menu__header">
+            <h1>{name}</h1>
+          </div>
+          <div className="player-menu__stats">
+            <p>attack  : {attackPoint}</p>
+            <p>defense : {defensePoint}</p>
+            <p>health  : {healthPoint.current} / {healthPoint.max}</p>
+          </div>
+          <div className="player-menu__inventory">
+            WIP : Inventory
       </div>
-    )}
-  </>
-);
+        </div>
+      )}
+    </>
+  );
 
 // == PropTypes
 PlayerMenu.propTypes = {

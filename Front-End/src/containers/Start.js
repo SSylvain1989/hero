@@ -14,6 +14,7 @@ import getSceneById from '../selectors/getSceneById';
 const mapStateToProps = (state, { sceneId }) => ({
   storyId: state.game.story.history.history_id,
   scene: getSceneById(sceneId, state.game.story.history.scene_list),
+  image: state.game.player.image,
 });
 
 /* === Actions ===

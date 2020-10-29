@@ -7,7 +7,7 @@ const createPlayer = (chosenCharacter) => {
       current: chosenCharacter.hp,
       max: chosenCharacter.hp,
     },
-    image: '',
+    image: chosenCharacter.image,
     inventory: {},
   };
 

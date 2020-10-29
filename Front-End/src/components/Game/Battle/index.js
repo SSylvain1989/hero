@@ -3,12 +3,11 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PlayerFrame from 'src/containers/PlayerFrame';
 import OpponentFrame from 'src/containers/OpponentFrame';
-import testImage from 'src/images/start-minautor.gif';
 
 import './battle.scss';
 
 const Battle = ({
-  scene, storyId, setOpponent, handleAttack, playerIsAlive, opponentIsAlive,
+  scene, storyId, setOpponent, handleAttack, playerIsAlive, opponentIsAlive, image,
 }) => {
   if (scene !== undefined) {
     const [ready, setReady] = useState(false);
@@ -27,7 +26,7 @@ const Battle = ({
           {ready && <h1><OpponentFrame /></h1>}
           <div className="battle-element__scene--image-container">
             <img
-              src={testImage}
+              src={image}
               alt="player-info"
             />
           </div>

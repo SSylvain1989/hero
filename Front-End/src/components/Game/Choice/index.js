@@ -2,19 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link, Redirect } from 'react-router-dom';
-import startMinautor from '../../../images/start-minautor.gif';
 import parchemin from '../../../images/parchemin.png';
 
 import './choice.scss';
 
-const Choice = ({ scene, storyId }) => {
+const Choice = ({ scene, storyId, image }) => {
   if (scene !== undefined) {
     const text = scene.details_scene.scene_text;
     return (
       <div className="choice">
         <div className="choice__scene">
+          {/* ici switch case si player = minautor on affiche minautor .. etc  */}
           <img
-            src={startMinautor}
+            src={image}
+            // voir comment faire un alt dynamique
             alt="mooving-minautor"
           />
           <div className="choice__scene--left" />

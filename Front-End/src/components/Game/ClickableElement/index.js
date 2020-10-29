@@ -2,18 +2,17 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PlayerFrame from 'src/containers/PlayerFrame';
-import testImage from 'src/images/start-minautor.gif';
 
 import './clickableElement.scss';
 
-const clickableElement = ({ scene, storyId }) => {
+const clickableElement = ({ scene, storyId, image }) => {
   if (scene !== undefined) {
     return (
       <div className="clickable-element">
         <div className="clickable-element__scene">
           <div className="clickable-element__scene--image-container">
             <img
-              src={testImage}
+              src={image}
               alt="player-info"
             />
           </div>
