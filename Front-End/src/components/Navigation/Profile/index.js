@@ -72,7 +72,7 @@ const Profile = ({
           </div>
         </div>
       </div>
-      <div className={displayMessage ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
+      <div className={(displayMessage && message !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
         <p>{Object.values(message)[0]}</p>
       </div>
     </div>
@@ -91,7 +91,7 @@ Profile.propTypes = ({
   handleAccountDeletion: PropTypes.func.isRequired,
   showModal: PropTypes.bool.isRequired,
   showModalToggle: PropTypes.func.isRequired,
-  message: PropTypes.object.isRequired,
+  message: PropTypes.string.isRequired,
   displayMessage: PropTypes.bool.isRequired,
   displayMessageToggle: PropTypes.func.isRequired,
 });

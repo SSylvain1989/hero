@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link, Redirect } from 'react-router-dom';
-import startMinautor from '../../../images/start-minautor.gif';
+import startMinautor from '../../../images/minotaur.gif';
 import parchemin from '../../../images/parchemin.png';
 
 import './redirection.scss';

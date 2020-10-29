@@ -73,6 +73,7 @@ GameDetail.propTypes = ({
     name: PropTypes.string.isRequired,
     difficulty: PropTypes.string.isRequired,
   }).isRequired,
+  firstSceneId: PropTypes.string.isRequired,
 });
 
 export default GameDetail;

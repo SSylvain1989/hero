@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PlayerFrame from 'src/containers/PlayerFrame';
 import OpponentFrame from 'src/containers/OpponentFrame';
-import testImage from 'src/images/start-minautor.gif';
+import testImage from 'src/images/minotaur.gif';
 
 import './battle.scss';
 

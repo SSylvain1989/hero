@@ -23,9 +23,11 @@
   }
 
   &__title {
+
     font-size: 2rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid vars.$border-color;
+    padding-bottom: 1rem;
   }
   
   &__button {
@@ -73,6 +75,7 @@
     margin: 1rem;
     font-size: large;
     font-weight: 600;
+    padding: 0;
   }
 }
 
