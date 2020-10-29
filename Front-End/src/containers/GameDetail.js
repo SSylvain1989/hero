@@ -20,7 +20,8 @@ const mapStateToProps = (state, { gameId }) => ({
   game: getGameDetailById(gameId, state.navigation.games),
   characterList: state.game.characterList,
   playerSelected: state.game.playerSelected,
-  firstSceneId: state.game.story.history.scene_list[0].details_scene.scene_id
+  firstSceneId: state.game.story.history.scene_list[0].details_scene.scene_id,
+  isLogged: state.field.isLoged,
 });
 
 /* === Actions ===
