@@ -23,7 +23,7 @@ INSERT INTO game.history (
     "img"
     )
     VALUES  ('L''arène', 'Arriverez-vous a battre tous les ennemies ?', 'Moyen', 'https://i.ibb.co/25xVbhh/arenes.jpg'),
-            ('Chateau', 'Le Roi c''est fais volé sa courrone ! Pourra t''il la retrouver ?', 'Moyen', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
+            ('Chateau', 'Le roi s''est fait voler sa couronne. Pourra t''il la retrouver ?', 'Moyen', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
             ('Le labyrinthe', 'Trouvez la sortie le plus vite possible !', 'Difficile', 'https://i.ibb.co/bKW2JFn/labyrinth.jpg');
 
 INSERT INTO game.scene ( 
