@@ -164,7 +164,7 @@ SELECT  scene.id AS scene_id,
         "character"."hp" AS opponent_hp,
         "character"."atk" AS opponent_atk,
         "character"."def" AS opponent_def,
-        "character"."img" AS opponent_img
+        "character"."image" AS opponent_img
 FROM game.scene
 JOIN game.type ON "type"."id" = scene.type_id
 JOIN game.character ON "character"."id" = scene.opponent_id;
