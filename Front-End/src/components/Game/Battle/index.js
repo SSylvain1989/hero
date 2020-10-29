@@ -8,12 +8,12 @@ import testImage from 'src/images/minotaur.gif';
 import './battle.scss';
 
 const Battle = ({
-  scene, storyId, setOpponent, handleAttack, playerIsAlive, opponentIsAlive,
+  scene, storyId, setOpponent, handleAttack, playerIsAlive, opponent,
 }) => {
   if (scene !== undefined) {
     const [ready, setReady] = useState(false);
     useEffect(() => {
-      setOpponent(scene.details_scene);
+      setOpponent(scene.details_scene.scene_opponent_id);
       setReady(true);
     }, []);
 
@@ -33,8 +33,8 @@ const Battle = ({
           </div>
           <PlayerFrame />
           <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>
-          {!playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
-          {!opponentIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
+          {ready && !playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
+          {ready && !opponent.isAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
         </div>
         <div className="battle-element__image-background">
           <img
@@ -61,6 +61,7 @@ Battle.propTypes = ({
       opponent_hp: PropTypes.number,
       opponent_atk: PropTypes.number,
       opponent_def: PropTypes.number,
+      scene_opponent_id: PropTypes.number,
     }).isRequired,
     previous_scene_id: PropTypes.number.isRequired,
     next_scene: PropTypes.shape({
@@ -76,7 +77,9 @@ Battle.propTypes = ({
   handleAttack: PropTypes.func.isRequired,
   setOpponent: PropTypes.func.isRequired,
   playerIsAlive: PropTypes.bool.isRequired,
-  opponentIsAlive: PropTypes.bool.isRequired,
+  opponent: PropTypes.shape({
+    isAlive: PropTypes.bool.isRequired,
+  }).isRequired,
 });
 
 export default Battle;

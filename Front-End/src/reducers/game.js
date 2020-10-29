@@ -7,6 +7,7 @@ import {
   RESET_STORY,
 } from '../actions/game';
 
+import prepareOpponentsFromStory from '../utils/prepareOpponentsFromStory';
 import createOpponentFromScene from '../utils/createOpponentFromScene';
 import getCharactersByStory from '../selectors/getCharactersByStory';
 import getCharacterById from '../selectors/getCharacterbyId';
@@ -31,6 +32,7 @@ export const initialState = {
   player: {},
   playerIsAlive: true,
   playerSelected: false,
+  opponentList: [],
   opponent: {},
   opponentIsAlive: true,
   characterList: [],
@@ -38,7 +40,9 @@ export const initialState = {
 
 const game = (state = initialState, action = {}) => {
   switch (action.type) {
-    case ADD_STORY:
+    case ADD_STORY: {
+      // Préparer tous les opponents (non playable characters) de l'histoire
+      const opponentList = prepareOpponentsFromStory({ ...action.story });
       return {
         ...state,
         story: {
@@ -46,7 +50,9 @@ const game = (state = initialState, action = {}) => {
         },
         playerSelected: false,
         isStoryLoaded: true,
+        opponentList: [...opponentList],
       };
+    }
     case RESET_STORY:
       return {
         ...initialState,
@@ -59,23 +65,20 @@ const game = (state = initialState, action = {}) => {
         ...state,
         player: newPlayer,
         playerSelected: true,
-        playerIsAlive: true,
       };
     }
     case ADD_CHARACTER_LIST: {
       const characterList = getCharactersByStory([...action.data.character], state.story);
-      console.log('characterList', characterList);
       return {
         ...state,
         characterList: [...characterList],
       };
     }
     case SET_OPPONENT: {
-      const opponent = createOpponentFromScene(action.sceneDetails);
+      const opponent = state.opponentList.find((who) => who.id === action.id);
       return {
         ...state,
         opponent,
-        opponentIsAlive: true,
       };
     }
     case ATTACK: {
@@ -85,26 +88,24 @@ const game = (state = initialState, action = {}) => {
       const opponentIsAlive = damageCalculation(state.player, state.opponent);
 
       if (!opponentIsAlive) {
-        return {
-          ...state,
-          opponentIsAlive: false,
-        };
+        state.opponent.isAlive = opponentIsAlive;
       }
 
       // calcul des dégats qu'on va subir par l'adversaire (aléatoire et points d'attaque)
       // renvoie true si nous sommes en vie
       // renvoie false si nous sommes vaincu
-      const playerIsAlive = damageCalculation(state.opponent, state.player);
+      else {
+        const playerIsAlive = damageCalculation(state.opponent, state.player);
 
-      if (!playerIsAlive) {
-        return {
-          ...state,
-          playerIsAlive: false,
-        };
+        if (!playerIsAlive) {
+          return {
+            ...state,
+            playerIsAlive,
+          };
+        }
       }
-
       // si personne ne meurt, on attend une nouvelle action
-      return { ...state };
+      return { ...state, opponentIsAlive };
     }
     default:
       return state;
