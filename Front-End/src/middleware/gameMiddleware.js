@@ -5,6 +5,7 @@ import {
   LOAD_CHARACTER_LIST,
   addStory,
   addCharacterList,
+  SEND_END_DETAILS,
 } from '../actions/game';
 
 const gameMiddleware = (store) => (next) => (action) => {
@@ -29,6 +30,26 @@ const gameMiddleware = (store) => (next) => (action) => {
         });
       next(action);
       break;
+    case SEND_END_DETAILS: {
+      // Vérification si on a un game over ou pas
+      let gameWin = true;
+      if (action.sceneName === 'game_over' || action.sceneName === 'game over') {
+        gameWin = false;
+      }
+      // Récupération du character_id
+      const characterId = store.getState().game.player.id;
+      // Création des data à envoyer sur la route POST
+      const data = {
+        character_id: characterId,
+        gameWin,
+      };
+      // Route POST pour update les parties jouées, gagnées ou perdues
+      axios.post(`http://34.207.247.234:3000/api/stories/${action.storyId}/finish`,
+        { ...data },
+        { withCredentials: true });
+      next(action);
+      break;
+    }
     default:
       next(action);
       break;

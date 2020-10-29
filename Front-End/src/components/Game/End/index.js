@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './end.scss';
 
-const End = ({ scene, storyId }) => {
+const End = ({ scene, storyId, sendEndDetails }) => {
   if (scene !== undefined) {
+    useEffect(() => {
+      sendEndDetails(storyId, scene.details_scene.scene_name);
+    }, []);
     return (
       <div className="end">
         <div className="end__scene">
@@ -28,7 +31,12 @@ const End = ({ scene, storyId }) => {
 End.propTypes = ({
   scene: PropTypes.shape({
     finish_text: PropTypes.string.isRequired,
+    details_scene: PropTypes.shape({
+      scene_name: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
+  storyId: PropTypes.number.isRequired,
+  sendEndDetails: PropTypes.func.isRequired,
 });
 
 export default End;

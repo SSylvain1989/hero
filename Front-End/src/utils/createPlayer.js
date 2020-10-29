@@ -1,5 +1,6 @@
 const createPlayer = (chosenCharacter) => {
   const player = {
+    id: chosenCharacter.id,
     name: chosenCharacter.name,
     attackPoint: chosenCharacter.atk,
     defensePoint: chosenCharacter.def,

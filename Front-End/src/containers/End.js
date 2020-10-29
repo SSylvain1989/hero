@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import End from '../components/Game/End';
 // == Import : actions
 import getSceneById from '../selectors/getSceneById';
+import { endGame } from '../actions/game';
 
 // Action Creators
 
@@ -27,7 +28,11 @@ const mapStateToProps = (state, { sceneId }) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+  sendEndDetails: (storyId, sceneName) => {
+    dispatch(endGame(storyId, sceneName));
+  },
+});
 
 // Container
 const EndContainer = connect(

@@ -8,6 +8,8 @@ export const SELECT_CHARACTER = 'SELECT_CHARACTER';
 export const SET_OPPONENT = 'SET_OPPONENT';
 export const ATTACK = 'ATTACK';
 
+export const SEND_END_DETAILS = 'SEND_END_DETAILS';
+
 export const loadStory = (gameId) => ({
   type: LOAD_ONE_STORY,
   gameId,
@@ -44,4 +46,10 @@ export const setOpponent = (sceneDetails) => ({
 
 export const attack = () => ({
   type: ATTACK,
+});
+
+export const endGame = (storyId, sceneName) => ({
+  type: SEND_END_DETAILS,
+  sceneName,
+  storyId,
 });
