@@ -13,3 +13,10 @@ body {
   // }
 
 
+// Test avec le fond bibli 01 du site //
+.bg__site {
+  background: no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  filter: brightness(50%) hue-rotate(-5deg);
+}
