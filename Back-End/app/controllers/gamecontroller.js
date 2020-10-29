@@ -171,12 +171,12 @@ const gameController = {
                         { // Scene 9
                             details_scene: sceneTab[8],
                             previous_scene_id: oneHistory[13].previous_scene_id,
-                            finish_text: `Game Over, Vous etes mort !`
+                            finish_text: `Game Over, vous êtes mort !`
                         },
                         { // Scene 10
                             details_scene: sceneTab[9],
                             previous_scene_id: oneHistory[14].previous_scene_id,
-                            finish_text: `Bravo, vous avez terminé le jeu mais vous etes maudit !`
+                            finish_text: `Bravo, vous avez terminé le jeu mais vous êtes maudit !`
                         },
                         { // Scene 11
                             details_scene: sceneTab[10],
@@ -264,13 +264,13 @@ const gameController = {
                         { // Scene 16
                             details_scene: sceneTab[4],
                             previous_scene_id: [15, 14, 13],
-                            finish_text: `Game Over, Vous etes mort !`,
+                            finish_text: `Game Over, vous êtes mort !`,
                             img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                         { // Scene 17
                             details_scene: sceneTab[5],
                             previous_scene_id: oneHistory[5].previous_scene_id,
-                            finish_text: `Bravo, vous etes le grand maitre de l'arene !`,
+                            finish_text: `Bravo, vous êtes le grand maitre de l'arène !`,
                             img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
                         },
                     ]
@@ -278,7 +278,7 @@ const gameController = {
                 
                 response.status(200).json({history: history, session: request.session.user});
             } else {
-                const message = `L'histoire demandé n'est pas disponible`
+                const message = `L'histoire demandée n'est pas disponible.`
                 response.status(404).json({message: message, session: request.session.user});
             }
         } catch (error) {

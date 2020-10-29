@@ -56,7 +56,7 @@ const user = {
         const sql = `INSERT INTO nav.user ("userName", "email", "password", "detail_id") VALUES ($1, $2, $3, $4) RETURNING "id", "userName";`;
         // on se connecte à la BD avec notre client , ici DB , et on stock dans data la requete complete pour notre return
         const data = await db.query(sql, [newUser.userName, newUser.email, newUser.password, gameDetails.id]);
-        data.rows[0].message = 'Le compte est bien créé';
+        data.rows[0].message = 'Votre compte a bien été créé.';
         return data.rows[0];
     },
 

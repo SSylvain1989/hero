@@ -5,3 +5,14 @@ scene 7 et 8: https://ibb.co/kmCnxzL - https://i.ibb.co/hYz5yrG/Bord-de-mer-barq
 arene: https://ibb.co/nR9dWmm - https://i.ibb.co/25xVbhh/arenes.jpg
 chateau: https://ibb.co/Q9WfB0R - https://i.ibb.co/xhnDvZ0/chateau.jpg
 labyrinthe: https://ibb.co/6Wn1B85 - https://i.ibb.co/bKW2JFn/labyrinth.jpg
+
+# personnage
+minotaure: https://ibb.co/4tnCc9c - https://i.ibb.co/ZXpv3t3/minotaur.gif
+spectre: https://ibb.co/yQTxzXc - https://i.ibb.co/71c03Xd/wraith.gif
+vieillard: https://ibb.co/wRkBbxR - https://i.ibb.co/NsvtkHs/Papy-01.png
+anges déchus: https://ibb.co/WnNhWGM - https://i.ibb.co/R2GFpYs/fallen-angels.gif
+faucheur: https://ibb.co/kx3BBQv - https://i.ibb.co/Ms8SSMQ/reaper-man.gif
+golem: https://ibb.co/VVyBqpC - https://i.ibb.co/qBG1rFg/golem.gif
+goblin: https://ibb.co/QNmkkfY - https://i.ibb.co/BZsGGtT/output-n-Ccx-S9.gif
+orc: https://ibb.co/yp1JwkS - https://i.ibb.co/zFYwy2J/orc.gif
+ogre: https://ibb.co/BrhGPgh - https://i.ibb.co/KLtDG9t/Webp-net-gifmaker.gif

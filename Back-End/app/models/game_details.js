@@ -26,7 +26,7 @@ const boardDetail = {
         // on envoie la requete en bdd avec la requete preparer et les valeurs passé en parametre
         const boardUserUpdate = await db.query(sql, [boardUser.displayName, boardUser.avatar, boardUser.id]);
         // on stock un message de confirmation dans les données recus
-        boardUserUpdate.rows[0].message = 'Vos informations sont modifiées';
+        boardUserUpdate.rows[0].message = 'Vos informations ont été modifiées';
         // on renvoie les données
         return boardUserUpdate.rows[0];
     },
@@ -43,7 +43,7 @@ const boardDetail = {
         // on envoie la requete en bdd avec la requete preparer et les valeurs passé en parametre
         const boardDetailUpdate = await db.query(sql, [boardDetail.gameWin, boardDetail.gameOver, boardDetail.gamePlay, boardDetail.detail_id]);
         // on stock un message de confirmation dans les données recus
-        boardDetailUpdate.rows[0].message = 'Vos informations sont modifiées';
+        boardDetailUpdate.rows[0].message = 'Vos informations ont bien été modifiées.';
         // on renvoie les données
         return boardDetailUpdate.rows[0];
     },
@@ -59,7 +59,7 @@ const boardDetail = {
         // on envoie la requete en bdd avec la requete preparer et l'id passé en parametre
         const newData = await db.query(sql, [data.user_id, data.playable_id, data.history_id]);
         // on ecrit un message de confirmation
-        const message = 'Votre partie est bien enregistré';
+        const message = 'Votre partie a bien été enregistrée.';
         // on renvoie le message
         return message;
     },

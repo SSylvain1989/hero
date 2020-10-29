@@ -7,14 +7,15 @@ INSERT INTO game.character (
     "playable",
     "hp",
     "atk",
-    "def"
+    "def",
+    "image"
     )
-    VALUES  ('Anges déchus', 'true', '30', '15', '7'),
-            ('Faucheur', 'true', '20', '20', '10'),
-            ('Golem', 'true', '40', '7', '15'),
-            ('Goblin', 'false', '20', '5', '4'),
-            ('Orc', 'false', '30', '8', '10'),
-            ('Ogre', 'false', '40', '12', '6');
+    VALUES  ('Anges déchus', 'true', '30', '15', '7', 'https://i.ibb.co/R2GFpYs/fallen-angels.gif'),
+            ('Faucheur', 'true', '20', '20', '10', 'https://i.ibb.co/Ms8SSMQ/reaper-man.gif'),
+            ('Golem', 'true', '40', '7', '15', 'https://i.ibb.co/qBG1rFg/golem.gif'),
+            ('Goblin', 'false', '20', '5', '4', 'https://i.ibb.co/BZsGGtT/output-n-Ccx-S9.gif'),
+            ('Orc', 'false', '30', '8', '10', 'https://i.ibb.co/zFYwy2J/orc.gif'),
+            ('Ogre', 'false', '40', '12', '6', 'https://i.ibb.co/KLtDG9t/Webp-net-gifmaker.gif');
 
 INSERT INTO game.history ( 
     "name",
@@ -22,8 +23,8 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('L''arène', 'Arriverez-vous a battre tous les ennemies ?', 'Moyen', 'https://i.ibb.co/25xVbhh/arenes.jpg'),
-            ('Chateau', 'Le roi s''est fait voler sa couronne. Pourra t''il la retrouver ?', 'Moyen', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
+    VALUES  ('L''arène', 'Oyez oyez combattants de tous horizons ! Le moment est venu de vous battre en du-du-duel !! L''arène de Bonduel est la plus disputée sur ce website. Nombreux sont les héros prets à en découdre, à vous faire mordre la poussière, seriez vous prets à prendre la place de notre champion actuel et devenir notre nouvelle mascotte ?', 'Moyen', 'https://i.ibb.co/25xVbhh/arenes.jpg'),
+            ('Chateau', 'Vous êtes le seul habitant d''un château à ne pas avoir été transformé par un bouffon maléfique qui s''est emparé du trésor du château, la couronne du roi. Parviendrez-vous à déjouer les vols de ce mauvais bougre ?', 'Moyen', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
             ('Le labyrinthe', 'Trouvez la sortie le plus vite possible !', 'Difficile', 'https://i.ibb.co/bKW2JFn/labyrinth.jpg');
 
 INSERT INTO game.scene ( 
@@ -45,7 +46,7 @@ INSERT INTO game.categories (
 INSERT INTO game.text_in_game ( 
     "description"
     )
-    VALUES  ('Après avoir finalisé votre inscription au tournoi de l’arène, vous attendez impatiemment votre tour pour montrer votre talent au monde entier. Aucune inquiétude ! Votre combat est sur le point de commencer, serez-vous à la hauteur ?');
+    VALUES  ('Après avoir finalisé votre inscription au tournoi de l’arène, vous attendez impatiemment votre tour pour montrer votre talent au monde entier. Aucune inquiétude ! Votre combat est sur le point de commencer, seriez-vous prêts à en découdre ?');
 
 COMMIT;
 
