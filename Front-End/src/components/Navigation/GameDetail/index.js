@@ -17,6 +17,7 @@ const GameDetail = ({
   selectCharacter,
   playerSelected,
   firstSceneId,
+  isLogged,
 }) => {
   useEffect(() => {
     loadCharacterList();
@@ -42,7 +43,7 @@ const GameDetail = ({
           <section className="game-detail__section">{game.description}</section>
           <p>{game.difficulty}</p>
           <div>
-            {!isStoryLoaded
+            {isLogged && !isStoryLoaded
               ? <button type="button" className="game-detail__button" onClick={loadStory(gameId)}>Choisir un héro</button>
               : (
                 <>
@@ -53,6 +54,7 @@ const GameDetail = ({
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/${firstSceneId}`}><button type="button" className="game-detail__button">Jouer</button></Link>}
                 </>
               )}
+            {!isLogged && <Link to="/connection"><button type="button" className="game-detail__button">Connectez-vous !</button></Link>}
           </div>
         </div>
       </div>
@@ -74,6 +76,7 @@ GameDetail.propTypes = ({
     difficulty: PropTypes.string.isRequired,
   }).isRequired,
   firstSceneId: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 });
 
 export default GameDetail;
