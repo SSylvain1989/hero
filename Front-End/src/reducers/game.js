@@ -28,6 +28,10 @@ export const initialState = {
       ],
     },
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00f57f162a82b4c6f22a6bc87ede243f2ebec8cc
   isStoryLoaded: false,
   player: {},
   playerIsAlive: true,
@@ -65,6 +69,10 @@ const game = (state = initialState, action = {}) => {
         ...state,
         player: newPlayer,
         playerSelected: true,
+<<<<<<< HEAD
+=======
+        playerIsAlive: true,
+>>>>>>> 00f57f162a82b4c6f22a6bc87ede243f2ebec8cc
       };
     }
     case ADD_CHARACTER_LIST: {
@@ -75,10 +83,18 @@ const game = (state = initialState, action = {}) => {
       };
     }
     case SET_OPPONENT: {
+<<<<<<< HEAD
       const opponent = state.opponentList.find((who) => who.id === action.id);
       return {
         ...state,
         opponent,
+=======
+      const opponent = createOpponentFromScene(action.sceneDetails);
+      return {
+        ...state,
+        opponent,
+        opponentIsAlive: true,
+>>>>>>> 00f57f162a82b4c6f22a6bc87ede243f2ebec8cc
       };
     }
     case ATTACK: {

@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const Game = ({ name, description, difficulty, id }) => (
   <div className="game">
     <div className="game__card">
-      <img src="#" alt="imgGames" />
-      <div className="game__card-text">
-        <h2>{name}</h2>
+      <img className="game__image" src="#" alt="imgGames" />
+      <div className="game__card--text">
+        <h2 className="game__card--name">{name}</h2>
         <p>{difficulty}</p>
         <p>{description}</p>
       </div>
-      <button type="button"><Link to={`/liste-des-jeux/${id}`}>Voir les détails</Link></button>
+      <button type="button" className="game__card--button"><Link to={`/liste-des-jeux/${id}`}>Voir les détails</Link></button>
     </div>
   </div>
 );

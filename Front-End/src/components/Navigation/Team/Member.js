@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { CgMail } from 'react-icons/cg';
+// import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+// import { CgMail } from 'react-icons/cg';
 
 // == Import
 

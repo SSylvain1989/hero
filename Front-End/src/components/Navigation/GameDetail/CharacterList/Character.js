@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './character.scss';
-import wraith from 'src/images/wraith.gif';
 
 const Character = ({
   id, name, hp, atk, def, onClick,
