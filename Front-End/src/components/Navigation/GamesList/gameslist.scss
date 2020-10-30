@@ -16,6 +16,7 @@
   font-size: 24px;
   font-weight: bold;
   
+  letter-spacing: 10px;
 
   text-shadow: 3px 2px 0 #290f0f;
   //color: vars.$font-gold-color;
@@ -64,7 +65,6 @@
   font-size: 24px;
   font-weight: bold;
   
-
   text-shadow: 3px 2px 0 #290f0f;
   color: vars.$font-gold-color;
   text-align: center;
@@ -109,6 +109,8 @@
     height: auto;
   
     color: vars.$font-btn-grad-color;
+
+    letter-spacing: .2rem;
   
     transition: all 0.4s;
     
@@ -151,4 +153,5 @@
 .game__card:hover {
   transition: 0.5s;
   filter: grayscale(0);
+  transform: scale(1.1);
 }
