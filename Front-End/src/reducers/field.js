@@ -50,7 +50,6 @@ export const initialState = {
     userName: '',
   },
   messagesError: '',
-  // loginErrorMessage: [],
   displayMessage: false,
 };
 

@@ -11,6 +11,8 @@ import {
   passwordSubmit,
   showModalToggle,
   handleAccountDeletion,
+  addProfileErrorMessage,
+  saveMessage,
 } from '../actions/user';
 import {
   resetFields,
@@ -69,6 +71,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   displayMessageToggle: () => {
     dispatch(displayMessageToggle());
+  },
+  addProfileErrorMessage: (errorMessage) => {
+    dispatch(addProfileErrorMessage(errorMessage));
+  },
+  saveMessage: (message) => {
+    dispatch(saveMessage(message));
   },
 });
 

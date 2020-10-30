@@ -28,6 +28,7 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveMessage(response.data.message));
           store.dispatch(saveSession(response.data.session));
           store.dispatch(resetFields());
+          store.dispatch((addProfileErrorMessage([])));
         })
         .catch((error) => {
           store.dispatch((addProfileErrorMessage(error.response.data.message)));
@@ -43,6 +44,7 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(saveMessage(response.data.message));
           store.dispatch(saveSession(response.data.session));
+          store.dispatch((addProfileErrorMessage([])));
         })
         .catch((error) => {
           store.dispatch((addProfileErrorMessage(error.response.data.message)));
@@ -62,6 +64,7 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveMessage(response.data.message));
           console.log(response);
           store.dispatch(resetFields());
+          store.dispatch((addProfileErrorMessage([])));
         })
         .catch((error) => {
           store.dispatch((addProfileErrorMessage(error.response.data.message)));

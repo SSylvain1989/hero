@@ -13,12 +13,13 @@
     width: 1000px;
     border: 5px solid vars.$border-color;
     z-index: 1;
+    position: relative;
 
-    &--papi {
+    &--opponent {
       position: absolute;
       height: 350px;
-      left: 10rem;
-      bottom: 0;
+      left: 1rem;
+      bottom: -1rem;
     }
 
     button {

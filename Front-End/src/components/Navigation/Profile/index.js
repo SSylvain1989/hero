@@ -21,12 +21,15 @@ const Profile = ({
   displayMessageToggle,
   resetFields,
   errorMessage,
+  addProfileErrorMessage,
+  saveMessage,
 }) => {
   useEffect(() => {
     displayMessageToggle();
     setTimeout(() => displayMessageToggle(), 3000);
     return () => {
       resetFields();
+      addProfileErrorMessage([]);
     };
   }, [message]);
   return (

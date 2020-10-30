@@ -14,10 +14,18 @@ const Choice = ({ scene, storyId, image }) => {
         <div className="choice__scene">
           {/* ici switch case si player = minautor on affiche minautor .. etc  */}
           <img
+            className="choice__scene--player"
             src={image}
             // voir comment faire un alt dynamique
             alt="mooving-minautor"
           />
+          {scene.img_opponent && (
+          <img
+            className="choice__scene--opponent"
+            src={scene.img_opponent}
+            alt="El Papito"
+          />
+          )}
           <div className="choice__scene--left" />
           <div className="choice__scene--right">
             <div className="choice__scene--right-text">

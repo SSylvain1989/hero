@@ -31,7 +31,7 @@ const Battle = ({
         <div className="battle-element__scene">
           {ready && <h1><OpponentFrame /></h1>}
           <img
-            className="battle-element__scene--papi"
+            className="battle-element__scene--opponent"
             src={scene.details_scene.opponent_img}
             alt="El Papito"
           />

@@ -6,7 +6,9 @@ import getSceneById from 'src/selectors/getSceneById';
 
 import './clickableElement.scss';
 
-const clickableElement = ({ scene, storyId, image, game }) => {
+const clickableElement = ({
+  scene, storyId, image, game,
+}) => {
   if (scene !== undefined) {
     // TOUT CE QUI SE TROUVE EN DESSOUS EST SALE
     // MAIS CA MARCHE
@@ -42,6 +44,28 @@ const clickableElement = ({ scene, storyId, image, game }) => {
     return (
       <div className="clickable-element">
         <div className="clickable-element__scene">
+          {scene.next_scene.img_element
+          && nextSceneOpponentIsAlive
+          && (
+          <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}>
+            <img
+              className="clickable-element__scene--clickable1"
+              src={scene.next_scene.img_element}
+              alt="element-cliquable1"
+            />
+          </Link>
+          )}
+          {scene.next_scene2
+          && nextSceneOpponentIsAlive2
+          && (
+          <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}>
+            <img
+              className="clickable-element__scene--clickable2"
+              src={scene.next_scene2.img_element}
+              alt="element-cliquable2"
+            />
+          </Link>
+          )}
           <div className="clickable-element__scene--image-container">
             <img
               src={image}
@@ -49,12 +73,6 @@ const clickableElement = ({ scene, storyId, image, game }) => {
             />
           </div>
           <PlayerFrame />
-          {scene.next_scene
-          && nextSceneOpponentIsAlive
-          && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}><button type="button">{scene.next_scene.next_scene_name}</button></Link>}
-          {scene.next_scene2
-          && nextSceneOpponentIsAlive2
-          && <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`}><button type="button">{scene.next_scene2.next_scene_name2}</button></Link>}
         </div>
         <div className="clickable-element__image-background">
           <img
