@@ -50,11 +50,6 @@ export const attack = () => ({
   type: ATTACK,
 });
 
-// ici je code mon action qui sera lancé par addLogFight
-export const addLogFight = () => ({
-  type: ADD_LOG_FIGHT,
-});
-
 export const endGame = (storyId, sceneName) => ({
   type: SEND_END_DETAILS,
   sceneName,

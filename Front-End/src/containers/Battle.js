@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Battle from '../components/Game/Battle';
 // == Import : actions
 import getSceneById from '../selectors/getSceneById';
-import { attack, setOpponent, addLogFight } from '../actions/game';
+import { attack, setOpponent } from '../actions/game';
 
 // Action Creators
 
@@ -23,6 +23,8 @@ const mapStateToProps = (state, { sceneId }) => ({
   opponent: { ...state.game.opponent },
   opponentIsAlive: state.game.opponentIsAlive,
   image: state.game.player.image,
+  logOpponentFight: state.game.logOpponentFight,
+  logPlayerFight: state.game.logPlayerFight,
 });
 
 /* === Actions ===
@@ -38,8 +40,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleAttack: () => {
     dispatch(attack());
-    // ici je dispatch avec addLogFight pour mettre en state mes log
-    // dispatch(addLogFight());
   },
 });
 

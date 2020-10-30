@@ -5,7 +5,6 @@ import {
   SET_OPPONENT,
   ATTACK,
   RESET_STORY,
-  ADD_LOG_FIGHT,
 } from '../actions/game';
 
 import prepareOpponentsFromStory from '../utils/prepareOpponentsFromStory';
@@ -42,9 +41,10 @@ export const initialState = {
   // opponent sert ici à savoir si l'adversaire de notre utilisateur est en vie ou pas
   opponentIsAlive: true,
   characterList: [],
-  // sylvain je rajoute logFight que je vais recuperer 
-  // dans mes composants histoire pour affiches les logs lors des batailles
-  logFight: [],
+  // je rajoute logFight que je vais recuperer
+  // dans mes composants histoire pour afficher les logs lors des batailles
+  logOpponentFight: [],
+  logPlayerFight: [],
 };
 
 const game = (state = initialState, action = {}) => {
@@ -69,7 +69,6 @@ const game = (state = initialState, action = {}) => {
     case SELECT_CHARACTER: {
       const chosenCharacter = getCharacterById(action.id, [...state.characterList]);
       const newPlayer = createPlayer(chosenCharacter);
-      // console.log(newPlayer);
       return {
         ...state,
         player: newPlayer,
@@ -98,15 +97,9 @@ const game = (state = initialState, action = {}) => {
       const [opponentIsAlive,
         destinationName,
         sourceName,
-        baseDameage,
-        trueDamage,
+        damageBase, // nombre de degat de base
+        trueDamage, // nombre de degat réel infligé suite à la défence de l'adversaire
         destHealtPoint] = damageCalculation(state.player, state.opponent);
-      console.log('log reducer game opponentIsAlive', opponentIsAlive,
-        destinationName,
-        sourceName,
-        baseDameage,
-        trueDamage,
-        destHealtPoint);
       if (!opponentIsAlive) {
         state.opponent.isAlive = opponentIsAlive;
       }
@@ -115,37 +108,41 @@ const game = (state = initialState, action = {}) => {
       // renvoie false si nous sommes vaincu
       else {
         const [playerIsAlive,
-          damageToDestName,
-          damageByName,
-          baseDamage,
-          reelDamage,
+          damageToDestName, // degat fait à
+          damageByName, // degat fait part
+          baseDamage, // nombre de degat de base
+          reelDamage, // nombre de degat réel infligé suite à la défence de l'adversaire
           opponentHealtMax] = damageCalculation(state.opponent, state.player);
-        console.log('log reducer playerIsAlive', playerIsAlive,
-          damageToDestName,
-          damageByName,
-          baseDamage,
-          reelDamage,
-          opponentHealtMax);
+        // si le joueur n'est pas mort
         if (!playerIsAlive) {
           console.log('playerIsAlive', !playerIsAlive);
-
           return {
             ...state,
             playerIsAlive,
           };
         }
+        // je retourne les valeurs de damageCalculation(fichier utils) dans mon state
+        // pour faire mes logs dans mon compnt Battle
+        return {
+          ...state,
+          // logOpponentFight : vision des dégats vu de l'adversaire
+          logOpponentFight: [opponentIsAlive,
+            destinationName,
+            sourceName,
+            damageBase,
+            trueDamage,
+            destHealtPoint],
+          // logPlayerFight : vision des dégats vu du joueur
+          logPlayerFight: [playerIsAlive,
+            damageToDestName,
+            damageByName,
+            baseDamage,
+            reelDamage,
+            opponentHealtMax],
+        };
       }
       // si personne ne meurt, on attend une nouvelle action
       return { ...state, opponentIsAlive };
-    }
-    // ic je mets mes nouveaux log dans mon state
-    case ADD_LOG_FIGHT: {
-      const logFight = damageCalculation();
-      console.log(logFight);
-      return {
-        ...state,
-        logFight: [...logFight],
-      };
     }
     default:
       return state;
