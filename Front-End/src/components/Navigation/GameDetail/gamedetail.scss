@@ -1,10 +1,6 @@
 @use 'src/styles/vars';
 
 .game-detail {
-  font-size: 15px;
-  letter-spacing: .2rem;
-  color: vars.$font-silver-color;
-
   height: 500vh;
   display: flex;
   align-items: center;
@@ -13,6 +9,10 @@
   padding-top: 3rem;
   background-color: #222222;
 
+  font-size: 15px;
+  letter-spacing: .2rem;
+  color: vars.$font-silver-color;
+
 &__title {
   //font-family: sans-serif;
   font-size: 24px;
@@ -20,8 +20,11 @@
   
   letter-spacing: 10px;
 
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+
   text-shadow: 3px 2px 0 #290f0f;
-  //color: vars.$font-gold-color;
   color: vars.$font-silver-color;
   text-align: center;
   text-transform: uppercase;
@@ -47,7 +50,6 @@
     margin-right: 100px;
 
     background-color: vars.$border-color;
-    border-radius: 10px;
     overflow: hidden;
     flex-wrap: wrap;
     padding: 10px 30px 10px 30px;
@@ -60,18 +62,20 @@
     width: 600px;
     height: 50px;
   
-    color: #42291A;
-  
+    color: vars.$font-btn-grad-color;
+    letter-spacing: .2rem;
     transition: all 0.4s;
+
+  
   
     cursor: pointer;
   
     background: linear-gradient(
-    180deg,
-    #fea 0%,
-    #eccb5f 49%,
-    #D4AF37 51%,
-    #fea 100%);
+      180deg,
+    vars.$bgr-btn-grad-01 0%,
+    vars.$bgr-btn-grad-02 49%,
+    vars.$bgr-btn-grad-03 51%,
+    vars.$bgr-btn-grad-04 100%);
   
     padding: 10px 20px 10px 20px;
     margin-top: 3rem;
@@ -82,17 +86,19 @@
     font-weight: bold;
     text-align: center;
   
-    border: 5px outset #D4AF37;
+    border: 5px outset vars.$font-gold-color;
     border-radius: 12px;
 
     &:hover {
-      color: #D4AF37;
+      color: vars.$font-btn-grad-color-hover;
       background: linear-gradient(
         180deg,
-        #804b2a 0%,
-        #42291A 46.65551839464883%,
-        #42291A 46.65551839464883%,
-        #804b2a  100%);
+        vars.$bgr-btn-grad-hover-01 0%,
+        vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-04  100%);
+
+        transform: scale(1.25);
     }
   }
 }
@@ -108,6 +114,5 @@
     
     //   padding-bottom: 10px;
     //   border-bottom: vars.$border-color 1px;
-    //  // border-style: dashed;
   //   }
   // }

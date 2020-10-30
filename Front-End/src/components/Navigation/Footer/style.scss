@@ -4,7 +4,17 @@
 .footer {
   position: fixed;
   bottom: 0;
-  background-color: #222222;
+  //background-color: #222222;
+
+  background-color: vars.$border-color;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 10px 30px 10px 30px;
+  
+  border: 10px double vars.$brown-color;
+  border-radius: 12px;
+  
+
   width: 100%;
   z-index: 999;
   font-family: Merriweather, arial;
@@ -19,15 +29,20 @@
 }
 
 .footer li {
-  color: #B1B1B1;
+  color: vars.$brown-color;
   text-align: center;
   padding: 1rem;
   margin: 0 2rem;
   text-decoration: none;
   font-size: 17px;
+
+  letter-spacing: .2rem;
+  transition: all 0.4s;
   
 }
 
 .footer li:hover {
-  color: #D4AF37;
+  //color: vars.$font-gold-color;
+  filter: brightness(200%);
+  transform: scale(1.25);
 }
