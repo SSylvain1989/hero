@@ -2,32 +2,70 @@
 
 .game-detail {
   width: 100%;
-  height: 100vh;
+  height: 1000px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  //background-color:red;
 
   &__container {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    background-color: #222222;
   }
   
   &__content {
-    text-align: center;
-    vertical-align: top;
+
+  margin-top: 20px;
+  font-size: 15px;
+  letter-spacing: .2rem;
+  text-align: center;
+  color: vars.$font-silver-color;
 
     p {
-      margin: 1rem 0;
+      font-size: 17px;
+      font-weight: lighter;
+      color: #b1b1b1;
+      text-align: center;
+      font-style: italic;
+      letter-spacing: .2rem;
+    
+      padding-bottom: 10px;
+      border-bottom: vars.$border-color 1px;
+      border-style: dashed;
     }
   }
 
   &__title {
+  //font-family: sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  
+  letter-spacing: 10px;
 
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid vars.$border-color;
-    padding-bottom: 1rem;
+  text-shadow: 3px 2px 0 #290f0f;
+  //color: vars.$font-gold-color;
+  color: vars.$font-silver-color;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  //border-bottom: vars.$border-color 1px solid;
+  border-bottom: dashed vars.$border-color 1px;
+  }
+
+  &__section {
+    border-radius: 5px;
+    margin: 1rem;
+    font-size: large;
+    font-weight: 600;
+    padding: 0;
   }
   
   &__button {
@@ -67,15 +105,6 @@
         #42291A 46.65551839464883%,
         #804b2a  100%);
     }
-  }
-  
-  &__section {
-    //border: 1px solid black;
-    border-radius: 5px;
-    margin: 1rem;
-    font-size: large;
-    font-weight: 600;
-    padding: 0;
   }
 }
 

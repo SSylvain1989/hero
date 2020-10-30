@@ -7,8 +7,7 @@
   align-items: center;
   border: solid vars.$border-color;
   width: 350px;
-  //height: 100px;
-  margin: 0 2rem;
+  margin: 10px;
 
   position:relative;
   background-color: vars.$brown-color;
@@ -26,7 +25,9 @@
   //filter: grayscale(1);
 
   &__heroes {
-    height: 150px;
+    height: 100px;
+    margin-top: 50px;
+    filter: grayscale(1);
   }
 
   &__name {
@@ -69,8 +70,33 @@
   }
 }
 
+.character:hover {
+  transition: 0.5s;
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.character__heroes:hover {
+  transition: 0.6s;
+  transform: scale(1.2);
+  filter: contrast(150%);
+  filter: drop-shadow(5px 3px 30px gold);
+}
+
+.character__name:hover {
+  transition: 0.6s;
+  transform: scale(1.2);
+  filter: drop-shadow(0px 3px 50px gold);
+}
+
 .character-list {
   display: flex;
   justify-content: center;
-  align-items: center;
+  
+  //background-color: vars.$font-silver-color;
+
+  height: 600px;
+  width: 800px;
+  margin: auto;
+
 }

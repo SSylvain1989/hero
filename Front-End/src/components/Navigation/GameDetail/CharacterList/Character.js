@@ -9,15 +9,17 @@ const Character = ({
   console.log(image);
 
   return (
-    <div className="character" id={id} onClick={onClick}>
-      <img className="character__heroes" src={image} alt={name} />
-      <h1 className="character__name">{name}</h1>
-      <h2 className="character__text">Points de vie</h2>
-      <p className="character__stats">{hp}</p>
-      <h2 className="character__text">Attaque</h2>
-      <p className="character__stats">{atk}</p>
-      <h2 className="character__text">Défense</h2>
-      <p className="character__stats">{def}</p>
+    <div className="character-list">
+      <div className="character" id={id} onClick={onClick}>
+        <img className="character__heroes" src={image} alt={name} />
+        <h1 className="character__name">{name}</h1>
+        <h2 className="character__text">Points de vie</h2>
+        <p className="character__stats">{hp}</p>
+        <h2 className="character__text">Attaque</h2>
+        <p className="character__stats">{atk}</p>
+        <h2 className="character__text">Défense</h2>
+        <p className="character__stats">{def}</p>
+      </div>
     </div>
   );
 };
