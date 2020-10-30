@@ -7,9 +7,8 @@ chateau: https://ibb.co/Q9WfB0R - https://i.ibb.co/xhnDvZ0/chateau.jpg
 labyrinthe: https://ibb.co/6Wn1B85 - https://i.ibb.co/bKW2JFn/labyrinth.jpg
 
 # element clickable
-barque: https://ibb.co/9tcP0Rx - https://i.ibb.co/RyY8KLX/Bord-de-mer-barque-solo-01.png
-porte: https://ibb.co/QY4CTmD - https://i.ibb.co/VMsQzBw/cellule-porte-solo-01.png
-vieillard: https://ibb.co/ZLcXbmd - https://i.ibb.co/ngQmKCr/cellule-01-papy-ratio-img.png
+barque: https://ibb.co/K2HNCfL - https://i.ibb.co/0C3BP6F/Bord-de-mer-barque-solo-02.png
+porte: https://ibb.co/q5wD7h6 - https://i.ibb.co/74FSjBh/cellule-porte-solo-02.png
 
 # personnage
 minotaure: https://ibb.co/4tnCc9c - https://i.ibb.co/ZXpv3t3/minotaur.gif

@@ -90,16 +90,14 @@ const gameController = {
                             next_scene: {
                                 next_scene_id: oneHistory[1].next_scene_id,
                                 next_scene_name: 'Vieillard',
-                                img_opponent: 'https://i.ibb.co/ngQmKCr/cellule-01-papy-ratio-img.png'
+                                img_element: sceneTab[3].opponent_img
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[2].next_scene_id,
                                 next_scene_name2: 'Porte',
-                                img_element: 'https://i.ibb.co/VMsQzBw/cellule-porte-solo-01.png'
+                                img_element: 'https://i.ibb.co/74FSjBh/cellule-porte-solo-02.png'
                             },
                             img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
-                            img_opponent: sceneTab[3].opponent_img,
-                            img_element: 'https://i.ibb.co/VMsQzBw/cellule-porte-solo-01.png'
                         },
                         { // Scene 3
                             details_scene: sceneTab[2],
@@ -157,10 +155,10 @@ const gameController = {
                             previous_scene_id: oneHistory[10].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[10].next_scene_id,
-                                next_scene_name: 'Barque'
+                                next_scene_name: 'Barque',
+                                img_element: 'https://i.ibb.co/0C3BP6F/Bord-de-mer-barque-solo-02.png'
                             },
-                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png',
-                            img_element: 'https://i.ibb.co/RyY8KLX/Bord-de-mer-barque-solo-01.png'
+                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png'
                         },
                         { // Scene 8
                             details_scene: sceneTab[7],
@@ -174,8 +172,7 @@ const gameController = {
                                 next_scene_name2: `Si le veillard est mort`
                             },
                             finish_text: `Suite`,
-                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png',
-                            img_element: 'https://i.ibb.co/RyY8KLX/Bord-de-mer-barque-solo-01.png'
+                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png'
                         },
                         { // Scene 9
                             details_scene: sceneTab[8],
