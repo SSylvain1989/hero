@@ -10,9 +10,9 @@ INSERT INTO game.character (
     "def",
     "image"
     )
-    VALUES  ('Minotaure', 'true', '20', '7', '10', 'https://i.ibb.co/ZXpv3t3/minotaur.gif'),
-            ('Spectre', 'true', '15', '10', '5', 'https://i.ibb.co/71c03Xd/wraith.gif'),
-            ('Vieillard', 'false', '20', '3', '2', 'https://i.ibb.co/NsvtkHs/Papy-01.png');
+    VALUES  ('Etienne', 'true', '15', '3', '2', 'https://i.ibb.co/ZXpv3t3/minotaur.gif'),
+            ('Charles', 'true', '25', '6', '3', 'https://i.ibb.co/71c03Xd/wraith.gif'),
+            ('Vieillard', 'false', '20', '5', '2', 'https://i.ibb.co/NsvtkHs/Papy-01.png');
 
 INSERT INTO game.type ( 
     "name"
