@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import HealthBar from '../HealthBar';
 // == Import
 import './playerMenu.scss';
 
@@ -9,24 +10,24 @@ import './playerMenu.scss';
 const PlayerMenu = ({
   isToggled, name, attackPoint, defensePoint, healthPoint,
 }) => (
-    <>
-      {isToggled && (
-        <div className="player-menu">
-          <div className="player-menu__header">
-            <h1>{name}</h1>
-          </div>
-          <div className="player-menu__stats">
-            <p>attack  : {attackPoint}</p>
-            <p>defense : {defensePoint}</p>
-            <p>health  : {healthPoint.current} / {healthPoint.max}</p>
-          </div>
-          <div className="player-menu__inventory">
-            WIP : Inventory
+  <>
+    {isToggled && (
+    <div className="player-menu">
+      <div className="player-menu__header">
+        <h1>{name}</h1>
       </div>
-        </div>
-      )}
-    </>
-  );
+      <div className="player-menu__stats">
+        <p>Attaque  : {attackPoint}</p>
+        <p>Défense : {defensePoint}</p>
+        <HealthBar
+          current={healthPoint.current}
+          max={healthPoint.max}
+        />
+      </div>
+    </div>
+    )}
+  </>
+);
 
 // == PropTypes
 PlayerMenu.propTypes = {

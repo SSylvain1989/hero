@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import HealthBar from '../HealthBar';
 
-// == Import 
+// == Import
 
 // == Composant
 const OpponentFrame = ({
@@ -12,20 +12,19 @@ const OpponentFrame = ({
 }) => {
   console.log('opponent', opponent);
 
-  //<HealthBar heathStatus={ opponent.healthPointent } />
+  // <HealthBar heathStatus={ opponent.healthPointent } />
   return (
     <>
-      {opponent && 
-      (
+      {opponent
+      && (
         <div className="opponent-frame">
           <h1>{ opponent.name }</h1>
-          <HealthBar 
-            current={ opponent.healthPoint.current } 
-            max={ opponent.healthPoint.max }
+          <HealthBar
+            current={opponent.healthPoint.current}
+            max={opponent.healthPoint.max}
           />
         </div>
-      )
-      }
+      )}
     </>
   );
 };
