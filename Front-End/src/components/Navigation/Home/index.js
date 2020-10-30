@@ -9,7 +9,7 @@ import './home.scss';
 // == Composant
 const Home = () => (
   <div className="Home">
-    <img className="Home__img" src={backgroundhero} alt="backgroundHero" />
+    <img className="bg__site--01" src={backgroundhero} alt="backgroundHero" />
     <div className="Home__content">
       <h1 className="Home__title">Bienvenue à toi Soldat !</h1>
       <p className="Home__description">Description</p>

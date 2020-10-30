@@ -1,36 +1,102 @@
 @use 'src/styles/vars';
 
-.character__card {
+.character {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid vars.$border-color;
   width: 350px;
-  margin: 0 2rem;
+  margin: 10px;
 
-  img {
-    height: 150px;
+  position:relative;
+  background-color: vars.$brown-color;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 0px 30px 10px 30px;
+  
+  border: 10px outset vars.$border-color;
+  border-radius: 12px;
+  
+  box-shadow: 0px 10px 13px -7px #000000,
+  inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+
+  //filter: grayscale(1);
+
+  &__heroes {
+    height: 100px;
+    margin-top: 50px;
+    filter: grayscale(1);
   }
 
-  h1 {
-    margin-top: 2rem;
+  &__name {
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+      //font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
+    text-transform: uppercase;
+
+    padding-bottom: 10px;
+    border-bottom: vars.$border-color 1px solid;
   }
 
-  h2 {
-    margin: 0.5rem;
-    font-size: 20px;
+  &__text {
+    font-size: 17px;
+    font-weight: lighter;
+    color: #b1b1b1;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: .2rem;
+  
+    padding-bottom: 10px;
+    border-bottom: vars.$border-color 1px;
+    border-style: dashed;
+
+    margin-bottom: 5px;
   }
 
-  p {
+  &__stats {
     font-size: 18px;
     font-weight: bold;
+    font-style: italic;
     color: vars.$font-gold-color;
   }
+}
+
+.character:hover {
+  transition: 0.5s;
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.character__heroes:hover {
+  transition: 0.6s;
+  transform: scale(1.2);
+  filter: contrast(150%);
+  filter: drop-shadow(5px 3px 30px gold);
+}
+
+.character__name:hover {
+  transition: 0.6s;
+  transform: scale(1.2);
+  filter: drop-shadow(0px 3px 50px gold);
 }
 
 .character-list {
   display: flex;
   justify-content: center;
-  align-items: center;
+  
+  //background-color: vars.$font-silver-color;
+
+  height: 600px;
+  width: 800px;
+  margin: auto;
+
 }

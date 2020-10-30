@@ -45,17 +45,3 @@
     z-index: 8; 
   }
 }
-
-
-// Test avec le fond bibli 01 du site //
-.legal-notices__bg--site {
-  background: no-repeat center fixed; 
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
-
-  //filter: grayscale(1);
-  //filter: sepia(1);
-  //filter: blur(3px);
-  //filter: opacity(50%);
-  filter: brightness(50%) blur(1px) hue-rotate(-5deg);
-}

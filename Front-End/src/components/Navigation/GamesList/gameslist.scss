@@ -3,21 +3,32 @@
 @use 'src/styles/vars' as vars;
 
 .games-list {
-  height: 100vh;
+  height: 500vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding-top: 8rem;
+  padding-top: 6rem;
+  background-color: #222222;
 
   &__title {
-    margin-bottom: 3rem;
-    font-size: 30px;
-    font-weight: bold;
-    width: 90%;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #D4AF37;
-    color: #D4AF37;
+  //font-family: sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  
+  letter-spacing: 10px;
+
+  text-shadow: 3px 2px 0 #290f0f;
+  //color: vars.$font-gold-color;
+  color: vars.$font-silver-color;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  //border-bottom: vars.$border-color 1px solid;
+  border-bottom: dashed vars.$border-color 1px;
 
   }&__item {
     display: flex;
@@ -28,62 +39,119 @@
 }
 
 .game__card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border: solid #D4AF37 5px;
-  border-radius: 5px;
-  padding: 30px;
   margin: 10px;
-  background-color:#f2f2f2;
   display: flex;
   justify-content: center;
   align-items: center;
-  height:27em;
-  width:14em;
-  display:flex;
-  flex-direction:column;
+  height:600px;
+  width:400px;
   position:relative;
-  border-radius:16px;
-  overflow:hidden;
-  background-color: #42291A;
+  background-color: vars.$brown-color;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 0px 30px 10px 30px;
+  
+  border: 10px outset vars.$border-color;
+  border-radius: 12px;
+  
+  box-shadow: 0px 10px 13px -7px #000000,
+  inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
 
-.game__card--name {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 1rem 0;
-    color: #D4AF37;
+  filter: grayscale(1);
+
+.game__card__name {
+  //font-family: sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  
+  text-shadow: 3px 2px 0 #290f0f;
+  color: vars.$font-gold-color;
+  text-align: center;
+  text-transform: uppercase;
+
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: vars.$border-color 1px solid;
   }
 
-  &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
+.game__card__difficulty {
+  font-size: 17px;
+  font-weight: lighter;
+  color: #b1b1b1;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: .2rem;
 
+  padding-bottom: 10px;
+  border-bottom: vars.$border-color 1px;
+  border-style: dashed;
+
+}
+
+.game__card__description {
+  margin-top: 20px;
+  font-size: 15px;
+  letter-spacing: .2rem;
+  text-align: justify;
+  color: vars.$font-silver-color;
+}
   .game__image {
-    border-radius: 5px 5px 0 0;
-    margin-bottom: 5px;
+    border-radius: 20px;
+    width: 110%;
+    height: 40%;
+    padding: 10px;
+    border-bottom: dashed vars.$font-gold-color;
   }
 
   .game__card--button {
-    background-color: #42291A;
-    color: #D4AF37;
-    padding: 7px 32px;
+    width: auto;
+    height: auto;
+  
+    color: vars.$font-btn-grad-color;
+
+    letter-spacing: .2rem;
+  
+    transition: all 0.4s;
+    
+    cursor: pointer;
+  
+    background: linear-gradient(
+    180deg,
+    vars.$bgr-btn-grad-01 0%,
+    vars.$bgr-btn-grad-02 49%,
+    vars.$bgr-btn-grad-03 51%,
+    vars.$bgr-btn-grad-04 100%);
+  
+    padding: 10px 20px 10px 20px;
     margin-top: 10px;
+    
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
   
-    font-weight: bold;
-    font-size: 16px;
-    border: solid #D4AF37;
-    border-radius: 15px;
-    box-shadow: 0 6px 5px 0px rgba(0,0,0,0.2);
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 12px;
+
+    transition: .2s ease-in-out 0s;
 
     &:hover {
-      color: #EBD78D;
-      box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2);
+      color: vars.$font-btn-grad-color-hover;
+      background: linear-gradient(
+        180deg,
+        vars.$bgr-btn-grad-hover-01 0%,
+        vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-04  100%);
+
+        transform: scale(1.25);
     }
   }
+}
 
-  .game__card--text {
-    color: #B1B1B1;
-  }
-
+.game__card:hover {
+  transition: 0.5s;
+  filter: grayscale(0);
+  transform: scale(1.1);
 }
