@@ -84,22 +84,24 @@ const gameController = {
                             next_scene_name: 'Démarrer',
                             img_scene: 'https://i.ibb.co/9tjk959/Alcatraz-01.png'
                         },
-                        { // Scene 2 ajout img opponent
+                        { // Scene 2
                             details_scene: sceneTab[1],
                             previous_scene_id: oneHistory[1].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[1].next_scene_id,
                                 next_scene_name: 'Vieillard',
-                                img_opponent: sceneTab[3].opponent_img
+                                img_opponent: 'https://i.ibb.co/ngQmKCr/cellule-01-papy-ratio-img.png'
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[2].next_scene_id,
-                                next_scene_name2: 'Porte'
+                                next_scene_name2: 'Porte',
+                                img_element: 'https://i.ibb.co/VMsQzBw/cellule-porte-solo-01.png'
                             },
                             img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
-                            img_opponent: sceneTab[3].opponent_img
+                            img_opponent: sceneTab[3].opponent_img,
+                            img_element: 'https://i.ibb.co/VMsQzBw/cellule-porte-solo-01.png'
                         },
-                        { // Scene 3 ajout img opponent
+                        { // Scene 3
                             details_scene: sceneTab[2],
                             previous_scene_id: oneHistory[3].previous_scene_id,
                             next_scene: {
@@ -127,7 +129,7 @@ const gameController = {
                             img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
                             img_opponent: sceneTab[3].opponent_img
                         },
-                        { // Scene 5 ajout img opponent
+                        { // Scene 5
                             details_scene: sceneTab[4],
                             previous_scene_id: oneHistory[7].previous_scene_id,
                             next_scene: {
@@ -157,7 +159,8 @@ const gameController = {
                                 next_scene_id: oneHistory[10].next_scene_id,
                                 next_scene_name: 'Barque'
                             },
-                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png'
+                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png',
+                            img_element: 'https://i.ibb.co/RyY8KLX/Bord-de-mer-barque-solo-01.png'
                         },
                         { // Scene 8
                             details_scene: sceneTab[7],
@@ -171,7 +174,8 @@ const gameController = {
                                 next_scene_name2: `Si le veillard est mort`
                             },
                             finish_text: `Suite`,
-                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png'
+                            img_scene: 'https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png',
+                            img_element: 'https://i.ibb.co/RyY8KLX/Bord-de-mer-barque-solo-01.png'
                         },
                         { // Scene 9
                             details_scene: sceneTab[8],

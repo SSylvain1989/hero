@@ -6,6 +6,11 @@ arene: https://ibb.co/nR9dWmm - https://i.ibb.co/25xVbhh/arenes.jpg
 chateau: https://ibb.co/Q9WfB0R - https://i.ibb.co/xhnDvZ0/chateau.jpg
 labyrinthe: https://ibb.co/6Wn1B85 - https://i.ibb.co/bKW2JFn/labyrinth.jpg
 
+# element clickable
+barque: https://ibb.co/9tcP0Rx - https://i.ibb.co/RyY8KLX/Bord-de-mer-barque-solo-01.png
+porte: https://ibb.co/QY4CTmD - https://i.ibb.co/VMsQzBw/cellule-porte-solo-01.png
+vieillard: https://ibb.co/ZLcXbmd - https://i.ibb.co/ngQmKCr/cellule-01-papy-ratio-img.png
+
 # personnage
 minotaure: https://ibb.co/4tnCc9c - https://i.ibb.co/ZXpv3t3/minotaur.gif
 spectre: https://ibb.co/yQTxzXc - https://i.ibb.co/71c03Xd/wraith.gif
