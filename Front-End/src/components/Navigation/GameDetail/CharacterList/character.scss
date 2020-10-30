@@ -47,6 +47,13 @@
     border-bottom: vars.$border-color 1px solid;
   }
 
+  &__stats {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: vars.$font-gold-color;
+  }
+
   &__text {
     font-size: 17px;
     font-weight: lighter;
@@ -59,14 +66,7 @@
     border-bottom: vars.$border-color 1px;
     border-style: dashed;
 
-    margin-bottom: 5px;
-  }
-
-  &__stats {
-    font-size: 18px;
-    font-weight: bold;
-    font-style: italic;
-    color: vars.$font-gold-color;
+    margin-bottom: 20px;
   }
 }
 

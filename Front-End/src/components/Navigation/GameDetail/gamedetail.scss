@@ -54,6 +54,7 @@
   text-transform: uppercase;
   font-style: italic;
 
+  padding-top: 2em;
   padding-bottom: 10px;
   margin-bottom: 30px;
   //border-bottom: vars.$border-color 1px solid;
@@ -69,7 +70,7 @@
   }
   
   &__button {
-    width: 50%;
+    width: 600px;
     height: 50px;
   
     color: #42291A;
@@ -87,6 +88,7 @@
   
     padding: 10px 20px 10px 20px;
     margin-top: 3rem;
+    margin-bottom: 3rem;
   
     font-family: sans-serif;
     font-size: 16px;
