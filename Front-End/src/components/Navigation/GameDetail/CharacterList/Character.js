@@ -10,14 +10,14 @@ const Character = ({
 
   return (
     <div className="character__card" id={id} onClick={onClick}>
-      <img src={image} alt={name} />
-      <h1>{name}</h1>
-      <h2>Points de vie</h2>
-      <p>{hp}</p>
-      <h2>Attaque</h2>
-      <p>{atk}</p>
-      <h2>Défense</h2>
-      <p>{def}</p>
+      <img className="character__img" src={image} alt={name} />
+      <h1 className="character__name">{name}</h1>
+      <h2 className="character__text">Points de vie</h2>
+      <p className="character__stats">{hp}</p>
+      <h2 className="character__text">Attaque</h2>
+      <p className="character__stats">{atk}</p>
+      <h2 className="character__text">Défense</h2>
+      <p className="character__stats">{def}</p>
     </div>
   );
 };
