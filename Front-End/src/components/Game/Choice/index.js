@@ -6,13 +6,13 @@ import parchemin from '../../../images/parchemin.png';
 
 import './choice.scss';
 
+// composant choix , entre Combatte & Discuter
 const Choice = ({ scene, storyId, image }) => {
   if (scene !== undefined) {
     const text = scene.details_scene.scene_text;
     return (
       <div className="choice">
         <div className="choice__scene">
-          {/* ici switch case si player = minautor on affiche minautor .. etc  */}
           <img
             className="choice__scene--player"
             src={image}

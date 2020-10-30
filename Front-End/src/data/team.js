@@ -1,25 +1,25 @@
 const team = [
   {
     fullName: 'Wesley Boosko',
-    role: 'Product Owner',
+    role: 'Product Owner (Belge)',
     description: 'Dev Full Stack Js',
     specialite: 'React',
   },
   {
     fullName: 'Nicolas Vidale',
-    role: 'Git Master niveau expert',
+    role: 'Git Master niveau EXPERT',
     description: 'Dev Full Stack Js',
     specialite: 'React',
   },
   {
-    fullName: 'Caroline Liardcar',
-    role: 'Scrum Master',
+    fullName: 'Caroline Liard',
+    role: 'Scrum Master & Graphiste',
     description: 'Dev Full Stack Js',
     specialite: 'React',
   },
   {
     fullName: 'Alexis Quirantes',
-    role: 'Lead dev back',
+    role: 'Lead dev back DE LUXE',
     description: 'Dev Full Stack Js',
     specialite: 'Data',
   },

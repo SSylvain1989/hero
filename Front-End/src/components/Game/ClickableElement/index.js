@@ -6,9 +6,8 @@ import getSceneById from 'src/selectors/getSceneById';
 
 import './clickableElement.scss';
 
-const clickableElement = ({
-  scene, storyId, image, game,
-}) => {
+// composant avec deux choix vieillard ou porte
+const clickableElement = ({ scene, storyId, image, game }) => {
   if (scene !== undefined) {
     // TOUT CE QUI SE TROUVE EN DESSOUS EST SALE
     // MAIS CA MARCHE

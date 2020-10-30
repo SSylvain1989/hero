@@ -29,14 +29,22 @@ export const initialState = {
   },
   isStoryLoaded: false,
   player: {},
+  // playerIsAlive nous sert dans les batailles à savoir si le joueur est vivant ou mort
   playerIsAlive: true,
+  // ici je mets le nom du joueur qui va recevoir des dégâts
+  damageToDestName: '',
   playerSelected: false,
   opponentList: [],
   opponent: {
     isAlive: true,
   },
+  // opponent sert ici à savoir si l'adversaire de notre utilisateur est en vie ou pas
   opponentIsAlive: true,
   characterList: [],
+  // je rajoute logFight que je vais recuperer
+  // dans mes composants histoire pour afficher les logs lors des batailles
+  logOpponentFight: [],
+  logPlayerFight: [],
 };
 
 const game = (state = initialState, action = {}) => {
@@ -61,7 +69,6 @@ const game = (state = initialState, action = {}) => {
     case SELECT_CHARACTER: {
       const chosenCharacter = getCharacterById(action.id, [...state.characterList]);
       const newPlayer = createPlayer(chosenCharacter);
-      // console.log(newPlayer);
       return {
         ...state,
         player: newPlayer,
@@ -87,24 +94,52 @@ const game = (state = initialState, action = {}) => {
       // calcul des dégats qu'on va infliger à l'adversaire (aléatoire et points d'attaque)
       // renvoie true si l'adversaire est en vie
       // renvoie false s'il est vaincu
-      const opponentIsAlive = damageCalculation(state.player, state.opponent);
-
+      const [opponentIsAlive,
+        destinationName,
+        sourceName,
+        damageBase, // nombre de degat de base
+        trueDamage, // nombre de degat réel infligé suite à la défence de l'adversaire
+        destHealtPoint] = damageCalculation(state.player, state.opponent);
       if (!opponentIsAlive) {
         state.opponent.isAlive = opponentIsAlive;
       }
-
       // calcul des dégats qu'on va subir par l'adversaire (aléatoire et points d'attaque)
       // renvoie true si nous sommes en vie
       // renvoie false si nous sommes vaincu
       else {
-        const playerIsAlive = damageCalculation(state.opponent, state.player);
-
+        const [playerIsAlive,
+          damageToDestName, // degat fait à
+          damageByName, // degat fait part
+          baseDamage, // nombre de degat de base
+          reelDamage, // nombre de degat réel infligé suite à la défence de l'adversaire
+          opponentHealtMax] = damageCalculation(state.opponent, state.player);
+        // si le joueur n'est pas mort
         if (!playerIsAlive) {
+          console.log('playerIsAlive', !playerIsAlive);
           return {
             ...state,
             playerIsAlive,
           };
         }
+        // je retourne les valeurs de damageCalculation(fichier utils) dans mon state
+        // pour faire mes logs dans mon compnt Battle
+        return {
+          ...state,
+          // logOpponentFight : vision des dégats vu de l'adversaire
+          logOpponentFight: [opponentIsAlive,
+            destinationName,
+            sourceName,
+            damageBase,
+            trueDamage,
+            destHealtPoint],
+          // logPlayerFight : vision des dégats vu du joueur
+          logPlayerFight: [playerIsAlive,
+            damageToDestName,
+            damageByName,
+            baseDamage,
+            reelDamage,
+            opponentHealtMax],
+        };
       }
       // si personne ne meurt, on attend une nouvelle action
       return { ...state, opponentIsAlive };

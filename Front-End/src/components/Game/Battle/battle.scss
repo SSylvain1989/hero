@@ -89,3 +89,34 @@
     font-weight: bold;
   }
 }
+// div qui fait l'affichage des logs de combat
+.battle-element{
+&__log{
+  border-radius: 5px;
+  height: 7rem;
+  width: 40rem;
+  position: absolute;
+  z-index: 3;
+  left: 15%;
+  bottom: 30%;
+  background-color:rgba(139, 182, 133, 0.4);
+}
+&__logText{
+  font-size: 1rem;
+  color:vars.$font-contrast-color;
+  font-weight: bold;
+  position: absolute;
+  z-index: 4;
+  left: 10%;
+  bottom: 50%;
+}
+&__logTextTwo{
+  font-size: 1rem;
+  color:vars.$font-contrast-color;
+  font-weight: bold;
+  position: absolute;
+  z-index: 4;
+  left: 10%;
+  bottom: 20%;
+}
+}

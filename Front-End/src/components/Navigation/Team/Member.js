@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { CgMail } from 'react-icons/cg';
 
@@ -37,6 +38,13 @@ const Member = ({ fullName, description, role, specialite }) => {
     </div>
   );
 };
+
+Member.propType = ({
+  fullName: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  specialite: PropTypes.string.isRequired,
+});
 
 // == Export
 export default Member;

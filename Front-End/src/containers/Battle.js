@@ -23,6 +23,8 @@ const mapStateToProps = (state, { sceneId }) => ({
   opponent: { ...state.game.opponent },
   opponentIsAlive: state.game.opponentIsAlive,
   image: state.game.player.image,
+  logOpponentFight: state.game.logOpponentFight,
+  logPlayerFight: state.game.logPlayerFight,
 });
 
 /* === Actions ===

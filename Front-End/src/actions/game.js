@@ -4,6 +4,8 @@ export const RESET_STORY = 'RESET_STORY';
 export const LOAD_CHARACTER_LIST = 'LOAD_CHARACTER_LIST';
 export const ADD_CHARACTER_LIST = 'ADD_CHARACTER_LIST';
 export const SELECT_CHARACTER = 'SELECT_CHARACTER';
+// Sylvain : je rajoute une action qui va dispatch à chaque attaque de nouveaux log FIGHT
+export const ADD_LOG_FIGHT = 'ADD_LOG_FIGHT';
 
 export const SET_OPPONENT = 'SET_OPPONENT';
 export const ATTACK = 'ATTACK';
