@@ -27,8 +27,14 @@ const Battle = ({
       setReady(true);
     }, []);
 
+    const [display, setDisplay] = useState(false);
+
     const handleOnAttackClick = () => {
       handleAttack();
+      setDisplay(true);
+      setTimeout(() => {
+        setDisplay(false);
+      }, 5000);
     };
 
     return (
@@ -42,7 +48,7 @@ const Battle = ({
             />
           </div>
           <PlayerFrame />
-          <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>
+          {!display && <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>}
           {ready && !playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
           {ready && !opponent.isAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
         </div>
@@ -55,8 +61,8 @@ const Battle = ({
         <div className="battle-element__log">
           {/* le X vous attaque mais vous défendez et perdez réellement X point de vie */}
           <p>Appuyer sur attaquer pour que le combat commence ..!</p>
-          {logOpponentFight.length > 0 && <p className="battle-element__logText">Vous attaquez mais le {logPlayerFight[2]} se défend et perd réellement {logOpponentFight[4]} point(s) de vie</p>}
-          {logPlayerFight.length > 0 && <p className="battle-element__logTextTwo">Le {logPlayerFight[2]} vous attaque mais vous défendez et perdez réellement {logPlayerFight[4]} point(s) de vie</p>}
+          {display && logOpponentFight.length > 0 && <p className="battle-element__logText">Vous attaquez mais le {logPlayerFight[2]} se défend et perd réellement {logOpponentFight[4]} point(s) de vie</p>}
+          {display && logPlayerFight.length > 0 && <p className="battle-element__logTextTwo">Le {logPlayerFight[2]} vous attaque mais vous défendez et perdez réellement {logPlayerFight[4]} point(s) de vie</p>}
           {!opponent.isAlive && <p>Votre adversaire est mort dans d'atroces souffrances</p>}
           {!opponent.isAlive && <p>Vous êtes toujours debout avec 'à définir' point de vie</p>}
         </div>
