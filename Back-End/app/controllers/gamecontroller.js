@@ -84,20 +84,22 @@ const gameController = {
                             next_scene_name: 'Démarrer',
                             img_scene: 'https://i.ibb.co/9tjk959/Alcatraz-01.png'
                         },
-                        { // Scene 2
+                        { // Scene 2 ajout img opponent
                             details_scene: sceneTab[1],
                             previous_scene_id: oneHistory[1].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[1].next_scene_id,
-                                next_scene_name: 'Vieillard'
+                                next_scene_name: 'Vieillard',
+                                img_opponent: sceneTab[3].opponent_img
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[2].next_scene_id,
                                 next_scene_name2: 'Porte'
                             },
-                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
+                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
+                            img_opponent: sceneTab[3].opponent_img
                         },
-                        { // Scene 3
+                        { // Scene 3 ajout img opponent
                             details_scene: sceneTab[2],
                             previous_scene_id: oneHistory[3].previous_scene_id,
                             next_scene: {
@@ -108,7 +110,8 @@ const gameController = {
                                 next_scene_id2: oneHistory[4].next_scene_id,
                                 next_scene_name2: 'Discuter'
                             },
-                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
+                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
+                            img_opponent: sceneTab[3].opponent_img
                         },
                         { // Scene 4
                             details_scene: sceneTab[3],
@@ -121,16 +124,18 @@ const gameController = {
                                 next_scene_id2: oneHistory[6].next_scene_id,
                                 next_scene_name2: 'GameOver'
                             },
-                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
+                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
+                            img_opponent: sceneTab[3].opponent_img
                         },
-                        { // Scene 5
+                        { // Scene 5 ajout img opponent
                             details_scene: sceneTab[4],
                             previous_scene_id: oneHistory[7].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[7].next_scene_id,
                                 next_scene_name: 'Suite'
                             },
-                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
+                            img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
+                            img_opponent: sceneTab[3].opponent_img
                         },
                         { // Scene 6
                             details_scene: sceneTab[5],

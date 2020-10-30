@@ -44,7 +44,7 @@ const profileController = {
                 const checkUser = await user.findByUserName(request.body.userName); // On verifie si le userName existe en bdd
         
                 if (checkUser !== undefined) { // Si il existe on stock un message d'erreur dans messageTab
-                    const messageUserName = "Votre nom d''utilisateur a bien été enregistré en base de donnée.";
+                    const messageUserName = "Nom d'utilisateur déjà enregistré en base de donnée";
                     messageTab.push({messageUserName: messageUserName});
                 } else { // Sinon on le stock le userName du body dans data
                     data.userName = request.body.userName;
