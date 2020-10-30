@@ -2,17 +2,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// == Import
+import HealthBar from '../HealthBar';
+
+// == Import 
 
 // == Composant
 const OpponentFrame = ({
   opponent,
-}) => (
-  <div className="opponent-frame">
-    <h1>{ opponent.name }</h1>
-    <p>health  : { opponent.healthPoint.current } / { opponent.healthPoint.max }</p>
-  </div>
-);
+}) => {
+  console.log('opponent', opponent);
+
+  //<HealthBar heathStatus={ opponent.healthPointent } />
+  return (
+    <>
+      {opponent && 
+      (
+        <div className="opponent-frame">
+          <h1>{ opponent.name }</h1>
+          <HealthBar 
+            current={ opponent.healthPoint.current } 
+            max={ opponent.healthPoint.max }
+          />
+        </div>
+      )
+      }
+    </>
+  );
+};
 
 // == PropTypes
 OpponentFrame.propTypes = {
