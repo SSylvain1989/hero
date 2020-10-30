@@ -81,6 +81,7 @@ const userMiddleware = (store) => (next) => (action) => {
         },
         { withCredentials: true })
         .then((response) => {
+          console.log(response.data.session);
           store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
           store.dispatch(resetFields());
