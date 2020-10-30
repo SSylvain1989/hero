@@ -9,8 +9,8 @@ const Character = ({
   console.log(image);
 
   return (
-    <div className="character__card" id={id} onClick={onClick}>
-      <img className="character__img" src={image} alt={name} />
+    <div className="character" id={id} onClick={onClick}>
+      <img className="character__heroes" src={image} alt={name} />
       <h1 className="character__name">{name}</h1>
       <h2 className="character__text">Points de vie</h2>
       <p className="character__stats">{hp}</p>

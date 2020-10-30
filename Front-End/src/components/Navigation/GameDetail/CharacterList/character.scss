@@ -1,42 +1,29 @@
 @use 'src/styles/vars';
 
-.character__card {
+.character {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid vars.$border-color;
   width: 350px;
+  //height: 100px;
   margin: 0 2rem;
 
-  background-color: vars.$brown-color;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-wrap: wrap;
-  padding: 0px 30px 10px 30px;
-  
-  border: 10px outset vars.$border-color;
-  border-radius: 12px;
-  
-  box-shadow: 0px 10px 13px -7px #000000,
-  inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
-
-  //filter: grayscale(1);
-
-  img {
+  &__heroes {
     height: 150px;
   }
 
-  h1 {
+  &__name {
     margin-top: 2rem;
   }
 
-  h2 {
+  &__text {
     margin: 0.5rem;
     font-size: 20px;
   }
 
-  p {
+  &__stats {
     font-size: 18px;
     font-weight: bold;
     color: vars.$font-gold-color;
