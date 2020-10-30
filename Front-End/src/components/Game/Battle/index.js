@@ -34,7 +34,7 @@ const Battle = ({
       setDisplay(true);
       setTimeout(() => {
         setDisplay(false);
-      }, 5000);
+      }, 1000);
     };
 
     return (
