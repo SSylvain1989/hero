@@ -10,22 +10,61 @@
   //height: 100px;
   margin: 0 2rem;
 
+  position:relative;
+  background-color: vars.$brown-color;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 0px 30px 10px 30px;
+  
+  border: 10px outset vars.$border-color;
+  border-radius: 12px;
+  
+  box-shadow: 0px 10px 13px -7px #000000,
+  inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+
+  //filter: grayscale(1);
+
   &__heroes {
     height: 150px;
   }
 
   &__name {
-    margin-top: 2rem;
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+      //font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
+    text-transform: uppercase;
+
+    padding-bottom: 10px;
+    border-bottom: vars.$border-color 1px solid;
   }
 
   &__text {
-    margin: 0.5rem;
-    font-size: 20px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: #b1b1b1;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: .2rem;
+  
+    padding-bottom: 10px;
+    border-bottom: vars.$border-color 1px;
+    border-style: dashed;
+
+    margin-bottom: 5px;
   }
 
   &__stats {
     font-size: 18px;
     font-weight: bold;
+    font-style: italic;
     color: vars.$font-gold-color;
   }
 }
