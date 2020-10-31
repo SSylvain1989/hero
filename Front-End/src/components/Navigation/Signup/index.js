@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
 
-import Field from '../../common/Field';
+import Field from '../../common/Field/FieldUser';
 
 // == Import scss
 import './signup.scss';
@@ -36,6 +36,7 @@ const Signup = ({
             onChange={changeField}
             value={username}
             type="text"
+            className="signup__input"
           />
           <Field
             name="email"
@@ -43,6 +44,7 @@ const Signup = ({
             onChange={changeField}
             value={email}
             type="email"
+            className="signup__input"
           />
           <Field
             name="password"
@@ -50,6 +52,7 @@ const Signup = ({
             onChange={changeField}
             value={password}
             type="password"
+            className="signup__input"
           />
           <Field
             name="passwordConfirm"
@@ -57,6 +60,7 @@ const Signup = ({
             onChange={changeField}
             value={passwordConfirm}
             type="password"
+            className="signup__input"
           />
           <input className="signup__submit" type="submit" value="C'est parti" />
           {messagesError.length > 0
