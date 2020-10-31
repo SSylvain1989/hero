@@ -62,7 +62,7 @@ const Signup = ({
             type="password"
             className="signup__input"
           />
-          <input className="signup__submit" type="submit" value="C'est parti" />
+          <button className="signup__button" type="submit" value="C'est parti">Confirmer </button>
           {messagesError.length > 0
             && messagesError.map((element) => (
               <p

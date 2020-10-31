@@ -52,15 +52,37 @@
         margin: 1rem;
     }&__text {
       margin: 1rem;
-    }&__button {
-      padding: 1rem;
-      color: white;
-      font-size: large;
-      bottom: 20px;
-      border-radius: 5px;
-      border: none;
-      background-color: vars.$bgr-btn-bleu;
-    }&__error {
+    }  &__button {
+      width: 25rem;
+      height: 5rem;
+      color: vars.$font-btn-grad-color;
+      transition: all 0.4s;
+      cursor: pointer;
+      background: linear-gradient(
+      180deg,
+      vars.$bgr-btn-grad-01 0%,
+      vars.$bgr-btn-grad-02 49%,
+      vars.$bgr-btn-grad-03 51%,
+      vars.$bgr-btn-grad-04 100%);
+      padding: 10px 20px 10px 20px;
+      margin-top: 10px;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      border: 5px outset vars.$font-gold-color;
+      border-radius: 12px;
+    }
+    &__button:hover {
+      color: vars.$font-btn-grad-color-hover;
+      background: linear-gradient(
+        180deg,
+        vars.$bgr-btn-grad-hover-01 0%,
+        vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-04  100%);
+    }
+    &__error {
       color: vars.$invalide-color;
     }&__signed {
         display:flex;
