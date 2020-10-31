@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
 
+import logo from 'src/images/logo.png';
 import Field from '../../common/Field/FieldUser';
 
 // == Import scss
@@ -29,6 +30,7 @@ const Signup = ({
     return (
       <div className="signup">
         <form onSubmit={handleOnSubmit}>
+          <img className="signup__picture" src={logo} alt="logo" />
           <h1 className="signup__title">Je souhaite devenir joueur</h1>
           <Field
             name="username"
