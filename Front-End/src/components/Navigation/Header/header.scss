@@ -9,30 +9,26 @@
   height: 4rem;
   z-index: 999;
 
-
   ul {
   display: flex;
 
     li {
       margin: 1.5rem;
       color: vars.$font-gold-color;
-      font-weight: 500;
+      font-weight: 800;
       font-size: 1rem;
-      padding-left: 4rem;
     }
   }
 
   &__leftside {
   display: flex;
   text-align: left;
-  width: 50%;
-  position: absolute;
+  width: 100%;
     
   img {
-    width: 14rem;
-    top: -2rem;
-    position: absolute;
-    // margin: 0.5rem;
+    width: 10.5rem;
+    top: 0;
+    margin: 0.3rem 0.3rem 0rem 0.3rem;
   }
   }
 
@@ -43,9 +39,23 @@
 
       img {
         position: absolute;
-        width: 50px;
-        top: 0.5rem;
-        right: 9rem;
+        width: 6rem;
+        top: 0rem;
+        right: 7rem;
+      }
+      img:hover {
+        transition: 0.6s;
+        transform: scale(0.9);
+        filter: contrast(150%);
+        filter: drop-shadow(1px 1px 10px gold);
       }
     }
 }
+
+// .character:hover {
+//   transition: 0.5s;
+//   filter: grayscale(0);
+//   transform: scale(1.1);
+// }
+
+// .character__heroes

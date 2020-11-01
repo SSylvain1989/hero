@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import './header.scss';
-import logo from '../../../images/logo.png';
-// import avatar from '../../../images/avatar.png';
+import logo from '../../../images/logo4.png';
+import avatar from '../../../images/avatar.png';
 
 const Header = ({
   isLoged,
@@ -56,7 +56,7 @@ const Header = ({
                     exact
                   >
                     <img
-                      src={avatar}
+                      src="https://i.ibb.co/ZXpv3t3/minotaur.gif"
                       alt="avatar"
                     />
                   </NavLink>
