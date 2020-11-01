@@ -1,47 +1,82 @@
 @use 'src/styles/vars' as vars;
 
-
 .connection{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-
-  &__title {
-    font-size: 24px;
+  height: 100vh;
+  &__form{
+      background-color: vars.$brown-color;
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.5rem;
+      border: 0.6rem outset vars.$border-color;
+      border-radius: 12px;
+      box-shadow: 0px 10px 13px -7px #000000,
+      inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+      position: absolute;
+  }&__title {
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 2rem;
-    border-bottom: grey 1px solid;
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: vars.$border-color 1px solid;
   }&__redirect {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
     padding: 1rem;
-    color: white;
-    font-size: large;
-    bottom: 20px;
-    margin: 1rem;
-    border-radius: 5px;
-    border: none;
-    // background-color: vars.$bgr-btn-bleu;
-    background-color: vars.$bgr-btn-bleu;
+    margin: 2rem;
   }&__input {
-    padding: 0.5rem;
-    width: 14rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-  }&__button {
-    padding: 1rem;
-    color: white;
-    font-size: large;
-    bottom: 20px;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    background: vars.$font-base-color;
+    font-size: 1rem;
+    line-height: 1.5;
     margin: 1rem;
-    border-radius: 5px;
-    border: none;
-    // background-color: vars.$bgr-btn-bleu;
-    background-color: vars.$bgr-btn-green;
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 15px;
+    text-align: center;
+  }&__button {
+    width: 20rem;
+    height: 3.5rem;
+    margin: auto;
+    color: vars.$font-btn-grad-color;
+    transition: all 0.4s;
+    cursor: pointer;
+    background: linear-gradient(
+    180deg,
+    vars.$bgr-btn-grad-01 0%,
+    vars.$bgr-btn-grad-02 49%,
+    vars.$bgr-btn-grad-03 51%,
+    vars.$bgr-btn-grad-04 100%);
+    padding: 0.8rem 0rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 12px;
   }
-
-
-  &__loged {
+  &__button:hover {
+    color: vars.$font-btn-grad-color-hover;
+    background: linear-gradient(
+      180deg,
+      vars.$bgr-btn-grad-hover-01 0%,
+      vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+      vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+      vars.$bgr-btn-grad-hover-04  100%);
+  }&__loged {
     width: 100%;
     display: flex;
     flex-direction: column;
