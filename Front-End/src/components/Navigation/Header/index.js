@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import './header.scss';
 import logo from '../../../images/logo.png';
-import avatar from '../../../images/avatar.png';
+// import avatar from '../../../images/avatar.png';
 
 const Header = ({
   isLoged,

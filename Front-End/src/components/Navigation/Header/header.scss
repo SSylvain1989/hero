@@ -1,7 +1,7 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as vars;
 
 .header {
-  background-color: vars.$normal-color;
+  background-color: vars.$font-contrast-color;
   position: fixed;
   width: 100%;
   left:0;
@@ -9,23 +9,30 @@
   height: 4rem;
   z-index: 999;
 
+
   ul {
   display: flex;
 
     li {
       margin: 1.5rem;
+      color: vars.$font-gold-color;
+      font-weight: 500;
+      font-size: 1rem;
+      padding-left: 4rem;
     }
   }
 
   &__leftside {
   display: flex;
   text-align: left;
-  width: 100%;
+  width: 50%;
+  position: absolute;
     
   img {
-    width: 50px;
-    top: 0;
-    margin: 0.5rem;
+    width: 14rem;
+    top: -2rem;
+    position: absolute;
+    // margin: 0.5rem;
   }
   }
 
