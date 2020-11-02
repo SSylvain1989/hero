@@ -1,20 +1,10 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as vars;
 
 
 .footer {
   position: fixed;
   bottom: 0;
-  //background-color: #222222;
-
-  background-color: vars.$border-color;
-  overflow: hidden;
-  flex-wrap: wrap;
-  padding: 2px 10px 5px 10px;
-  
-  border: 10px double vars.$brown-color;
-  border-radius: 12px;
-  
-
+  background-color: vars.$font-contrast-color;
   width: 100%;
   z-index: 999;
   font-family: Merriweather, arial;
@@ -29,15 +19,13 @@
 }
 
 .footer li {
-  color: vars.$brown-color;
+  color: vars.$font-gold-color;
   text-align: center;
   padding: 1rem;
   margin: 0 2rem;
   text-decoration: none;
-  font-size: 17px;
-
-  letter-spacing: .2rem;
-  transition: all 0.4s;
+  font-size: 1rem;
+  font-weight: 800;
   
 }
 

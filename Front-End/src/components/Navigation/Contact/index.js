@@ -1,4 +1,3 @@
-  
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/order */
 /* eslint-disable consistent-return */
@@ -42,9 +41,9 @@ const Contact = ({
         alert('Votre message a bien été envoyé, nous vous répondrons sous peu', result.text);
         console.log(result);
       },
-      (error) => {
-        alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
-      });
+        (error) => {
+          alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
+        });
   };
   if (!response) {
     return (

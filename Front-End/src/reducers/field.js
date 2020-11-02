@@ -93,6 +93,7 @@ const field = (state = initialState, action = {}) => {
         isLoged: !state.isLoged,
       };
     case SAVE_SESSION:
+      console.log('action.session', action.session);
       return {
         ...state,
         session: {

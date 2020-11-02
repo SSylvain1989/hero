@@ -29,8 +29,8 @@ const Connection = ({
 
   if (!isLoged) {
     return (
-      <>
-        <form className="connection" onSubmit={handleSubmit}>
+      <div className="connection">
+        <form className="connection__form" onSubmit={handleSubmit}>
           <h1 className="connection__title">CONNEXION</h1>
           <Field
             name="userName"
@@ -53,14 +53,14 @@ const Connection = ({
               <p
                 className="connection__error"
                 key={Object.values(element)[0]}
-              >Attention :
+              >
                 {Object.values(element)[0]}
               </p>
             ))}
           <button className="connection__button" type="submit">Se connecter</button>
-          <button className="connection__redirect" type="button"><Link to="/inscription">L'inscription c'est par ici</Link></button>
+          <p className="connection__redirect" type="button"><Link to="/inscription">Pas de compte ? <span>L'inscription c'est par ici</span></Link></p>
         </form>
-      </>
+      </div>
     );
   }
   return (
