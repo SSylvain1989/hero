@@ -26,11 +26,15 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
+
+  letter-spacing: .2rem;
+  transition: all 0.4s;
   
 }
 
 .footer li:hover {
   //color: vars.$font-gold-color;
-  filter: brightness(200%);
+  //filter: brightness(200%);
   transform: scale(1.25);
+  color: vars.$font-silver-color;
 }
