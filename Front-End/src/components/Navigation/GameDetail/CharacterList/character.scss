@@ -27,19 +27,16 @@
     background-color: rgba(vars.$normal-color, 0.3);
   }
 
-  //filter: grayscale(1);
 
   &__heroes {
     height: 100px;
     margin-top: 10px;
-    //filter: grayscale(1);
   }
 
   &__name {
     margin-top: 10px;
     margin-bottom: 30px;
 
-      //font-family: sans-serif;
     font-size: 24px;
     font-weight: bold;
     
@@ -80,7 +77,6 @@
 
   &:hover {
     transition: 0.5s;
-    //filter: grayscale(0);
     transform: scale(1.05);
   }
 }
@@ -93,15 +89,10 @@
 
 .character-list {
   display: flex;
-  //justify-content: center;
-  //align-items: center;
   flex-direction: row;
-  
-  //background-color: vars.$font-silver-color;
 
   height: 550px;
   width: 400px;
   margin-top: 10px;
-  //margin: auto;
 
 }

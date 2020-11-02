@@ -58,14 +58,14 @@ const Connection = ({
               </p>
             ))}
           <button className="connection__button" type="submit">Se connecter</button>
-          <Link to="/inscription"><p className="connection__redirect" type="button">Pas de compte ? <span>L'inscription c'est par ici</span></p></Link>
+          <Link to="/inscription"><p className="connection__redirect" type="button">Pas de compte ? <br></br> <span>L'inscription se fait par ici !</span></p></Link>
         </form>
       </div>
     );
   }
   return (
     <div className="connection__loged">
-      <h1>Vous êtes bien connecté, bienvenue {sessionUserName} </h1>
+      <h1>Vous êtes bien connecté, <br></br> bienvenue à bord {sessionUserName} ! </h1>
       <button type="button" className="connection__redirect"><Link to="liste-des-jeux">Voir la liste des jeux</Link></button>
     </div>
   );
