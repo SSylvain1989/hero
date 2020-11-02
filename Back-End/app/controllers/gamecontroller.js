@@ -177,17 +177,20 @@ const gameController = {
                         { // Scene 9
                             details_scene: sceneTab[8],
                             previous_scene_id: oneHistory[13].previous_scene_id,
-                            finish_text: `Game Over, vous êtes mort !`
+                            finish_text: `Game Over, vous êtes mort !`,
+                            img_scene: 'https://i.ibb.co/vJT3LjN/Fin-03.png'
                         },
                         { // Scene 10
                             details_scene: sceneTab[9],
                             previous_scene_id: oneHistory[14].previous_scene_id,
-                            finish_text: `Bravo, vous avez terminé le jeu mais vous êtes maudit !`
+                            finish_text: `Bravo, vous avez terminé le jeu mais vous êtes maudit !`,
+                            img_scene: 'https://i.ibb.co/VWy0dxL/Fin-en-etant-maudit-01.png'
                         },
                         { // Scene 11
                             details_scene: sceneTab[10],
                             previous_scene_id: oneHistory[15].previous_scene_id,
-                            finish_text: `Bravo, vous avez terminé le jeu en ayant levé la malédiction !`
+                            finish_text: `Bravo, vous avez terminé le jeu en ayant levé la malédiction !`,
+                            img_scene: 'https://i.ibb.co/L9gs2Yd/Fin-sans-etre-maudit-01.png'
                         },
                     ]
                 };
@@ -226,7 +229,7 @@ const gameController = {
                             previous_scene_id: oneHistory[0].previous_scene_id,
                             next_scene_id: oneHistory[0].next_scene_id,
                             next_scene_name: 'Démarrer',
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 13
                             details_scene: sceneTab[1],
@@ -239,7 +242,7 @@ const gameController = {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
                             },
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 14
                             details_scene: sceneTab[2],
@@ -252,7 +255,7 @@ const gameController = {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
                             },
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 15
                             details_scene: sceneTab[3],
@@ -265,19 +268,19 @@ const gameController = {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
                             },
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 16
                             details_scene: sceneTab[4],
                             previous_scene_id: [15, 14, 13],
                             finish_text: `Game Over, vous êtes mort !`,
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 17
                             details_scene: sceneTab[5],
                             previous_scene_id: oneHistory[5].previous_scene_id,
                             finish_text: `Bravo, vous êtes le grand maitre de l'arène !`,
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                     ]
                 };

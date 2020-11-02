@@ -30,7 +30,7 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('Prison', 'Alcatraz, une prison terrifiante. Dieu seul sait pourquoi vous vous retrouvez inopinément ici ... A vous, de déjouer les mauvais sorts et vous échappez au plus vite de cet endroit maudit ... ', 'Facile', 'https://i.ibb.co/25xVbhh/arenes.jpg');
+    VALUES  ('Prison', 'Alcatraz, une prison terrifiante. Dieu seul sait pourquoi vous vous retrouvez inopinément ici ... A vous, de déjouer les mauvais sorts et vous échappez au plus vite de cet endroit maudit ... ', 'Facile', 'https://i.ibb.co/427w5DY/Miniature-prison-01.png');
 
 INSERT INTO game.scene ( 
     "name",
