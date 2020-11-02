@@ -26,6 +26,7 @@
     bottom: 0;
     right: 4rem;
     border: 3px solid vars.$brown-color;
+    border-radius: 5px 0 0 0;
 
     &__header {
       height: 25%;
@@ -44,7 +45,7 @@
     &__stats {
       color: vars.$font-contrast-color;
       font-weight: 700;
-      padding-top: 0.5rem;
+      padding-top: 0.25rem;
       margin: auto;
       flex: auto;
       flex-direction: row;

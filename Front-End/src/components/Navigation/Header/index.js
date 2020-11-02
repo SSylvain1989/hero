@@ -38,7 +38,7 @@ const Header = ({
                 to="/profil"
                 exact
               >
-                // Scores //
+                Scores
               </NavLink>
             </li>
           ) : null}
@@ -52,7 +52,7 @@ const Header = ({
                   to="/profil"
                   exact
                 >
-                  <p>// {userName} //</p>
+                  <p>{userName}</p>
                   <img
                     src="https://i.ibb.co/ZXpv3t3/minotaur.gif"
                     alt="avatar"
@@ -61,7 +61,7 @@ const Header = ({
               </li>
               <li onClick={logoutHandler}>
                 <NavLink to="/">
-                  // Déconnexion //
+                  Déconnexion
                 </NavLink>
               </li>
             </>
@@ -72,14 +72,7 @@ const Header = ({
                 <NavLink
                   to="/Connection"
                   exact
-                >-- Connexion --
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/inscription"
-                  exact
-                >-- Créer un compte --
+                >Connexion
                 </NavLink>
               </li>
             </>
