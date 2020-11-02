@@ -58,7 +58,7 @@ const Connection = ({
               </p>
             ))}
           <button className="connection__button" type="submit">Se connecter</button>
-          <p className="connection__redirect" type="button"><Link to="/inscription">Pas de compte ? <span>L'inscription c'est par ici</span></Link></p>
+          <Link to="/inscription"><p className="connection__redirect" type="button">Pas de compte ? <span>L'inscription c'est par ici</span></p></Link>
         </form>
       </div>
     );

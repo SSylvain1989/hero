@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ReactCardFlip from 'react-card-flip';
 
 import logo from 'src/images/logo.png';
 import Field from '../../common/Field/FieldUser';
