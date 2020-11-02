@@ -45,18 +45,22 @@ const GameDetail = ({
           {/* <p>{game.category}</p> */}
           <p>{game.difficulty}</p>
           <section className="game-detail__section">{game.description}</section>
-          <div>
+          <div className="game-detail__character">
             {isLogged && !isStoryLoaded
               ? <button type="button" className="game-detail__button" onClick={loadStory(gameId)}>Choisir un héro</button>
               : (
                 <>
-                  <CharacterList
-                    characterList={characterList}
-                    handleCharacterOnClick={handleCharacterOnClick}
-                  />
+                  <div className="game-detail__character--container">
+                    <CharacterList
+                      characterList={characterList}
+                      handleCharacterOnClick={handleCharacterOnClick}
+                    />
+                  </div>
+
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/${firstSceneId}`}><button type="button" className="game-detail__button">Jouer</button></Link>}
                 </>
               )}
+
             {!isLogged && <Link to="/connection"><button type="button" className="game-detail__btn">Connectez-vous !</button></Link>}
           </div>
         </div>
