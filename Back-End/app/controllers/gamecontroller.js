@@ -24,6 +24,7 @@ const gameController = {
      */
     getHistory: async (request, response) => {
         try {
+            // Si le slug correspond a l'histoire 1
             if (request.params.id === '1' || request.params.id === 1) {
                 // on attend le retour de la methode qui recupère une histoire par son id
                 const oneHistory = await game.findHistoryById(request.params.id);
@@ -196,6 +197,7 @@ const gameController = {
                 };
     
                 response.status(200).json({history: history, session: request.session.user});
+                // Si le slug correspond a l'histoire 2
             } else if (request.params.id === '2' || request.params.id === 2) {
                 // on attend le retour de la methode qui recupère une histoire par son id
                 const oneHistory = await game.findHistoryById(request.params.id);
@@ -217,7 +219,7 @@ const gameController = {
                     };
                 };
                 
-                const history = { // je configure l'objet de l'histoire
+                const history2 = { // je configure l'objet de l'histoire
                     history_id: oneHistory[0].history_id,
                     history_name: oneHistory[0].history_name,
                     history_description: oneHistory[0].history_description,
@@ -285,7 +287,7 @@ const gameController = {
                     ]
                 };
                 
-                response.status(200).json({history: history, session: request.session.user});
+                response.status(200).json({history: history2, session: request.session.user});
             } else {
                 const message = `L'histoire demandée n'est pas disponible.`
                 response.status(404).json({message: message, session: request.session.user});

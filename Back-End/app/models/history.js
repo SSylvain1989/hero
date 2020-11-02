@@ -19,6 +19,18 @@ const history = {
         const data = await db.query(sql, [id]);
         return data.rows;
     },
+    /**
+     * On récupère une histoire par son id
+     * @param - id de l'histoire
+     */
+    categoriesByHistoryId: async (id) => {
+        const sql = `SELECT categories.name
+                     FROM game.categories
+                     JOIN game.history_has_categories ON history_has_categories.categories_id = categories.id
+                     WHERE history_has_categories.history_id = $1;`;
+        const data = await db.query(sql, [id]);
+        return data.rows;
+    },
 
 };
 

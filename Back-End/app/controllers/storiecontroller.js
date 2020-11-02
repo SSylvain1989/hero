@@ -10,6 +10,21 @@ const storieController = {
         try {
             // on attend le retour de la methode qui recupère toute les histoires
             const historyList = await history.findAll();
+            // on parcours la liste d'histoire
+            for (let oneHistory of historyList) {
+                // Pour chaque histoire on recupère ses categories
+                const categoriesForHistory = await history.categoriesByHistoryId(oneHistory.id);
+                // on instancie un tableau vide
+                const cat = [];
+                // Pour chaque element de la liste des categories
+                for (let element of categoriesForHistory) {
+                    // On stock chaque element dans le tableau vide
+                    cat.push(element.name);
+                }
+                // Une fois tout les element parcourue et stocker dans le tableau on le passe dans l'objet Onehistoire 
+                // une fois le tableau de categories copier dans one histoiry, l'historyList est a jour 
+                oneHistory.categories = cat;
+            };
             // on renvoie les histoires et la session 
             return response.status(200).json({historylist: historyList, session: request.session.user});
         } catch (error) {

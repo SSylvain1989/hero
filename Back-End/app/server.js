@@ -17,6 +17,9 @@ const port = process.env.PORT || 8000;
 // on rajoute la gestion des POST body
 app.use(express.urlencoded({extended: true}));
 
+// On dit que le fichier dist est static (n'existera qu'une fois le front compilé et déplacé a la racine du back)
+app.use(express.static('dist'));
+
 // et on rajoute la gestion des sessions
 const session = require('express-session');
 app.use(session({
