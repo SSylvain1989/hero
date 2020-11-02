@@ -144,6 +144,10 @@ const field = (state = initialState, action = {}) => {
           userName: '',
           password: '',
         },
+        contact: {
+          email: '',
+          message: '',
+        },
         messagesError: '',
       };
     case DISPLAY_MESSAGE_TOOGLE:

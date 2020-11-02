@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -18,14 +18,16 @@ const Connection = ({
   isLoged,
   sessionUserName,
   messagesError,
+  resetFields,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
   };
 
-  console.log('log connection component', messagesError);
-  console.log('log connection component', messagesError);
+  useEffect(() => {
+    resetFields();
+  }, []);
 
   if (!isLoged) {
     return (
@@ -79,6 +81,7 @@ Connection.propTypes = ({
   isLoged: PropTypes.bool.isRequired,
   sessionUserName: PropTypes.string,
   messagesError: PropTypes.string.isRequired,
+  resetFields: PropTypes.func.isRequired,
 });
 
 Connection.defaultProps = ({

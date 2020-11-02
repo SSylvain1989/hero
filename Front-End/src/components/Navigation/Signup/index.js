@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -19,11 +19,16 @@ const Signup = ({
   handleSignup,
   messagesError,
   response,
+  resetFields,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     handleSignup();
   };
+
+  useEffect(() => {
+    resetFields();
+  }, []);
 
   if (!response) {
     return (
@@ -102,6 +107,7 @@ Signup.propTypes = ({
   handleSignup: PropTypes.func.isRequired,
   messagesError: PropTypes.array,
   response: PropTypes.string,
+  resetFields: PropTypes.func.isRequired,
 });
 
 Signup.defaultProps = ({

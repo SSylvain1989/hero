@@ -62,7 +62,7 @@
 
 .game__card__name {
   //font-family: sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   
   text-shadow: 3px 2px 0 #290f0f;
@@ -73,10 +73,11 @@
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: vars.$border-color 1px solid;
+  margin-top: 1rem;
   }
 
 .game__card__difficulty {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: lighter;
   color: #b1b1b1;
   text-align: center;
@@ -90,11 +91,15 @@
 }
 
 .game__card__description {
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 15px;
   letter-spacing: .2rem;
-  text-align: justify;
   color: vars.$font-silver-color;
+  height: 104px;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
   .game__image {
     border-radius: 20px;
@@ -152,5 +157,5 @@
 .game__card:hover {
   transition: 0.5s;
   filter: grayscale(0);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
