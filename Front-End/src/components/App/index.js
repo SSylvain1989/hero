@@ -106,6 +106,12 @@ const App = ({ games, checkConnexion, story }) => {
 App.propTypes = ({
   games: PropTypes.array.isRequired,
   checkConnexion: PropTypes.func.isRequired,
+  story: PropTypes.shape({
+    history: PropTypes.shape({
+      scene_list: PropTypes.array.isRequired,
+      history_id: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
 });
 
 export default App;

@@ -25,6 +25,7 @@ export const initialState = {
           },
         },
       ],
+      history_id: 0,
     },
   },
   isStoryLoaded: false,
