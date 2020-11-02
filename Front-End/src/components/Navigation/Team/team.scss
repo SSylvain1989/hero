@@ -6,7 +6,9 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 0 5rem ;
+  //padding: 0 1rem ;
+  justify-content: center;
+  align-items: center;
 }
 
 .member{
@@ -96,14 +98,15 @@
 // si plus de 700px en largeur sur ton ecran ( donc pc ) voir ci-dessous 
 @media screen and (min-width: 700px){
   .team{
+    display: flex;
     width: 100%;
     height: 100%;
     margin-top: 0.3rem;
     flex-direction: row;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0 9rem;
+    //padding: 0 9rem;
   }
 .member{
   &__wrapper{
