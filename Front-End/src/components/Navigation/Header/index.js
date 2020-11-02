@@ -48,9 +48,6 @@ const Header = ({
             ? (
               <>
                 <li>
-
-                </li>
-                <li>
                   <NavLink
                     to="/profil"
                     exact
