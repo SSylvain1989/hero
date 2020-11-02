@@ -10,12 +10,12 @@ INSERT INTO game.character (
     "def",
     "image"
     )
-    VALUES  ('Anges déchus', 'true', '30', '15', '7', 'https://i.ibb.co/R2GFpYs/fallen-angels.gif'),
-            ('Faucheur', 'true', '20', '20', '6', 'https://i.ibb.co/Ms8SSMQ/reaper-man.gif'),
-            ('Golem', 'true', '40', '10', '8', 'https://i.ibb.co/qBG1rFg/golem.gif'),
-            ('Goblin', 'false', '20', '6', '4', 'https://i.ibb.co/BZsGGtT/output-n-Ccx-S9.gif'),
-            ('Orc', 'false', '30', '8', '8', 'https://i.ibb.co/zFYwy2J/orc.gif'),
-            ('Ogre', 'false', '40', '10', '6', 'https://i.ibb.co/KLtDG9t/Webp-net-gifmaker.gif');
+    VALUES  ('Anges déchus', 'true', '30', '15', '7', 'https://i.ibb.co/h1NtDMg/ange-d-chu.gif'),
+            ('Faucheur', 'true', '20', '20', '6', 'https://i.ibb.co/6NjNMYH/faucheur.gif'),
+            ('Golem', 'true', '40', '10', '8', 'https://i.ibb.co/PjGhhK6/Golem.gif'),
+            ('Goblin', 'false', '20', '6', '4', 'https://i.ibb.co/m6r7GGG/Goblin.gif'),
+            ('Orc', 'false', '30', '8', '8', 'https://i.ibb.co/yRxJ0xj/Orc.gif'),
+            ('Ogre', 'false', '40', '10', '6', 'https://i.ibb.co/3stsmjD/Ogre.gif');
 
 INSERT INTO game.history ( 
     "name",

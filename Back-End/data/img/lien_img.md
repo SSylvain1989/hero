@@ -24,6 +24,15 @@ goblin: https://ibb.co/QNmkkfY - https://i.ibb.co/BZsGGtT/output-n-Ccx-S9.gif
 orc: https://ibb.co/yp1JwkS - https://i.ibb.co/zFYwy2J/orc.gif
 ogre: https://ibb.co/BrhGPgh - https://i.ibb.co/KLtDG9t/Webp-net-gifmaker.gif
 
+# personnage redimens
+spectre: https://i.ibb.co/qDZ9g5H/Webp-net-gifmaker-1.gif
+goblin: https://i.ibb.co/m6r7GGG/Goblin.gif
+orc: https://i.ibb.co/yRxJ0xj/Orc.gif
+ogre: https://i.ibb.co/3stsmjD/Ogre.gif
+anges déchus: https://i.ibb.co/h1NtDMg/ange-d-chu.gif
+golem: https://i.ibb.co/PjGhhK6/Golem.gif
+faucheur: https://i.ibb.co/6NjNMYH/faucheur.gif
+
 # miniature
 arene: https://ibb.co/5WsgZZ3 - https://i.ibb.co/MDPxddH/Miniature-arene-01.png
 chateau: https://ibb.co/SJsXJML - https://i.ibb.co/GFxvF8h/Miniature-chateau-01.png

@@ -11,7 +11,7 @@ INSERT INTO game.character (
     "image"
     )
     VALUES  ('Etienne', 'true', '15', '3', '2', 'https://i.ibb.co/ZXpv3t3/minotaur.gif'),
-            ('Charles', 'true', '25', '6', '3', 'https://i.ibb.co/71c03Xd/wraith.gif'),
+            ('Charles', 'true', '25', '6', '3', 'https://i.ibb.co/qDZ9g5H/Webp-net-gifmaker-1.gif'),
             ('Vieillard', 'false', '20', '5', '2', 'https://i.ibb.co/NsvtkHs/Papy-01.png');
 
 INSERT INTO game.type ( 
