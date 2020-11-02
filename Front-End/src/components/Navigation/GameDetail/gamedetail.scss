@@ -1,17 +1,39 @@
 @use 'src/styles/vars';
 
 .game-detail {
-  height: 100vh;
+  //padding-top: 10rem;
+  height: calc(100vh + 15rem);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding-top: 3rem;
   background-color: #222222;
+  justify-content: center;
 
   font-size: 15px;
   letter-spacing: .2rem;
   color: vars.$font-silver-color;
+
+  &__content {
+
+  p {
+    font-size: 17px;
+    font-weight: lighter;
+   // color: #b1b1b1;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: .2rem;
+
+    padding-top: 10px;
+  
+    padding-bottom: 10px;
+    border-bottom: vars.$border-color 1px;
+  }
+}
+
+
+
 
 &__title {
   //font-family: sans-serif;
@@ -25,7 +47,7 @@
   width: 6em;
 
   text-shadow: 3px 2px 0 #290f0f;
-  color: vars.$font-silver-color;
+  color: vars.$font-gold-color;
   text-align: center;
   text-transform: uppercase;
   font-style: italic;
@@ -42,12 +64,12 @@
 
     font-size: large;
     font-weight: lighter;
-    margin: 1em;
+    margin: auto;
 
-    width: auto;
+    width: 500px;
     height: auto;
-    margin-left: 100px;
-    margin-right: 100px;
+    // margin-left: 100px;
+    // margin-right: 100px;
 
     background-color: vars.$border-color;
     overflow: hidden;
@@ -56,6 +78,18 @@
     
     border: 10px double vars.$brown-color;
     border-radius: 12px;
+  }
+  
+  &__character {
+    display: flex;
+    //display: inline;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__character--container {
+    display: flex;
+    flex-direction: row;
   }
   
   &__button {
@@ -100,19 +134,47 @@
 
         transform: scale(1.25);
     }
+  } &__btn {
+    width: 300px;
+    height: 50px;
+  
+    color: vars.$font-btn-grad-color;
+    letter-spacing: .2rem;
+    transition: all 0.4s;
+
+  
+  
+    cursor: pointer;
+  
+    background: linear-gradient(
+      180deg,
+    vars.$bgr-btn-grad-01 0%,
+    vars.$bgr-btn-grad-02 49%,
+    vars.$bgr-btn-grad-03 51%,
+    vars.$bgr-btn-grad-04 100%);
+  
+    padding: 10px 20px 10px 20px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 12px;
+
+    &:hover {
+      color: vars.$font-btn-grad-color-hover;
+      background: linear-gradient(
+        180deg,
+        vars.$bgr-btn-grad-hover-01 0%,
+        vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-04  100%);
+
+        transform: scale(1.25);
+    }
   }
 }
-
-
-  // p {
-    //   font-size: 17px;
-    //   font-weight: lighter;
-    //  // color: #b1b1b1;
-    //   text-align: center;
-    //   font-style: italic;
-    //   letter-spacing: .2rem;
-    
-    //   padding-bottom: 10px;
-    //   border-bottom: vars.$border-color 1px;
-  //   }
-  // }

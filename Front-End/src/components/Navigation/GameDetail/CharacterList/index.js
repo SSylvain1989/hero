@@ -4,16 +4,19 @@ import PropTypes from 'prop-types';
 import Character from './Character';
 
 const CharacterList = ({ characterList, handleCharacterOnClick }) => (
-  <div className="character-list">
-    {characterList.length > 0
-      && characterList.map((character) => (
-        <Character
-          key={character.id}
-          {...character}
-          onClick={handleCharacterOnClick}
-        />
-      ))}
-  </div>
+  <>
+    {(characterList.length > 0)
+      ? characterList.map((character) => (
+        <div className="character-list">
+          <Character
+            key={character.id}
+            {...character}
+            onClick={handleCharacterOnClick}
+          />
+        </div>
+
+      )) : null}
+  </>
 );
 
 CharacterList.propTypes = ({
