@@ -20,6 +20,12 @@
 
       letter-spacing: .2rem;
       transition: all 0.4s;
+      }
+
+
+      li:hover {
+        transform: scale(1.2);
+        color: vars.$font-silver-color;
     }
   }
 
@@ -68,7 +74,7 @@
 
 // .character__heroes
 
-li:hover {
-  transform: scale(1.2);
-  color: vars.$font-silver-color;
-}
+// li:hover {
+//   transform: scale(1.2);
+//   color: vars.$font-silver-color;
+// }

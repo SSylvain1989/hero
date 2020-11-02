@@ -28,7 +28,8 @@
 
   
   &__title {
-    font-family: sans-serif;
+    letter-spacing: .2rem;
+
     font-size: 24px;
     font-weight: bold;
 
@@ -40,10 +41,18 @@
     margin-bottom: 20px;
     border-bottom: vars.$border-color 1px solid;
   }
+
+  &__description {
+    letter-spacing: .1rem;
+    margin-bottom: 30px;
+    color: vars.$font-gold-color;
+  }
   
   &__button {
     width: auto;
     height: auto;
+
+    letter-spacing: .2rem;
   
     color: vars.$font-btn-grad-color;
   
@@ -61,7 +70,6 @@
     padding: 10px 20px 10px 20px;
     margin-top: 10px;
     
-    font-family: sans-serif;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -77,5 +85,7 @@
       vars.$bgr-btn-grad-hover-02 46.65551839464883%,
       vars.$bgr-btn-grad-hover-03 46.65551839464883%,
       vars.$bgr-btn-grad-hover-04  100%);
+
+      transform: scale(1.1);
   }
 }

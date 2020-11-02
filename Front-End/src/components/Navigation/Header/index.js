@@ -28,7 +28,7 @@ const Header = ({
               to="/liste-des-jeux"
               exact
             >
-              Liste des jeux
+              -- Liste des jeux --
           </NavLink>
           </li>
           {isLoged
@@ -38,7 +38,7 @@ const Header = ({
                   to="/score"
                   exact
                 >
-                  Scores
+                  -- Scores --
               </NavLink>
               </li>
             ) : null}
@@ -71,14 +71,14 @@ const Header = ({
                   <NavLink
                     to="/Connection"
                     exact
-                  >Connexion
+                  >-- Connexion --
                 </NavLink>
                 </li>
                 <li>
                   <NavLink
                     to="/inscription"
                     exact
-                  >Créer un compte
+                  >-- Créer un compte --
                 </NavLink>
                 </li>
               </>
