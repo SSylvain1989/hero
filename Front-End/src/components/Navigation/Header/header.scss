@@ -30,6 +30,7 @@
     top: 0;
     margin: 0.3rem 0.3rem 0rem 0.3rem;
   }
+
   }
 
   &__rightside {
@@ -42,6 +43,10 @@
         width: 6rem;
         top: 0rem;
         right: 7rem;
+        margin-right: 1.2rem ;
+      }
+      p {
+        margin-right: 4.6rem ;
       }
       img:hover {
         transition: 0.6s;
