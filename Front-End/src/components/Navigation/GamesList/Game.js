@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 import rpgmaker from 'src/images/rpgmaker.jpg';
 
 const Game = ({
-  name, description, difficulty, id,
+  name, description, difficulty, id, img,
 }) => (
   <div className="game">
     <div className="game__card">
-      <img className="game__image" src={rpgmaker} alt="imgGames" />
+      <img className="game__image" src={img} alt="imgGames" />
       <div className="game__card--text">
         <h2 className="game__card__name">{name}</h2>
         <p className="game__card__difficulty">{difficulty}</p>
@@ -27,6 +27,7 @@ Game.propTypes = ({
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
 });
 
 export default Game;

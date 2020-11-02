@@ -22,6 +22,11 @@
   box-shadow: 0px 10px 13px -7px #000000,
   inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
 
+  &--active {
+    transform: scale(1.05);
+    background-color: rgba(vars.$normal-color, 0.3);
+  }
+
   //filter: grayscale(1);
 
   &__heroes {
@@ -71,23 +76,19 @@
   }
 }
 
-.character:hover {
-  transition: 0.5s;
-  //filter: grayscale(0);
-  transform: scale(1.05);
-}
+.character {
 
+  &:hover {
+    transition: 0.5s;
+    //filter: grayscale(0);
+    transform: scale(1.05);
+  }
+}
 .character__heroes:hover {
   transition: 0.6s;
   transform: scale(0.9);
   filter: contrast(150%);
-  filter: drop-shadow(5px 3px 30px gold);
-}
-
-.character__name:hover {
-  transition: 0.6s;
-  transform: scale(1.2);
-  filter: drop-shadow(0px 3px 50px gold);
+  filter: drop-shadow(10px 3px 30px gold);
 }
 
 .character-list {
