@@ -17,12 +17,12 @@ const PlayerMenu = ({
         <h1>{name}</h1>
       </div>
       <div className="player-menu__stats">
-        <p>Attaque  : {attackPoint}</p>
-        <p>Défense : {defensePoint}</p>
         <HealthBar
           current={healthPoint.current}
           max={healthPoint.max}
         />
+        <p>Attaque : {attackPoint}</p>
+        <p>Défense : {defensePoint}</p>
       </div>
     </div>
     )}

@@ -42,8 +42,14 @@
     }
 
     &__stats {
+      color: vars.$font-contrast-color;
+      font-weight: 700;
+      padding-top: 0.5rem;
+      margin: auto;
       flex: auto;
       flex-direction: row;
+      flex-wrap: nowrap;
+      text-align: center;
       height: 75%;
       width: 100%;
       background-color: vars.$normal-color;
