@@ -22,7 +22,6 @@ const Profile = ({
   resetFields,
   errorMessage,
   addProfileErrorMessage,
-  saveMessage,
 }) => {
   useEffect(() => {
     displayMessageToggle();
@@ -116,7 +115,10 @@ Profile.propTypes = ({
   resetFields: PropTypes.func.isRequired,
   errorMessage: PropTypes.array.isRequired,
   addProfileErrorMessage: PropTypes.func.isRequired,
+<<<<<<< HEAD
   saveMessage: PropTypes.func.isRequired,
+=======
+>>>>>>> eeaa07ab3fa51eaad442815c2c681827496e1fcf
 });
 
 export default Profile;

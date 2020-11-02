@@ -87,24 +87,13 @@ const Battle = ({
 Battle.propTypes = ({
   scene: PropTypes.shape({
     details_scene: PropTypes.shape({
-      scene_id: PropTypes.number,
-      scene_name: PropTypes.string,
-      scene_description: PropTypes.string,
-      scene_type: PropTypes.string,
-      opponent_name: PropTypes.string,
-      opponent_hp: PropTypes.number,
-      opponent_atk: PropTypes.number,
-      opponent_def: PropTypes.number,
-      scene_opponent_id: PropTypes.number,
+      opponent_img: PropTypes.string.isRequired,
     }).isRequired,
-    previous_scene_id: PropTypes.number.isRequired,
     next_scene: PropTypes.shape({
       next_scene_id: PropTypes.number.isRequired,
-      next_scene_name: PropTypes.string.isRequired,
     }).isRequired,
     next_scene2: PropTypes.shape({
       next_scene_id2: PropTypes.number,
-      next_scene_name2: PropTypes.string,
     }),
   }).isRequired,
   storyId: PropTypes.number.isRequired,
@@ -115,6 +104,7 @@ Battle.propTypes = ({
     isAlive: PropTypes.bool.isRequired,
   }).isRequired,
   image: PropTypes.string.isRequired,
+  logOpponentFight: PropTypes.array.isRequired,
 });
 
 export default Battle;

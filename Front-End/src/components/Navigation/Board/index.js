@@ -1,5 +1,6 @@
 // == Import : npm
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // == Import : local
 import React, { useEffect } from 'react';
 import './styles.scss';
@@ -33,6 +34,16 @@ const Board = ({
     </>
   );
 };
+
+Board.propTypes = ({
+  boardData: PropTypes.shape({
+    displayName: PropTypes.string.isRequired,
+    gameOver: PropTypes.number.isRequired,
+    gamePlay: PropTypes.number.isRequired,
+    gameWin: PropTypes.number.isRequired,
+  }).isRequired,
+  fetchDataBoard: PropTypes.func.isRequired,
+});
 
 // == Export
 export default Board;

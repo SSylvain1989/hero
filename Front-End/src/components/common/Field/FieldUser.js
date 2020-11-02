@@ -39,5 +39,9 @@ Field.propTypes = {
   className: PropTypes.string,
 };
 
+Field.defaultProps = {
+  className: '',
+};
+
 // == Export
 export default Field;
