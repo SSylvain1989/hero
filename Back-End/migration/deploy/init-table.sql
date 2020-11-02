@@ -31,7 +31,8 @@ CREATE TABLE game.character (
   "playable" boolean NOT NULL,
   "hp" float NOT NULL,
   "atk" float NOT NULL,
-  "def" float NOT NULL
+  "def" float NOT NULL,
+  "image" text
 );
 
 CREATE TABLE game.history ( -- NE PEUT ETRE CREE AVANT CHARACTER
