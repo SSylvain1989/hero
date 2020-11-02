@@ -18,23 +18,27 @@
 
 
   .player-menu {
-    width: 300px;
+    width: 250px;
     height: 100px;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     position: absolute;
     bottom: 0;
-    right: 3rem;
+    right: 4rem;
     border: 3px solid vars.$brown-color;
-    z-index: 0;
 
     &__header {
       height: 25%;
       width: 100%;
       background-color: vars.$brown-color;
-      margin: auto;
-      text-align: center;
+
+      h1 {
+        color: vars.$font-gold-color;
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: auto;
+      }
     }
 
     &__stats {
@@ -43,8 +47,6 @@
       height: 75%;
       width: 100%;
       background-color: vars.$normal-color;
-      margin: auto;
-      text-align: center;
     }
   }
 }
