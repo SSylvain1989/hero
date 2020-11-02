@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import './header.scss';
-import logo from '../../../images/logo.png';
+import logo from '../../../images/logo4.png';
 import avatar from '../../../images/avatar.png';
 
 const Header = ({
@@ -41,14 +41,14 @@ const Header = ({
                 Scores
               </NavLink>
             </li>
-          ) : null }
+          ) : null}
       </div>
       <div className="header__rightside">
         {isLoged
           ? (
             <>
               <li>
-                { userName }
+                {userName}
               </li>
               <li>
                 <NavLink
@@ -56,7 +56,7 @@ const Header = ({
                   exact
                 >
                   <img
-                    src={avatar}
+                    src="https://i.ibb.co/ZXpv3t3/minotaur.gif"
                     alt="avatar"
                   />
                 </NavLink>
@@ -91,6 +91,7 @@ Header.propTypes = ({
   isLoged: PropTypes.bool.isRequired,
   logoutHandler: PropTypes.func.isRequired,
   userName: PropTypes.string,
+
 });
 
 Header.defaultProps = ({

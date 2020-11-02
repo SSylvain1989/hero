@@ -1,9 +1,6 @@
 // Package pour express (server)
 const express = require('express');
 
-// Package pour ouvrir l'acces de l'API
-const cors = require('cors');
-
 // Package pour les variables d'environements
 const dotenv = require('dotenv');
 dotenv.config();
@@ -19,9 +16,6 @@ const port = process.env.PORT || 8000;
 
 // on rajoute la gestion des POST body
 app.use(express.urlencoded({extended: true}));
-
-// On dit que le dossier public est static
-app.use(express.static('public'));
 
 // et on rajoute la gestion des sessions
 const session = require('express-session');

@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import PlayerMenu from './PlayerMenu';
 
 // == Composant
-const PlayerFrame = ({ player }) => {
-  const [playerMenu, setPlayerMenu] = useState(false);
+const PlayerFrame = ({ player, toggle }) => {
+  const [playerMenu, setPlayerMenu] = useState(toggle);
 
   const togglePlayerMenu = () => {
     setPlayerMenu(!playerMenu);
@@ -27,6 +27,12 @@ PlayerFrame.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,
+  toggle: PropTypes.bool,
+};
+
+// == Default Props
+PlayerFrame.defaultProps = {
+  toggle: false,
 };
 
 // == Export

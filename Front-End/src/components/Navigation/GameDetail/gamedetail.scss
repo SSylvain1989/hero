@@ -1,110 +1,118 @@
 @use 'src/styles/vars';
 
 .game-detail {
-  width: 100%;
-  height: 1000px;
-
+  height: 500vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 3rem;
+  background-color: #222222;
 
-  //background-color:red;
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    background-color: #222222;
-  }
-  
-  &__content {
-
-  margin-top: 20px;
   font-size: 15px;
   letter-spacing: .2rem;
-  text-align: center;
   color: vars.$font-silver-color;
 
-    p {
-      font-size: 17px;
-      font-weight: lighter;
-      color: #b1b1b1;
-      text-align: center;
-      font-style: italic;
-      letter-spacing: .2rem;
-    
-      padding-bottom: 10px;
-      border-bottom: vars.$border-color 1px;
-      border-style: dashed;
-    }
-  }
-
-  &__title {
+&__title {
   //font-family: sans-serif;
   font-size: 24px;
   font-weight: bold;
   
   letter-spacing: 10px;
 
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+
   text-shadow: 3px 2px 0 #290f0f;
-  //color: vars.$font-gold-color;
   color: vars.$font-silver-color;
   text-align: center;
   text-transform: uppercase;
   font-style: italic;
 
+  padding-top: 2em;
   padding-bottom: 10px;
   margin-bottom: 30px;
-  //border-bottom: vars.$border-color 1px solid;
+  
   border-bottom: dashed vars.$border-color 1px;
   }
 
   &__section {
-    border-radius: 5px;
-    margin: 1rem;
+    color: vars.$brown-color;
+
     font-size: large;
-    font-weight: 600;
-    padding: 0;
+    font-weight: lighter;
+    margin: 1em;
+
+    width: auto;
+    height: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+
+    background-color: vars.$border-color;
+    overflow: hidden;
+    flex-wrap: wrap;
+    padding: 10px 30px 10px 30px;
+    
+    border: 10px double vars.$brown-color;
+    border-radius: 12px;
   }
   
   &__button {
-    width: 50%;
+    width: 600px;
     height: 50px;
   
-    color: #42291A;
-  
+    color: vars.$font-btn-grad-color;
+    letter-spacing: .2rem;
     transition: all 0.4s;
+
+  
   
     cursor: pointer;
   
     background: linear-gradient(
-    180deg,
-    #fea 0%,
-    #eccb5f 49%,
-    #D4AF37 51%,
-    #fea 100%);
+      180deg,
+    vars.$bgr-btn-grad-01 0%,
+    vars.$bgr-btn-grad-02 49%,
+    vars.$bgr-btn-grad-03 51%,
+    vars.$bgr-btn-grad-04 100%);
   
     padding: 10px 20px 10px 20px;
     margin-top: 3rem;
+    margin-bottom: 3rem;
   
     font-family: sans-serif;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
   
-    border: 5px outset #D4AF37;
+    border: 5px outset vars.$font-gold-color;
     border-radius: 12px;
 
     &:hover {
-      color: #D4AF37;
+      color: vars.$font-btn-grad-color-hover;
       background: linear-gradient(
         180deg,
-        #804b2a 0%,
-        #42291A 46.65551839464883%,
-        #42291A 46.65551839464883%,
-        #804b2a  100%);
+        vars.$bgr-btn-grad-hover-01 0%,
+        vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+        vars.$bgr-btn-grad-hover-04  100%);
+
+        transform: scale(1.25);
     }
   }
 }
 
+
+  // p {
+    //   font-size: 17px;
+    //   font-weight: lighter;
+    //  // color: #b1b1b1;
+    //   text-align: center;
+    //   font-style: italic;
+    //   letter-spacing: .2rem;
+    
+    //   padding-bottom: 10px;
+    //   border-bottom: vars.$border-color 1px;
+  //   }
+  // }

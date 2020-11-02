@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
 
-import Field from '../../common/Field';
+import logo from 'src/images/logo.png';
+import Field from '../../common/Field/FieldUser';
 
 // == Import scss
 import './signup.scss';
@@ -29,6 +30,7 @@ const Signup = ({
     return (
       <div className="signup">
         <form onSubmit={handleOnSubmit}>
+          <img className="signup__picture" src={logo} alt="logo" />
           <h1 className="signup__title">Je souhaite devenir joueur</h1>
           <Field
             name="username"
@@ -36,6 +38,7 @@ const Signup = ({
             onChange={changeField}
             value={username}
             type="text"
+            className="signup__input"
           />
           <Field
             name="email"
@@ -43,6 +46,7 @@ const Signup = ({
             onChange={changeField}
             value={email}
             type="email"
+            className="signup__input"
           />
           <Field
             name="password"
@@ -50,6 +54,7 @@ const Signup = ({
             onChange={changeField}
             value={password}
             type="password"
+            className="signup__input"
           />
           <Field
             name="passwordConfirm"
@@ -57,8 +62,9 @@ const Signup = ({
             onChange={changeField}
             value={passwordConfirm}
             type="password"
+            className="signup__input"
           />
-          <input className="signup__submit" type="submit" value="C'est parti" />
+          <button className="signup__button" type="submit" value="C'est parti">Confirmer </button>
           {messagesError.length > 0
             && messagesError.map((element) => (
               <p

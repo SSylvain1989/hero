@@ -26,7 +26,7 @@ const boardController = {
             };
             // Si il manque le champs character_id on stock un message d'erreur
             if (request.body.character_id === undefined) {
-                const message = `Le personnage n'est pas renseigné, les stats ne peuvent pas etre mis a jour`
+                const message = `Ce personnage n'est pas encore renseigné, vos stats ne peuvent pas être mise à jour.`
                 response.status(404).json({message: message, session: request.session.user});
             } else { // Sinon on stock le character envoyer dans le body dans data
                 data.character_id = request.body.character_id;
@@ -54,7 +54,7 @@ const boardController = {
             // on renvoie le resultat de la session update et un message de confirmation
             response.status(200).json({message: createParty, session: request.session.user});
         } else {
-            const message = `Votre partie n'a pas été enregistré, l'histoire n'est pas disponible`
+            const message = `Votre partie n'a pas été enregistrée, l'histoire n'est pas encore disponible.`
             response.status(404).json({message: message, session: request.session.user});
         }
         } catch (error) {
