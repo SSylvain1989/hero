@@ -7,11 +7,12 @@ INSERT INTO game.character (
     "playable",
     "hp",
     "atk",
-    "def"
+    "def",
+    "image"
     )
-    VALUES  ('Minotaur', 'true', '20', '7', '10'),
-            ('Wraith', 'true', '15', '10', '5'),
-            ('Vieillard', 'false', '20', '3', '2');
+    VALUES  ('Etienne', 'true', '15', '3', '2', 'https://i.ibb.co/ZXpv3t3/minotaur.gif'),
+            ('Charles', 'true', '25', '6', '3', 'https://i.ibb.co/71c03Xd/wraith.gif'),
+            ('Vieillard', 'false', '20', '5', '2', 'https://i.ibb.co/NsvtkHs/Papy-01.png');
 
 INSERT INTO game.type ( 
     "name"
@@ -29,7 +30,7 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('Prison', 'Evadez-vous', 'easy', 'https://i.ibb.co/25xVbhh/arenes.jpg');
+    VALUES  ('Prison', 'Alcatraz, une prison terrifiante. Dieu seul sait pourquoi vous vous retrouvez inopinément ici ... A vous, de déjouer les mauvais sorts et vous échappez au plus vite de cet endroit maudit ... ', 'Facile', 'https://i.ibb.co/25xVbhh/arenes.jpg');
 
 INSERT INTO game.scene ( 
     "name",
@@ -110,7 +111,7 @@ INSERT INTO game.history_has_scene (
             (1, 10, 8, null),
             (1, 11, 8, null);
 
-           
+
 
 INSERT INTO game.history_has_categories ( 
     "history_id",
@@ -162,7 +163,8 @@ SELECT  scene.id AS scene_id,
         "character"."name" AS opponent_name,
         "character"."hp" AS opponent_hp,
         "character"."atk" AS opponent_atk,
-        "character"."def" AS opponent_def
+        "character"."def" AS opponent_def,
+        "character"."image" AS opponent_img
 FROM game.scene
 JOIN game.type ON "type"."id" = scene.type_id
 JOIN game.character ON "character"."id" = scene.opponent_id;
