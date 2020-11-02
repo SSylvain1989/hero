@@ -36,7 +36,7 @@ const profile = {
         // On lance la troisieme requete pour supprimer les details d'un utilisateur
         await db.query(sql3, [user.details_id]);
 
-        const message = 'Le compte est bien supprimer';
+        const message = 'Votre compte a bien été supprimé.';
         // On retourne le message de confirmation de suppression de compte
         return message;
     },

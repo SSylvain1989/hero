@@ -24,15 +24,15 @@ const connexionController = {
                 const compare = await bcrypt.compare(request.body.password, checkUser.password);
                 // Si la comparaison n'est pas bonne on stock un message d'erreur 
                 if (compare === false) {
-                    const messagePassword = `Le mot de passe n'est pas valide`;
+                    const messagePassword = `Votre mot de passe n'est pas valide.`;
                     messageTab.push({ messagePassword: messagePassword });
                 };
             } else { // Sinon on stock un message d'erreur
-                const messageUserName = 'UserName non enregistré en base de donnée';
+                const messageUserName = "Votre nom d''utilisateur n'a pas été enregistré en base de donnée.";
                 messageTab.push({ messageUserName: messageUserName });
             };
         } else { // Sinon on stock un message d'erreur
-            const messageUserName = 'Veuillez remplir tous les champs';
+            const messageUserName = 'Veuillez remplir tous les champs.';
             messageTab.push({ messageUserName: messageUserName });
         };
 
@@ -56,7 +56,7 @@ const connexionController = {
             gamePlay: userBoard.gamePlay
         };
 
-        const messageConnexion = 'L\'utilisateur est bien connecté';
+        const messageConnexion = 'Vous êtes maintenant connecté.';
         // on renvoie la session et le message de confirmation
         response.status(200).json({message: messageConnexion, session: request.session.user});
     } catch (error) {
@@ -76,13 +76,13 @@ const connexionController = {
         // si l'utilisateur n'est pas connecter on renvoie un message 
         if (request.session.user.connected_user === false) {
 
-            const messageCheckConnexion = 'Aucun utilisateur n\'est connecté';
+            const messageCheckConnexion = 'Aucun utilisateur n\'est connecté.';
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
             return response.status(404).json({message: messageTab, session: request.session.user});
         };
         // si l'utilisateur est connecter on renvoie un message de confirmation
         if (request.session.user.connected_user === true){
-            const messageCheckConnexion = 'L\'utilisateur est bien connecté';
+            const messageCheckConnexion = 'Vous êtes maintenant connecté.';
             messageTab.push({messageCheckConnexion: messageCheckConnexion});
             return response.status(200).json({message: messageTab, session: request.session.user});
         };
@@ -108,17 +108,17 @@ const connexionController = {
             const checkUser = await user.findByUserName(request.body.userName);
 
             if (checkUser !== undefined) { // - 1: On verifie si L'utilisateur existe en bdd
-                const messageUserName = 'UserName deja enregistré en base de donnée';
+                const messageUserName = "Votre nom d''utilisateur n'a pas été enregistré en base de donnée.";
                 messageTab.push({ messageUserName: messageUserName });
             };
 
             if (!emailValidator.validate(request.body.email)) { // - 2: On verifie si le format d'email est valide
-                const messageEmail = `Cet email n\'est pas valide.`;
+                const messageEmail = `Votre email n\'est pas valide.`;
                 messageTab.push({ messageEmail: messageEmail });
             };
 
             if (request.body.password !== request.body.passwordConfirm) { // - 3: On verifie si le mdp et sa confirmation correspondent
-                const messagePassword = "La confirmation du mot de passe ne correspond pas.";
+                const messagePassword = "La confirmation de votre mot de passe ne correspond pas.";
                 messageTab.push({ messagePassword: messagePassword });
             };
 
@@ -161,14 +161,14 @@ const connexionController = {
             const messageTab = [];
             // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
             if (request.session.user.connected_user === false) {
-                const messageLogout = 'Aucun utilisateur n\'est connecté';
+                const messageLogout = 'Aucun utilisateur n\'est connecté.';
                 messageTab.push({messageLogout: messageLogout});
                 return response.status(404).json({message: messageTab, session: request.session.user});
             };
             // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
             if (request.session.user.connected_user === true){
                 request.session.user = {connected_user: false};
-                const messageLogout = 'Déconnexion de l\'utilisateur ok';
+                const messageLogout = 'Vous avez été déconnecté de votre compte.';
                 messageTab.push({messageLogout: messageLogout});
                 return response.status(200).json({message: messageTab, session: request.session.user});
             };
