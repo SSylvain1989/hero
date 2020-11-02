@@ -3,7 +3,7 @@
 @use 'src/styles/vars' as vars;
 
 .games-list {
-  height: 500vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -19,8 +19,8 @@
   letter-spacing: 10px;
 
   text-shadow: 3px 2px 0 #290f0f;
-  //color: vars.$font-gold-color;
-  color: vars.$font-silver-color;
+  color: vars.$font-gold-color;
+  //color: vars.$font-silver-color;
   text-align: center;
   text-transform: uppercase;
   font-style: italic;

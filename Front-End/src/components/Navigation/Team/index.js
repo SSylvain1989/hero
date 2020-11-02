@@ -15,10 +15,8 @@ const Team = () => {
     console.log(oneTeamMember.fullName)
   ));
   return (
-    <div>
-      {/* <h1 className="heading"> La Team Hero</h1> */}
-      <div className="team">
-        {
+    <div className="team">
+      {
           team.map((oneTeamMember) => (
             <Member
               key={oneTeamMember.fullName}
@@ -26,7 +24,6 @@ const Team = () => {
             />
           ))
         }
-      </div>
     </div>
   );
 };

@@ -27,7 +27,7 @@
   &__heroes {
     height: 100px;
     margin-top: 10px;
-    filter: grayscale(1);
+    //filter: grayscale(1);
   }
 
   &__name {
@@ -73,13 +73,13 @@
 
 .character:hover {
   transition: 0.5s;
-  filter: grayscale(0);
-  transform: scale(1.1);
+  //filter: grayscale(0);
+  transform: scale(1.05);
 }
 
 .character__heroes:hover {
   transition: 0.6s;
-  transform: scale(1.2);
+  transform: scale(0.9);
   filter: contrast(150%);
   filter: drop-shadow(5px 3px 30px gold);
 }
@@ -92,12 +92,15 @@
 
 .character-list {
   display: flex;
-  justify-content: center;
+  //justify-content: center;
+  //align-items: center;
+  flex-direction: row;
   
   //background-color: vars.$font-silver-color;
 
-  height: 600px;
-  width: 800px;
-  margin: auto;
+  height: 550px;
+  width: 400px;
+  margin-top: 10px;
+  //margin: auto;
 
 }
