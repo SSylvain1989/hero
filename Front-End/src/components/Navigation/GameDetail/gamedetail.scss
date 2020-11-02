@@ -1,8 +1,7 @@
 @use 'src/styles/vars';
 
 .game-detail {
-  //padding-top: 10rem;
-  height: calc(100vh + 15rem);
+  padding: 6rem;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,9 +23,7 @@
     text-align: center;
     font-style: italic;
     letter-spacing: .2rem;
-
     padding-top: 10px;
-  
     padding-bottom: 10px;
     border-bottom: vars.$border-color 1px;
   }
@@ -66,7 +63,7 @@
     font-weight: lighter;
     margin: auto;
 
-    width: 500px;
+    width: 700px;
     height: auto;
     // margin-left: 100px;
     // margin-right: 100px;

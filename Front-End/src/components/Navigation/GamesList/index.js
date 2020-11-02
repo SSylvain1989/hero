@@ -36,6 +36,7 @@ GamesList.propTypes = {
       id: PropTypes.number.isRequired,
     }),
   ).isRequired,
+  resetStory: PropTypes.func.isRequired,
 };
 
 export default GamesList;
