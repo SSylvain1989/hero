@@ -144,7 +144,8 @@
         vars.$bgr-btn-grad-hover-03 46.65551839464883%,
         vars.$bgr-btn-grad-hover-04  100%);
 
-        transform: scale(1.25);
+        //transform: scale(1.25);
+        transform: translateY(-2px);
     }
   }
 }
