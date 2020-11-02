@@ -6,18 +6,21 @@
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-color: vars.$bgr-color-black;
 
   &__scene {
     display: flex;
-    height: 400px;
-    width: 80%;
-    background-color: #D1D1D1;
-    border: 5px solid vars.$border-color;
+    height: 405px;
+    width: 1000px;
+    border: 0.6rem outset vars.$border-color;
+    border-radius: 12px;
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
     position: relative;
+    z-index: 999;
 
     img {
       position: absolute;
-      top: 0.2rem;
       width: 100%;
       height: 100%;
     }
@@ -30,32 +33,59 @@
     &--modal {
       display: flex;
       flex-direction: column;
-      width: 35%;
+      width: 30%;
       position: absolute;
-      left: 31%;
+      left: 35%;
       background-color: vars.$brown-color;
-      top: 20%;
+      top: 8%;
       text-align: center;
+      border-radius: 5px;
+      
 
       p {
         height: 80%;
-        margin: 2rem 1rem;
+        margin: 1rem 1rem;
         font-weight: bold;
-        color: white;
+        color: vars.$font-gold-color ;
       }
 
-      &buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 20%;
+      // &buttons {
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      //   height: 20%;
 
-        button {
-          padding: 0.5rem;
-          width: 45%;
-          margin: 0.3rem;
+        button {width: 15rem;
+          height: 3.5rem;
+          margin: auto;
+          color: vars.$font-btn-grad-color;
+          transition: all 0.4s;
+          cursor: pointer;
+          background: linear-gradient(
+          180deg,
+          vars.$bgr-btn-grad-01 0%,
+          vars.$bgr-btn-grad-02 49%,
+          vars.$bgr-btn-grad-03 51%,
+          vars.$bgr-btn-grad-04 100%);
+          padding: 0.8rem 0rem;
+          margin: 1rem;
+          font-size: 0.9rem;
+          font-weight: bold;
+          text-align: center;
+          border: 5px outset vars.$font-gold-color;
+          border-radius: 12px;
         }
-      }
+        button:hover {
+          color: vars.$font-btn-grad-color-hover;
+          background: linear-gradient(
+            180deg,
+            vars.$bgr-btn-grad-hover-01 0%,
+            vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+            vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+            vars.$bgr-btn-grad-hover-04  100%);
+        }
+        
+      
     }
 
   }
