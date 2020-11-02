@@ -17,6 +17,15 @@
       color: vars.$font-gold-color;
       font-weight: 800;
       font-size: 1rem;
+
+      letter-spacing: .2rem;
+      transition: all 0.4s;
+      }
+
+
+      li:hover {
+        transform: scale(1.2);
+        color: vars.$font-silver-color;
     }
   }
 
@@ -42,7 +51,7 @@
         position: absolute;
         width: 6rem;
         top: 0rem;
-        right: 7rem;
+       // right: 7rem;
         margin-right: 1.2rem ;
       }
       p {
@@ -64,3 +73,8 @@
 // }
 
 // .character__heroes
+
+// li:hover {
+//   transform: scale(1.2);
+//   color: vars.$font-silver-color;
+// }

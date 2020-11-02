@@ -19,7 +19,6 @@
   p {
     font-size: 17px;
     font-weight: lighter;
-   // color: #b1b1b1;
     text-align: center;
     font-style: italic;
     letter-spacing: .2rem;
@@ -33,7 +32,6 @@
 
 
 &__title {
-  //font-family: sans-serif;
   font-size: 24px;
   font-weight: bold;
   
@@ -65,8 +63,6 @@
 
     width: 700px;
     height: auto;
-    // margin-left: 100px;
-    // margin-right: 100px;
 
     background-color: vars.$border-color;
     overflow: hidden;
@@ -79,7 +75,6 @@
   
   &__character {
     display: flex;
-    //display: inline;
     flex-direction: column;
     align-items: center;
   }
@@ -96,8 +91,6 @@
     color: vars.$font-btn-grad-color;
     letter-spacing: .2rem;
     transition: all 0.4s;
-
-  
   
     cursor: pointer;
   
@@ -112,7 +105,6 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
   
-    font-family: sans-serif;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -138,8 +130,6 @@
     color: vars.$font-btn-grad-color;
     letter-spacing: .2rem;
     transition: all 0.4s;
-
-  
   
     cursor: pointer;
   
@@ -154,7 +144,6 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
   
-    font-family: sans-serif;
     font-size: 16px;
     font-weight: bold;
     text-align: center;

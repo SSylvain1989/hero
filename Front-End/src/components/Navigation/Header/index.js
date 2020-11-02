@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
@@ -34,10 +35,10 @@ const Header = ({
           ? (
             <li>
               <NavLink
-                to="/score"
+                to="/profil"
                 exact
               >
-                Scores
+                // Scores //
               </NavLink>
             </li>
           ) : null}
@@ -46,20 +47,23 @@ const Header = ({
         {isLoged
           ? (
             <>
-              <li />
               <li>
                 <NavLink
                   to="/profil"
                   exact
                 >
-                  <p>{userName}</p>
+                  <p>// {userName} //</p>
                   <img
                     src="https://i.ibb.co/ZXpv3t3/minotaur.gif"
                     alt="avatar"
                   />
                 </NavLink>
               </li>
-              <li onClick={logoutHandler}><NavLink to="/">Déconnexion</NavLink></li>
+              <li onClick={logoutHandler}>
+                <NavLink to="/">
+                  // Déconnexion //
+                </NavLink>
+              </li>
             </>
           )
           : (
@@ -68,14 +72,14 @@ const Header = ({
                 <NavLink
                   to="/Connection"
                   exact
-                >Connexion
+                >-- Connexion --
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   to="/inscription"
                   exact
-                >Créer un compte
+                >-- Créer un compte --
                 </NavLink>
               </li>
             </>
