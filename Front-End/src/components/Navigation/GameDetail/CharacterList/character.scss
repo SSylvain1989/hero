@@ -71,23 +71,24 @@
   }
 }
 
-.character:hover {
-  transition: 0.5s;
-  //filter: grayscale(0);
-  transform: scale(1.05);
-}
+.character {
 
+  &:hover {
+    transition: 0.5s;
+    //filter: grayscale(0);
+    transform: scale(1.05);
+  }
+
+  &--active {
+    transition: 0.5s;
+    transform: scale(1.05);
+  }
+}
 .character__heroes:hover {
   transition: 0.6s;
   transform: scale(0.9);
   filter: contrast(150%);
   filter: drop-shadow(5px 3px 30px gold);
-}
-
-.character__name:hover {
-  transition: 0.6s;
-  transform: scale(1.2);
-  filter: drop-shadow(0px 3px 50px gold);
 }
 
 .character-list {

@@ -12,6 +12,10 @@ const End = ({ scene, storyId, sendEndDetails }) => {
     return (
       <div className="end">
         <div className="end__scene">
+          <img
+            src={scene.img_scene}
+            alt="mooving-minautor"
+          />
           <h1>Image de fin</h1>
           <div className="end__scene--modal">
             <p>{scene.finish_text}</p>
