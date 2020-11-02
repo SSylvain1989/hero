@@ -111,9 +111,10 @@
 .member{
   &__wrapper{
     width: 19rem;
+    margin: 2rem;
   }&__card{
-    width: 17rem;
-    margin: 0.5rem ;
+    width: 20rem;
+    //margin: 2rem ;
   }&__social{
     width: 90%;
     list-style: none;
@@ -124,7 +125,7 @@
     border-top: 1px solid rgba(0,0,0,0.1);
     font-size: 2rem;
   }&__imgBgr{
-    width: 17rem;
+    width: 20rem;
     height: auto;
     object-fit: cover;
     // https://bennettfeely.com/clippy/
