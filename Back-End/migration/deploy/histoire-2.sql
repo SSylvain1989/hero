@@ -23,7 +23,7 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('L''arène', 'Oyez oyez combattants de tous horizons ! Le moment est venu de vous battre en du-du-duel !! L''arène de Bonduel est la plus disputée sur ce website. Nombreux sont les héros prets à en découdre, à vous faire mordre la poussière, seriez vous prets à prendre la place de notre champion actuel et devenir notre nouvelle mascotte ?', 'Moyen', 'https://i.ibb.co/25xVbhh/arenes.jpg'),
+    VALUES  ('L''arène', 'Oyez oyez combattants de tous horizons ! Le moment est venu de vous battre en du-du-duel !! L''arène de Bonduel est la plus disputée sur ce website. Nombreux sont les héros prets à en découdre, à vous faire mordre la poussière, seriez vous prets à prendre la place de notre champion actuel et devenir notre nouvelle mascotte ?', 'Moyen', 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'),
             ('Chateau', 'Vous êtes le seul habitant d''un château à ne pas avoir été transformé par un bouffon maléfique qui s''est emparé du trésor du château, la couronne du roi. Parviendrez-vous à déjouer les vols de ce mauvais bougre ?', 'Moyen', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
             ('Le labyrinthe', 'Trouvez la sortie le plus vite possible !', 'Difficile', 'https://i.ibb.co/bKW2JFn/labyrinth.jpg');
 

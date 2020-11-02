@@ -2,7 +2,10 @@
 Scene 1: https://ibb.co/nCSNsJs - https://i.ibb.co/9tjk959/Alcatraz-01.png
 scene 2 à 6: https://ibb.co/wLGJS2y - https://i.ibb.co/7zMgn0v/cellule-01.png
 scene 7 et 8: https://ibb.co/kmCnxzL - https://i.ibb.co/hYz5yrG/Bord-de-mer-barque-01.png
-arene: https://ibb.co/nR9dWmm - https://i.ibb.co/25xVbhh/arenes.jpg
+scene 9(game over): https://ibb.co/Yt1cfL5 - https://i.ibb.co/vJT3LjN/Fin-03.png
+scene 10(fin maudit):
+scene 11(fin win):
+arene: https://ibb.co/Gdn8QCd - https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png
 chateau: https://ibb.co/Q9WfB0R - https://i.ibb.co/xhnDvZ0/chateau.jpg
 labyrinthe: https://ibb.co/6Wn1B85 - https://i.ibb.co/bKW2JFn/labyrinth.jpg
 
@@ -20,3 +23,9 @@ golem: https://ibb.co/VVyBqpC - https://i.ibb.co/qBG1rFg/golem.gif
 goblin: https://ibb.co/QNmkkfY - https://i.ibb.co/BZsGGtT/output-n-Ccx-S9.gif
 orc: https://ibb.co/yp1JwkS - https://i.ibb.co/zFYwy2J/orc.gif
 ogre: https://ibb.co/BrhGPgh - https://i.ibb.co/KLtDG9t/Webp-net-gifmaker.gif
+
+# miniature
+arene:
+chateau:
+labyrinth:
+prison:
