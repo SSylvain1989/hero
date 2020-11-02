@@ -52,7 +52,7 @@ const Battle = ({
               alt="player-info"
             />
           </div>
-          <PlayerFrame />
+          <PlayerFrame toggle />
           {!display && <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>}
           {ready && !playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
           {ready && !opponent.isAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
