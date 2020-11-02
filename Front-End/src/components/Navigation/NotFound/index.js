@@ -10,17 +10,16 @@ import './notfound.scss';
 const NotFound = () => (
   <>
     <div className="NotFound">
-      <div className="NotFound__background">
-        <div className="NotFound__container">
-          <div className="NotFound__content">
-            <h1 className="NotFound__title">Oups.. il n'y a pas de batailles à mener pour toi ici ...!</h1>
-            <Link to="/liste-des-jeux">
-              <button type="button">
-                Clique ici pour voir la liste des différentes batailles que tu peux mener..
-              </button>
-            </Link>
-          </div>
+      <div className="NotFound__container">
+        <div className="NotFound__content">
+          <h1 className="NotFound__404">404</h1>
+          <h2 className="NotFound__title">Il n'y a pas d'aventures par ici !</h2>
         </div>
+        <Link to="/liste-des-jeux">
+          <button type="button">
+            Clique ici pour retrouver ton chemin
+          </button>
+        </Link>
       </div>
     </div>
     <Footer />
