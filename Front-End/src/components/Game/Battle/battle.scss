@@ -20,6 +20,49 @@
       height: 350px;
       left: 1rem;
       bottom: -1rem;
+    }&__log{
+      border-radius: 5px;
+      // height: 4rem;
+      display: inline block;
+      // width: 5rem;
+      position: absolute;
+      z-index: 3;
+      left: 14%;
+      bottom: 61%;
+      // background-color:rgba(139, 182, 133, 0.4);
+    }
+    &__logTwo{
+      border-radius: 5px;
+      // height: 4rem;
+      display: inline block;
+      // width: 5rem;
+      position: absolute;
+      z-index: 3;
+      left: 88%;
+      bottom: 26%;
+      // background-color:rgba(139, 182, 133, 0.4);
+    }
+    &__logText{
+      font-size: 2.2rem;
+      color:vars.$font-contrast-color;
+      font-weight: bold;
+      // position: absolute;
+      z-index: 4;
+      // left: 10%;
+      // bottom: 50%;
+      animation: fadeIn 0.7s;
+      color:red ;
+    }
+    &__logTextTwo{
+      font-size: 2.2rem;
+      color:vars.$font-contrast-color;
+      font-weight: bold;
+      // position: absolute;
+      z-index: 4;
+      // left: 10%;
+      // bottom: 20%;
+      animation: fadeIn 5.0s;
+      color: red;
     }
 
     button {
@@ -86,32 +129,5 @@
 }
 // div qui fait l'affichage des logs de combat
 .battle-element{
-&__log{
-  border-radius: 5px;
-  height: 7rem;
-  width: 40rem;
-  position: absolute;
-  z-index: 3;
-  left: 15%;
-  bottom: 30%;
-  background-color:rgba(139, 182, 133, 0.4);
-}
-&__logText{
-  font-size: 1rem;
-  color:vars.$font-contrast-color;
-  font-weight: bold;
-  position: absolute;
-  z-index: 4;
-  left: 10%;
-  bottom: 50%;
-}
-&__logTextTwo{
-  font-size: 1rem;
-  color:vars.$font-contrast-color;
-  font-weight: bold;
-  position: absolute;
-  z-index: 4;
-  left: 10%;
-  bottom: 20%;
-}
+
 }
