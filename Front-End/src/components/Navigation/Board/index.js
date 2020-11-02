@@ -27,7 +27,7 @@ const Board = ({
           <p className="Board__Nb">{boardData.gameWin}</p>
           <p className="Board__p">Défaites</p>
           <p className="Board__Nb">{boardData.gameOver}</p>
-          <button className="Board__button" type="button"><Link to="/liste-des-jeux">Retour à la liste des jeux..</Link></button>
+          <Link to="/liste-des-jeux"><button className="Board__button" type="button">Retour à la liste des jeux..</button></Link>
         </div>
       </div>
     </>
