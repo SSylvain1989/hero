@@ -64,20 +64,35 @@
   font-style: italic;
   text-align: center;
   color: #333;
-}&__btn{
-  padding: 1rem 2.5rem;
-  background-color: vars.$bgr-btn-bleu;
+}&__btn {
+  width: 10rem;
+  height: 3.5rem;
+  margin: auto;
+  color: vars.$font-btn-grad-color;
+  transition: all 0.4s;
+  cursor: pointer;
+  background: linear-gradient(
+  180deg,
+  vars.$bgr-btn-grad-01 0%,
+  vars.$bgr-btn-grad-02 49%,
+  vars.$bgr-btn-grad-03 51%,
+  vars.$bgr-btn-grad-04 100%);
+  padding: 0.8rem 0rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border: 5px outset vars.$font-gold-color;
   border-radius: 2rem;
-  margin: 1rem 0;
-  text-transform: uppercase;
-  color: #eeee;
-  transition: all .5s;
-}&__btn:hover{
-  transform: translateY(-2px);
-  box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
-}&__btn:active{
-  transform: translateY(0);
-  box-shadow: none;
+}
+&__btn:hover {
+  color: vars.$font-btn-grad-color-hover;
+  background: linear-gradient(
+    180deg,
+    vars.$bgr-btn-grad-hover-01 0%,
+    vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+    vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+    vars.$bgr-btn-grad-hover-04  100%);
 }&__social{
   width: 100%;
   list-style: none;
