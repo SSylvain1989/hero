@@ -27,11 +27,13 @@ const Profile = ({
   useEffect(() => {
     displayMessageToggle();
     setTimeout(() => displayMessageToggle(), 3000);
-    return () => {
-      resetFields();
-      addProfileErrorMessage([]);
-    };
   }, [message]);
+
+  useEffect(() => () => {
+    resetFields();
+    addProfileErrorMessage([]);
+    saveMessage([{ toto: '' }]);
+  }, []);
   return (
     <div className="profile">
       <div className="profile__input">
@@ -89,7 +91,7 @@ const Profile = ({
           </div>
         </div>
       </div>
-      <div className={(displayMessage && message !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
+      <div className={(displayMessage && Object.values(message)[0] !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
         <p>{Object.values(message)[0]}</p>
       </div>
     </div>
@@ -113,6 +115,8 @@ Profile.propTypes = ({
   displayMessageToggle: PropTypes.func.isRequired,
   resetFields: PropTypes.func.isRequired,
   errorMessage: PropTypes.array.isRequired,
+  addProfileErrorMessage: PropTypes.func.isRequired,
+  saveMessage: PropTypes.func.isRequired,
 });
 
 export default Profile;

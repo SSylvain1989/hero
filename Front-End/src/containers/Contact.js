@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // == Import : actions
 import { contact } from '../actions/contact';
-import { changeContactFieldValue } from '../actions/field';
+import { changeContactFieldValue, resetFields } from '../actions/field';
 import Contact from '../components/Navigation/Contact';
 
 // Action Creators
@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleContact: () => {
     dispatch(contact());
+  },
+  resetFields: () => {
+    dispatch(resetFields());
   },
 });
 

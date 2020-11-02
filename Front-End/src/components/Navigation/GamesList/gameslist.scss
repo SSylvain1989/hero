@@ -1,18 +1,14 @@
-// integrer typo merriweather
-
 @use 'src/styles/vars' as vars;
 
 .games-list {
-  height: calc(100vh + 15rem);
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding-top: 6rem;
+  padding: 6rem 0;
   background-color: #222222;
 
   &__title {
-  //font-family: sans-serif;
   font-size: 24px;
   font-weight: bold;
   
@@ -20,14 +16,12 @@
 
   text-shadow: 3px 2px 0 #290f0f;
   color: vars.$font-gold-color;
-  //color: vars.$font-silver-color;
   text-align: center;
   text-transform: uppercase;
   font-style: italic;
 
   padding-bottom: 10px;
   margin-bottom: 30px;
-  //border-bottom: vars.$border-color 1px solid;
   border-bottom: dashed vars.$border-color 1px;
 
   }&__item {
@@ -62,7 +56,7 @@
 
 .game__card__name {
   //font-family: sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   
   text-shadow: 3px 2px 0 #290f0f;
@@ -73,10 +67,11 @@
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: vars.$border-color 1px solid;
+  margin-top: 1rem;
   }
 
 .game__card__difficulty {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: lighter;
   color: #b1b1b1;
   text-align: center;
@@ -90,11 +85,15 @@
 }
 
 .game__card__description {
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 15px;
   letter-spacing: .2rem;
-  text-align: justify;
   color: vars.$font-silver-color;
+  height: 104px;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
   .game__image {
     border-radius: 20px;
@@ -124,8 +123,7 @@
   
     padding: 10px 20px 10px 20px;
     margin-top: 10px;
-    
-    font-family: sans-serif;
+  
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -144,7 +142,8 @@
         vars.$bgr-btn-grad-hover-03 46.65551839464883%,
         vars.$bgr-btn-grad-hover-04  100%);
 
-        transform: scale(1.25);
+        //transform: scale(1.25);
+        transform: translateY(-2px);
     }
   }
 }
@@ -152,5 +151,5 @@
 .game__card:hover {
   transition: 0.5s;
   filter: grayscale(0);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }

@@ -1,15 +1,13 @@
-// integrer typo merriweather
-
 @use 'src/styles/vars' as vars;
 
 .legal-notices {
+  height: calc(100vh + 40rem);
     width: 100%;
-    min-height: 100vh;
+   // min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 20px;
     
   &__encart {
     background-color: vars.$brown-color;
@@ -20,10 +18,9 @@
     position: absolute;
     height: auto;
     width: auto;
-    margin: 40px;
+    margin: 10px;
 
   }&__title {
-    font-family: sans-serif;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
@@ -36,12 +33,23 @@
     padding-bottom: 5px;
 
   }&__text {
-    font-weight: bold;
-    font-size: 12px;
+    line-height: 15px;
+    font-size: 10px;
     margin: 20px;
-    font-family: Merriweather, arial;
+    color: vars.$font-silver-color;
+    text-align: justify;
+    z-index: 8; 
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 13px;
     color: vars.$normal-color;
     text-align: justify;
     z-index: 8; 
   }
+  
 }
+
+
+
