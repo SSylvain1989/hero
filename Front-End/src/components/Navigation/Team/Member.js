@@ -25,7 +25,7 @@ const Member = ({
           <div className="member__card">
             <img className="member__imgBgr" src="https://miro.medium.com/max/1206/0*qQP5Xo1C-qcm7gmz." alt="card bacground" />
             <img src={image} alt="profile" className="member__imgProfile" />
-            <h1 className="member__name">{fullName}</h1>
+            <h1>{fullName}</h1>
             <p className="member__job">{role}</p>
             <p className="member__about">{description}</p>
             <p className="member__about"> spécialité : {specialite}</p>

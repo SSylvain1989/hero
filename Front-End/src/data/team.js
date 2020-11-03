@@ -5,7 +5,7 @@ import nicolas from '../images/nicolas.jpg';
 
 const team = [
   {
-    fullName: 'Wesley Boosko',
+    fullName: 'Wesley',
     role: 'Product Owner',
     description: 'Dev Full Stack Js',
     specialite: 'React',
@@ -16,7 +16,7 @@ const team = [
     twitter: '',
   },
   {
-    fullName: 'Nicolas Vidale',
+    fullName: 'Nicolas',
     role: 'Git Master niveau EXPERT',
     description: 'Dev Full Stack Js',
     specialite: 'React',
@@ -27,7 +27,7 @@ const team = [
     twitter: '',
   },
   {
-    fullName: 'Caroline Liard',
+    fullName: 'Caroline',
     role: 'Scrum Master & Graphiste',
     description: 'Dev Full Stack Js',
     specialite: 'React',
@@ -38,7 +38,7 @@ const team = [
     twitter: '',
   },
   {
-    fullName: 'Alexis Quirantes',
+    fullName: 'Alexis',
     role: 'Lead dev back DE LUXE',
     description: 'Dev Full Stack Js',
     specialite: 'Data',
@@ -49,7 +49,7 @@ const team = [
     twitter: '',
   },
   {
-    fullName: 'Sylvain Sigonnez',
+    fullName: 'Sylvain',
     role: 'Lead dev front',
     description: 'Dev Full Stack Js',
     specialite: 'React',

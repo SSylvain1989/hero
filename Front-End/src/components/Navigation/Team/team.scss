@@ -1,6 +1,5 @@
 @use 'src/styles/vars' as vars;
 
-
 .team{
   margin-top: 5rem;
   display: flex;
@@ -26,7 +25,7 @@
   align-content: center;
   flex-direction: column;
 }&__card{
-  background-color: #ebeef8;
+  background-color: vars.$brown-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,12 +48,12 @@
   z-index: 2;
   border: 0.5rem solid #ebeef8;
   background-color: vars.$bgr-color-black;
-}&__name{
+}h1{
   font-size: 2.5rem;
-  color: #333;
+  color: vars.$font-gold-color;
   margin: 1.5rem 0;
 }&__job{
-  color: #777;
+  color: vars.$font-base-color;
   font-size: 1.5rem;
   font-weight: 300;
 }&__about{
@@ -62,7 +61,7 @@
   margin: .9rem 0;
   font-style: italic;
   text-align: center;
-  color: #333;
+  color: vars.$font-silver-color;
 }&__btn {
   width: 10rem;
   height: 3.5rem;
@@ -99,7 +98,7 @@
   justify-content: space-evenly;
   padding: 2rem 0;
   margin-top: 1.5rem;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid vars.$border-color;
   font-size: 3rem;
 }&__social-icon:hover{
   transform: translateY(-2px); 
@@ -125,9 +124,12 @@
     width: 19rem;
     margin: 2rem;
   }&__card{
+    border: 0.6rem outset vars.$border-color;
+    border-radius: 12px;
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
     border-radius: 9px 6px 0 0;
     width: 20rem;
-    clip-path: polygon(0 1%, 100% 0, 100% 100%, 0% 100%);
   }&__social{
     width: 90%;
     list-style: none;
@@ -135,23 +137,21 @@
     justify-content: space-evenly;
     padding: 1rem 0;
     margin-top: 1.5rem;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid vars.$border-color;
     font-size: 2rem;
   }&__imgBgr{
-    width: 20rem;
+    width: 18.9rem;
     height: auto;
     object-fit: cover;
     // https://bennettfeely.com/clippy/
-    clip-path: polygon(0 1%, 100% 0, 100% 71%, 0% 100%);
+    clip-path: polygon(0 1%,100% 0, 100% 71%, 0% 100%);
     border-radius: 8px 5px 0 0;
   }&__imgProfile{
     width: 10rem;
     height: 10rem;
-    object-fit: cover;
     border-radius: 50%;
     margin-top: -5rem;
-    z-index: 2;
-    border: 0.5rem solid #ebeef8;
+    border: 0.5rem solid vars.$border-color;
   }&__name{
     font-size: 2.2rem;
     color: #333;
