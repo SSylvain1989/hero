@@ -6,7 +6,6 @@ import './legalnotices.scss';
 
 const LegalNotices = () => (
   <div className="legal-notices">
-    <img className="bg__site--01" src={backgroundhero} alt="backgroundHero" />
     <div className="legal-notices__encart">
       <h1 className="legal-notices__title">Mentions légales</h1>
       <p className="legal-notices__text">

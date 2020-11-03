@@ -35,7 +35,7 @@ const Header = ({
           ? (
             <li>
               <NavLink
-                to="/profil"
+                to="/score"
                 exact
               >
                 Scores

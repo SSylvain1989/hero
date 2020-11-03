@@ -20,7 +20,7 @@ const End = ({ scene, storyId, sendEndDetails }) => {
           <div className="end__scene--modal">
             <p>{scene.finish_text}</p>
             <div className="end__scene--modalbuttons">
-              <button type="button"><Link to="/liste-des-jeux">Retourner à la liste des jeux</Link></button>
+            <Link to="/liste-des-jeux"><button type="button">Retourner à la liste des jeux</button></Link>
             </div>
           </div>
         </div>
