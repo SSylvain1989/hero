@@ -6,10 +6,25 @@ const gameController = {
      * Sert a récupérer tout les personnages jouable
      * @returns {object} 200 - La liste des personnages jouable et la session
      */
-    getAllCharacter: async (request, response) => {
+    getAllCharacterPlayable: async (request, response) => {
         try {
             // on recupère tout les personnable jouable
-            const allCharacter = await game.findAllCharacter();
+            const allCharacter = await game.findAllCharacterPlayable();
+
+            response.status(200).json({character: allCharacter, session: request.session.user});
+        } catch (error) {
+            console.trace(error);
+            return response.status(500).json(error.tostring());  
+        };
+    },
+    /**
+     * Sert a récupérer tout les personnages d'avatar
+     * @returns {object} 200 - La liste des personnages pour la selection d'avatar et la session
+     */
+    getAllCharacter: async (request, response) => {
+        try {
+            // on recupère tout les personnable pour les avatars
+            const allCharacter = await game.findAllCharacterAvatar();
 
             response.status(200).json({character: allCharacter, session: request.session.user});
         } catch (error) {
@@ -105,11 +120,11 @@ const gameController = {
                             previous_scene_id: oneHistory[3].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[3].next_scene_id,
-                                next_scene_name: 'Combattre'
+                                next_scene_name: 'Faire la baguarre'
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[4].next_scene_id,
-                                next_scene_name2: 'Discuter'
+                                next_scene_name2: 'Un brin de causette'
                             },
                             img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
                             img_opponent: sceneTab[3].opponent_img
@@ -143,11 +158,11 @@ const gameController = {
                             previous_scene_id: oneHistory[8].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[8].next_scene_id,
-                                next_scene_name: 'Sortir'
+                                next_scene_name: 'Débarrasser le plancher'
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[9].next_scene_id,
-                                next_scene_name2: `Revenir a l'entrée`
+                                next_scene_name2: `Rester ici`
                             },
                             img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
                         },

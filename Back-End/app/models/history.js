@@ -24,7 +24,8 @@ const history = {
      * @param - id de l'histoire
      */
     categoriesByHistoryId: async (id) => {
-        const sql = `SELECT categories.name
+        const sql = `SELECT categories.name,
+                            categories.color
                      FROM game.categories
                      JOIN game.history_has_categories ON history_has_categories.categories_id = categories.id
                      WHERE history_has_categories.history_id = $1;`;

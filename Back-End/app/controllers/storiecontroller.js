@@ -19,7 +19,7 @@ const storieController = {
                 // Pour chaque element de la liste des categories
                 for (let element of categoriesForHistory) {
                     // On stock chaque element dans le tableau vide
-                    cat.push(element.name);
+                    cat.push(element);
                 }
                 // Une fois tout les element parcourue et stocker dans le tableau on le passe dans l'objet Onehistoire 
                 // une fois le tableau de categories copier dans one histoiry, l'historyList est a jour 

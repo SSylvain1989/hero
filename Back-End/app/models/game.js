@@ -5,7 +5,18 @@ const game = {
     /**
      * On récupère tout les personnages jouables
      */
-    findAllCharacter: async () => {
+    findAllCharacterAvatar: async () => {
+        const sql = `SELECT character.id,
+                            character.name,
+                            character.image
+                    FROM game.character;`;
+        const data = await db.query(sql);
+        return data.rows;
+    },
+    /**
+     * On récupère tout les personnages jouables
+     */
+    findAllCharacterPlayable: async () => {
         const sql = `SELECT * FROM game.character WHERE character.playable = $1;`;
         const data = await db.query(sql, [true]);
         return data.rows;

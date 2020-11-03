@@ -104,6 +104,13 @@ router.delete('/profile/delete', checkConnexion, profileController.delete);
  */
 router.get('/board', checkConnexion, boardController.getOneBoard);
 /**
+ * Récupérer tout les personnages pour la modification d'avatar
+ * @route GET /board/characters
+ * @group board - Route en lien avec les données de jeu personnel
+ * @returns {object} 200 - Un message de confirmation, les differents personnages et la session 
+ */
+router.get('/board/characters', checkConnexion, gameController.getAllCharacter);
+/**
  * Modifier des informations profil de jeu (Avatar et displayName)
  * @route PATCH /board/edit
  * @group board - Route en lien avec les données de jeu personnel
@@ -118,7 +125,7 @@ router.patch('/board/edit', checkConnexion, boardController.edit);
  * @group game - Route en lien avec le jeu
  * @returns {object} 200 - Un message de confirmation, les differents personnages jouable et la session 
  */
-router.get('/characters', checkConnexion, gameController.getAllCharacter);
+router.get('/characters', checkConnexion, gameController.getAllCharacterPlayable);
 /**
  * Récupérer toute l'histoire 
  * @route GET /characters

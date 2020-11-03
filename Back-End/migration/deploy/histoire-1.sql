@@ -49,10 +49,11 @@ INSERT INTO game.scene (
            ('game_win', 'scene de fin: sortir en ayant tuer le Vieillard');
 
 INSERT INTO game.categories ( 
-    "name"
+    "name",
+    "color"
     )
-    VALUES  ('horror'),
-            ('fantastic');
+    VALUES  ('horreur', 'Indigo'),
+            ('fantastique', 'DodgerBlue');
 
 INSERT INTO game.text_in_game ( 
     "description"

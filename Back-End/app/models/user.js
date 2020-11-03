@@ -40,7 +40,7 @@ const user = {
         const sql = `INSERT INTO nav.game_details ("avatar", "displayName") VALUES ($1, $2) RETURNING "id"`;
         // on se co à la BD avec le client db, on injecte dans la BD en dur "Warrior" pour l'avatar et displayName qui 
         // sera identique au userName 
-        const data = await db.query(sql, ["Warrior", newUser.userName]);
+        const data = await db.query(sql, ["https://i.ibb.co/6NjNMYH/faucheur.gif", "Faucheur"]);
         return data.rows[0];
     },
     /**

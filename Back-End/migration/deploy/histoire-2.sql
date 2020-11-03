@@ -39,9 +39,10 @@ INSERT INTO game.scene (
            ('game win', 'scene de fin: sortir en ayant tuer tous les adversaires');
 
 INSERT INTO game.categories ( 
-    "name"
+    "name",
+    "color"
     )
-    VALUES  ('fight');
+    VALUES  ('combat', 'Brown');
 
 INSERT INTO game.text_in_game ( 
     "description"
