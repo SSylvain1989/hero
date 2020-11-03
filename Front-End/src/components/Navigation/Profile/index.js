@@ -23,6 +23,8 @@ const Profile = ({
   errorMessage,
   addProfileErrorMessage,
   saveMessage,
+  currentEmail,
+  currentUserName,
 }) => {
   useEffect(() => {
     displayMessageToggle();
@@ -48,6 +50,7 @@ const Profile = ({
               </p>
             ))}
         <h2>Modifier mon email</h2>
+        <h3>Votre email actuel: {currentEmail}</h3>
         <Field
           name="email"
           placeholder="Nouvel email"
@@ -57,6 +60,7 @@ const Profile = ({
         />
         <button type="button" onClick={handleEmailSubmit}>Valider</button>
         <h2>Modifier mon nom d'utilisateur</h2>
+        <h3>Votre nom d'utilisateur actuel: {currentUserName}</h3>
         <Field
           name="userName"
           placeholder="Nouveau pseudo"
@@ -117,6 +121,8 @@ Profile.propTypes = ({
   errorMessage: PropTypes.array.isRequired,
   addProfileErrorMessage: PropTypes.func.isRequired,
   saveMessage: PropTypes.func.isRequired,
+  currentEmail: PropTypes.string.isRequired,
+  currentUserName: PropTypes.string.isRequired,
 });
 
 export default Profile;

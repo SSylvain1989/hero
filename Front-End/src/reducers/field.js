@@ -31,7 +31,7 @@ export const initialState = {
     password: '',
     passwordConfirm: '',
     showModal: false,
-    message: '',
+    message: { toto: '' },
     errorMessage: [],
   },
   login: {
