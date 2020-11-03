@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-const Game = ({
-  name, description, difficulty, id, img, categories,
+const Category = ({
+  name, color,
 }) => (
   <div className="game">
     <div className="game__card">
@@ -12,7 +11,7 @@ const Game = ({
         <h2 className="game__card__name">{name}</h2>
         <p className="game__card__difficulty">{difficulty}</p>
         {categories.map((category) => (
-          <p key={category.name} className={`game__card__category ${category.color}`}>{category.name}</p>
+          <p key={category.name} className={`category ${category.color}`}>{category.name}</p>
         ))}
         <p className="game__card__description">{description}</p>
       </div>
@@ -21,13 +20,13 @@ const Game = ({
   </div>
 );
 
-Game.propTypes = ({
+Category.propTypes = ({
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  difficulty: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired,
-  categories: PropTypes.array.isRequired,
+  color: PropTypes.string,
 });
 
-export default Game;
+Category.defaultProps = ({
+  color: 'white',
+}),
+
+export default Category;
