@@ -66,9 +66,11 @@ const Connection = ({
     );
   }
   return (
-    <div className="connection__loged">
-      <h1>Vous êtes bien connecté, <br></br> bienvenue à bord {sessionUserName} ! </h1>
-      <button type="button" className="connection__redirect"><Link to="liste-des-jeux">Voir la liste des jeux</Link></button>
+    <div className="connection">
+      <div className="connection__loged">
+        <h1>Vous êtes bien connecté, <br></br> Bienvenue à bord {sessionUserName} ! </h1>
+        <button type="button" className="connection__redirect"><Link to="liste-des-jeux">Voir la liste des jeux</Link></button>
+      </div>
     </div>
   );
 };
