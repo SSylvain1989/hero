@@ -46,7 +46,6 @@
     }
 
     &__stats {
-      color: vars.$font-contrast-color;
       font-weight: 700;
       padding-top: 0.25rem;
       margin: auto;
@@ -57,6 +56,16 @@
       height: 75%;
       width: 100%;
       background-color: vars.$normal-color;
+
+      padding-right: 7px;
+
+      line-height: 0.9rem;
+      letter-spacing: .1rem;
+
+      font-style: oblique;
+      font-family: cursive;
+
+      color: rgb(51, 27, 27);
     }
   }
 }

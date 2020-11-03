@@ -51,11 +51,20 @@
         }
 
         p {
+          position: absolute;
+
           padding: 3rem 3rem;
           line-height: 1.3rem;
-          position: absolute;
-          z-index:1;
+          letter-spacing: .1rem;
+
           text-align: justify;
+          font-style: oblique;
+          font-family: cursive;
+
+          z-index:1;
+
+          vertical-align: middle;
+          color: rgb(51, 27, 27);
         }
       }
 
@@ -77,7 +86,7 @@
             width: 100%;
             background-color: vars.$brown-color;
             border: none;
-            color: vars.$font-base-color;
+            color: vars.$font-gold-color;;
             border-radius: 5px;
           }
         }
@@ -112,7 +121,23 @@
       &-text {
         p{
         padding: 1rem;
-        position: relative;
+        //position: relative;
+
+        position: absolute;
+
+        padding: 3rem 3rem;
+        line-height: 1.3rem;
+        letter-spacing: .1rem;
+
+        text-align: justify;
+        font-style: oblique;
+        font-family: cursive;
+
+        z-index:1;
+
+        vertical-align: middle;
+        color: rgb(51, 27, 27);
+        
         }
         img {
           display: none;
@@ -120,6 +145,7 @@
       }
 
       &-buttons {
+        color: vars.$font-gold-color;
         font-family: Merriweather;
         margin-bottom: 2rem;
       }
