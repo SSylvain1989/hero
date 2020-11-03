@@ -9,14 +9,9 @@ import team from '../../../data/team';
 import './team.scss';
 
 // == Composant
-const Team = () => {
-  console.log(team);
-  team.map((oneTeamMember) => (
-    console.log(oneTeamMember.fullName)
-  ));
-  return (
-    <div className="team">
-      {
+const Team = () => (
+  <div className="team">
+    {
           team.map((oneTeamMember) => (
             <Member
               key={oneTeamMember.fullName}
@@ -24,9 +19,8 @@ const Team = () => {
             />
           ))
         }
-    </div>
-  );
-};
+  </div>
+);
 
 // == Export
 export default Team;

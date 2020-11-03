@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import logo from 'src/images/logo.png';
+import logo from '../../../images/logo.png';
 import Field from '../../common/Field/FieldUser';
 
 // == Import scss
