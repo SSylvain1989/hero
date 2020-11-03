@@ -10,22 +10,22 @@
   margin: 5px;
 }
 
-.Indigo{
-  background-color: #222;
+.Horreur{
+  background-color: vars.$category-horror;
   color: vars.$font-base-color;
 }
 
-.DodgerBlue{
-  background-color: rgb(40, 40, 190);
+.Fantastique{
+  background-color: vars.$category-fantastic;
   color: vars.$font-base-color;
 }
 
-.Brown{
-  background-color: brown;
+.Combat{
+  background-color: vars.$category-combat;
   color: vars.$font-base-color;
 }
 
-.Green{
-  background-color: rgb(20, 95, 20);
+.Médiéval{
+  background-color: vars.$category-medieval;
   color: vars.$font-base-color;
 }

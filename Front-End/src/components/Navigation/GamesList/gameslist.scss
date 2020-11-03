@@ -47,15 +47,15 @@
   padding: 0px 30px 10px 30px;
   
   &--Facile{
-    border: 10px outset lightgreen;
+    border: 10px outset vars.$difficulty-easy;
   }
   
   &--Moyen{
-    border: 10px outset vars.$font-gold-color;
+    border: 10px outset vars.$difficulty-medium;
   }
   
   &--Difficile{
-    border: 10px outset rgb(205, 80, 80);
+    border: 10px outset vars.$difficulty-hard;
   }
 
   

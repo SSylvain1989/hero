@@ -13,11 +13,11 @@ const Game = ({
       <div className="game__card--text">
         <h2 className="game__card__name">{name}</h2>
         <p className={`game__card__difficulty game__card__difficulty--${difficulty}`}>{difficulty}</p>
-      <div className="game__card__categories">
-        {categories.map((category) => (
-          <Category key={category.name} {...category} />
-        ))}
-      </div>
+        <div className="game__card__categories">
+          {categories.map((category) => (
+            <Category key={category.name} {...category} />
+          ))}
+        </div>
 
         <p className="game__card__description">{description}</p>
       </div>
