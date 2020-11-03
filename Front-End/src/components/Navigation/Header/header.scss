@@ -17,15 +17,10 @@
       color: vars.$font-gold-color;
       font-weight: 800;
       font-size: 1rem;
-
-      letter-spacing: .2rem;
-      transition: all 0.4s;
-      }
-
-
-      li:hover {
-        transform: scale(1.2);
-        color: vars.$font-silver-color;
+    }
+    li:hover {
+      transition: 0.3s;
+      transform: scale(1.1);
     }
   }
 
@@ -47,20 +42,30 @@
     display: flex;
     right: 1rem;
 
+      li{
+        margin: 3.5rem;
+        color: vars.$font-gold-color;
+        font-weight: 800;
+        font-size: 1rem;
+      }
+      li:hover {
+        transition: 0.3s;
+        transform: scale(1.1);
+      }
+
       img {
         position: relative;
         width: 5rem;
-        top: -1.7rem;
+        top: -2.1rem;
+        left: 3.1rem;
         margin-right: 0.2rem;
       }
       p {
-        padding-right: 6.8rem ;
+        margin-right: 1.0rem ;
       }
       img:hover {
         transition: 0.6s;
         transform: scale(0.9);
-        filter: contrast(150%);
-        filter: drop-shadow(1px 1px 10px gold);
       }
     }
 }
@@ -72,8 +77,3 @@
 // }
 
 // .character__heroes
-
-// li:hover {
-//   transform: scale(1.2);
-//   color: vars.$font-silver-color;
-// }

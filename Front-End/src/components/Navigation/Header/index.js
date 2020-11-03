@@ -1,10 +1,10 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import './header.scss';
 import logo from '../../../images/logo4.png';
+import avatar from '../../../images/avatar.png';
 
 const Header = ({
   isLoged,
@@ -59,11 +59,7 @@ const Header = ({
                   />
                 </NavLink>
               </li>
-              <li onClick={logoutHandler}>
-                <NavLink to="/">
-                  Déconnexion
-                </NavLink>
-              </li>
+              <li onClick={logoutHandler}><NavLink to="/">Déconnexion</NavLink></li>
             </>
           )
           : (
@@ -73,6 +69,13 @@ const Header = ({
                   to="/Connection"
                   exact
                 >Connexion
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/inscription"
+                  exact
+                >Créer un compte
                 </NavLink>
               </li>
             </>

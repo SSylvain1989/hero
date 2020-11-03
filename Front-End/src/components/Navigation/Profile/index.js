@@ -38,9 +38,10 @@ const Profile = ({
   }, []);
   return (
     <div className="profile">
-      <div className="profile__input">
-        <h1>VOS INFORMATIONS</h1>
-        {errorMessage.length > 0
+      <div className="profile__container">
+        <div className="profile__input">
+          <h1>VOS INFORMATIONS</h1>
+          {errorMessage.length > 0
             && errorMessage.map((element) => (
               <p
                 className="signup__error"
@@ -94,9 +95,9 @@ const Profile = ({
             <button type="button" onClick={() => showModalToggle(showModal)}>Retour</button>
           </div>
         </div>
-      </div>
-      <div className={(displayMessage && Object.values(message)[0] !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
-        <p>{Object.values(message)[0]}</p>
+        <div className={(displayMessage && Object.values(message)[0] !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
+          <p>{Object.values(message)[0]}</p>
+        </div>
       </div>
     </div>
   );
