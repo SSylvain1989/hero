@@ -13,11 +13,13 @@ const NotFound = () => (
       <div className="NotFound__background">
         <div className="NotFound__container">
           <div className="NotFound__content">
-            <h1 className="NotFound__title">Oups.. 404 ..tout le monde est déjà mort ici  ...!</h1>
-            <h1 className="NotFound__title">Tu peux retourner à la liste des jeux si tu ne souhaites pas rester avec les morts..</h1>
+            <h1>404</h1>
+            <h2>
+              Pas d'aventure ici, pars vite malheureux
+            </h2>
             <Link to="/liste-des-jeux">
               <button className="NotFound__button" type="button">
-                Liste des jeux
+                Clique ici pour retrouver ton chemin
               </button>
             </Link>
           </div>

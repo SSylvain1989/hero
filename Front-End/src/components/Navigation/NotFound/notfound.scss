@@ -28,15 +28,23 @@
 
     text-align: center;
     vertical-align: middle;
-  }&__title{
-    padding: 1rem;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: vars.$font-gold-color;
-  }&__button {
-    width: 15rem;
-    height: 3.5rem;
+  }
+    h1 {
+      padding: 1rem;
+      font-size: 8rem;
+      margin-bottom: 2rem;
+      color: vars.$font-gold-color;
+    }
+
+    h2 {
+      padding: 1rem;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: vars.$font-gold-color;
+    }
+  &__button {
     margin: auto;
+    padding: 1rem 3rem;
     color: vars.$font-btn-grad-color;
     transition: all 0.4s;
     cursor: pointer;
@@ -46,7 +54,6 @@
     vars.$bgr-btn-grad-02 49%,
     vars.$bgr-btn-grad-03 51%,
     vars.$bgr-btn-grad-04 100%);
-    padding: 0.8rem 0rem;
     margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: bold;
