@@ -198,3 +198,15 @@ FROM game.scene
 JOIN game.type ON "type"."id" = scene.type_id;
 
 --------------------------------------------------------------------------
+
+SELECT  history.*,
+        categories.name AS categories_name
+FROM game.history
+JOIN game.history_has_categories ON history_has_categories.history_id = history.id
+JOIN game.categories ON history_has_categories.categories_id = categories.id
+GROUP BY history.id;
+
+SELECT  categories.name
+FROM game.categories
+JOIN game.history_has_categories ON history_has_categories.categories_id = categories.id
+WHERE history_has_categories.history_id = 1;

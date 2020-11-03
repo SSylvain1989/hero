@@ -10,12 +10,12 @@ INSERT INTO game.character (
     "def",
     "image"
     )
-    VALUES  ('Anges déchus', 'true', '30', '15', '7', 'https://i.ibb.co/R2GFpYs/fallen-angels.gif'),
-            ('Faucheur', 'true', '20', '20', '10', 'https://i.ibb.co/Ms8SSMQ/reaper-man.gif'),
-            ('Golem', 'true', '40', '7', '15', 'https://i.ibb.co/qBG1rFg/golem.gif'),
-            ('Goblin', 'false', '20', '5', '4', 'https://i.ibb.co/BZsGGtT/output-n-Ccx-S9.gif'),
-            ('Orc', 'false', '30', '8', '10', 'https://i.ibb.co/zFYwy2J/orc.gif'),
-            ('Ogre', 'false', '40', '12', '6', 'https://i.ibb.co/KLtDG9t/Webp-net-gifmaker.gif');
+    VALUES  ('Anges déchus', 'true', '30', '15', '7', 'https://i.ibb.co/h1NtDMg/ange-d-chu.gif'),
+            ('Faucheur', 'true', '20', '20', '6', 'https://i.ibb.co/6NjNMYH/faucheur.gif'),
+            ('Golem', 'true', '40', '10', '8', 'https://i.ibb.co/PjGhhK6/Golem.gif'),
+            ('Goblin', 'false', '20', '6', '4', 'https://i.ibb.co/m6r7GGG/Goblin.gif'),
+            ('Orc', 'false', '30', '8', '8', 'https://i.ibb.co/yRxJ0xj/Orc.gif'),
+            ('Ogre', 'false', '40', '10', '6', 'https://i.ibb.co/3stsmjD/Ogre.gif');
 
 INSERT INTO game.history ( 
     "name",
@@ -23,9 +23,9 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('L''arène', 'Oyez oyez combattants de tous horizons ! Le moment est venu de vous battre en du-du-duel !! L''arène de Bonduel est la plus disputée sur ce website. Nombreux sont les héros prets à en découdre, à vous faire mordre la poussière, seriez vous prets à prendre la place de notre champion actuel et devenir notre nouvelle mascotte ?', 'Moyen', 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'),
-            ('Chateau', 'Vous êtes le seul habitant d''un château à ne pas avoir été transformé par un bouffon maléfique qui s''est emparé du trésor du château, la couronne du roi. Parviendrez-vous à déjouer les vols de ce mauvais bougre ?', 'Moyen', 'https://i.ibb.co/xhnDvZ0/chateau.jpg'),
-            ('Le labyrinthe', 'Trouvez la sortie le plus vite possible !', 'Difficile', 'https://i.ibb.co/bKW2JFn/labyrinth.jpg');
+    VALUES  ('L''arène', 'Oyez oyez combattants de tous horizons ! Le moment est venu de vous battre en du-du-duel !! L''arène de Bonduel est la plus disputée sur ce website. Nombreux sont les héros prets à en découdre, à vous faire mordre la poussière, seriez vous prets à prendre la place de notre champion actuel et devenir notre nouvelle mascotte ?', 'Moyen', 'https://i.ibb.co/MDPxddH/Miniature-arene-01.png'),
+            ('Le chateau', 'Vous êtes le seul habitant d''un château à ne pas avoir été transformé par un bouffon maléfique qui s''est emparé du trésor du château, la couronne du roi. Parviendrez-vous à déjouer les vols de ce mauvais bougre ?', 'Moyen', 'https://i.ibb.co/GFxvF8h/Miniature-chateau-01.png'),
+            ('Le labyrinthe', 'Trouvez la sortie le plus vite possible !', 'Difficile', 'https://i.ibb.co/kX8hQ5d/Miniature-labyrinth-01.png');
 
 INSERT INTO game.scene ( 
     "name",
@@ -39,9 +39,11 @@ INSERT INTO game.scene (
            ('game win', 'scene de fin: sortir en ayant tuer tous les adversaires');
 
 INSERT INTO game.categories ( 
-    "name"
+    "name",
+    "color"
     )
-    VALUES  ('fight');
+    VALUES  ('Combat', 'Brown'),
+            ('Médiéval', 'Green');
 
 INSERT INTO game.text_in_game ( 
     "description"
@@ -78,7 +80,11 @@ INSERT INTO game.history_has_categories (
     "history_id",
     "categories_id"
     )
-    VALUES  (2, 3);
+    VALUES  (2, 3),
+            (3, 2),
+            (3, 4),
+            (4, 1),
+            (4, 3);
 
 INSERT INTO game.scene_has_text ( 
     "scene_id",

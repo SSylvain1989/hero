@@ -68,7 +68,8 @@ CREATE TABLE game.scene ( -- NE PEUT ETRE CREE AVANT CHARACTER ET TYPE
 
 CREATE TABLE game.categories ( 
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  "name" text NOT NULL UNIQUE
+  "name" text NOT NULL UNIQUE,
+  "color" text
 );
 
 CREATE TABLE game.text_in_game ( 

@@ -11,7 +11,7 @@ INSERT INTO game.character (
     "image"
     )
     VALUES  ('Etienne', 'true', '15', '3', '2', 'https://i.ibb.co/ZXpv3t3/minotaur.gif'),
-            ('Charles', 'true', '25', '6', '3', 'https://i.ibb.co/71c03Xd/wraith.gif'),
+            ('Charles', 'true', '25', '6', '3', 'https://i.ibb.co/qDZ9g5H/Webp-net-gifmaker-1.gif'),
             ('Vieillard', 'false', '20', '5', '2', 'https://i.ibb.co/NsvtkHs/Papy-01.png');
 
 INSERT INTO game.type ( 
@@ -30,7 +30,7 @@ INSERT INTO game.history (
     "difficulty",
     "img"
     )
-    VALUES  ('Prison', 'Alcatraz, une prison terrifiante. Dieu seul sait pourquoi vous vous retrouvez inopinément ici ... A vous, de déjouer les mauvais sorts et vous échappez au plus vite de cet endroit maudit ... ', 'Facile', 'https://i.ibb.co/25xVbhh/arenes.jpg');
+    VALUES  ('La prison', 'Alcatraz, une prison terrifiante. Dieu seul sait pourquoi vous vous retrouvez inopinément ici ... A vous, de déjouer les mauvais sorts et vous échappez au plus vite de cet endroit maudit ... ', 'Facile', 'https://i.ibb.co/427w5DY/Miniature-prison-01.png');
 
 INSERT INTO game.scene ( 
     "name",
@@ -49,10 +49,11 @@ INSERT INTO game.scene (
            ('game_win', 'scene de fin: sortir en ayant tuer le Vieillard');
 
 INSERT INTO game.categories ( 
-    "name"
+    "name",
+    "color"
     )
-    VALUES  ('horror'),
-            ('fantastic');
+    VALUES  ('Horreur', 'Indigo'),
+            ('Fantastique', 'DodgerBlue');
 
 INSERT INTO game.text_in_game ( 
     "description"

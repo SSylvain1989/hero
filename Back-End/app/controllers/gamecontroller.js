@@ -6,10 +6,25 @@ const gameController = {
      * Sert a récupérer tout les personnages jouable
      * @returns {object} 200 - La liste des personnages jouable et la session
      */
-    getAllCharacter: async (request, response) => {
+    getAllCharacterPlayable: async (request, response) => {
         try {
             // on recupère tout les personnable jouable
-            const allCharacter = await game.findAllCharacter();
+            const allCharacter = await game.findAllCharacterPlayable();
+
+            response.status(200).json({character: allCharacter, session: request.session.user});
+        } catch (error) {
+            console.trace(error);
+            return response.status(500).json(error.tostring());  
+        };
+    },
+    /**
+     * Sert a récupérer tout les personnages d'avatar
+     * @returns {object} 200 - La liste des personnages pour la selection d'avatar et la session
+     */
+    getAllCharacter: async (request, response) => {
+        try {
+            // on recupère tout les personnable pour les avatars
+            const allCharacter = await game.findAllCharacterAvatar();
 
             response.status(200).json({character: allCharacter, session: request.session.user});
         } catch (error) {
@@ -24,6 +39,7 @@ const gameController = {
      */
     getHistory: async (request, response) => {
         try {
+            // Si le slug correspond a l'histoire 1
             if (request.params.id === '1' || request.params.id === 1) {
                 // on attend le retour de la methode qui recupère une histoire par son id
                 const oneHistory = await game.findHistoryById(request.params.id);
@@ -104,11 +120,11 @@ const gameController = {
                             previous_scene_id: oneHistory[3].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[3].next_scene_id,
-                                next_scene_name: 'Combattre'
+                                next_scene_name: 'Faire la baguarre'
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[4].next_scene_id,
-                                next_scene_name2: 'Discuter'
+                                next_scene_name2: 'Un brin de causette'
                             },
                             img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png',
                             img_opponent: sceneTab[3].opponent_img
@@ -142,11 +158,11 @@ const gameController = {
                             previous_scene_id: oneHistory[8].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[8].next_scene_id,
-                                next_scene_name: 'Sortir'
+                                next_scene_name: 'Débarrasser le plancher'
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[9].next_scene_id,
-                                next_scene_name2: `Revenir a l'entrée`
+                                next_scene_name2: `Rester ici`
                             },
                             img_scene: 'https://i.ibb.co/7zMgn0v/cellule-01.png'
                         },
@@ -177,22 +193,26 @@ const gameController = {
                         { // Scene 9
                             details_scene: sceneTab[8],
                             previous_scene_id: oneHistory[13].previous_scene_id,
-                            finish_text: `Game Over, vous êtes mort !`
+                            finish_text: `Game Over, vous êtes mort !`,
+                            img_scene: 'https://i.ibb.co/vJT3LjN/Fin-03.png'
                         },
                         { // Scene 10
                             details_scene: sceneTab[9],
                             previous_scene_id: oneHistory[14].previous_scene_id,
-                            finish_text: `Bravo, vous avez terminé le jeu mais vous êtes maudit !`
+                            finish_text: `Bravo, vous avez terminé le jeu mais vous êtes maudit !`,
+                            img_scene: 'https://i.ibb.co/VWy0dxL/Fin-en-etant-maudit-01.png'
                         },
                         { // Scene 11
                             details_scene: sceneTab[10],
                             previous_scene_id: oneHistory[15].previous_scene_id,
-                            finish_text: `Bravo, vous avez terminé le jeu en ayant levé la malédiction !`
+                            finish_text: `Bravo, vous avez terminé le jeu en ayant levé la malédiction !`,
+                            img_scene: 'https://i.ibb.co/L9gs2Yd/Fin-sans-etre-maudit-01.png'
                         },
                     ]
                 };
     
                 response.status(200).json({history: history, session: request.session.user});
+                // Si le slug correspond a l'histoire 2
             } else if (request.params.id === '2' || request.params.id === 2) {
                 // on attend le retour de la methode qui recupère une histoire par son id
                 const oneHistory = await game.findHistoryById(request.params.id);
@@ -214,7 +234,7 @@ const gameController = {
                     };
                 };
                 
-                const history = { // je configure l'objet de l'histoire
+                const history2 = { // je configure l'objet de l'histoire
                     history_id: oneHistory[0].history_id,
                     history_name: oneHistory[0].history_name,
                     history_description: oneHistory[0].history_description,
@@ -226,7 +246,7 @@ const gameController = {
                             previous_scene_id: oneHistory[0].previous_scene_id,
                             next_scene_id: oneHistory[0].next_scene_id,
                             next_scene_name: 'Démarrer',
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 13
                             details_scene: sceneTab[1],
@@ -239,7 +259,7 @@ const gameController = {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
                             },
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 14
                             details_scene: sceneTab[2],
@@ -252,7 +272,7 @@ const gameController = {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
                             },
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 15
                             details_scene: sceneTab[3],
@@ -265,24 +285,24 @@ const gameController = {
                                 next_scene_id2: 16,
                                 next_scene_name2: 'GameOver'
                             },
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 16
                             details_scene: sceneTab[4],
                             previous_scene_id: [15, 14, 13],
                             finish_text: `Game Over, vous êtes mort !`,
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                         { // Scene 17
                             details_scene: sceneTab[5],
                             previous_scene_id: oneHistory[5].previous_scene_id,
                             finish_text: `Bravo, vous êtes le grand maitre de l'arène !`,
-                            img_scene: 'https://i.ibb.co/25xVbhh/arenes.jpg'
+                            img_scene: 'https://i.ibb.co/MgZtkPg/Arene-grand-Format-01.png'
                         },
                     ]
                 };
                 
-                response.status(200).json({history: history, session: request.session.user});
+                response.status(200).json({history: history2, session: request.session.user});
             } else {
                 const message = `L'histoire demandée n'est pas disponible.`
                 response.status(404).json({message: message, session: request.session.user});
