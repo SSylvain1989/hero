@@ -7,8 +7,6 @@
   background-color: vars.$font-contrast-color;
   width: 100%;
   z-index: 999;
-  font-family: Merriweather, arial;
-   //text-transform: uppercase;
 
   ul {
     width: 100%;
@@ -26,11 +24,11 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
+
   
 }
 
 .footer li:hover {
-  //color: vars.$font-gold-color;
-  filter: brightness(200%);
-  transform: scale(1.25);
+  transform: scale(1.2);
+  transition: 0.3s;
 }

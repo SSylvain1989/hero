@@ -7,12 +7,45 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  h1 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 2rem;
+  background-color: vars.$bgr-color-black;
+  &__container{
+    width: 45rem;
+    background-color: vars.$brown-color;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    border: 0.6rem outset vars.$border-color;
+    border-radius: 12px;
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+    position: absolute;
+    align-items: center;
+  }&__field{
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    background: vars.$font-base-color;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0.7rem;
+    border: 5px outset vars.$font-gold-color;
+    border-radius: 15px;
+    text-align: center;
+    width: 25rem;
   }
 
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 3px 2px 0 #290f0f;
+    color: vars.$font-gold-color;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
+    border-bottom: vars.$border-color 1px solid;;
+  }
+// c'est quoi ? 
     &__input {
       display: flex;
       flex-direction: column;
@@ -25,29 +58,51 @@
           margin-top: 3rem;
           margin-bottom: 1rem;
           font-weight: bold;
+          border-bottom: 1px black solid;
         }
 
-        input {
-          margin: 0.3rem 0;
-          padding: 0.5rem;
-          width: 70%;
-        }
+        // input {
+        //   margin: 0.3rem 0;
+        //   padding: 0.5rem;
+        //   width: 70%;
+        // }
 
         button {
-          margin: 0.3rem;
-          padding: 0.5rem;
-          background-color: #F9BA32;
-          font-size: 16px;
-          border-radius: 5px;
-          border: 1px solid black;
-          width: 70%;
+          width: 10rem;
+          height: 3.5rem;
+          margin: auto;
+          color: vars.$font-btn-grad-color;
+          transition: all 0.4s;
+          cursor: pointer;
+          background: linear-gradient(
+          180deg,
+          vars.$bgr-btn-grad-01 0%,
+          vars.$bgr-btn-grad-02 49%,
+          vars.$bgr-btn-grad-03 51%,
+          vars.$bgr-btn-grad-04 100%);
+          padding: 0.8rem 0rem;
+          margin-top: 1rem;
+          font-size: 1.2rem;
+          font-weight: bold;
+          text-align: center;
+          border: 5px outset vars.$font-gold-color;
+          border-radius: 12px;
+        }
+        button:hover {
+          color: vars.$font-btn-grad-color-hover;
+          background: linear-gradient(
+            180deg,
+            vars.$bgr-btn-grad-hover-01 0%,
+            vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+            vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+            vars.$bgr-btn-grad-hover-04  100%);
         }
 
         &--delete {
 
           button {
-            background-color: #D70026;
-            width: 200px;
+            color: #D70026;
+            width: 20rem;
           }
         }
     }

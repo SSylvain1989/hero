@@ -47,13 +47,11 @@ const Header = ({
           ? (
             <>
               <li>
-                {userName}
-              </li>
-              <li>
                 <NavLink
                   to="/profil"
                   exact
                 >
+                  <p>{userName}</p>
                   <img
                     src="https://i.ibb.co/ZXpv3t3/minotaur.gif"
                     alt="avatar"

@@ -6,7 +6,9 @@ import parchemin from '../../../images/parchemin.png';
 
 import './redirection.scss';
 
-const Redirection = ({ scene, storyId, opponentIsAlive, image }) => {
+const Redirection = ({
+  scene, storyId, opponentIsAlive, image,
+}) => {
   if (scene !== undefined) {
     const text = scene.details_scene.scene_text;
     return (
@@ -63,9 +65,11 @@ Redirection.propTypes = ({
       next_scene_id2: PropTypes.number,
       next_scene_name2: PropTypes.string,
     }),
+    img_scene: PropTypes.string.isRequired,
   }).isRequired,
   storyId: PropTypes.number.isRequired,
   opponentIsAlive: PropTypes.bool.isRequired,
+  image: PropTypes.string.isRequired,
 });
 
 export default Redirection;

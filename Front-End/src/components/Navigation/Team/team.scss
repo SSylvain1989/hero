@@ -3,20 +3,18 @@
 
 .team{
   margin-top: 5rem;
-  background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 0 5rem ;
+  justify-content: center;
+  align-items: center;
+  background-color: vars.$bgr-color-black;
+  height: 100vh;
+  width: 100%;
 }
 
 .member{
-  // display: flex;
-  // flex-direction: row;
 &__section{
-    // display: flex;
-  // flex-direction: row;
   padding: 4rem 0rem;
-  background-color: #fff;
 }&__container{
   margin: 0.1rem;
   display: flex;
@@ -64,20 +62,35 @@
   font-style: italic;
   text-align: center;
   color: #333;
-}&__btn{
-  padding: 1rem 2.5rem;
-  background-color: vars.$bgr-btn-bleu;
+}&__btn {
+  width: 10rem;
+  height: 3.5rem;
+  margin: auto;
+  color: vars.$font-btn-grad-color;
+  transition: all 0.4s;
+  cursor: pointer;
+  background: linear-gradient(
+  180deg,
+  vars.$bgr-btn-grad-01 0%,
+  vars.$bgr-btn-grad-02 49%,
+  vars.$bgr-btn-grad-03 51%,
+  vars.$bgr-btn-grad-04 100%);
+  padding: 0.8rem 0rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border: 5px outset vars.$font-gold-color;
   border-radius: 2rem;
-  margin: 1rem 0;
-  text-transform: uppercase;
-  color: #eeee;
-  transition: all .5s;
-}&__btn:hover{
-  transform: translateY(-2px);
-  box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
-}&__btn:active{
-  transform: translateY(0);
-  box-shadow: none;
+}
+&__btn:hover {
+  color: vars.$font-btn-grad-color-hover;
+  background: linear-gradient(
+    180deg,
+    vars.$bgr-btn-grad-hover-01 0%,
+    vars.$bgr-btn-grad-hover-02 46.65551839464883%,
+    vars.$bgr-btn-grad-hover-03 46.65551839464883%,
+    vars.$bgr-btn-grad-hover-04  100%);
 }&__social{
   width: 100%;
   list-style: none;
@@ -96,21 +109,24 @@
 // si plus de 700px en largeur sur ton ecran ( donc pc ) voir ci-dessous 
 @media screen and (min-width: 700px){
   .team{
+    display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin-top: 0.3rem;
     flex-direction: row;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0 9rem;
+    //padding: 0 9rem;
   }
 .member{
   &__wrapper{
     width: 19rem;
+    margin: 2rem;
   }&__card{
-    width: 17rem;
-    margin: 0.5rem ;
+    border-radius: 9px 6px 0 0;
+    width: 20rem;
+    clip-path: polygon(0 1%, 100% 0, 100% 100%, 0% 100%);
   }&__social{
     width: 90%;
     list-style: none;
@@ -121,7 +137,7 @@
     border-top: 1px solid rgba(0,0,0,0.1);
     font-size: 2rem;
   }&__imgBgr{
-    width: 17rem;
+    width: 20rem;
     height: auto;
     object-fit: cover;
     // https://bennettfeely.com/clippy/
@@ -141,7 +157,7 @@
     margin: 1.5rem 0;
   }&__btn:hover{
     transform: translateY(-2px);
-    box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
+    //box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
   }&__btn:active{
     transform: translateY(0);
     box-shadow: none;

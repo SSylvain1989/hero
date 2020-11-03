@@ -4,7 +4,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-alert */
 /* eslint-disable react/style-prop-object */
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
 import apiKeys from './apikey';
@@ -22,13 +22,14 @@ const Contact = ({
   message,
   changeField,
   response,
+  resetFields,
 }) => {
+  useEffect(() => {
+    resetFields();
+  }, []);
+
   const onSubmit = (e) => {
-    console.log('je suis la');
     e.preventDefault();// Prevents default refresh by the browser
-    console.log('Et je suis rela');
-    console.log(email);
-    console.log(message);
     const form = {
       // les attributs name & message sont identiques aux attributs du template du mail de emailJs
       name: email, message,
@@ -39,11 +40,10 @@ const Contact = ({
     emailjs.send('default_service', apiKeys.TEMPLATE_ID, form, apiKeys.USER_ID)
       .then((result) => {
         alert('Votre message a bien été envoyé, nous vous répondrons sous peu', result.text);
-        console.log(result);
       },
-        (error) => {
-          alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
-        });
+      (error) => {
+        alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
+      });
   };
   if (!response) {
     return (
@@ -83,6 +83,7 @@ Contact.propTypes = ({
   changeField: PropTypes.func.isRequired,
   handleContact: PropTypes.func.isRequired,
   response: PropTypes.object,
+  resetFields: PropTypes.func.isRequired,
 });
 
 Contact.defaultProps = ({

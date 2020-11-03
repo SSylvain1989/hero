@@ -6,7 +6,7 @@ import Connection from '../components/Navigation/Connection';
 
 // == Import : actions
 import { loginSubmit } from '../actions/user';
-import { changeLoginField } from '../actions/field';
+import { changeLoginField, resetFields } from '../actions/field';
 
 // Action Creators
 
@@ -38,6 +38,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onSubmit: () => {
     dispatch(loginSubmit());
+  },
+  resetFields: () => {
+    dispatch(resetFields());
   },
 });
 

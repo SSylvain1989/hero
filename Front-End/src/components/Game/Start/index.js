@@ -32,7 +32,7 @@ const Start = ({ scene, storyId, image }) => {
               />
             </div>
             <div className="start__scene--right-buttons">
-              <button type="button"><Link to={nextSceneURL}>Démarrer</Link></button>
+              <Link to={nextSceneURL}><button type="button">Démarrer</button></Link>
             </div>
           </div>
         </div>
@@ -53,6 +53,7 @@ const Start = ({ scene, storyId, image }) => {
 Start.propTypes = ({
   scene: PropTypes.object.isRequired,
   storyId: PropTypes.number.isRequired,
+  image: PropTypes.number.isRequired,
 });
 
 // == Export

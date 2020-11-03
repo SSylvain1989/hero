@@ -1,5 +1,6 @@
 // == Import : npm
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // == Import : local
 import React, { useEffect } from 'react';
 import './styles.scss';
@@ -21,18 +22,28 @@ const Board = ({
         <div className="Board__container">
           <img className="Board__image" src="https://i.ibb.co/ZXpv3t3/minotaur.gif" alt="" />
           <h1 className="Board__title">Voici le tableau de tes scores {boardData.displayName}</h1>
-          <p className="Board__p">Partie jouées</p>
-          <p className="Board__Nb">{boardData.gamePlay}</p>
-          <p className="Board__p">Victoires</p>
-          <p className="Board__Nb">{boardData.gameWin}</p>
-          <p className="Board__p">Défaites</p>
-          <p className="Board__Nb">{boardData.gameOver}</p>
-          <button className="Board__button" type="button"><Link to="/liste-des-jeux">Retour à la liste des jeux..</Link></button>
+          <p>Partie jouées</p>
+          <span>{boardData.gamePlay}</span>
+          <p>Victoires</p>
+          <span>{boardData.gameWin}</span>
+          <p>Défaites</p>
+          <span>{boardData.gameOver}</span>
+          <Link to="/liste-des-jeux"><button className="Board__button" type="button">Retour à la liste des jeux..</button></Link>
         </div>
       </div>
     </>
   );
 };
+
+Board.propTypes = ({
+  boardData: PropTypes.shape({
+    displayName: PropTypes.string.isRequired,
+    gameOver: PropTypes.number.isRequired,
+    gamePlay: PropTypes.number.isRequired,
+    gameWin: PropTypes.number.isRequired,
+  }).isRequired,
+  fetchDataBoard: PropTypes.func.isRequired,
+});
 
 // == Export
 export default Board;

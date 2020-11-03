@@ -31,7 +31,7 @@ export const initialState = {
     password: '',
     passwordConfirm: '',
     showModal: false,
-    message: '',
+    message: { toto: '' },
     errorMessage: [],
   },
   login: {
@@ -143,6 +143,10 @@ const field = (state = initialState, action = {}) => {
         login: {
           userName: '',
           password: '',
+        },
+        contact: {
+          email: '',
+          message: '',
         },
         messagesError: '',
       };

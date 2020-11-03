@@ -6,6 +6,8 @@
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-color: vars.$bgr-color-black;
+
 
   &__scene {
     display: flex;
@@ -13,11 +15,15 @@
     width: 1000px;
     position: relative;
     z-index: 1;
+    border: 0.6rem outset vars.$border-color;
+    border-radius: 12px;
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
 
     img {
       position: absolute;
       width: 150px;
-      right: 0;
+      right: -8px;
       bottom: 0.7rem;
     }
 
@@ -27,11 +33,11 @@
 
     &--left {
       width: 65%;
-      border: 5px solid vars.$border-color;
+      border-right: 1px solid vars.$border-color;
     }
 
     &--right {
-      border: 5px solid vars.$border-color;
+      border-left: 1px solid vars.$border-color;
       display: flex;
       flex-direction: column;
       width: 35%;
@@ -64,14 +70,19 @@
         height: 20%;
         margin: 1rem 1rem;
 
+        a {
+          text-align: left;
+        }
+
         button {
           padding: 0.8rem;
           width: 45%;
           margin: 0.3rem;
           background-color: vars.$brown-color;
           border: none;
-          color: vars.$font-base-color;
+          color: vars.$font-gold-color;
           border-radius: 5px;
+          font-weight: bold;
         }
       }
     }
@@ -83,6 +94,7 @@
     img {
     height: 400px;
     z-index: 0;
+    border-radius: 12px;
     }
   }
 }

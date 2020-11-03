@@ -12,11 +12,15 @@ const End = ({ scene, storyId, sendEndDetails }) => {
     return (
       <div className="end">
         <div className="end__scene">
+          <img
+            src={scene.img_scene}
+            alt="mooving-minautor"
+          />
           <h1>Image de fin</h1>
           <div className="end__scene--modal">
             <p>{scene.finish_text}</p>
             <div className="end__scene--modalbuttons">
-              <button type="button"><Link to="/liste-des-jeux">Retourner à la liste des jeux</Link></button>
+            <Link to="/liste-des-jeux"><button type="button">Retourner à la liste des jeux</button></Link>
             </div>
           </div>
         </div>

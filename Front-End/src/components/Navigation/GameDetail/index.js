@@ -35,26 +35,32 @@ const GameDetail = ({
 
   // console.log(playerSelected);
 
+  console.log(game);
+
   return (
     <div className="game-detail">
       <div className="game-detail__container">
         <div className="game-detail__content">
           <h1 className="game-detail__title">{game.name}</h1>
-          <section className="game-detail__section">{game.description}</section>
+          {/* <p>{game.category}</p> */}
           <p>{game.difficulty}</p>
-          <div>
+          <section className="game-detail__section">{game.description}</section>
+          <div className="game-detail__character">
             {isLogged && !isStoryLoaded
               ? <button type="button" className="game-detail__button" onClick={loadStory(gameId)}>Choisir un héro</button>
               : (
                 <>
-                  <CharacterList
-                    characterList={characterList}
-                    handleCharacterOnClick={handleCharacterOnClick}
-                  />
+                  <div className="game-detail__character--container">
+                    <CharacterList
+                      characterList={characterList}
+                      handleCharacterOnClick={handleCharacterOnClick}
+                    />
+                  </div>
                   {playerSelected && <Link to={`/liste-des-jeux/${gameId}/${firstSceneId}`}><button type="button" className="game-detail__button">Jouer</button></Link>}
                 </>
               )}
-            {!isLogged && <Link to="/connection"><button type="button" className="game-detail__button">Connectez-vous !</button></Link>}
+
+            {!isLogged && <Link to="/connection"><button type="button" className="game-detail__btn">Connectez-vous !</button></Link>}
           </div>
         </div>
       </div>

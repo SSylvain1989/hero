@@ -6,14 +6,18 @@
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-color: vars.$bgr-color-black;
 
   &__scene {
     position: relative;
     height: 405px;
     width: 1000px;
-    border: 5px solid vars.$border-color;
     z-index: 1;
     position: relative;
+    border: 0.6rem outset vars.$border-color;
+    border-radius: 12px;
+    box-shadow: 0px 10px 13px -7px #000000,
+    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
 
     &--opponent {
       position: absolute;
@@ -27,8 +31,8 @@
       // width: 5rem;
       position: absolute;
       z-index: 3;
-      left: 14%;
-      bottom: 61%;
+      left: 16%;
+      bottom: 63%;
       // background-color:rgba(139, 182, 133, 0.4);
     }
     &__logTwo{
@@ -38,8 +42,8 @@
       // width: 5rem;
       position: absolute;
       z-index: 3;
-      left: 88%;
-      bottom: 26%;
+      left: 83%;
+      bottom: 29%;
       // background-color:rgba(139, 182, 133, 0.4);
     }
     &__logText{
@@ -51,7 +55,9 @@
       // left: 10%;
       // bottom: 50%;
       animation: fadeIn 0.7s;
-      color:red ;
+      color: vars.$font-gold-color ;
+      text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+      
     }
     &__logTextTwo{
       font-size: 2.2rem;
@@ -61,24 +67,27 @@
       z-index: 4;
       // left: 10%;
       // bottom: 20%;
-      animation: fadeIn 5.0s;
-      color: red;
+      animation: fadeIn 1.6s;
+      color: vars.$font-gold-color;
+      text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
     }
 
     button {
       padding: 0.8rem;
       width: 100px;
-      margin: 0.3rem;
+      margin: 0.5rem;
       background-color: vars.$brown-color;
       border: none;
-      color: vars.$font-base-color;
+      color: vars.$font-gold-color;
+      font-weight: bold;
       border-radius: 5px;
       position: absolute;
     }
 
     &-attack {
       bottom: 6rem;
-      right: 8rem
+      right: 8rem;
+      
     }
 
     h1 {
@@ -110,6 +119,7 @@
     img {
     height: 400px;
     z-index: 0;
+    border-radius: 12px;
     }
   }
 }
@@ -119,11 +129,37 @@
   width: 200px;
   position: absolute;
   top: 0;
-  left: 0;
-  padding: 1rem;
-
+  left: 0.07rem;
+  border-right: 3px solid vars.$brown-color;
+  border-bottom: 3px solid vars.$brown-color;
+  border-radius: 0 0px 5px 0;
+  &__header {
+    height: 25%;
+    width: 100%;
+    background-color: vars.$brown-color;
+  }
+  &__stat{
+      color: vars.$font-contrast-color;
+      font-weight: 700;
+      padding-top: 0.2rem;
+      margin: auto;
+      flex: auto;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      text-align: center;
+      height: 75%;
+      width: 100%;
+      background-color: vars.$normal-color;
+  }
   h1 {
-    margin: 0;
+    color: vars.$font-gold-color;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: auto;
+    padding-top: 0.2rem;
+  }
+  p{
     font-weight: bold;
   }
 }

@@ -38,6 +38,8 @@ const mapStateToProps = (state) => ({
   message: state.field.profile.message,
   displayMessage: state.field.displayMessage,
   errorMessage: state.field.profile.errorMessage,
+  currentEmail: state.field.session.email,
+  currentUserName: state.field.session.userName,
 });
 
 /* === Actions ===

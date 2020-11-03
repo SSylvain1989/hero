@@ -58,13 +58,8 @@ const Choice = ({ scene, storyId, image }) => {
 Choice.propTypes = ({
   scene: PropTypes.shape({
     details_scene: PropTypes.shape({
-      scene_id: PropTypes.number,
-      scene_name: PropTypes.string,
-      scene_description: PropTypes.string,
-      scene_type: PropTypes.string,
-      scene_text: PropTypes.string,
+      scene_text: PropTypes.string.isRequired,
     }).isRequired,
-    previous_scene_id: PropTypes.number.isRequired,
     next_scene: PropTypes.shape({
       next_scene_id: PropTypes.number.isRequired,
       next_scene_name: PropTypes.string.isRequired,
@@ -73,8 +68,11 @@ Choice.propTypes = ({
       next_scene_id2: PropTypes.number,
       next_scene_name2: PropTypes.string,
     }),
+    img_opponent: PropTypes.string.isRequired,
+    img_scene: PropTypes.string.isRequired,
   }).isRequired,
   storyId: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
 });
 
 export default Choice;

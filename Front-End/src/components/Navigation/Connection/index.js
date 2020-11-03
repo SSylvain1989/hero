@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -18,14 +18,16 @@ const Connection = ({
   isLoged,
   sessionUserName,
   messagesError,
+  resetFields,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
   };
 
-  console.log('log connection component', messagesError);
-  console.log('log connection component', messagesError);
+  useEffect(() => {
+    resetFields();
+  }, []);
 
   if (!isLoged) {
     return (
@@ -58,14 +60,14 @@ const Connection = ({
               </p>
             ))}
           <button className="connection__button" type="submit">Se connecter</button>
-          <p className="connection__redirect" type="button"><Link to="/inscription">Pas de compte ? <span>L'inscription c'est par ici</span></Link></p>
+          <Link to="/inscription"><p className="connection__redirect" type="button">Pas de compte ? <br></br> <span>L'inscription se fait par ici !</span></p></Link>
         </form>
       </div>
     );
   }
   return (
     <div className="connection__loged">
-      <h1>Vous êtes bien connecté, bienvenue {sessionUserName} </h1>
+      <h1>Vous êtes bien connecté, <br></br> bienvenue à bord {sessionUserName} ! </h1>
       <button type="button" className="connection__redirect"><Link to="liste-des-jeux">Voir la liste des jeux</Link></button>
     </div>
   );
@@ -79,6 +81,7 @@ Connection.propTypes = ({
   isLoged: PropTypes.bool.isRequired,
   sessionUserName: PropTypes.string,
   messagesError: PropTypes.string.isRequired,
+  resetFields: PropTypes.func.isRequired,
 });
 
 Connection.defaultProps = ({
