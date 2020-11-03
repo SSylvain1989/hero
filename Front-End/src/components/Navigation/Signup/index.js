@@ -74,7 +74,7 @@ const Signup = ({
               <p
                 className="signup__error"
                 key={Object.values(element)[0]}
-              >Attention :
+              >
                 {Object.values(element)[0]}
               </p>
             ))}
