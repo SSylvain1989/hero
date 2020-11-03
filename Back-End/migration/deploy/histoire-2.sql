@@ -42,7 +42,8 @@ INSERT INTO game.categories (
     "name",
     "color"
     )
-    VALUES  ('combat', 'Brown');
+    VALUES  ('Combat', 'Brown'),
+            ('Médiéval', 'Green');
 
 INSERT INTO game.text_in_game ( 
     "description"
@@ -79,7 +80,11 @@ INSERT INTO game.history_has_categories (
     "history_id",
     "categories_id"
     )
-    VALUES  (2, 3);
+    VALUES  (2, 3),
+            (3, 2),
+            (3, 4),
+            (4, 1),
+            (4, 3);
 
 INSERT INTO game.scene_has_text ( 
     "scene_id",

@@ -24,11 +24,11 @@ const connexionController = {
                 const compare = await bcrypt.compare(request.body.password, checkUser.password);
                 // Si la comparaison n'est pas bonne on stock un message d'erreur 
                 if (compare === false) {
-                    const messagePassword = `Votre mot de passe n'est pas valide.`;
+                    const messagePassword = `Votre mot de passe ou votre nom d''utilisateur n'est pas valide.`;
                     messageTab.push({ messagePassword: messagePassword });
                 };
             } else { // Sinon on stock un message d'erreur
-                const messageUserName = "Votre nom d''utilisateur ne correspond à aucun compte.";
+                const messageUserName = "Votre mot de passe ou votre nom d''utilisateur n'est pas valide.";
                 messageTab.push({ messageUserName: messageUserName });
             };
         } else { // Sinon on stock un message d'erreur

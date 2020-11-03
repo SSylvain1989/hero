@@ -52,8 +52,8 @@ INSERT INTO game.categories (
     "name",
     "color"
     )
-    VALUES  ('horreur', 'Indigo'),
-            ('fantastique', 'DodgerBlue');
+    VALUES  ('Horreur', 'Indigo'),
+            ('Fantastique', 'DodgerBlue');
 
 INSERT INTO game.text_in_game ( 
     "description"
