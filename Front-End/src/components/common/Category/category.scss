@@ -1,0 +1,31 @@
+@use 'src/styles/vars' as vars;
+
+.category{
+  color: vars.$font-contrast-color;
+  background-color: vars.$font-base-color;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 120px;
+  font-style: italic;
+  margin: 5px;
+}
+
+.Indigo{
+  background-color: #222;
+  color: vars.$font-base-color;
+}
+
+.DodgerBlue{
+  background-color: rgb(40, 40, 190);
+  color: vars.$font-base-color;
+}
+
+.Brown{
+  background-color: brown;
+  color: vars.$font-base-color;
+}
+
+.Green{
+  background-color: rgb(20, 95, 20);
+  color: vars.$font-base-color;
+}
