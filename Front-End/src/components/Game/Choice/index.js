@@ -73,6 +73,7 @@ Choice.propTypes = ({
   }).isRequired,
   storyId: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  img_opponent: PropTypes.string.isRequired,
 });
 
 export default Choice;

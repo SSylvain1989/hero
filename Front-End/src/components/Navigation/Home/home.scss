@@ -24,13 +24,12 @@
 
   h2 {
     text-align: left;
-    padding: 5px 0px;
+    padding: 0.5rem 2rem 0.8rem 0.5rem;
     color: vars.$font-gold-color;
-    padding-left: 20px;
     font-size: 1.3rem;
     font-weight: bold;
-    margin: 10px 0px;
-    border-bottom: vars.$font-gold-color solid;
+    margin: 1rem 0;
+    border-bottom: 1px vars.$font-gold-color solid;
     width: 450px;
   }
 
@@ -87,15 +86,11 @@
   &__button {
     width: auto;
     height: auto;
-
+    margin-top: 5rem;
     letter-spacing: .2rem;
-  
     color: vars.$font-btn-grad-color;
-  
     transition: all 0.4s;
-    
     cursor: pointer;
-  
     background: linear-gradient(
     180deg,
     vars.$bgr-btn-grad-01 0%,
@@ -104,7 +99,6 @@
     vars.$bgr-btn-grad-04 100%);
   
     padding: 10px 20px 10px 20px;
-    margin: 30px 0px -30px;
     
     font-size: 16px;
     font-weight: bold;

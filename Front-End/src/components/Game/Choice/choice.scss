@@ -10,14 +10,11 @@
 
   &__scene {
     display: flex;
-    height: 405px;
+    height: 400px;
     width: 1000px;
     position: relative;
     z-index: 1;
-    //border: 0.6rem outset vars.$border-color;
-    //border-radius: 12px;
-    //box-shadow: 0px 10px 13px -7px #000000,
-    //inset 4px 2px 50px -1px rgba(0,0,0,0.62);
+    box-shadow: 0px 10px 13px -7px #000000;
 
     &--opponent {
       position: absolute;
@@ -75,14 +72,14 @@
         flex-direction: column;
         justify-content: center;
         height: 20%;
-        margin: 1rem 1rem;
+        margin: 1rem 0.5rem;
 
         a {
-          width: 45%;
+          width: 60%;
 
           button {
             padding: 0.8rem;
-            margin: 0.3rem;
+            margin: 0.3rem 0;
             width: 100%;
             background-color: vars.$brown-color;
             border: none;

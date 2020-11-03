@@ -56,7 +56,7 @@ const Battle = ({
           {ready && !playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
           {ready && !opponent.isAlive && (
             <div className="battle-element__scene-finish">
-              <h1>Bravo, tu as bien fais la bagare</h1>
+              <h1>Bravo, ton adversaire est à terre</h1>
               <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}>
                 <button type="button">
                   Continuer
@@ -83,7 +83,6 @@ const Battle = ({
             alt="background"
           />
         </div>
-
       </div>
     );
   }
