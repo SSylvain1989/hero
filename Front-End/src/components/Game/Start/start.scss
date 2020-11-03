@@ -33,11 +33,11 @@
 
     &--left {
       width: 65%;
-      border-right: 1px solid vars.$border-color;
+      //border-right: 1px solid vars.$border-color;
     }
 
     &--right {
-      border-left: 1px solid vars.$border-color;
+     // border-left: 1px solid vars.$border-color;
       display: flex;
       flex-direction: column;
       width: 35%;
@@ -54,11 +54,22 @@
         }
 
         p {
-          padding: 3rem 3rem;
-          line-height: 1.3rem;
           position: absolute;
-          z-index:1;
+
+          padding: 3rem 3rem;
+          line-height: 1.5rem;
+          letter-spacing: .1rem;
+
           text-align: justify;
+          //font-style: italic;
+          font-style: oblique;
+          font-family: cursive;
+
+          z-index:1;
+
+          vertical-align: middle;
+          color: rgb(51, 27, 27);
+      
         }
       }
 
@@ -117,6 +128,8 @@
         p{
         padding: 1rem;
         position: relative;
+        letter-spacing: .2rem;
+
         }
         img {
           display: none;
