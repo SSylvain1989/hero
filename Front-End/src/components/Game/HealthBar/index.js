@@ -11,7 +11,8 @@ const HealthBar = ({ current, max }) => {
   let backgroundColor = 100;
   // Si la vie est supperieur a 50%
   if (healthPercent >= 50) {
-    backgroundColor = 'greenyellow';
+    backgroundColor = '#aacc00';
+    //backgroundColor = 'greenyellow';
     // Sinon Si la vie est entre 50 et 25%
   }
   else if (healthPercent < 50 && healthPercent >= 25) {

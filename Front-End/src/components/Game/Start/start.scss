@@ -15,10 +15,11 @@
     width: 1000px;
     position: relative;
     z-index: 1;
-    border: 0.6rem outset vars.$border-color;
-    border-radius: 12px;
-    box-shadow: 0px 10px 13px -7px #000000,
-    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+   // border: 0.6rem outset vars.$border-color;
+    //border: 0.4rem ridge vars.$border-color;
+    //border-radius: 25px;
+    //box-shadow: 0px 10px 13px -7px #000000,
+    //inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
 
     img {
       position: absolute;
@@ -33,11 +34,11 @@
 
     &--left {
       width: 65%;
-      border-right: 1px solid vars.$border-color;
+      //border-right: 1px solid vars.$border-color;
     }
 
     &--right {
-      border-left: 1px solid vars.$border-color;
+     // border-left: 1px solid vars.$border-color;
       display: flex;
       flex-direction: column;
       width: 35%;
@@ -49,16 +50,28 @@
         img {
           position: absolute;
           top: 0.2rem;
-          width: 100%;
+          width: 90%;
           height: 100%;
+          right: 0.9rem;
         }
 
         p {
+          position: absolute;
+
           padding: 3rem 3rem;
           line-height: 1.3rem;
-          position: absolute;
-          z-index:1;
+          letter-spacing: .1rem;
+
           text-align: justify;
+          //font-style: italic;
+          font-style: oblique;
+          font-family: cursive;
+
+          z-index:1;
+
+          vertical-align: middle;
+          color: rgb(51, 27, 27);
+      
         }
       }
 
@@ -77,7 +90,7 @@
         button {
           padding: 0.8rem;
           width: 45%;
-          margin: 0.3rem;
+          margin: 0.9rem;
           background-color: vars.$brown-color;
           border: none;
           color: vars.$font-gold-color;
@@ -117,6 +130,8 @@
         p{
         padding: 1rem;
         position: relative;
+        letter-spacing: .2rem;
+
         }
         img {
           display: none;
