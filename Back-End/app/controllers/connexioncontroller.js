@@ -28,7 +28,7 @@ const connexionController = {
                     messageTab.push({ messagePassword: messagePassword });
                 };
             } else { // Sinon on stock un message d'erreur
-                const messageUserName = "Votre nom d''utilisateur n'a pas été enregistré en base de donnée.";
+                const messageUserName = "Votre nom d''utilisateur ne correspond à aucun compte.";
                 messageTab.push({ messageUserName: messageUserName });
             };
         } else { // Sinon on stock un message d'erreur
@@ -108,7 +108,7 @@ const connexionController = {
             const checkUser = await user.findByUserName(request.body.userName);
 
             if (checkUser !== undefined) { // - 1: On verifie si L'utilisateur existe en bdd
-                const messageUserName = "Votre nom d''utilisateur n'a pas été enregistré en base de donnée.";
+                const messageUserName = "Votre nom d''utilisateur existe déjà en base de donnée.";
                 messageTab.push({ messageUserName: messageUserName });
             };
 
