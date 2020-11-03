@@ -87,7 +87,20 @@
     &-attack {
       bottom: 6rem;
       right: 8rem;
-      
+    }
+
+    &-finish {
+      h1 {
+        font-size: 2.2rem;
+        color: vars.$font-gold-color;
+        font-weight: bold;
+      }
+
+      button {
+      bottom: 150px;
+      right: 380px;
+      width: 200px;
+      }
     }
 
     h1 {
@@ -162,8 +175,4 @@
   p{
     font-weight: bold;
   }
-}
-// div qui fait l'affichage des logs de combat
-.battle-element{
-
 }

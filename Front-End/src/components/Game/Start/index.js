@@ -53,7 +53,7 @@ const Start = ({ scene, storyId, image }) => {
 Start.propTypes = ({
   scene: PropTypes.object.isRequired,
   storyId: PropTypes.number.isRequired,
-  image: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
 });
 
 // == Export

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PlayerFrame from 'src/containers/PlayerFrame';
 import OpponentFrame from 'src/containers/OpponentFrame';
@@ -17,9 +17,6 @@ const Battle = ({
   logOpponentFight,
   logPlayerFight,
 }) => {
-  console.log('logOponentFight[2]', logOpponentFight);
-  console.log('!playerIsAlive', !playerIsAlive);
-
   if (scene !== undefined) {
     const [ready, setReady] = useState(false);
     useEffect(() => {
@@ -40,12 +37,14 @@ const Battle = ({
     return (
       <div className="battle-element">
         <div className="battle-element__scene">
-          {ready && <h1><OpponentFrame /></h1>}
+          {ready && opponent.isAlive && <h1><OpponentFrame /></h1>}
+          {opponent.isAlive && (
           <img
             className="battle-element__scene--opponent"
             src={scene.details_scene.opponent_img}
             alt="El Papito"
           />
+          )}
           <div className="battle-element__scene--image-container">
             <img
               src={image}
@@ -53,18 +52,27 @@ const Battle = ({
             />
           </div>
           <PlayerFrame toggle />
-          {!display && <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>}
+          {!display && opponent.isAlive && <button className="battle-element__scene-attack" type="button" onClick={handleOnAttackClick}>Attaquer</button>}
           {ready && !playerIsAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene2.next_scene_id2}`} exact />}
-          {ready && !opponent.isAlive && <Redirect to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`} exact />}
+          {ready && !opponent.isAlive && (
+            <div className="battle-element__scene-finish">
+              <h1>Bravo, tu as bien fais la bagare</h1>
+              <Link to={`/liste-des-jeux/${storyId}/${scene.next_scene.next_scene_id}`}>
+                <button type="button">
+                  Continuer
+                </button>
+              </Link>
+            </div>
+          )}
           <div className="battle-element__scene__log">
             {/* <p>Appuyer sur attaquer pour que le combat commence ..!</p> */}
-            {display && logOpponentFight.length > 0 && <p className="battle-element__scene__logText"> - {logOpponentFight[4]} PV </p>}
+            {display && opponent.isAlive && logOpponentFight.length > 0 && <p className="battle-element__scene__logText"> - {logOpponentFight[4]} PV </p>}
             {/* {!opponent.isAlive && <p>Votre adversaire est mort dans d'atroces souffrances</p>}
           {!opponent.isAlive && <p>Vous êtes toujours debout avec 'à définir' point de vie</p>} */}
           </div>
           <div className="battle-element__scene__logTwo">
             {/* <p>Appuyer sur attaquer pour que le combat commence ..!</p> */}
-            {display && logPlayerFight.length > 0 && <p className="battle-element__scene__logTextTwo"> - {logPlayerFight[4]} PV </p>}
+            {display && opponent.isAlive && logPlayerFight.length > 0 && <p className="battle-element__scene__logTextTwo"> - {logPlayerFight[4]} PV </p>}
             {/* {!opponent.isAlive && <p>Votre adversaire est mort dans d'atroces souffrances</p>}
           {!opponent.isAlive && <p>Vous êtes toujours debout avec 'à définir' point de vie</p>} */}
           </div>
@@ -86,8 +94,10 @@ const Battle = ({
 
 Battle.propTypes = ({
   scene: PropTypes.shape({
+    img_scene: PropTypes.string.isRequired,
     details_scene: PropTypes.shape({
       opponent_img: PropTypes.string.isRequired,
+      scene_opponent_id: PropTypes.string.isRequired,
     }).isRequired,
     next_scene: PropTypes.shape({
       next_scene_id: PropTypes.number.isRequired,
@@ -105,6 +115,7 @@ Battle.propTypes = ({
   }).isRequired,
   image: PropTypes.string.isRequired,
   logOpponentFight: PropTypes.array.isRequired,
+  logPlayerFight: PropTypes.array.isRequired,
 });
 
 export default Battle;
