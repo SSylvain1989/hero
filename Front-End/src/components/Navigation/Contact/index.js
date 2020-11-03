@@ -48,7 +48,6 @@ const Contact = ({
   if (!response) {
     return (
       <div className="contact">
-        <img className="bg__site--01" src={backgroundhero} alt="backgroundHero" />
         <div className="contact__wrap">
           <img className="contact__picture" src={logo} alt="logo" />
           <form className="contact__form" onSubmit={onSubmit}>

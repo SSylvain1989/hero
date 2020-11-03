@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-import backgroundhero from 'src/images/backgroundhero.jpg';
 
 import './legalnotices.scss';
 
