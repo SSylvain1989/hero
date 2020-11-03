@@ -1,0 +1,31 @@
+@use 'src/styles/vars' as vars;
+
+.category{
+  color: vars.$font-contrast-color;
+  background-color: vars.$font-base-color;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 120px;
+  font-style: italic;
+  margin: 5px;
+}
+
+.Horreur{
+  background-color: vars.$category-horror;
+  color: vars.$font-base-color;
+}
+
+.Fantastique{
+  background-color: vars.$category-fantastic;
+  color: vars.$font-base-color;
+}
+
+.Combat{
+  background-color: vars.$category-combat;
+  color: vars.$font-base-color;
+}
+
+.Médiéval{
+  background-color: vars.$category-medieval;
+  color: vars.$font-base-color;
+}
