@@ -101,8 +101,10 @@
   margin-top: 1.5rem;
   border-top: 1px solid rgba(0,0,0,0.1);
   font-size: 3rem;
+  color: gold;
 }&__social-icon:hover{
   transform: translateY(-2px); 
+  
 }
 }
 
@@ -128,7 +130,7 @@
     border-radius: 9px 6px 0 0;
     width: 20rem;
     clip-path: polygon(0 1%, 100% 0, 100% 100%, 0% 100%);
-  }&__social{
+  }&__social{ 
     width: 90%;
     list-style: none;
     display: flex;
