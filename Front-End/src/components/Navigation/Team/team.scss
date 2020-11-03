@@ -1,9 +1,7 @@
 @use 'src/styles/vars' as vars;
 
 .team{
-  margin-top: 5rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: vars.$bgr-color-black;
@@ -19,164 +17,71 @@
   display: flex;
   flex-direction: row;
 }&__wrapper{
+  width: 19rem;
+  margin: 2rem;
   margin-top: 1.9rem;
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: column;
 }&__card{
+  height: 700px;
+  box-shadow: 0px 10px 13px -7px #000000,
+  inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+  border-radius: 9px 6px 0 0;
+  width: 20rem;
   background-color: vars.$brown-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 0.6rem outset vars.$border-color;
+  border-radius: 12px;
   // https://html-css-js.com/css/generator/box-shadow/
   box-shadow: 8px 8px 10px 3px rgba(0,0,0,0.26)
 }&__imgBgr{
-  width: 20rem;
+  width: 18.9rem;
   height: auto;
   object-fit: cover;
   // https://bennettfeely.com/clippy/
   clip-path: polygon(0 1%, 100% 0, 100% 71%, 0% 100%);
   border-radius: 8px 5px 0 0;
 }&__imgProfile{
-  width: 12rem;
-  height: 12rem;
   object-fit: cover;
   border-radius: 50%;
-  margin-top: -10rem;
   z-index: 2;
-  border: 0.5rem solid #ebeef8;
   background-color: vars.$bgr-color-black;
+  width: 10rem;
+  height: 10rem;
+  margin-top: -5rem;
+  border: 0.5rem solid vars.$border-color;
 }h1{
   font-size: 2.5rem;
   color: vars.$font-gold-color;
   margin: 1.5rem 0;
+  height: 80px;
 }&__job{
   color: vars.$font-base-color;
   font-size: 1.5rem;
   font-weight: 300;
+  margin: 1rem;
+  height: 80px;
 }&__about{
   font-size: 1.5rem;
   margin: .9rem 0;
   font-style: italic;
   text-align: center;
   color: vars.$font-silver-color;
-}&__btn {
-  width: 10rem;
-  height: 3.5rem;
-  margin: auto;
-  color: vars.$font-btn-grad-color;
-  transition: all 0.4s;
-  cursor: pointer;
-  background: linear-gradient(
-  180deg,
-  vars.$bgr-btn-grad-01 0%,
-  vars.$bgr-btn-grad-02 49%,
-  vars.$bgr-btn-grad-03 51%,
-  vars.$bgr-btn-grad-04 100%);
-  padding: 0.8rem 0rem;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-  border: 5px outset vars.$font-gold-color;
-  border-radius: 2rem;
-}
-&__btn:hover {
-  color: vars.$font-btn-grad-color-hover;
-  background: linear-gradient(
-    180deg,
-    vars.$bgr-btn-grad-hover-01 0%,
-    vars.$bgr-btn-grad-hover-02 46.65551839464883%,
-    vars.$bgr-btn-grad-hover-03 46.65551839464883%,
-    vars.$bgr-btn-grad-hover-04  100%);
 }&__social{
-  width: 100%;
+  width: 80%;
   list-style: none;
   display: flex;
   justify-content: space-evenly;
   padding: 2rem 0;
   margin-top: 1.5rem;
   border-top: 1px solid vars.$border-color;
-  font-size: 3rem;
+  font-size: 2.2rem;
 }&__social-icon:hover{
   transform: translateY(-2px); 
 }
-}
-
-// si t'es sur mobile , le css est au-dessus
-// si plus de 700px en largeur sur ton ecran ( donc pc ) voir ci-dessous 
-@media screen and (min-width: 700px){
-  .team{
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    margin-top: 0.3rem;
-    flex-direction: row;
-    //flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    //padding: 0 9rem;
-  }
-.member{
-  &__wrapper{
-    width: 19rem;
-    margin: 2rem;
-  }&__card{
-    border: 0.6rem outset vars.$border-color;
-    border-radius: 12px;
-    box-shadow: 0px 10px 13px -7px #000000,
-    inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
-    border-radius: 9px 6px 0 0;
-    width: 20rem;
-  }&__social{
-    width: 90%;
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1rem 0;
-    margin-top: 1.5rem;
-    border-top: 1px solid vars.$border-color;
-    font-size: 2rem;
-  }&__imgBgr{
-    width: 18.9rem;
-    height: auto;
-    object-fit: cover;
-    // https://bennettfeely.com/clippy/
-    clip-path: polygon(0 1%,100% 0, 100% 71%, 0% 100%);
-    border-radius: 8px 5px 0 0;
-  }&__imgProfile{
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin-top: -5rem;
-    border: 0.5rem solid vars.$border-color;
-  }&__name{
-    font-size: 2.2rem;
-    color: #333;
-    margin: 1.5rem 0;
-  }&__btn:hover{
-    transform: translateY(-2px);
-    //box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
-  }&__btn:active{
-    transform: translateY(0);
-    box-shadow: none;
-  }
-}
-}
-
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-
-}
-.card:nth-child(1){
-  animation: fadeIn 0.7s;
 }
