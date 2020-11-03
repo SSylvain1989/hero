@@ -83,14 +83,13 @@ const Signup = ({
     );
   }
 
-  // for (const message of messagesError) {
-  //   console.log(message);
-  // };
-
   return (
     <div className="signup">
       <div className="signup__signed">
-        <h1 className="signup__text">Bonjour <span>{response.userName}</span> , Votre compte est créé - connectez-vous vite pour pouvoir jouer </h1>
+        <h1>
+          Bonjour <span>{response.userName}</span>,<br />
+          Votre compte a bien été crée, connectez-vous vite pour pouvoir jouer
+        </h1>
         <Link to="/connection"><button className="signup__button" type="button">Connectez-vous</button></Link>
       </div>
     </div>
