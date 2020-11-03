@@ -83,14 +83,14 @@
     height: 20rem;
     z-index: 1;
     position: absolute;
-    top: 15rem;
+    padding-top: 15rem;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: vars.$bgr-color-black;
-    height: 100vh;
+    height: calc(100vh);
     padding-top: 400px;
     width: 100%;
 

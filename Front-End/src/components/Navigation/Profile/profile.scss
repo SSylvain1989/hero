@@ -23,21 +23,19 @@
     position: absolute;
     align-items: center;
   }&__field{
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem;
     background: vars.$font-base-color;
     font-size: 0.7rem;
     line-height: 1.5;
-    margin: 0.7rem;
+    margin-bottom: 1rem;
     border: 5px outset vars.$font-gold-color;
     border-radius: 15px;
     text-align: center;
     width: 21rem;
     font-size: 0.9rem;
   }&__btn {
-    width: 8rem;
+    width: 21rem;
     height: 2.5rem;
-    margin: auto;
     color: vars.$font-btn-grad-color;
     transition: all 0.4s;
     cursor: pointer;
@@ -47,8 +45,6 @@
     vars.$bgr-btn-grad-02 49%,
     vars.$bgr-btn-grad-03 51%,
     vars.$bgr-btn-grad-04 100%);
-    padding: 0.2rem 0rem;
-    margin-top: 0.14rem;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
@@ -65,11 +61,11 @@
       vars.$bgr-btn-grad-hover-04  100%);
   }
   &__deleteBtn {
-    width: 15rem;
-    height: 2.5rem;
-    margin: auto;
-    color: red;
+    width: 21rem;
+    height: 4rem;
+    margin: 2rem auto;
     transition: all 0.4s;
+    font-size: 20px;
     cursor: pointer;
     background: linear-gradient(
     180deg,
@@ -77,9 +73,6 @@
     vars.$bgr-btn-grad-02 49%,
     vars.$bgr-btn-grad-03 51%,
     vars.$bgr-btn-grad-04 100%);
-    padding: 0.2rem 0rem;
-    margin-top: 0.6rem;
-    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     border: 5px outset vars.$font-gold-color;
@@ -101,7 +94,6 @@
     color: vars.$font-gold-color;
     text-align: center;
     padding-bottom: 0.5rem;
-    margin-bottom: 0rem;
     border-bottom: vars.$border-color 1px solid;;
   }
 // container du contenu 
@@ -114,18 +106,19 @@
       width: 60%;
 
         h2 {
-          margin-top: 1rem;
-          margin-bottom: 0.3rem;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
           padding-bottom:0.3rem ;
           font-weight: bold;
-          border-bottom: 1px black solid;
-          font-size: 0.9rem;
+          border-bottom: 1px solid vars.$border-color;
+          font-size: 1.1rem;
+          color: vars.$font-base-color;
         }
         h3{
-          margin-top: 0.1rem;
-          margin-bottom: 0.1rem;
+          margin-bottom: 0.8rem;
           font-weight: bold;
           font-size: 0.8rem;
+          color: vars.$font-silver-color;
         }
     }
 
@@ -141,14 +134,17 @@
     left: 4rem;
     right: 4rem;
     margin: auto;
-    top: 61%;
+    top: 0;
+    width: 100%;
+    left: 0;
     padding: 2.5rem;
     border-radius: 10px;
+    height: 100%;
+    padding-top: 8rem;
   }&__delete-btn {
+      color: vars.$invalide-color;
       width: 18rem;
-      height: 3.2rem;
-      margin: auto;
-      color: red;
+      height: 4rem;
       transition: all 0.4s;
       cursor: pointer;
       background: linear-gradient(
@@ -175,7 +171,7 @@
     }
     &__delete-back {
       width: 18rem;
-      height: 3.2rem;
+      height: 4rem;
       margin: auto;
       color: vars.$font-btn-grad-color;
       transition: all 0.4s;
