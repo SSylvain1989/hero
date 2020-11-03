@@ -60,6 +60,7 @@
       }
 
       &-buttons {
+        font-family: Merriweather;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -70,6 +71,7 @@
           width: 45%;
 
           button {
+            font-family: Merriweather;
             padding: 0.8rem;
             margin: 0.3rem;
             width: 100%;
@@ -118,6 +120,7 @@
       }
 
       &-buttons {
+        font-family: Merriweather;
         margin-bottom: 2rem;
       }
     }

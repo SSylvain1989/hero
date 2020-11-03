@@ -87,6 +87,8 @@
   &__button {
     width: 600px;
     height: 50px;
+
+    font-family: Merriweather;
   
     color: vars.$font-btn-grad-color;
     letter-spacing: .2rem;
@@ -130,6 +132,8 @@
     color: vars.$font-btn-grad-color;
     letter-spacing: .2rem;
     transition: all 0.4s;
+
+    font-family: Merriweather;
   
     cursor: pointer;
   
