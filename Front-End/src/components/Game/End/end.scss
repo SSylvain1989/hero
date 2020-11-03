@@ -36,9 +36,9 @@
       flex-direction: column;
       width: 30%;
       position: absolute;
-      left: 35%;
+      left: 65%;
       background-color: vars.$brown-color;
-      top: 8%;
+      bottom: 8%;
       text-align: center;
       border-radius: 5px;
       
@@ -50,13 +50,8 @@
         color: vars.$font-gold-color ;
       }
 
-      // &buttons {
-      //   display: flex;
-      //   justify-content: center;
-      //   align-items: center;
-      //   height: 20%;
-
-        button {width: 15rem;
+        button {
+          width: 15rem;
           height: 3.5rem;
           margin: auto;
           color: vars.$font-btn-grad-color;

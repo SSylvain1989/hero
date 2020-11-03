@@ -20,7 +20,11 @@ const End = ({ scene, storyId, sendEndDetails }) => {
           <div className="end__scene--modal">
             <p>{scene.finish_text}</p>
             <div className="end__scene--modalbuttons">
-            <Link to="/liste-des-jeux"><button type="button">Retourner à la liste des jeux</button></Link>
+              <Link to="/liste-des-jeux">
+                <button type="button">
+                  Retourner à la liste des jeux
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -34,6 +38,7 @@ const End = ({ scene, storyId, sendEndDetails }) => {
 
 End.propTypes = ({
   scene: PropTypes.shape({
+    img_scene: PropTypes.string.isRequired,
     finish_text: PropTypes.string.isRequired,
     details_scene: PropTypes.shape({
       scene_name: PropTypes.string.isRequired,
