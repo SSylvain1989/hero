@@ -58,18 +58,20 @@ const Profile = ({
             onChange={onChange}
             value={email}
             type="text"
+            className="profile__field"
           />
-          <button type="button" onClick={handleEmailSubmit}>Valider</button>
+          <button className="profile__btn" type="button" onClick={handleEmailSubmit}>Valider</button>
           <h2>Modifier mon nom d'utilisateur</h2>
           <h3>Votre nom d'utilisateur actuel: {currentUserName}</h3>
           <Field
             name="userName"
-            placeholder="Nouveau pseudo"
+            placeholder="Nouveau nom d'utilisateur"
             onChange={onChange}
             value={userName}
             type="text"
+            className="profile__field"
           />
-          <button type="button" onClick={handleUsernameSubmit}>Valider</button>
+          <button className="profile__btn" type="button" onClick={handleUsernameSubmit}>Valider</button>
           <h2>Modifier mon mot de passe</h2>
           <Field
             name="password"
@@ -77,6 +79,7 @@ const Profile = ({
             onChange={onChange}
             value={password}
             type="password"
+            className="profile__field"
           />
           <Field
             name="passwordConfirm"
@@ -84,15 +87,17 @@ const Profile = ({
             onChange={onChange}
             value={passwordConfirm}
             type="password"
+            className="profile__field"
           />
-          <button type="button" onClick={handlePasswordSubmit}>Valider</button>
+          <button className="profile__btn" type="button" onClick={handlePasswordSubmit}>Valider</button>
           <div className="profile__input--delete">
             <h2>Supprimer mon compte</h2>
-            <button type="button" onClick={() => showModalToggle(showModal)}>Supprimer mon compte</button>
+            <button className="profile__deleteBtn" type="button" onClick={() => showModalToggle(showModal)}>Supprimer mon compte</button>
+            {/* Modal pour la suppression du compte */}
             <div className={showModal ? 'profile__delete-modal' : 'profile__delete-modal--hide'}>
-              <h1>Êtes-vous sur de vouloir supprimer votre compte</h1>
-              <button type="button" onClick={handleAccountDeletion}>Supprimer mon compte definitivement</button>
-              <button type="button" onClick={() => showModalToggle(showModal)}>Retour</button>
+              <h1 className="profile__delete-title">Êtes-vous sur de vouloir supprimer votre compte</h1>
+              <button type="button" onClick={handleAccountDeletion} className="profile__delete-btn">Supprimer mon compte definitivement</button>
+              <button className="profile__delete-back" type="button" onClick={() => showModalToggle(showModal)}>Retour</button>
             </div>
           </div>
           <div className={(displayMessage && Object.values(message)[0] !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>

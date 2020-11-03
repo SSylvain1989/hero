@@ -15,7 +15,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 2.5rem;
+      padding: 1.2rem 2.1rem 0rem 2.1rem;
       border: 0.6rem outset vars.$border-color;
       border-radius: 12px;
       box-shadow: 0px 10px 13px -7px #000000,
@@ -39,9 +39,10 @@
     text-align: center;
     padding: 1rem;
     margin: 2rem;
+  
   }&__input {
     border-radius: 1rem;
-    padding: 1rem 2rem;
+    padding: 0.7rem 1.8rem;
     background: vars.$font-base-color;
     font-size: 1rem;
     line-height: 1.5;
@@ -50,7 +51,7 @@
     border-radius: 15px;
     text-align: center;
   }&__button {
-    width: 20rem;
+    width: 14rem;
     height: 3.5rem;
     margin: auto;
     color: vars.$font-btn-grad-color;
@@ -79,7 +80,11 @@
       vars.$bgr-btn-grad-hover-03 46.65551839464883%,
       vars.$bgr-btn-grad-hover-04  100%);
   }&__loged {
-    width: 100%;
+    height: 20rem;
+    z-index: 1;
+    position: absolute;
+    top: 15rem;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,7 +135,9 @@
     }
   }
   &__error{
-    color : vars.$invalide-color;
-    padding: 1rem;
+    color: vars.$invalide-color;
+    padding-top: 1rem;
+    font-size: 0.7rem;
   }
 }
+
