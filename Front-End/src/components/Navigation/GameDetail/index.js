@@ -32,7 +32,6 @@ const GameDetail = ({
       <div className="game-detail__container">
         <div className="game-detail__content">
           <h1 className="game-detail__title">{game.name}</h1>
-          {/* <p>{game.category}</p> */}
           <p>{game.difficulty}</p>
           <section className="game-detail__section">{game.description}</section>
           <div className="game-detail__character">

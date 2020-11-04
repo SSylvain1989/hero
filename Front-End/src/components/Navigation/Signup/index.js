@@ -21,6 +21,7 @@ const Signup = ({
   response,
   resetFields,
   signupError,
+  signupResponse,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -30,9 +31,10 @@ const Signup = ({
   useEffect(() => {
     resetFields();
     signupError([]);
+    signupResponse({});
   }, []);
 
-  if (!response) {
+  if (!response.id) {
     return (
       <div className="signup">
         <form onSubmit={handleOnSubmit}>
@@ -107,9 +109,10 @@ Signup.propTypes = ({
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
   messagesError: PropTypes.array,
-  response: PropTypes.string,
+  response: PropTypes.object,
   resetFields: PropTypes.func.isRequired,
   signupError: PropTypes.func.isRequired,
+  signupResponse: PropTypes.func.isRequired,
 });
 
 Signup.defaultProps = ({
@@ -118,7 +121,7 @@ Signup.defaultProps = ({
   email: '',
   password: '',
   passwordConfirm: '',
-  response: '',
+  response: {},
 });
 
 // == Export

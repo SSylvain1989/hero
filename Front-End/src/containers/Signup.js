@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // import Signup from 'src/components/Navigation/Signup';
 
 // == Import : actions
-import { signup, signupError } from '../actions/signup';
+import { signup, signupError, signupResponse } from '../actions/signup';
 import { changeSignupFieldValue, resetFields } from '../actions/field';
 import Signup from '../components/Navigation/Signup';
 
@@ -48,6 +48,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   signupError: (message) => {
     dispatch(signupError(message));
+  },
+  // on se sert de cette fonction ci-dessous pour re-initialiser
+  // le tableau de réponse ds création de cpte
+  signupResponse: (response) => {
+    dispatch(signupResponse(response));
   },
 });
 

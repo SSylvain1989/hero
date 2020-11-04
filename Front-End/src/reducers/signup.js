@@ -1,7 +1,7 @@
 import { SIGNUP_RESPONSE, SIGNUP_ERROR } from '../actions/signup';
 
 const initialState = {
-  response: '',
+  response: {},
   messagesError: [],
 };
 
