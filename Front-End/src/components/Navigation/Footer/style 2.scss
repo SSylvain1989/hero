@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #222222;
+  width: 100%;
+  z-index: 999;
+  font-family: Merriweather, arial;
+   //text-transform: uppercase;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+.footer li {
+  color: #B1B1B1;
+  text-align: center;
+  padding: 1rem;
+  margin: 0 2rem;
+  text-decoration: none;
+  font-size: 17px;
+  
+}
+
+.footer li:hover {
+  color: #D4AF37;
+}
