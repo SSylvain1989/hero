@@ -108,7 +108,7 @@ const connexionController = {
             const checkUser = await user.findByUserName(request.body.userName);
 
             if (checkUser !== undefined) { // - 1: On verifie si L'utilisateur existe en bdd
-                const messageUserName = "Votre nom dutilisateur existe déjà en base de donnée.";
+                const messageUserName = "Votre nom d'utilisateur existe déjà.";
                 messageTab.push({ messageUserName: messageUserName });
             };
 
