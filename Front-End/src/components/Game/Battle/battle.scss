@@ -71,6 +71,7 @@
     }
 
     button {
+      font-family: Merriweather;
       padding: 0.8rem;
       width: 100px;
       margin: 0.5rem;
@@ -95,6 +96,7 @@
       }
 
       button {
+      font-family: Merriweather;
       bottom: 150px;
       right: 380px;
       width: 200px;
@@ -103,6 +105,12 @@
 
     h1 {
       margin: 2rem;
+
+      font-style: oblique;
+      font-family: cursive;
+      line-height: 1.3rem;
+      letter-spacing: .1rem;
+      color: rgb(51, 27, 27);
     }
 
     &--image-container {
@@ -169,8 +177,19 @@
     text-align: center;
     margin: auto;
     padding-top: 0.2rem;
+
+    font-style: oblique;
+    font-family: cursive;
+
+    line-height: 1.3rem;
+    letter-spacing: .1rem;
+
   }
   p{
-    font-weight: bold;
+    font-style: oblique;
+    font-family: cursive;
+    line-height: 1.3rem;
+    letter-spacing: .1rem;
+    color: rgb(51, 27, 27);
   }
 }

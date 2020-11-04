@@ -59,11 +59,20 @@
         }
 
         p {
+          position: absolute;
+
           padding: 3rem 3rem;
           line-height: 1.3rem;
-          position: absolute;
-          z-index:1;
+          letter-spacing: .1rem;
+
           text-align: justify;
+          font-style: oblique;
+          font-family: cursive;
+
+          z-index:1;
+
+          vertical-align: middle;
+          color: rgb(51, 27, 27);
         }
       }
 
@@ -78,6 +87,7 @@
           width: 60%;
 
           button {
+            font-family: Merriweather;
             padding: 0.8rem;
             margin: 0.3rem 0;
             width: 100%;
@@ -127,6 +137,7 @@
       }
 
       &-buttons {
+        font-family: Merriweather;
         margin-bottom: 2rem;
       }
     }

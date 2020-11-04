@@ -35,6 +35,7 @@
     font-size: 0.9rem;
   }&__btn {
     width: 21rem;
+    font-family: Merriweather;
     height: 2.5rem;
     color: vars.$font-btn-grad-color;
     transition: all 0.4s;
@@ -64,6 +65,8 @@
     width: 21rem;
     height: 4rem;
     margin: 2rem auto;
+    font-family: Merriweather;
+    color: red;
     transition: all 0.4s;
     font-size: 20px;
     cursor: pointer;
@@ -143,6 +146,7 @@
     padding-top: 8rem;
   }&__delete-btn {
       color: vars.$invalide-color;
+    font-family: Merriweather;
       width: 18rem;
       height: 4rem;
       transition: all 0.4s;
@@ -214,5 +218,4 @@
         display: none;
       }
   }
-  }
-
+}

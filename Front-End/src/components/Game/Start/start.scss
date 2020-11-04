@@ -57,7 +57,6 @@
           letter-spacing: .1rem;
 
           text-align: justify;
-          //font-style: italic;
           font-style: oblique;
           font-family: cursive;
 
@@ -70,6 +69,7 @@
       }
 
       &-buttons {
+        font-family: Merriweather;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -82,6 +82,7 @@
         }
 
         button {
+          font-family: Merriweather;
           padding: 0.8rem;
           width: 45%;
           margin: 0.9rem;
@@ -133,6 +134,7 @@
       }
 
       &-buttons {
+        font-family: Merriweather;
         margin-bottom: 2rem;
       }
     }
