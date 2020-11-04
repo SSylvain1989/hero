@@ -23,6 +23,7 @@ export const initialState = {
           details_scene: {
             scene_id: 0,
           },
+          // img_opponent: '',
         },
       ],
       history_id: 0,
@@ -116,7 +117,6 @@ const game = (state = initialState, action = {}) => {
           opponentHealtMax] = damageCalculation(state.opponent, state.player);
         // si le joueur n'est pas mort
         if (!playerIsAlive) {
-          console.log('playerIsAlive', !playerIsAlive);
           return {
             ...state,
             playerIsAlive,

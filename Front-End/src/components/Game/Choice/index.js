@@ -20,11 +20,11 @@ const Choice = ({ scene, storyId, image }) => {
             alt="mooving-minautor"
           />
           {scene.img_opponent && (
-          <img
-            className="choice__scene--opponent"
-            src={scene.img_opponent}
-            alt="El Papito"
-          />
+            <img
+              className="choice__scene--opponent"
+              src={scene.img_opponent}
+              alt="El Papito"
+            />
           )}
           <div className="choice__scene--left" />
           <div className="choice__scene--right">
@@ -68,12 +68,17 @@ Choice.propTypes = ({
       next_scene_id2: PropTypes.number,
       next_scene_name2: PropTypes.string,
     }),
-    img_opponent: PropTypes.string.isRequired,
+    img_opponent: PropTypes.string,
     img_scene: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   storyId: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
-  img_opponent: PropTypes.string.isRequired,
+});
+
+Choice.defaultProps = ({
+  scene: PropTypes.shape({
+    img_opponent: '',
+  }),
 });
 
 export default Choice;

@@ -23,7 +23,7 @@
     border-radius: 10px;
     overflow: hidden;
     flex-wrap: wrap;
-    padding: 0px 30px 10px 30px;
+    padding: 0px 30px 20px 30px;
     
     border: 10px outset vars.$border-color;
     border-radius: 12px;
@@ -84,10 +84,10 @@
   }&__button {
     letter-spacing: .2rem;
     font-family: Merriweather;
-    width: 280px;
-    height: auto;
+    width: 20rem;
+    height: 3rem;
     //margin: auto;
-    margin: 20px;
+    margin: auto;
     color: vars.$font-btn-grad-color;
     transition: all 0.3s;
     cursor: pointer;

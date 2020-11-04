@@ -14,14 +14,12 @@ const signupMiddleware = (store) => (next) => (action) => {
       const signupFormValues = state.field.signup;
       // Renommer userName pour correspondre avec le back
       signupFormValues.userName = signupFormValues.username;
-      console.log(signupFormValues);
       axios.post('http://34.207.247.234:3000/api/sign-up', { ...signupFormValues })
         .then((response) => {
           store.dispatch(signupResponse(response.data.userSave));
           store.dispatch(resetFields());
         })
         .catch((error) => {
-          console.error('signupMidlleware', error.response);
           store.dispatch(signupError(error.response.data.message));
         });
       next(action);

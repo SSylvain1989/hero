@@ -16,7 +16,6 @@ const gameMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(addStory(response.data));
         }).catch((error) => {
-          console.log(error);
         });
       next(action);
       break;
@@ -26,7 +25,6 @@ const gameMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(addCharacterList(response.data));
         }).catch((error) => {
-          console.log(error);
         });
       next(action);
       break;
