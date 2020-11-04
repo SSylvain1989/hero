@@ -39,11 +39,11 @@ const Battle = ({
         <div className="battle-element__scene">
           {ready && opponent.isAlive && <h1><OpponentFrame /></h1>}
           {opponent.isAlive && (
-          <img
-            className="battle-element__scene--opponent"
-            src={scene.details_scene.opponent_img}
-            alt="El Papito"
-          />
+            <img
+              className="battle-element__scene--opponent"
+              src={scene.details_scene.opponent_img}
+              alt="El Papito"
+            />
           )}
           <div className="battle-element__scene--image-container">
             <img
@@ -96,7 +96,7 @@ Battle.propTypes = ({
     img_scene: PropTypes.string.isRequired,
     details_scene: PropTypes.shape({
       opponent_img: PropTypes.string.isRequired,
-      scene_opponent_id: PropTypes.string.isRequired,
+      scene_opponent_id: PropTypes.number.isRequired,
     }).isRequired,
     next_scene: PropTypes.shape({
       next_scene_id: PropTypes.number.isRequired,

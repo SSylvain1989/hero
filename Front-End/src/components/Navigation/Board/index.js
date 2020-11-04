@@ -9,12 +9,9 @@ import './styles.scss';
 const Board = ({
   boardData,
   fetchDataBoard,
-  displayName,
 }) => {
-  console.log('dataBoard dans le composant Board gamePlay', boardData.gamePlay);
   useEffect(() => {
     fetchDataBoard();
-    console.log('dataBoard dans le composant Board gameWin,', boardData.gameWin);
   }, []);
 
   return (
@@ -23,13 +20,13 @@ const Board = ({
         <div className="Board__container">
           <img className="Board__image" src="https://i.ibb.co/ZXpv3t3/minotaur.gif" alt="" />
           <h1 className="Board__title">Voici le tableau de tes scores</h1>
-          <p>Partie jouées</p>
+          <p>Parties jouées</p>
           <span>{boardData.gamePlay}</span>
           <p>Victoires</p>
           <span>{boardData.gameWin}</span>
           <p>Défaites</p>
           <span>{boardData.gameOver}</span>
-          <Link to="/liste-des-jeux"><button className="Board__button" type="button">Retour à la liste des jeux..</button></Link>
+          <Link to="/liste-des-jeux"><button className="Board__button" type="button">Retour à la liste des jeux</button></Link>
         </div>
       </div>
     </>
@@ -38,12 +35,18 @@ const Board = ({
 
 Board.propTypes = ({
   boardData: PropTypes.shape({
-    displayName: PropTypes.string.isRequired,
-    gameOver: PropTypes.number.isRequired,
-    gamePlay: PropTypes.number.isRequired,
-    gameWin: PropTypes.number.isRequired,
-  }).isRequired,
+    gameOver: PropTypes.number,
+    gamePlay: PropTypes.number,
+    gameWin: PropTypes.number,
+  }),
   fetchDataBoard: PropTypes.func.isRequired,
+});
+Board.defaultProps = ({
+  boardData: PropTypes.shape({
+    gameOver: 0,
+    gamePlay: 0,
+    gameWin: 0,
+  }),
 });
 
 // == Export

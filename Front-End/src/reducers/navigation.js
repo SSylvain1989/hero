@@ -19,7 +19,6 @@ const navigation = (state = initialState, action = {}) => {
     default:
       return state;
     case ADD_DATABOARD:
-      console.log('log REDUCER action.dataBoard', action.dataBoard);
       return {
         ...state,
         dataBoard: { ...action.dataBoard },

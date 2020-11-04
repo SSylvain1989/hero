@@ -62,7 +62,6 @@ const userMiddleware = (store) => (next) => (action) => {
         { withCredentials: true })
         .then((response) => {
           store.dispatch(saveMessage(response.data.message));
-          console.log(response);
           store.dispatch(resetFields());
           store.dispatch((addProfileErrorMessage([])));
         })
@@ -81,7 +80,6 @@ const userMiddleware = (store) => (next) => (action) => {
         },
         { withCredentials: true })
         .then((response) => {
-          console.log(response.data.session);
           store.dispatch(saveSession(response.data.session));
           store.dispatch(loginHandler());
           store.dispatch(resetFields());
@@ -101,7 +99,6 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(resetFields());
         })
         .catch((error) => {
-          console.error(error);
         });
       next(action);
       break;
@@ -117,7 +114,6 @@ const userMiddleware = (store) => (next) => (action) => {
           else store.dispatch(saveSession(response.data.session));
         })
         .catch((error) => {
-          console.error(error);
         });
       next(action);
       break;
@@ -125,12 +121,10 @@ const userMiddleware = (store) => (next) => (action) => {
       axios.delete('http://34.207.247.234:3000/api/profile/delete',
         { withCredentials: true })
         .then((response) => {
-          console.log(response);
           store.dispatch(loginHandler());
           store.dispatch(resetFields());
         })
         .catch((error) => {
-          console.error(error);
         });
       next(action);
       break;

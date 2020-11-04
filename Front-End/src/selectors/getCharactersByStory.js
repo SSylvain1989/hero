@@ -4,7 +4,6 @@ const getCharactersByStory = (characterList, story) => {
   const realCharacterList = characterList.filter(
     (character) => characterListId.includes(character.id),
   );
-  console.log('realCharacterList', realCharacterList);
   return [...realCharacterList];
 };
 

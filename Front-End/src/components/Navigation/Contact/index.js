@@ -31,16 +31,14 @@ const Contact = ({
       name: email, message,
     };
 
-    // console.log('e', e);
-    // console.log('form', form);
     emailjs.send('default_service', apiKeys.TEMPLATE_ID, form, apiKeys.USER_ID)
       .then((result) => {
         alert('Votre message a bien été envoyé, nous vous répondrons sous peu', result.text);
         resetFields();
       },
-      (error) => {
-        alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
-      });
+        (error) => {
+          alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
+        });
   };
   return (
     <div className="contact">

@@ -9,11 +9,7 @@ import HealthBar from '../HealthBar';
 // == Composant
 const OpponentFrame = ({
   opponent,
-}) => {
-  console.log('opponent', opponent);
-
-  // <HealthBar heathStatus={ opponent.healthPointent } />
-  return (
+}) => (
     <>
       {opponent
         && (
@@ -30,7 +26,6 @@ const OpponentFrame = ({
         )}
     </>
   );
-};
 
 // == PropTypes
 OpponentFrame.propTypes = {
