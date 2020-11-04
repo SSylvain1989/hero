@@ -14,12 +14,13 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      padding: 0.5rem 2.1rem 1.7rem 2.1rem;
+      padding: 0.5rem 2rem 1.7rem 2.1rem;
       border: 0.6rem outset vars.$border-color;
       border-radius: 12px;
       box-shadow: 0px 10px 13px -7px #000000,
       inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
       position: absolute;
+      justify-content: center;
   
     }&__input{
       border-radius: 1rem;
@@ -32,7 +33,9 @@
       border-radius: 15px;
       text-align: center;
       width: 21rem;
+      letter-spacing: .1rem;
     }&__title{
+      text-transform: uppercase;
       font-size: 24px;
       font-weight: bold;
       text-shadow: 3px 2px 0 #290f0f;
@@ -63,9 +66,10 @@
     }&__text {
       margin: 1rem;
     }  &__button {
-      font-family: Merriweather;
+      font-family: 'Merriweather';
+      letter-spacing: .2rem;
       width: 14rem;
-      height: 3.2rem;
+      height: auto;
       margin: auto;
       color: vars.$font-btn-grad-color;
       transition: all 0.4s;
@@ -92,6 +96,8 @@
         vars.$bgr-btn-grad-hover-02 46.65551839464883%,
         vars.$bgr-btn-grad-hover-03 46.65551839464883%,
         vars.$bgr-btn-grad-hover-04  100%);
+
+        transform: translateY(-2px);
     }
     &__error {
       color: vars.$invalide-color;

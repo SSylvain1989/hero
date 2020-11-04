@@ -39,8 +39,10 @@
     vertical-align: middle;
 
   }&__title {
-    font-size: 24px;
+    letter-spacing: .2rem;
+    font-size: 2rem;
     font-weight: bold;
+    text-transform: uppercase;
 
     text-shadow: 3px 2px 0 #290f0f;
     color: vars.$font-gold-color;
@@ -51,6 +53,7 @@
     border-bottom: vars.$border-color 1px solid;
 
   }&__email {
+    letter-spacing: .1rem;
     width: 100%;
     border-radius: 15px;
     display: list-item;
@@ -63,6 +66,7 @@
     text-align: left;
     font-family: Merriweather;
   }&__message {
+    letter-spacing: .1rem;
     font-family: Merriweather;
     width: 100%;
     min-height: 200px;
@@ -77,13 +81,9 @@
     border-radius: 15px;
     padding: 1rem;
     resize: none;
-  }&__email::placeholder {
-    color: vars.$brown-color;
-  }&__message::placeholder {
-    color: vars.$brown-color;
-  }
 
-  &__button {
+  }&__button {
+    letter-spacing: .2rem;
     width: 50%;
     height: 50px;
     font-family: merriweather;

@@ -9,10 +9,8 @@ const LegalNotices = () => (
       <h1 className="legal-notices__title">Mentions légales</h1>
       <div className="legal-notices__text">
         <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser le lien crédit subdelirium sur cette page de mentions légales.</strong><br />
-        Vos mentions légales :
-        <h2>Informations légales</h2>
-        <h3>1. Présentation du site.<br /></h3>
-        <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="http://www.lewebsitedesheros.com/">www.lewebsitedesheros.com</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
+        <h3><br></br>1. Présentation du site.<br /></h3>
+        <p><br></br>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="http://www.lewebsitedesheros.com/">www.lewebsitedesheros.com</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
         <p><strong>Propriétaire</strong> : Etudiants O'clock – Start up – 75000<br />
           <strong>Créateur</strong>  : <a href="http://www.exemple.com/">Plusieurs créateurs</a><br />
           <strong>Responsable publication</strong> : Wesley Boosko – mail@mail.com<br />

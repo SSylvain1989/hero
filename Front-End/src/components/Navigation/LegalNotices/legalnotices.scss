@@ -1,7 +1,7 @@
 @use 'src/styles/vars' as vars;
 
 .legal-notices {
-  height: calc(100vh + 40rem);
+  height: calc(100vh + 60rem);
     width: 100%;
    // min-height: 100vh;
     display: flex;
@@ -23,6 +23,7 @@
     padding: 0 0.5rem;
 
   }&__title {
+    letter-spacing: .2rem;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
@@ -41,9 +42,11 @@
     color: vars.$font-silver-color;
     text-align: justify;
     z-index: 8; 
+    letter-spacing: .1rem;
   }
 
   h3 {
+    letter-spacing: .2rem;
     font-weight: bold;
     font-size: 13px;
     color: vars.$normal-color;
