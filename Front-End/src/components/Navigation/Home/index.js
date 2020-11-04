@@ -1,5 +1,6 @@
 // == Import : npm
 import React from 'react';
+import candle from'src/images/candle.jpg';
 import backgroundhero from 'src/images/backgroundhero.jpg';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ import './home.scss';
 // == Composant
 const Home = () => (
   <div className="Home">
-    <img className="bg__site--01" src={backgroundhero} alt="backgroundHero" />
+    <img className="bg__site--01" src={candle} alt="candle" />
     <div className="Home__content">
       <h1 className="Home__title">Bienvenue visiteur !</h1>
       <h2>Description</h2>
