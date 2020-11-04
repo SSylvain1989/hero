@@ -108,7 +108,7 @@ const connexionController = {
             const checkUser = await user.findByUserName(request.body.userName);
 
             if (checkUser !== undefined) { // - 1: On verifie si L'utilisateur existe en bdd
-                const messageUserName = "Votre nom d''utilisateur existe déjà en base de donnée.";
+                const messageUserName = "Votre nom dutilisateur existe déjà en base de donnée.";
                 messageTab.push({ messageUserName: messageUserName });
             };
 
@@ -118,7 +118,7 @@ const connexionController = {
             };
 
             if (request.body.password !== request.body.passwordConfirm) { // - 3: On verifie si le mdp et sa confirmation correspondent
-                const messagePassword = "La confirmation de votre mot de passe ne correspond pas.";
+                const messagePassword = "Vos mot de passe ne correspondent pas.";
                 messageTab.push({ messagePassword: messagePassword });
             };
 
