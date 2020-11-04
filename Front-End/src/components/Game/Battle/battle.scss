@@ -10,14 +10,12 @@
 
   &__scene {
     position: relative;
-    height: 405px;
+    height: 400px;
     width: 1000px;
     z-index: 1;
     position: relative;
-    //border: 0.6rem outset vars.$border-color;
-    //border-radius: 12px;
-    //box-shadow: 0px 10px 13px -7px #000000,
-    //inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
+    box-shadow: 0px 10px 13px -7px #000000;
+    border-radius: 12px;
 
     &--opponent {
       position: absolute;
@@ -146,18 +144,18 @@
 }
 
 .opponent-frame {
-  background-color: #fff;
   width: 200px;
   position: absolute;
-  top: 0;
+  top: -1px;
   left: 0.07rem;
   border-right: 3px solid vars.$brown-color;
   border-bottom: 3px solid vars.$brown-color;
-  border-radius: 0 0px 5px 0;
+  border-radius: 12px 0 0 0;
   &__header {
     height: 25%;
     width: 100%;
     background-color: vars.$brown-color;
+    border-radius: 12px 0 0 0;
   }
   &__stat{
       color: vars.$font-contrast-color;

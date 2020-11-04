@@ -9,6 +9,7 @@ import './styles.scss';
 const Board = ({
   boardData,
   fetchDataBoard,
+  displayName,
 }) => {
   console.log('dataBoard dans le composant Board gamePlay', boardData.gamePlay);
   useEffect(() => {
@@ -21,18 +22,14 @@ const Board = ({
       <div className="Board">
         <div className="Board__container">
           <img className="Board__image" src="https://i.ibb.co/ZXpv3t3/minotaur.gif" alt="" />
-          <div className="Board__text">
-            <h1 className="Board__title">Scores de {boardData.displayName}</h1>
-            <div className="Board__undertext">
-              <p>Partie jouées</p>
-              <span>{boardData.gamePlay}</span>
-              <p>Victoires</p>
-              <span>{boardData.gameWin}</span>
-              <p>Défaites</p>
-              <span>{boardData.gameOver}</span>
-            </div>
-            <Link to="/liste-des-jeux"><button className="Board__button" type="button">Retour à la liste des jeux..</button></Link>
-          </div>
+          <h1 className="Board__title">Voici le tableau de tes scores</h1>
+          <p>Partie jouées</p>
+          <span>{boardData.gamePlay}</span>
+          <p>Victoires</p>
+          <span>{boardData.gameWin}</span>
+          <p>Défaites</p>
+          <span>{boardData.gameOver}</span>
+          <Link to="/liste-des-jeux"><button className="Board__button" type="button">Retour à la liste des jeux..</button></Link>
         </div>
       </div>
     </>

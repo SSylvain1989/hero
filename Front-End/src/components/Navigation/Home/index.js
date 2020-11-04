@@ -27,7 +27,7 @@ const Home = () => (
       <p>1. Choisir une des histoires proposées.</p>
       <p>2. Sélectionner le personnage que l'on veut incarner.</p>
       <p>3. C'est parti pour l'aventure !</p>
-      <Link to="/liste-des-jeux" exact>
+      <Link to="/liste-des-jeux">
         <button className="Home__button" type="button">
           Voir la liste des jeux
         </button>

@@ -8,10 +8,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
 import apiKeys from './apikey';
-import Field from '../../common/Field/FieldUser';
-
-import backgroundhero from 'src/images/backgroundhero.jpg';
-
+import Field from '../../common/Field/FieldTextArea';
 import './contact.scss';
 import logo from 'src/images/logo.png';
 
@@ -21,7 +18,6 @@ const Contact = ({
   email,
   message,
   changeField,
-  response,
   resetFields,
 }) => {
   useEffect(() => {
@@ -40,55 +36,51 @@ const Contact = ({
     emailjs.send('default_service', apiKeys.TEMPLATE_ID, form, apiKeys.USER_ID)
       .then((result) => {
         alert('Votre message a bien été envoyé, nous vous répondrons sous peu', result.text);
+        resetFields();
       },
       (error) => {
         alert('Une erreur est apparue, retentez votre envoi s\'il-vous-plait', error.text);
       });
   };
-  if (!response) {
-    return (
-      <div className="contact">
-        <div className="contact__wrap">
-          <img className="contact__picture" src={logo} alt="logo" />
-          <form className="contact__form" onSubmit={onSubmit}>
-            <h1 className="contact__title">Nous contacter</h1>
-            <Field
-              name="email"
-              placeholder="Votre email"
-              onChange={changeField}
-              value={email}
-              type="email"
-              className="contact__email"
-            />
-            <Field
-              name="message"
-              placeholder="Votre message"
-              onChange={changeField}
-              value={message}
-              type="text"
-              className="contact__message"
-            />
-            <button className="contact__button">Envoyer</button>
-          </form>
-        </div>
+  return (
+    <div className="contact">
+      <div className="contact__wrap">
+        <img className="contact__picture" src={logo} alt="logo" />
+        <form className="contact__form" onSubmit={onSubmit}>
+          <h1 className="contact__title">Nous contacter</h1>
+          <Field
+            name="email"
+            placeholder="Votre email"
+            onChange={changeField}
+            value={email}
+            type="email"
+            className="contact__email"
+          />
+          <Field
+            name="message"
+            placeholder="Votre message"
+            onChange={changeField}
+            value={message}
+            type="text"
+            className="contact__message"
+          />
+          <button className="contact__button">Envoyer</button>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 Contact.propTypes = ({
   email: PropTypes.string,
   message: PropTypes.string,
   changeField: PropTypes.func.isRequired,
-  handleContact: PropTypes.func.isRequired,
-  response: PropTypes.object,
   resetFields: PropTypes.func.isRequired,
 });
 
 Contact.defaultProps = ({
   email: '',
   message: '',
-  response: '',
 });
 
 export default Contact;

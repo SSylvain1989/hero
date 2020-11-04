@@ -1,7 +1,7 @@
 import { CONTACT_RESPONSE, CONTACT_ERROR } from '../actions/contact';
 
 const initialState = {
-  response: '',
+  response: { },
   messagesError: '',
 };
 

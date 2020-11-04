@@ -13,12 +13,13 @@
   background-color: vars.$font-contrast-color;
 
   &__wrap {
+    width: 600px;
     background-color: vars.$brown-color;
     border-radius: 10px;
     overflow: hidden;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 30px 60px 50px;
+    padding: 2rem 1rem;
   
     border: 10px outset vars.$border-color;
     border-radius: 12px;
@@ -29,7 +30,7 @@
     position: absolute;
 
   }&__picture {
-    width: 50%;
+    width: 30%;
     padding-top: 10px;
     padding-bottom: 10px;
     box-sizing: border-box;
@@ -50,39 +51,32 @@
     border-bottom: vars.$border-color 1px solid;
 
   }&__email {
+    width: 100%;
     border-radius: 15px;
-    padding: 14px 30px;
-  
     display: list-item;
     background: vars.$font-base-color;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.5;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  
+    padding: 1.5rem 0 0 1rem;
     border: 5px outset vars.$font-gold-color;
     border-radius: 15px;
-  
-    text-align: center;
-
+    text-align: left;
+    font-family: Merriweather;
   }&__message {
-    min-height: 120px;
-
+    font-family: Merriweather;
+    width: 100%;
+    min-height: 200px;
     border-radius: 15px;
-    padding: 14px 30px;
-  
     display: list-item;
     background: vars.$font-base-color;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.5;
     margin-top: 10px;
     margin-bottom: 10px;
-    
     border: 5px outset vars.$font-gold-color;
     border-radius: 15px;
-  
-    text-align: center;
-
+    padding: 1rem;
+    resize: none;
   }&__email::placeholder {
     color: vars.$brown-color;
   }&__message::placeholder {
@@ -92,7 +86,7 @@
   &__button {
     width: 50%;
     height: 50px;
-  
+    font-family: merriweather;
     color: vars.$font-btn-grad-color;
   
     transition: all 0.4s;

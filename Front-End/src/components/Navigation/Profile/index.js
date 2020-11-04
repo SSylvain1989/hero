@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Field from '../../common/Field/FieldUser';
 
 import './profile.scss';
@@ -91,19 +92,18 @@ const Profile = ({
           />
           <button className="profile__btn" type="button" onClick={handlePasswordSubmit}>Valider</button>
           <div className="profile__input--delete">
-            <h2>Supprimer mon compte</h2>
             <button className="profile__deleteBtn" type="button" onClick={() => showModalToggle(showModal)}>Supprimer mon compte</button>
             {/* Modal pour la suppression du compte */}
             <div className={showModal ? 'profile__delete-modal' : 'profile__delete-modal--hide'}>
               <h1 className="profile__delete-title">Êtes-vous sur de vouloir supprimer votre compte</h1>
-              <button type="button" onClick={handleAccountDeletion} className="profile__delete-btn">Supprimer mon compte definitivement</button>
+              <Link to="/"><button type="button" onClick={handleAccountDeletion} className="profile__delete-btn">Supprimer mon compte definitivement</button></Link>
               <button className="profile__delete-back" type="button" onClick={() => showModalToggle(showModal)}>Retour</button>
             </div>
           </div>
-          <div className={(displayMessage && Object.values(message)[0] !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
-            <p>{Object.values(message)[0]}</p>
-          </div>
         </div>
+      </div>
+      <div className={(displayMessage && Object.values(message)[0] !== '') ? 'profile__confirmation' : 'profile__confirmation--hiden'}>
+        <p>{Object.values(message)[0]}</p>
       </div>
     </div>
   );
@@ -121,7 +121,7 @@ Profile.propTypes = ({
   handleAccountDeletion: PropTypes.func.isRequired,
   showModal: PropTypes.bool.isRequired,
   showModalToggle: PropTypes.func.isRequired,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.object.isRequired,
   displayMessage: PropTypes.bool.isRequired,
   displayMessageToggle: PropTypes.func.isRequired,
   resetFields: PropTypes.func.isRequired,

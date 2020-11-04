@@ -7,7 +7,7 @@ const LegalNotices = () => (
   <div className="legal-notices">
     <div className="legal-notices__encart">
       <h1 className="legal-notices__title">Mentions légales</h1>
-      <p className="legal-notices__text">
+      <div className="legal-notices__text">
         <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser le lien crédit subdelirium sur cette page de mentions légales.</strong><br />
         Vos mentions légales :
         <h2>Informations légales</h2>
@@ -73,7 +73,7 @@ const LegalNotices = () => (
         <p><br />Utilisateur : Internaute se connectant, utilisant le site susnommé.</p>
         <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
 
-      </p>
+      </div>
     </div>
   </div>
 );

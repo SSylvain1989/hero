@@ -49,7 +49,7 @@ export const initialState = {
     id: null,
     userName: '',
   },
-  messagesError: '',
+  messagesError: [],
   displayMessage: false,
 };
 
