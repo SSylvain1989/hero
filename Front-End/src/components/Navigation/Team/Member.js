@@ -28,7 +28,7 @@ const Member = ({
             <h1>{fullName}</h1>
             <p className="member__job">{role}</p>
             <p className="member__about">{description}</p>
-            <p className="member__about"> spécialité : {specialite}</p>
+            <p className="member__about"> Spécialité : {specialite}</p>
             <ul className="member__social">
               <li><a href={github} alt="github"><FaGithub className="member__social-icon" /></a></li>
               <li><a href={linkedin} alt="linkedin"><FaLinkedin color="#0073B1" className="member__social-icon" /></a></li>

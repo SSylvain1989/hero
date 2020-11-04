@@ -58,21 +58,27 @@
   border: 0.5rem solid vars.$border-color;
 }h1{
   font-size: 2.5rem;
+  text-transform: uppercase;
   color: vars.$font-gold-color;
   margin: 1.5rem 0;
   height: 80px;
+  letter-spacing: .2rem;
+  text-shadow: 3px 2px 0 #290f0f;
 }&__job{
   color: vars.$font-base-color;
   font-size: 1.5rem;
   font-weight: 300;
   margin: 1rem;
   height: 80px;
+  letter-spacing: .2rem;
+  line-height: 1.8rem;
 }&__about{
   font-size: 1.5rem;
   margin: .9rem 0;
   font-style: italic;
   text-align: center;
   color: vars.$font-silver-color;
+  letter-spacing: .2rem;
 }&__social{
   width: 80%;
   list-style: none;

@@ -22,6 +22,7 @@
       inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
       position: absolute;
   }&__title {
+    letter-spacing: .2rem;
     font-size: 2.5rem;
     font-weight: bold;
     text-shadow: 3px 2px 0 #290f0f;
@@ -39,6 +40,7 @@
     text-align: center;
     padding: 1rem;
     margin: 2rem;
+    letter-spacing: .2rem;
   
   }&__input {
     border-radius: 1rem;
@@ -50,9 +52,12 @@
     border: 5px outset vars.$font-gold-color;
     border-radius: 15px;
     text-align: center;
+    letter-spacing: .1rem;
   }&__button {
-    width: 14rem;
-    height: 3.5rem;
+    letter-spacing: .2rem;
+    font-family: merriweather;
+    width: 13rem;
+    height: auto;
     margin: auto;
     color: vars.$font-btn-grad-color;
     transition: all 0.4s;
@@ -72,6 +77,7 @@
     border-radius: 12px;
   }
   &__button:hover {
+    transform: translateY(-2px);
     color: vars.$font-btn-grad-color-hover;
     background: linear-gradient(
       180deg,
@@ -80,6 +86,8 @@
       vars.$bgr-btn-grad-hover-03 46.65551839464883%,
       vars.$bgr-btn-grad-hover-04  100%);
   }&__loged {
+    letter-spacing: .2rem;
+    font-family: merriweather;
     height: 20rem;
     z-index: 1;
     position: absolute;
@@ -104,8 +112,10 @@
     }
 
     button {
-      width: 15rem;
-      height: 3.5rem;
+      font-family: merriweather;
+      letter-spacing: .2rem;
+      width: auto;
+      height: auto;
       margin: auto;
       color: vars.$font-btn-grad-color;
       transition: all 0.4s;
@@ -116,7 +126,7 @@
       vars.$bgr-btn-grad-02 49%,
       vars.$bgr-btn-grad-03 51%,
       vars.$bgr-btn-grad-04 100%);
-      padding: 0.8rem 0rem;
+      padding: 0.8rem 1rem;
       margin-top: 1rem;
       font-size: 1.2rem;
       font-weight: bold;
@@ -125,6 +135,7 @@
       border-radius: 12px;
 
         &:hover {
+          transform: translateY(-2px);
           color: vars.$font-btn-grad-color-hover;
           background: linear-gradient(
             180deg,
@@ -139,6 +150,7 @@
     color: vars.$invalide-color;
     padding-top: 1rem;
     font-size: 0.7rem;
+    letter-spacing: .1rem;
   }
 }
 
