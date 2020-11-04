@@ -80,7 +80,7 @@ Connection.propTypes = ({
   onSubmit: PropTypes.func.isRequired,
   isLoged: PropTypes.bool.isRequired,
   sessionUserName: PropTypes.string,
-  messagesError: PropTypes.string.isRequired,
+  messagesError: PropTypes.array.isRequired,
   resetFields: PropTypes.func.isRequired,
 });
 

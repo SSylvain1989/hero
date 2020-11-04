@@ -147,7 +147,7 @@ const field = (state = initialState, action = {}) => {
           email: '',
           message: '',
         },
-        messagesError: '',
+        messagesError: [],
       };
     case DISPLAY_MESSAGE_TOOGLE:
       return {
