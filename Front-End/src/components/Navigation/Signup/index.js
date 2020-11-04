@@ -20,6 +20,7 @@ const Signup = ({
   messagesError,
   response,
   resetFields,
+  signupError,
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -28,6 +29,7 @@ const Signup = ({
 
   useEffect(() => {
     resetFields();
+    signupError([]);
   }, []);
 
   if (!response) {
@@ -107,6 +109,7 @@ Signup.propTypes = ({
   messagesError: PropTypes.array,
   response: PropTypes.string,
   resetFields: PropTypes.func.isRequired,
+  signupError: PropTypes.func.isRequired,
 });
 
 Signup.defaultProps = ({

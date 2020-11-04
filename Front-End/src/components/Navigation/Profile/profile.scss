@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: vars.$bgr-color-black;
+  padding: 2.5rem;
   &__container{
     width: 33rem;
     background-color: vars.$brown-color;
@@ -23,11 +24,11 @@
     position: absolute;
     align-items: center;
   }&__field{
-    padding: 0.5rem 0rem;
+    padding: 0.3rem 0rem;
     background: vars.$font-base-color;
     font-size: 0.7rem;
     line-height: 1.5;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     border: 5px outset vars.$font-gold-color;
     border-radius: 15px;
     text-align: center;
@@ -63,8 +64,8 @@
   }
   &__deleteBtn {
     width: 21rem;
-    height: 4rem;
-    margin: 2rem auto;
+    height: 3.7rem;
+    margin: 1rem auto;
     font-family: Merriweather;
     color: red;
     transition: all 0.4s;
@@ -109,7 +110,7 @@
       width: 60%;
 
         h2 {
-          margin-top: 2rem;
+          margin-top: 1rem;
           margin-bottom: 1rem;
           padding-bottom:0.3rem ;
           font-weight: bold;

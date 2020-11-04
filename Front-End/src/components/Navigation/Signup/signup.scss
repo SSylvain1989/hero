@@ -27,7 +27,7 @@
       background: vars.$font-base-color;
       font-size: 1rem;
       line-height: 1.5;
-      margin: 0.7rem;
+      margin: 0.7rem auto;
       border: 5px outset vars.$font-gold-color;
       border-radius: 15px;
       text-align: center;
@@ -94,6 +94,7 @@
         vars.$bgr-btn-grad-hover-04  100%);
     }
     &__error {
+      padding-top: 0.3rem;
       color: vars.$invalide-color;
     }&__submit{
       text-align: center;

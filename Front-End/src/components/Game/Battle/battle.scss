@@ -143,18 +143,19 @@
 }
 
 .opponent-frame {
-  width: 200px;
-  position: absolute;
-  top: -1px;
-  left: 0.07rem;
-  border-right: 3px solid vars.$brown-color;
-  border-bottom: 3px solid vars.$brown-color;
-  border-radius: 12px 0 0 0;
+width: 200px;
+    position: absolute;
+    top: -1px;
+    left: 0rem;
+    border-right: 1px solid #42291a;
+    border-bottom: 1px solid #42291a;
+    border-radius: 0 0px 12px 5px ;
+
   &__header {
     height: 25%;
     width: 100%;
     background-color: vars.$brown-color;
-    border-radius: 12px 0 0 0;
+    border-radius: 8px 0px 0 0;
   }
   &__stat{
       color: vars.$font-contrast-color;
@@ -168,6 +169,7 @@
       height: 75%;
       width: 100%;
       background-color: vars.$normal-color;
+      border-radius: 0 0 12px 0;
   }
   h1 {
     color: vars.$font-gold-color;
@@ -182,6 +184,7 @@
 
     line-height: 1.3rem;
     letter-spacing: .1rem;
+   
 
   }
   p{

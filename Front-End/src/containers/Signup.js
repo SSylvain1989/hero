@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // import Signup from 'src/components/Navigation/Signup';
 
 // == Import : actions
-import { signup } from '../actions/signup';
+import { signup, signupError } from '../actions/signup';
 import { changeSignupFieldValue, resetFields } from '../actions/field';
 import Signup from '../components/Navigation/Signup';
 
@@ -45,6 +45,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   resetFields: () => {
     dispatch(resetFields());
+  },
+  signupError: (message) => {
+    dispatch(signupError(message));
   },
 });
 

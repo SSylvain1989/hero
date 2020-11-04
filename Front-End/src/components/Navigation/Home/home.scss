@@ -39,7 +39,7 @@
     overflow: hidden;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 45px;
+    padding: 2rem;
   
     border: 10px outset vars.$border-color;
     border-radius: 12px;
@@ -86,7 +86,7 @@
   &__button {
     width: auto;
     height: auto;
-    margin-top: 5rem;
+    margin-top: 3rem;
     letter-spacing: .2rem;
     font-family: Merriweather;
   

@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 .game-detail {
-  padding: 6rem;
+  padding: 2rem;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,22 +24,20 @@
   }
 }
 &__title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
-  
   letter-spacing: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 6em;
+  display: inline-block ;
   text-shadow: 3px 2px 0 #290f0f;
   color: vars.$font-gold-color;
   text-align: center;
   text-transform: uppercase;
   font-style: italic;
-  padding-top: 2em;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  
+  padding-top: 1.3rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.1rem;
   border-bottom: dashed vars.$border-color 1px;
   }
   &__section {
@@ -47,13 +45,12 @@
     font-size: large;
     font-weight: lighter;
     margin: auto;
-    width: 700px;
+    width: 60rem;
     height: auto;
     background-color: vars.$border-color;
     overflow: hidden;
     flex-wrap: wrap;
     padding: 10px 30px 10px 30px;
-    
     border: 10px double vars.$brown-color;
     border-radius: 12px;
   }
@@ -104,8 +101,8 @@
     vars.$bgr-btn-grad-04 100%);
   
     padding: 10px 20px 10px 20px;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   
     font-size: 16px;
     font-weight: bold;
@@ -127,28 +124,20 @@
   } &__btn {
     width: 300px;
     height: 50px;
-  
     color: vars.$font-btn-grad-color;
     letter-spacing: .2rem;
     transition: all 0.4s;
-  
     cursor: pointer;
-  
     background: linear-gradient(
       180deg,
     vars.$bgr-btn-grad-01 0%,
     vars.$bgr-btn-grad-02 49%,
     vars.$bgr-btn-grad-03 51%,
     vars.$bgr-btn-grad-04 100%);
-  
     padding: 10px 20px 10px 20px;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-  
     border: 5px outset vars.$font-gold-color;
     border-radius: 12px;
     &:hover {
