@@ -120,7 +120,7 @@ const gameController = {
                             previous_scene_id: oneHistory[3].previous_scene_id,
                             next_scene: {
                                 next_scene_id: oneHistory[3].next_scene_id,
-                                next_scene_name: 'Faire la baguarre'
+                                next_scene_name: 'Faire la bagarre'
                             },
                             next_scene2: {
                                 next_scene_id2: oneHistory[4].next_scene_id,
