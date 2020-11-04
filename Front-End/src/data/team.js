@@ -31,7 +31,7 @@ const team = [
     role: 'Scrum Master & Graphiste',
     description: 'Dev Full Stack Js',
     specialite: 'React',
-    github: 'https://github.com/NicolasVid',
+    github: 'https://github.com/Caro-L-dev',
     linkedin: 'https://www.linkedin.com/in/liardcaroline/',
     email: 'liardcar@gmail.com',
     image: caroline,
