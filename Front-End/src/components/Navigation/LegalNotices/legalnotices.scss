@@ -1,14 +1,12 @@
 @use 'src/styles/vars' as vars;
 
 .legal-notices {
-  height: calc(100vh + 60rem);
     width: 100%;
-   // min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background-color: vars.$bgr-color-black;
+    margin: 6rem 0;
     
   &__encart {
     background-color: vars.$brown-color;
@@ -16,11 +14,10 @@
     border-radius: 12px;
     box-shadow: 0px 10px 13px -7px #000000,
     inset 4px 2px 50px -1px rgba(0,0,0,0.62); 
-    position: absolute;
     height: auto;
     width: auto;
-    margin: 10px;
     padding: 0 0.5rem;
+
 
   }&__title {
     letter-spacing: .2rem;

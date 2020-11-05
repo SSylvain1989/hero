@@ -1,4 +1,5 @@
 import axios from 'axios';
+import baseURL from '../config';
 
 import {
   LOAD_ONE_STORY,
@@ -11,20 +12,20 @@ import {
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOAD_ONE_STORY:
-      axios.get(`http://34.207.247.234:3000/api/stories/${action.gameId}/play`,
+      axios.get(`${baseURL}/api/stories/${action.gameId}/play`,
         { withCredentials: true })
         .then((response) => {
           store.dispatch(addStory(response.data));
-        }).catch((error) => {
+        }).catch(() => {
         });
       next(action);
       break;
     case LOAD_CHARACTER_LIST:
-      axios.get('http://34.207.247.234:3000/api/characters',
+      axios.get(`${baseURL}/api/characters`,
         { withCredentials: true })
         .then((response) => {
           store.dispatch(addCharacterList(response.data));
-        }).catch((error) => {
+        }).catch(() => {
         });
       next(action);
       break;
@@ -42,7 +43,7 @@ const gameMiddleware = (store) => (next) => (action) => {
         gameWin,
       };
       // Route POST pour update les parties jouées, gagnées ou perdues
-      axios.post(`http://34.207.247.234:3000/api/stories/${action.storyId}/finish`,
+      axios.post(`${baseURL}/api/stories/${action.storyId}/finish`,
         { ...data },
         { withCredentials: true });
       next(action);

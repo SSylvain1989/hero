@@ -92,7 +92,7 @@ const Signup = ({
       <div className="signup__signed">
         <h1>
           Bonjour <span>{response.userName}</span>,<br />
-          Votre compte a bien été crée, connectez-vous vite pour pouvoir jouer
+          Votre compte a bien été créé, connectez-vous vite pour pouvoir jouer
         </h1>
         <Link to="/connection"><button className="signup__button" type="button">Connectez-vous</button></Link>
       </div>
