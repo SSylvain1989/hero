@@ -7,6 +7,8 @@ import {
 
 import { resetFields } from '../actions/field';
 
+import baseURL from '../config';
+
 const signupMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SIGNUP: {
@@ -14,7 +16,7 @@ const signupMiddleware = (store) => (next) => (action) => {
       const signupFormValues = state.field.signup;
       // Renommer userName pour correspondre avec le back
       signupFormValues.userName = signupFormValues.username;
-      axios.post('http://34.207.247.234:3000/api/sign-up', { ...signupFormValues })
+      axios.post(`${baseURL}/api/sign-up`, { ...signupFormValues })
         .then((response) => {
           store.dispatch(signupResponse(response.data.userSave));
           store.dispatch(resetFields());

@@ -18,10 +18,12 @@ import {
 
 import { resetFields } from '../actions/field';
 
+import baseURL from '../config';
+
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case EMAIL_SUBMIT:
-      axios.patch('http://34.207.247.234:3000/api/profile/edit',
+      axios.patch(`${baseURL}/api/profile/edit`,
         { email: store.getState().field.profile.email },
         { withCredentials: true })
         .then((response) => {
@@ -38,7 +40,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case USERNAME_SUBMIT:
-      axios.patch('http://34.207.247.234:3000/api/profile/edit',
+      axios.patch(`${baseURL}/api/profile/edit`,
         { userName: store.getState().field.profile.userName },
         { withCredentials: true })
         .then((response) => {
@@ -54,7 +56,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case PASSWORD_SUBMIT:
-      axios.patch('http://34.207.247.234:3000/api/profile/edit',
+      axios.patch(`${baseURL}/api/profile/edit`,
         {
           password: store.getState().field.profile.password,
           passwordConfirm: store.getState().field.profile.passwordConfirm,
@@ -73,7 +75,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case LOGIN_SUBMIT:
-      axios.post('http://34.207.247.234:3000/api/log-in',
+      axios.post(`${baseURL}/api/log-in`,
         {
           password: store.getState().field.login.password,
           userName: store.getState().field.login.userName,
@@ -90,7 +92,7 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case LOGOUT_HANDLER:
-      axios.post('http://34.207.247.234:3000/api/log-out',
+      axios.post(`${baseURL}/api/log-out`,
         {},
         { withCredentials: true })
         .then((response) => {
@@ -98,12 +100,12 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(loginHandler());
           store.dispatch(resetFields());
         })
-        .catch((error) => {
+        .catch(() => {
         });
       next(action);
       break;
     case CHECK_CONNEXION:
-      axios.post('http://34.207.247.234:3000/api/login-check',
+      axios.post(`${baseURL}/api/login-check`,
         {},
         { withCredentials: true })
         .then((response) => {
@@ -113,18 +115,18 @@ const userMiddleware = (store) => (next) => (action) => {
           }
           else store.dispatch(saveSession(response.data.session));
         })
-        .catch((error) => {
+        .catch(() => {
         });
       next(action);
       break;
     case HANDLE_ACCOUNT_DELETION:
-      axios.delete('http://34.207.247.234:3000/api/profile/delete',
+      axios.delete(`${baseURL}/api/profile/delete`,
         { withCredentials: true })
-        .then((response) => {
+        .then(() => {
           store.dispatch(loginHandler());
           store.dispatch(resetFields());
         })
-        .catch((error) => {
+        .catch(() => {
         });
       next(action);
       break;
